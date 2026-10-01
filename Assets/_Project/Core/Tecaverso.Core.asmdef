@@ -1,0 +1,6 @@
+{
+    "name": "Tecaverso.Core",
+    "rootNamespace": "Tecaverso",
+    "references": [],
+    "autoReferenced": true
+}

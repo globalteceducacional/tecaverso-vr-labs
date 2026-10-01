@@ -1,0 +1,6 @@
+{
+    "name": "Tecaverso.EditMode.Tests",
+    "references": ["Tecaverso.Core"],
+    "includePlatforms": ["Editor"],
+    "optionalUnityReferences": ["TestAssemblies"]
+}

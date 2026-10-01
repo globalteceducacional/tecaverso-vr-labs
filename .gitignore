@@ -104,3 +104,9 @@ InitTestScene*.unity*
 
 # Auto-generated cache in Assets folder
 /[Aa]ssets/[Ss]ceneDependencyCache*
+
+# Unity XR build and performance-test generated data
+/Assets/XR/Temp/
+/Assets/XR/Temp.meta
+/Assets/Resources/PerformanceTestRunInfo.json*
+/Assets/Resources/PerformanceTestRunSettings.json*

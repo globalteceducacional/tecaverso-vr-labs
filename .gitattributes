@@ -1,0 +1,16 @@
+* text=auto
+*.cs text eol=lf
+*.asmdef text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.unity text eol=lf whitespace=-blank-at-eol
+*.prefab text eol=lf whitespace=-blank-at-eol
+*.asset text=auto whitespace=-blank-at-eol
+*.meta text eol=lf whitespace=-blank-at-eol
+*.png binary
+*.jpg binary
+*.exr binary
+*.fbx binary
+*.wav binary
+*.mp3 binary
+*.webm binary

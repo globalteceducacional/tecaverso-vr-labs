@@ -1,0 +1,5 @@
+{
+    "name": "Tecaverso.PlayMode.Tests",
+    "references": ["Unity.Netcode.Runtime", "Unity.Networking.Transport"],
+    "optionalUnityReferences": ["TestAssemblies"]
+}

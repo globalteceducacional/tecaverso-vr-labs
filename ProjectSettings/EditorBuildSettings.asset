@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Projects/Scenes/SampleScene.unity
-    guid: 13f6f87036926f94ab0417ca1b31725c
-  - enabled: 0
-    path: Assets/_Projects/Scenes/BasicScene.unity
+    path: Assets/_Project/Hub/Scenes/Hub.unity
     guid: bc761d9a86b33554f85fd11bb1f87ba3
+  - enabled: 1
+    path: Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity
+    guid: 721f193679f4f4045b3dfdeaed6f76ce
   m_configObjects:
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 33491290b38a6094fbf61d3c24a308a5,
       type: 2}
