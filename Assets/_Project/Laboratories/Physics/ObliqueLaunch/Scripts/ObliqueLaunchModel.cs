@@ -8,10 +8,10 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public LaunchParameters(float angle, float speed, float height, float mass, float gravity)
         {
             Angle = Mathf.Clamp(angle, 0f, 90f);
-            Speed = Mathf.Clamp(speed, 0f, 50f);
+            Speed = Mathf.Round(Mathf.Clamp(speed, 0f, 30f));
             Height = Mathf.Clamp(height, 0f, 10f);
             Mass = Mathf.Clamp(mass, 1f, 10f);
-            Gravity = Mathf.Clamp(gravity, 0.1f, 24.8f);
+            Gravity = Mathf.Clamp(gravity, 5f, 20f);
         }
         public Vector3 InitialVelocity
         {

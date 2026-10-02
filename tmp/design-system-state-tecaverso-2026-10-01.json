@@ -2,10 +2,13 @@
   "runId": "tecaverso-2026-10-01",
   "scope": "component-reconciliation",
   "fileKey": "ztbnAS5MZZmqOLbQAfm96E",
-  "step": "localization/pt-BR-verified",
+  "step": "examples/line-image-icon-variants-verified",
   "entities": {
     "collections": {
       "Tecaverso": "VariableCollectionId:3010:6"
+    },
+    "variables": {
+      "color/icon/on-brand": "VariableID:3039:6"
     },
     "pages": {
       "Intro": "0:1",
@@ -45,7 +48,7 @@
     }
   },
   "validation": {
-    "variableCount": 46,
+    "variableCount": 47,
     "modes": ["Claro", "Escuro"],
     "brokenAliasCount": 0,
     "allHaveWebSyntax": true,
@@ -72,6 +75,63 @@
       "pagesTranslated": 5,
       "visualValidation": "passed",
       "technicalNamesPreserved": true
+    },
+    "contrastAudit": {
+      "pagesAudited": 5,
+      "textNodesCorrected": 109,
+      "iconNodesCorrected": 117,
+      "semanticIconTokenAdded": "color/icon/on-brand",
+      "visualValidation": "passed"
+    },
+    "gameUiExamples": {
+      "mainMenu": "3047:200",
+      "disciplineSelection": "3047:229",
+      "contentSelection": "3047:267",
+      "screenCount": 3,
+      "layoutStrategy": "vertical main menu; horizontal discipline carousel; 3x2 content grid with detail panel",
+      "referenceFrames": ["523:863", "523:1150"],
+      "coursePatternsRemoved": true,
+      "cornerRadius": "0-2px",
+      "contrastValidation": "passed"
+    },
+    "disciplineAndContentIcons": {
+      "disciplineIconCount": 4,
+      "contentIconCount": 6,
+      "style": "geometric line icons with brand colors",
+      "visualValidation": "passed"
+    },
+    "svgIconVariants": {
+      "disciplineSelection": "3052:200",
+      "contentSelection": "3052:257",
+      "svgIconCount": 11,
+      "editableVectors": true,
+      "textVersionsPreserved": ["3047:229", "3047:267"],
+      "visualValidation": "passed"
+    },
+    "imageIconVariants": {
+      "disciplineSelection": "3053:200",
+      "contentSelection": "3053:238",
+      "generatedImageCount": 10,
+      "figmaImagePlacementCount": 11,
+      "assetDirectory": "assets/icons/tecaverso",
+      "transparentBackground": true,
+      "visualValidation": "passed"
+    },
+    "lineImageIconVariants": {
+      "disciplineSelection": "3054:200",
+      "contentSelection": "3054:238",
+      "iconCount": 10,
+      "stateVariants": ["blue-default", "white-hover-selected"],
+      "assetDirectory": "assets/icons/tecaverso-line",
+      "transparentBackground": true,
+      "visualValidation": "passed"
+    },
+    "projectileMotionExperiment": {
+      "simulationCanvas": "3051:256",
+      "analysisCanvas": "3051:338",
+      "canvasCount": 2,
+      "separation": "interaction and parameters; vectors, results and formulas",
+      "visualValidation": "passed"
     }
   },
   "completedSteps": [
@@ -85,7 +145,26 @@
     "components/remaining/reconciled",
     "components/page/verified",
     "localization/pt-BR/applied",
-    "localization/pt-BR/verified"
+    "localization/pt-BR/verified",
+    "accessibility/contrast-audited",
+    "accessibility/contrast-corrected",
+    "accessibility/contrast-verified",
+    "examples/vr-hud-created",
+    "examples/vr-hud-replaced",
+    "examples/game-ui-created",
+    "examples/game-ui-verified",
+    "examples/icons-created",
+    "examples/projectile-motion-created",
+    "examples/experiment-ui-verified",
+    "examples/text-versions-restored",
+    "examples/svg-icon-variants-created",
+    "examples/svg-icon-variants-verified",
+    "examples/image-icons-generated",
+    "examples/image-icon-variants-created",
+    "examples/image-icon-variants-verified",
+    "examples/line-image-icons-generated",
+    "examples/line-image-icon-variants-created",
+    "examples/line-image-icon-variants-verified"
   ],
   "pendingValidations": []
 }

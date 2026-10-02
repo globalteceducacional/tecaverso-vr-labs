@@ -33,7 +33,8 @@ public static class ObliqueLaunchSceneBuilder
         var platform = new GameObject("Launch Platform"); platform.transform.SetParent(root.transform);
         var baseCylinder = Primitive("Adjustable Base", PrimitiveType.Cylinder, platform.transform, Vector3.zero, new Vector3(1.2f,.5f,1.2f), Mat("Base", new Color(.12f,.25f,.34f)));
         var pivot = new GameObject("Cannon Pivot").transform; pivot.SetParent(platform.transform);
-        var barrel = Primitive("Cannon Barrel", PrimitiveType.Cylinder, pivot, Vector3.up*.75f, new Vector3(.25f,.8f,.25f), Mat("Cannon", new Color(.12f,.14f,.17f)));
+        var barrel = Primitive("Cannon Barrel", PrimitiveType.Cylinder, pivot, Vector3.up*.8f, new Vector3(.25f,.8f,.25f), Mat("Cannon", new Color(.12f,.14f,.17f)));
+        barrel.AddComponent<CannonTweenFeedback>().Bind(lab);
         var muzzle = new GameObject("Muzzle").transform; muzzle.SetParent(pivot); muzzle.localPosition=Vector3.up*1.65f;
 
         var projectile = CreateProjectile("Projectile", root.transform, Mat("Projectile", new Color(.08f,.08f,.09f)), true);
@@ -77,10 +78,11 @@ public static class ObliqueLaunchSceneBuilder
         Text("MOVIMENTO OBLÍQUO",rect,new Vector2(0,310),38,Color.white,TextAlignmentOptions.Center,new Vector2(860,55));
         Text("Ajuste os parâmetros e observe os vetores",rect,new Vector2(0,268),22,new Color(.55f,.8f,1f),TextAlignmentOptions.Center,new Vector2(860,38));
         var angle=SliderRow(rect,"ÂNGULO",new Vector2(0,205),0,90,45,out var angleValue);
-        var speed=SliderRow(rect,"VELOCIDADE INICIAL",new Vector2(0,125),0,50,18,out var speedValue);
+        var speed=SliderRow(rect,"VELOCIDADE INICIAL",new Vector2(0,125),0,30,18,out var speedValue);
+        speed.wholeNumbers=true;
         var height=SliderRow(rect,"ALTURA DA BASE",new Vector2(0,45),0,10,2,out var heightValue);
         var mass=SliderRow(rect,"MASSA",new Vector2(0,-35),1,10,3,out var massValue);
-        var gravity=SliderRow(rect,"GRAVIDADE LOCAL",new Vector2(0,-115),.1f,24.8f,9.81f,out var gravityValue);
+        var gravity=SliderRow(rect,"GRAVIDADE LOCAL",new Vector2(0,-115),5f,20f,9.81f,out var gravityValue);
         Text("Vresult  VERDE     Vx  AZUL     Vy  VERMELHO",rect,new Vector2(0,-155),19,new Color(.72f,.86f,.96f),TextAlignmentOptions.Center,new Vector2(850,32));
         var metrics=Text("t = 0.00 s     Y = 0.00 m     Ymax = 0.00 m",rect,new Vector2(0,-190),24,Color.white,TextAlignmentOptions.Center,new Vector2(850,45));
         var fire=Button(rect,"DISPARAR",new Vector2(-270,-270),new Color(.1f,.65f,.4f),out _);
@@ -94,6 +96,7 @@ public static class ObliqueLaunchSceneBuilder
         Text(label,parent,pos+new Vector2(-300,25),22,Color.white,TextAlignmentOptions.Left,new Vector2(310,35));
         valueText=Text("",parent,pos+new Vector2(330,25),22,new Color(.35f,.85f,1f),TextAlignmentOptions.Right,new Vector2(180,35));
         var go=new GameObject(label+" Slider",typeof(RectTransform),typeof(Slider)); go.transform.SetParent(parent,false); var r=go.GetComponent<RectTransform>(); r.anchoredPosition=pos+new Vector2(45,-10); r.sizeDelta=new Vector2(520,30);
+        go.AddComponent<SliderTweenFeedback>();
         var bg=UIRect("Background",r,Vector2.zero,new Vector2(520,12),new Color(.12f,.18f,.23f));
         var fillArea=new GameObject("Fill Area",typeof(RectTransform)); fillArea.transform.SetParent(r,false); Stretch(fillArea.GetComponent<RectTransform>(),new Vector2(0,0),new Vector2(1,1),new Vector2(8,8),new Vector2(-8,-8));
         var fill=UIRect("Fill",fillArea.GetComponent<RectTransform>(),Vector2.zero,Vector2.zero,new Color(.1f,.65f,.9f)); Stretch(fill.GetComponent<RectTransform>(),Vector2.zero,Vector2.one,Vector2.zero,Vector2.zero);
@@ -105,6 +108,7 @@ public static class ObliqueLaunchSceneBuilder
     static Button Button(RectTransform parent,string label,Vector2 pos,Color color,out TMP_Text text)
     {
         var go=UIRect(label+" Button",parent,pos,new Vector2(230,66),color); var button=go.AddComponent<Button>(); button.targetGraphic=go.GetComponent<Image>();
+        go.AddComponent<ButtonTweenFeedback>();
         text=Text(label,go.GetComponent<RectTransform>(),Vector2.zero,24,Color.white,TextAlignmentOptions.Center,new Vector2(220,60)); return button;
     }
 

@@ -4,6 +4,8 @@ namespace Tecaverso.Labs.ObliqueLaunch
 {
     public sealed class ObliqueLaunchLab : MonoBehaviour
     {
+        public event System.Action Launched;
+        public event System.Action ResetRequested;
         [SerializeField] ObliqueLaunchSimulation simulation;
         [SerializeField] ObliqueLaunchPanel panel;
         [SerializeField] ProjectileView projectile;
@@ -17,16 +19,22 @@ namespace Tecaverso.Labs.ObliqueLaunch
         void OnEnable()
         {
             panel.FireRequested+=Fire; panel.PauseRequested+=simulation.TogglePause; panel.ResetRequested+=ResetLab;
+            panel.VectorVisibilityChanged+=SetVectorVisibility;
             simulation.SampleChanged+=OnSample; simulation.StateChanged+=panel.ShowState; panel.ShowState(simulation.State); ApplyControls();
         }
         void OnDisable()
-        { panel.FireRequested-=Fire; panel.PauseRequested-=simulation.TogglePause; panel.ResetRequested-=ResetLab; simulation.SampleChanged-=OnSample; simulation.StateChanged-=panel.ShowState; }
+        { panel.FireRequested-=Fire; panel.PauseRequested-=simulation.TogglePause; panel.ResetRequested-=ResetLab; panel.VectorVisibilityChanged-=SetVectorVisibility; simulation.SampleChanged-=OnSample; simulation.StateChanged-=panel.ShowState; }
+        void SetVectorVisibility(bool visible)
+        {
+            foreach(var view in GetComponentsInChildren<ProjectileView>(true)) view.SetVectorsVisible(visible);
+            if(simulation.State==SimulationState.Idle || simulation.State==SimulationState.Complete) projectile.HideVectors();
+        }
         void Update() { if(simulation.State==SimulationState.Idle||simulation.State==SimulationState.Complete) ApplyControls(); }
         void ApplyControls()
         {
             var p=panel.Parameters; float h=Mathf.Max(.1f,p.Height);
             baseCylinder.localScale=new Vector3(1f,h*.5f,1f); baseCylinder.localPosition=new Vector3(0f,h*.5f,0f);
-            cannonPivot.position=new Vector3(0f,p.Height+.35f,0f); cannonPivot.localRotation=Quaternion.Euler(0f,0f,p.Angle-90f);
+            cannonPivot.position=LaunchOrigin; cannonPivot.rotation=Quaternion.Euler(0f,0f,p.Angle-90f);
             rulers.ShowLaunchGeometry(LaunchOrigin,p.Angle,p.Height);
             projectileBody.mass=p.Mass; if(simulation.State==SimulationState.Idle) projectile.transform.position=LaunchOrigin;
         }
@@ -38,15 +46,16 @@ namespace Tecaverso.Labs.ObliqueLaunch
             trajectory.Begin(LaunchOrigin,parameters);
             rulers.Begin(new Vector3(baseCylinder.position.x,0f,baseCylinder.position.z));
             simulation.Launch(parameters,LaunchOrigin);
+            Launched?.Invoke();
         }
         void ResetLab()
-        { simulation.ResetSimulation(); snapshots.Clear(); trajectory.Clear(); rulers.Clear(); projectile.HideVectors(); ApplyControls(); panel.ShowState(SimulationState.Idle); }
+        { simulation.ResetSimulation(); snapshots.Clear(); trajectory.Clear(); rulers.Clear(); projectile.HideVectors(); ApplyControls(); panel.ShowState(SimulationState.Idle); ResetRequested?.Invoke(); }
         void OnSample(FlightSample sample)
         {
             if(simulation.State==SimulationState.Idle){projectile.transform.position=LaunchOrigin;projectile.HideVectors();return;}
             projectile.transform.position=sample.Position;
-            if(simulation.State==SimulationState.Complete) projectile.HideVectors(); else projectile.Show(sample);
-            panel.ShowSample(sample); snapshots.Record(sample); trajectory.Plot(sample); rulers.UpdateMeasurements(sample);
+            if(simulation.State==SimulationState.Complete) projectile.HideVectors(); else projectile.Show(sample,simulation.Parameters.Gravity);
+            panel.ShowSample(sample); snapshots.Record(sample,simulation.Parameters.Gravity); trajectory.Plot(sample); rulers.UpdateMeasurements(sample);
         }
     }
 }

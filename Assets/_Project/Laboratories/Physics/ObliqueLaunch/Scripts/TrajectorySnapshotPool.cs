@@ -11,12 +11,12 @@ namespace Tecaverso.Labs.ObliqueLaunch
         float nextTime;
         public void Bind(ProjectileView[] pooledViews) => snapshots = pooledViews;
 
-        public void Record(in FlightSample sample)
+        public void Record(in FlightSample sample, float gravity=9.81f)
         {
             if (sample.Time + .001f < nextTime || active.Count >= snapshots.Length) return;
             var view = snapshots[active.Count];
             view.gameObject.SetActive(true);
-            view.Show(sample);
+            view.Show(sample,gravity);
             active.Add(view);
             nextTime += interval;
         }

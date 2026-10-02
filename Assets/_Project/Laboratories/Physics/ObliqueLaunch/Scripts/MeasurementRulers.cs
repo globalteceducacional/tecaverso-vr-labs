@@ -23,8 +23,8 @@ namespace Tecaverso.Labs.ObliqueLaunch
                 baseHeightLabel.fontSize=angleLabel.fontSize=2.5f;
                 baseHeightLabel.rectTransform.sizeDelta=angleLabel.rectTransform.sizeDelta=new Vector2(2f,.5f);
             }
-            // Place markings on the observer-facing side of the cannon (negative Z).
-            var center=origin+Vector3.back*.7f;
+            // Keep measurements coplanar with the cannon to avoid parallax offsets.
+            var center=origin;
             var bottom=new Vector3(center.x-1f,0f,center.z);
             baseHeightLine.useWorldSpace=true;
             baseHeightLine.positionCount=2;
