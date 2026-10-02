@@ -44,14 +44,20 @@ public static class ObliqueLaunchSceneBuilder
         for(int i=0;i<32;i++) { var view=CreateProjectile($"Snapshot {i:00}",snapshotRoot,Mat("Snapshot",new Color(.35f,.8f,1f,.45f)),false); view.transform.localScale=Vector3.one*.65f; view.gameObject.SetActive(false); snapshotViews.Add(view); }
         var pool = snapshotRoot.gameObject.AddComponent<TrajectorySnapshotPool>(); pool.Bind(snapshotViews.ToArray());
 
-        var graph = CreateGraph(root.transform);
+        var trajectory = CreateTrajectory(root.transform,projectile.GetComponent<Renderer>().sharedMaterial);
         var rulers = CreateRulers(root.transform);
         var panel = CreatePanel(root.transform);
 
-        lab.Bind(simulation,panel,projectile,pool,graph,rulers,baseCylinder.transform,pivot,muzzle,body);
+        lab.Bind(simulation,panel,projectile,pool,trajectory,rulers,baseCylinder.transform,pivot,muzzle,body);
         SetObjectField(lab,"baseCylinder",baseCylinder.transform);
 
-        var rig=GameObject.Find("XR Origin (XR Rig)"); if(rig!=null){rig.transform.position=new Vector3(2f,.15f,-6f);rig.transform.rotation=Quaternion.identity;}
+        var rig=GameObject.Find("XR Origin (XR Rig)");
+        if(rig!=null)
+        {
+            rig.transform.position=new Vector3(2f,.15f,-6f);
+            rig.transform.rotation=Quaternion.identity;
+            FaceViewer(panel.transform,rig.transform);
+        }
         var light=GameObject.Find("Directional Light");
         if(light!=null) Object.DestroyImmediate(light);
         light=new GameObject("Directional Light");
@@ -66,7 +72,7 @@ public static class ObliqueLaunchSceneBuilder
     {
         var canvasGo=new GameObject("XR Control Panel",typeof(RectTransform),typeof(Canvas),typeof(CanvasScaler),typeof(GraphicRaycaster),typeof(TrackedDeviceGraphicRaycaster),typeof(Image)); canvasGo.transform.SetParent(parent);
         var canvas=canvasGo.GetComponent<Canvas>(); canvas.renderMode=RenderMode.WorldSpace;
-        var rect=canvasGo.GetComponent<RectTransform>(); rect.sizeDelta=new Vector2(920,720); rect.position=new Vector3(-2.5f,2.4f,-2.2f); rect.rotation=Quaternion.Euler(0,180,0); rect.localScale=Vector3.one*.0028f;
+        var rect=canvasGo.GetComponent<RectTransform>(); rect.sizeDelta=new Vector2(920,720); rect.position=new Vector3(-2.5f,2.4f,-2.2f); rect.rotation=Quaternion.identity; rect.localScale=Vector3.one*.0028f;
         canvasGo.GetComponent<Image>().color=new Color(.025f,.045f,.07f,.96f);
         Text("MOVIMENTO OBLÍQUO",rect,new Vector2(0,310),38,Color.white,TextAlignmentOptions.Center,new Vector2(860,55));
         Text("Ajuste os parâmetros e observe os vetores",rect,new Vector2(0,268),22,new Color(.55f,.8f,1f),TextAlignmentOptions.Center,new Vector2(860,38));
@@ -102,14 +108,12 @@ public static class ObliqueLaunchSceneBuilder
         text=Text(label,go.GetComponent<RectTransform>(),Vector2.zero,24,Color.white,TextAlignmentOptions.Center,new Vector2(220,60)); return button;
     }
 
-    static HeightTimeGraph CreateGraph(Transform parent)
+    static ProjectileTrajectoryLine CreateTrajectory(Transform parent,Material projectileMaterial)
     {
-        var root=Primitive("Position Y vs Time Graph",PrimitiveType.Cube,parent,new Vector3(4f,2.8f,.3f),new Vector3(3.4f,1.8f,.08f),Mat("Panel",new Color(.025f,.05f,.075f)));
-        var title=WorldText("POSIÇÃO Y × TEMPO",root.transform,new Vector3(0,.65f,-.55f),.18f,Color.white);
-        var curve=Line("Curve",root.transform,new Color(.1f,.85f,1f),.035f,true); curve.transform.localPosition=new Vector3(-1.35f,-.65f,-.55f);
-        var progress=Line("Progress",root.transform,new Color(1f,.75f,.15f,.8f),.018f,true); progress.positionCount=2; progress.transform.localPosition=new Vector3(-1.35f,-.65f,-.56f);
-        var axes=Line("Axes",root.transform,Color.white,.018f,true); axes.positionCount=3; axes.SetPositions(new[]{new Vector3(-1.35f,.65f,-.54f),new Vector3(-1.35f,-.65f,-.54f),new Vector3(1.35f,-.65f,-.54f)});
-        var graph=root.AddComponent<HeightTimeGraph>(); graph.Bind(curve,progress,title); return graph;
+        var root=new GameObject("Projectile Trajectory"); root.transform.SetParent(parent);
+        var line=Line("Trajectory Line",root.transform,new Color(.1f,.85f,1f,.85f),.045f,false);
+        line.numCornerVertices=3;
+        var trajectory=root.AddComponent<ProjectileTrajectoryLine>(); trajectory.Bind(line,projectileMaterial); return trajectory;
     }
 
     static MeasurementRulers CreateRulers(Transform parent)
@@ -128,7 +132,7 @@ public static class ObliqueLaunchSceneBuilder
         var result=Arrow("Vresult",sphere.transform,Mat("Vresult",new Color(.15f,1f,.35f)));
         var vx=Arrow("Vx",sphere.transform,Mat("Vx",new Color(.15f,.65f,1f)));
         var vy=Arrow("Vy",sphere.transform,Mat("Vy",new Color(1f,.35f,.2f)));
-        var view=sphere.AddComponent<ProjectileView>(); view.Bind(result,vx,vy); return view;
+        var view=sphere.AddComponent<ProjectileView>(); view.Bind(result,vx,vy); view.HideVectors(); return view;
     }
 
     static VectorArrowView Arrow(string name,Transform parent,Material material)
@@ -157,6 +161,12 @@ public static class ObliqueLaunchSceneBuilder
     static GameObject UIRect(string name,RectTransform parent,Vector2 pos,Vector2 size,Color color)
     {var go=new GameObject(name,typeof(RectTransform),typeof(Image));go.transform.SetParent(parent,false);var r=go.GetComponent<RectTransform>();r.anchoredPosition=pos;r.sizeDelta=size;go.GetComponent<Image>().color=color;return go;}
     static void Stretch(RectTransform r,Vector2 min,Vector2 max,Vector2 offsetMin,Vector2 offsetMax){r.anchorMin=min;r.anchorMax=max;r.offsetMin=offsetMin;r.offsetMax=offsetMax;}
+    static void FaceViewer(Transform spatialUi,Transform viewer)
+    {
+        var eyePosition=viewer.position+Vector3.up*1.6f;
+        spatialUi.LookAt(eyePosition,Vector3.up);
+        spatialUi.Rotate(0f,180f,0f,Space.Self);
+    }
     static Material Mat(string name,Color color)
     {string path=MaterialPath+name+".mat";var m=AssetDatabase.LoadAssetAtPath<Material>(path);if(m==null){m=new Material(Shader.Find("Universal Render Pipeline/Unlit")){name=name,color=color};if(color.a<1){m.SetFloat("_Surface",1);m.renderQueue=3000;}AssetDatabase.CreateAsset(m,path);}return m;}
     static Mesh ConeMesh()

@@ -41,5 +41,14 @@ namespace Tecaverso.Labs.ObliqueLaunch
             float peak = p.Height + (v0.y * v0.y) / (2f * p.Gravity);
             return new FlightSample(time, position, velocity, peak);
         }
+
+        public static FlightSample Evaluate(in LaunchParameters p, float time, Vector3 origin)
+        {
+            var v0 = p.InitialVelocity;
+            var position = origin + new Vector3(v0.x * time, v0.y * time - .5f * p.Gravity * time * time, 0f);
+            var velocity = new Vector3(v0.x, v0.y - p.Gravity * time, 0f);
+            float peak = origin.y + (v0.y * v0.y) / (2f * p.Gravity);
+            return new FlightSample(time, position, velocity, peak);
+        }
     }
 }

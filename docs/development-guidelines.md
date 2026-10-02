@@ -21,3 +21,10 @@ Estas diretrizes adaptam ao projeto os princípios do guia da Unity sobre SOLID 
 ## Movimento oblíquo
 
 O MVP separa `ProjectileKinematics` (equações), `ObliqueLaunchSimulation` (estado e tempo), views de projétil/vetores/gráfico/réguas, pool de snapshots, painel e `ObliqueLaunchLab` como fachada coordenadora. A massa é exibida e aplicada ao Rigidbody representativo, mas não altera a trajetória cinemática ideal sem resistência do ar, reforçando o conceito físico correto.
+
+### Orientação espacial padrão
+
+- Os experimentos são apresentados lateralmente, com o movimento principal ocorrendo da esquerda para a direita no campo de visão do aluno.
+- O XR Origin deve ficar voltado para a área do experimento.
+- Canvas e demais interfaces espaciais devem ser orientados para a posição dos olhos do jogador, sem depender de rotações fixas específicas da cena.
+- Geradores de cena devem preservar ajustes autorais sempre que possível e nunca reaplicar uma orientação fixa sobre uma UI já posicionada manualmente.

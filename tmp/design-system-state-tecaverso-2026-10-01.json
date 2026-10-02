@@ -1,0 +1,91 @@
+{
+  "runId": "tecaverso-2026-10-01",
+  "scope": "component-reconciliation",
+  "fileKey": "ztbnAS5MZZmqOLbQAfm96E",
+  "step": "localization/pt-BR-verified",
+  "entities": {
+    "collections": {
+      "Tecaverso": "VariableCollectionId:3010:6"
+    },
+    "pages": {
+      "Intro": "0:1",
+      "Foundations": "1:25",
+      "Components": "10:689",
+      "Patterns": "92:2155",
+      "Examples": "183:711"
+    },
+    "components": {
+      "ButtonsSection": "47:211",
+      "PrimaryButton": "47:264",
+      "PrimaryIconTextButton": "71:285",
+      "PrimaryIconButton": "90:473",
+      "SecondaryButton": "85:437",
+      "SecondaryIconTextButton": "84:356",
+      "SecondaryIconButton": "92:2033",
+      "TertiaryButton": "86:279",
+      "TertiaryIconTextButton": "86:320",
+      "TertiaryIconButton": "92:2094"
+    },
+    "componentSections": {
+      "Icons": "75:375",
+      "NavigationButtons": "205:358",
+      "Indicators": "215:937",
+      "Tooltips": "215:1011",
+      "Controls": "94:2156",
+      "ProgressBars": "226:462",
+      "Containers": "215:995",
+      "Fields": "203:358",
+      "Dropdowns": "215:802",
+      "Buttons": "47:211"
+    },
+    "foundationSections": {
+      "Typography": "5:3",
+      "Spacing": "10:389",
+      "Colors": "11:9"
+    }
+  },
+  "validation": {
+    "variableCount": 46,
+    "modes": ["Claro", "Escuro"],
+    "brokenAliasCount": 0,
+    "allHaveWebSyntax": true,
+    "allHaveExplicitScopes": true,
+    "buttonComponentSetCount": 9,
+    "buttonVariantCount": 180,
+    "buttonIssueCount": 0,
+    "buttonFont": "Montserrat Regular",
+    "foundationSectionCount": 3,
+    "foundationSwatchCount": 9,
+    "foundationTypography": {
+      "display": "Montserrat ExtraBold",
+      "headings": "Montserrat Bold",
+      "body": "Montserrat Regular",
+      "gothamAvailable": false
+    },
+    "remainingComponentSectionCount": 9,
+    "remainingComponentSetCount": 25,
+    "remainingComponentIssueCount": 0,
+    "remainingComponentFont": "Montserrat",
+    "statusTokensAdded": 4,
+    "localization": {
+      "locale": "pt-BR",
+      "pagesTranslated": 5,
+      "visualValidation": "passed",
+      "technicalNamesPreserved": true
+    }
+  },
+  "completedSteps": [
+    "discovery",
+    "foundations/created",
+    "foundations/verified",
+    "components/buttons/reconciled",
+    "components/buttons/verified",
+    "foundations/page/reconciled",
+    "foundations/page/verified",
+    "components/remaining/reconciled",
+    "components/page/verified",
+    "localization/pt-BR/applied",
+    "localization/pt-BR/verified"
+  ],
+  "pendingValidations": []
+}

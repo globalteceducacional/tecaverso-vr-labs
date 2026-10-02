@@ -10,13 +10,15 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public SimulationState State { get; private set; } = SimulationState.Idle;
         public FlightSample Current { get; private set; }
         public LaunchParameters Parameters { get; private set; }
+        public Vector3 Origin { get; private set; }
         public event Action<FlightSample> SampleChanged;
         public event Action<SimulationState> StateChanged;
 
-        public void Launch(LaunchParameters parameters)
+        public void Launch(LaunchParameters parameters, Vector3 origin)
         {
             Parameters = parameters;
-            Current = ProjectileKinematics.Evaluate(parameters, 0f);
+            Origin = origin;
+            Current = ProjectileKinematics.Evaluate(parameters, 0f, Origin);
             SetState(SimulationState.Running);
             SampleChanged?.Invoke(Current);
         }
@@ -37,10 +39,10 @@ namespace Tecaverso.Labs.ObliqueLaunch
         void Update()
         {
             if (State != SimulationState.Running) return;
-            Current = ProjectileKinematics.Evaluate(Parameters, Current.Time + Time.deltaTime);
+            Current = ProjectileKinematics.Evaluate(Parameters, Current.Time + Time.deltaTime, Origin);
             if (Current.Position.y <= 0f && Current.Time > 0f)
             {
-                Current = new FlightSample(Current.Time, new Vector3(Current.Position.x, 0f, 0f), Current.Velocity, Current.MaximumHeight);
+                Current = new FlightSample(Current.Time, new Vector3(Current.Position.x, 0f, Origin.z), Current.Velocity, Current.MaximumHeight);
                 SetState(SimulationState.Complete);
             }
             SampleChanged?.Invoke(Current);

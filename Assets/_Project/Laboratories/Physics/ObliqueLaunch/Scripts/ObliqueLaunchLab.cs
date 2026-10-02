@@ -8,12 +8,12 @@ namespace Tecaverso.Labs.ObliqueLaunch
         [SerializeField] ObliqueLaunchPanel panel;
         [SerializeField] ProjectileView projectile;
         [SerializeField] TrajectorySnapshotPool snapshots;
-        [SerializeField] HeightTimeGraph graph;
+        [SerializeField] ProjectileTrajectoryLine trajectory;
         [SerializeField] MeasurementRulers rulers;
         [SerializeField] Transform baseCylinder, cannonPivot, muzzle;
         [SerializeField] Rigidbody projectileBody;
-        public void Bind(ObliqueLaunchSimulation sim, ObliqueLaunchPanel ui, ProjectileView projectileView, TrajectorySnapshotPool pool, HeightTimeGraph graphView, MeasurementRulers rulerView, Transform cylinder, Transform pivot, Transform muzzleTransform, Rigidbody body)
-        { simulation=sim; panel=ui; projectile=projectileView; snapshots=pool; graph=graphView; rulers=rulerView; baseCylinder=cylinder; cannonPivot=pivot; muzzle=muzzleTransform; projectileBody=body; }
+        public void Bind(ObliqueLaunchSimulation sim, ObliqueLaunchPanel ui, ProjectileView projectileView, TrajectorySnapshotPool pool, ProjectileTrajectoryLine trajectoryView, MeasurementRulers rulerView, Transform cylinder, Transform pivot, Transform muzzleTransform, Rigidbody body)
+        { simulation=sim; panel=ui; projectile=projectileView; snapshots=pool; trajectory=trajectoryView; rulers=rulerView; baseCylinder=cylinder; cannonPivot=pivot; muzzle=muzzleTransform; projectileBody=body; }
         void OnEnable()
         {
             panel.FireRequested+=Fire; panel.PauseRequested+=simulation.TogglePause; panel.ResetRequested+=ResetLab;
@@ -27,13 +27,26 @@ namespace Tecaverso.Labs.ObliqueLaunch
             var p=panel.Parameters; float h=Mathf.Max(.1f,p.Height);
             baseCylinder.localScale=new Vector3(1f,h*.5f,1f); baseCylinder.localPosition=new Vector3(0f,h*.5f,0f);
             cannonPivot.position=new Vector3(0f,p.Height+.35f,0f); cannonPivot.localRotation=Quaternion.Euler(0f,0f,p.Angle-90f);
-            projectileBody.mass=p.Mass; if(simulation.State!=SimulationState.Running&&simulation.State!=SimulationState.Paused) projectile.transform.position=muzzle.position;
+            rulers.ShowLaunchGeometry(LaunchOrigin,p.Angle,p.Height);
+            projectileBody.mass=p.Mass; if(simulation.State==SimulationState.Idle) projectile.transform.position=LaunchOrigin;
         }
+        Vector3 LaunchOrigin => new Vector3(baseCylinder.position.x,panel.Parameters.Height,baseCylinder.position.z);
         void Fire()
-        { snapshots.Clear(); graph.Clear(); rulers.Clear(); ApplyControls(); graph.Begin(panel.Parameters); simulation.Launch(panel.Parameters); }
+        {
+            snapshots.Clear(); rulers.Clear(); ApplyControls(); projectile.HideVectors();
+            var parameters=panel.Parameters;
+            trajectory.Begin(LaunchOrigin,parameters);
+            rulers.Begin(new Vector3(baseCylinder.position.x,0f,baseCylinder.position.z));
+            simulation.Launch(parameters,LaunchOrigin);
+        }
         void ResetLab()
-        { simulation.ResetSimulation(); snapshots.Clear(); graph.Clear(); rulers.Clear(); ApplyControls(); panel.ShowState(SimulationState.Idle); }
+        { simulation.ResetSimulation(); snapshots.Clear(); trajectory.Clear(); rulers.Clear(); projectile.HideVectors(); ApplyControls(); panel.ShowState(SimulationState.Idle); }
         void OnSample(FlightSample sample)
-        { if(simulation.State==SimulationState.Idle){projectile.transform.position=muzzle.position;return;} projectile.Show(sample); panel.ShowSample(sample); snapshots.Record(sample); graph.Plot(sample); rulers.UpdateMeasurements(sample); }
+        {
+            if(simulation.State==SimulationState.Idle){projectile.transform.position=LaunchOrigin;projectile.HideVectors();return;}
+            projectile.transform.position=sample.Position;
+            if(simulation.State==SimulationState.Complete) projectile.HideVectors(); else projectile.Show(sample);
+            panel.ShowSample(sample); snapshots.Record(sample); trajectory.Plot(sample); rulers.UpdateMeasurements(sample);
+        }
     }
 }
