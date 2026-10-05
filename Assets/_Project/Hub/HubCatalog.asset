@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a9f8307a74cd044809fa753483e437, type: 3}
+  m_Name: HubCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Hub.HubCatalog
+  disciplines:
+  - title: "F\xEDsica"
+    description: "Movimento, energia, ondas e fen\xF4menos do mundo f\xEDsico."
+    accent: {r: 0.15686275, g: 0.30588236, b: 0.627451, a: 1}
+    icon: {fileID: 21300000, guid: addda49e2b9e806408542fd44f12cf46, type: 3}
+    contents:
+    - title: "Movimento e for\xE7as"
+      description: "Explore o lan\xE7amento obl\xEDquo: varie o \xE2ngulo, a velocidade
+        inicial, a altura e a gravidade e observe a trajet\xF3ria e os vetores."
+      objective: "Relacionar velocidade, gravidade, alcance e altura m\xE1xima."
+      icon: {fileID: 21300000, guid: b960a8b17a8b5c44da5c37529e2f5112, type: 3}
+      scenePath: Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity
+    - title: Eletricidade
+      description: "Pr\xE9via: explore cargas el\xE9tricas, circuitos e transfer\xEAncia
+        de energia."
+      objective: "Relacionar tens\xE3o, corrente e resist\xEAncia."
+      icon: {fileID: 21300000, guid: 8e8a4f44e718e75419faec5c4fe911ff, type: 3}
+      scenePath: 
+    - title: "\xD3ptica"
+      description: "Pr\xE9via: observe como a luz se propaga e interage com espelhos
+        e lentes."
+      objective: "Investigar reflex\xE3o e refra\xE7\xE3o da luz."
+      icon: {fileID: 21300000, guid: ee97be9b68bd0834e848fd097b3520cb, type: 3}
+      scenePath: 
+    - title: "Termodin\xE2mica"
+      description: "Pr\xE9via: investigue temperatura, calor e transforma\xE7\xF5es
+        de energia."
+      objective: Compreender trocas de calor entre sistemas.
+      icon: {fileID: 21300000, guid: 3e885bd86df25994e8b4d13a9c2ecbe2, type: 3}
+      scenePath: 
+    - title: Ondas
+      description: "Pr\xE9via: observe oscila\xE7\xF5es, propaga\xE7\xE3o e interfer\xEAncia
+        de ondas."
+      objective: "Relacionar amplitude, frequ\xEAncia e comprimento de onda."
+      icon: {fileID: 21300000, guid: 54accea0adcb27f4e9de34540603ab92, type: 3}
+      scenePath: 
+    - title: "Gravita\xE7\xE3o"
+      description: "Pr\xE9via: explore a atra\xE7\xE3o gravitacional e o movimento
+        dos corpos celestes."
+      objective: "Compreender massa, dist\xE2ncia e atra\xE7\xE3o gravitacional."
+      icon: {fileID: 21300000, guid: db4bf1f1d5b09c449aeee8f9e4f9ce22, type: 3}
+      scenePath: 
+  - title: "Qu\xEDmica"
+    description: "Mat\xE9ria, propriedades, rea\xE7\xF5es e transforma\xE7\xF5es."
+    accent: {r: 0.4627451, g: 0.28235295, b: 0.9098039, a: 1}
+    icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
+    contents:
+    - title: "Estrutura da mat\xE9ria"
+      description: "Mockup: explore \xE1tomos, mol\xE9culas e propriedades da mat\xE9ria."
+      objective: "Reconhecer modelos e estruturas da mat\xE9ria."
+      icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
+      scenePath: 
+    - title: "Rea\xE7\xF5es qu\xEDmicas"
+      description: "Mockup: observe reagentes e produtos em transforma\xE7\xF5es
+        qu\xEDmicas."
+      objective: "Identificar evid\xEAncias de uma rea\xE7\xE3o qu\xEDmica."
+      icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
+      scenePath: 
+    - title: "Solu\xE7\xF5es"
+      description: "Mockup: prepare misturas e compare concentra\xE7\xF5es."
+      objective: "Relacionar soluto, solvente e concentra\xE7\xE3o."
+      icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
+      scenePath: 
+  - title: Biologia
+    description: Vida, organismos, sistemas e ecossistemas.
+    accent: {r: 0.24313726, g: 0.827451, b: 0.6117647, a: 1}
+    icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
+    contents:
+    - title: "C\xE9lulas"
+      description: "Mockup: conhe\xE7a estruturas e fun\xE7\xF5es celulares."
+      objective: "Identificar organelas e suas fun\xE7\xF5es."
+      icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
+      scenePath: 
+    - title: Corpo humano
+      description: 'Mockup: explore os sistemas do corpo humano.'
+      objective: "Relacionar \xF3rg\xE3os e sistemas."
+      icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
+      scenePath: 
+    - title: Ecossistemas
+      description: "Mockup: observe organismos e rela\xE7\xF5es ecol\xF3gicas."
+      objective: "Compreender intera\xE7\xF5es nos ecossistemas."
+      icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
+      scenePath: 
+  - title: "Matem\xE1tica"
+    description: "Formas, rela\xE7\xF5es, medidas e racioc\xEDnio l\xF3gico."
+    accent: {r: 0.90588236, g: 0.5058824, b: 0.105882354, a: 1}
+    icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+    contents:
+    - title: Geometria
+      description: "Mockup: explore formas geom\xE9tricas no espa\xE7o."
+      objective: "Relacionar formas, \xE1reas e volumes."
+      icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+      scenePath: 
+    - title: "Fun\xE7\xF5es"
+      description: "Mockup: observe rela\xE7\xF5es entre vari\xE1veis e gr\xE1ficos."
+      objective: "Interpretar o comportamento de fun\xE7\xF5es."
+      icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+      scenePath: 
+    - title: Medidas
+      description: 'Mockup: compare grandezas e unidades de medida.'
+      objective: "Estimar e medir grandezas no espa\xE7o."
+      icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+      scenePath: 

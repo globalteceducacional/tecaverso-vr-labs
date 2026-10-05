@@ -14,6 +14,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
         [SerializeField] MeasurementRulers rulers;
         [SerializeField] Transform baseCylinder, cannonPivot, muzzle;
         [SerializeField] Rigidbody projectileBody;
+        [SerializeField] TelescopicLaunchBase telescopicBase;
         public void Bind(ObliqueLaunchSimulation sim, ObliqueLaunchPanel ui, ProjectileView projectileView, TrajectorySnapshotPool pool, ProjectileTrajectoryLine trajectoryView, MeasurementRulers rulerView, Transform cylinder, Transform pivot, Transform muzzleTransform, Rigidbody body)
         { simulation=sim; panel=ui; projectile=projectileView; snapshots=pool; trajectory=trajectoryView; rulers=rulerView; baseCylinder=cylinder; cannonPivot=pivot; muzzle=muzzleTransform; projectileBody=body; }
         void OnEnable()
@@ -34,6 +35,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
         {
             var p=panel.Parameters; float h=Mathf.Max(.1f,p.Height);
             baseCylinder.localScale=new Vector3(1f,h*.5f,1f); baseCylinder.localPosition=new Vector3(0f,h*.5f,0f);
+            if(telescopicBase!=null) telescopicBase.SetHeight(p.Height);
             cannonPivot.position=LaunchOrigin; cannonPivot.rotation=Quaternion.Euler(0f,0f,p.Angle-90f);
             rulers.ShowLaunchGeometry(LaunchOrigin,p.Angle,p.Height);
             projectileBody.mass=p.Mass; if(simulation.State==SimulationState.Idle) projectile.transform.position=LaunchOrigin;

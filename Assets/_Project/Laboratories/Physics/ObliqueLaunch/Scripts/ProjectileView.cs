@@ -44,9 +44,9 @@ namespace Tecaverso.Labs.ObliqueLaunch
             horizontalArrow.SetVector(new Vector3(sample.Velocity.x, 0f, 0f));
             verticalArrow.SetVector(new Vector3(0f, sample.Velocity.y, 0f));
             gravityArrow.SetVector(Vector3.down*gravity);
-            Label(0,resultArrow,$"V = {sample.Velocity.magnitude:0.00} m/s",new Color(.15f,1f,.35f),new Vector3(.2f,.25f,0));
-            Label(1,horizontalArrow,$"Vx = {sample.Velocity.x:0.00} m/s",new Color(.15f,.65f,1f),new Vector3(.3f,-.2f,0));
-            Label(2,verticalArrow,$"Vy = {sample.Velocity.y:0.00} m/s",new Color(1f,.35f,.2f),new Vector3(-.8f,.1f,0));
+            Label(0,resultArrow,$"V = {sample.Velocity.magnitude:0.00} m/s",new Color32(40,78,160,255),new Vector3(.2f,.25f,0));
+            Label(1,horizontalArrow,$"Vx = {sample.Velocity.x:0.00} m/s",new Color32(62,211,156,255),new Vector3(.3f,-.2f,0));
+            Label(2,verticalArrow,$"Vy = {sample.Velocity.y:0.00} m/s",new Color32(217,54,69,255),new Vector3(-.8f,.1f,0));
             Label(3,gravityArrow,$"g = {gravity:0.00} m/s²",Color.yellow,new Vector3(.8f,-.2f,0));
         }
 

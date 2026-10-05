@@ -14,6 +14,8 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public bool VectorsVisible { get; private set; } = true;
         public event System.Action<bool> VectorVisibilityChanged;
         public event System.Action FireRequested, PauseRequested, ResetRequested;
+        static readonly System.Globalization.CultureInfo Portuguese = System.Globalization.CultureInfo.GetCultureInfo("pt-BR");
+        public void BindVectorToggle(Toggle toggle) => showVectors=toggle;
         public LaunchParameters Parameters => new(angle.value, speed.value, height.value, mass.value, gravity.value);
         public void Bind(Slider a, Slider s, Slider h, Slider m, Slider g, TMP_Text av, TMP_Text sv, TMP_Text hv, TMP_Text mv, TMP_Text gv, TMP_Text metricText, TMP_Text pauseText, Button fireButton, Button pauseButton, Button resetButton)
         { angle=a; speed=s; height=h; mass=m; gravity=g; angleValue=av; speedValue=sv; heightValue=hv; massValue=mv; gravityValue=gv; metrics=metricText; pauseLabel=pauseText; fire=fireButton; pause=pauseButton; reset=resetButton; }
@@ -54,9 +56,15 @@ namespace Tecaverso.Labs.ObliqueLaunch
             fire.onClick.AddListener(()=>FireRequested?.Invoke()); pause.onClick.AddListener(()=>PauseRequested?.Invoke()); reset.onClick.AddListener(()=>ResetRequested?.Invoke()); RefreshValues();
         }
         void RefreshValues()
-        { angleValue.text=$"{angle.value:0}°"; speedValue.text=$"{speed.value:0} m/s"; heightValue.text=$"{height.value:0.0} m"; massValue.text=$"{mass.value:0.0} kg"; gravityValue.text=$"{gravity.value:0.00} m/s²"; }
+        { angleValue.text=angle.value.ToString("0",Portuguese)+"°"; speedValue.text=speed.value.ToString("0",Portuguese)+" m/s"; heightValue.text=height.value.ToString("0.0",Portuguese)+" m"; massValue.text=mass.value.ToString("0.0",Portuguese)+" kg"; gravityValue.text=gravity.value.ToString("0.00",Portuguese)+" m/s²"; }
         public void ShowSample(in FlightSample s) => metrics.text=$"t = {s.Time:0.00} s\nY = {s.Position.y:0.00} m\nYmax = {s.MaximumHeight:0.00} m";
         public void ShowState(SimulationState state)
-        { pauseLabel.text=state==SimulationState.Paused?"RETOMAR":"PAUSAR"; pause.interactable=state==SimulationState.Running||state==SimulationState.Paused; fire.interactable=state==SimulationState.Idle||state==SimulationState.Complete; }
+        {
+            bool inFlight=state==SimulationState.Running||state==SimulationState.Paused;
+            pauseLabel.text=state==SimulationState.Paused?"RETOMAR":"PAUSAR";
+            pause.interactable=inFlight; fire.interactable=!inFlight;
+            foreach(var slider in new[]{angle,speed,height,mass,gravity}) slider.interactable=!inFlight;
+            if(state==SimulationState.Idle) metrics.text="t = 0,00 s    ·    y = 0,00 m";
+        }
     }
 }
