@@ -4,9 +4,9 @@ Laboratórios educacionais em realidade virtual para investigar conceitos por me
 
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. O primeiro experimento funcional é **Física / Lançamento oblíquo**.
 
-**GDD 1.0 · Atualizado em 05/10/2026 · Idioma principal: pt-BR.**
+**GDD 1.1 · Atualizado em 06/10/2026 · Idioma principal: pt-BR.**
 
-> Este documento distingue implementação de planejamento. **Atual** descreve código/cenas e verificações registradas; **Planejado** define o design a implementar. Esta revisão é documental: não implementa novas funcionalidades nem gera builds.
+> Este documento distingue implementação de planejamento. **Atual** descreve código/cenas e verificações registradas; **Planejado** define o design a implementar. Nenhum build foi gerado nesta revisão.
 
 ## Sumário
 
@@ -56,18 +56,18 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 
 | Área | Atual | Ainda falta |
 |---|---|---|
-| Entrada | `Hub.unity` é a primeira cena habilitada | Escolha unificada individual/LAN |
+| Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
-| HUB 2 | Seis conteúdos de Física; Movimento e forças abre o laboratório | Navegação coletiva e retorno do experimento |
+| HUB 2 | Seis conteúdos de Física; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Demais disciplinas | Mockups navegáveis de Química, Biologia e Matemática | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
 | Histórico | Até cinco trajetórias e marcadores de ápice esmaecidos | Comparação identificada e amostras completas por registro |
-| LAN | Host/join por IP e transporte direto, com validação histórica em loopback | Sincronizar o experimento e validar dispositivos físicos |
+| LAN | Sala, pronto, entrada coletiva e estado do lançamento oblíquo via UDP direto | Validar headsets físicos, oito dispositivos e Wi-Fi escolar |
 | Educação | Estrutura e objetivos decididos neste GDD | Implementar atividades, feedback e conclusão |
 | Qualidade | Verificações recentes no Editor/Play Mode | Conforto, desempenho e rede em headsets reais |
 
-**Restrição atual:** o lançamento oblíquo é local. `HubMenuController` bloqueia sua abertura durante uma sessão LAN ativa, evitando encerrar a conexão silenciosamente ou apresentar uma colaboração que não existe.
+**Autoridade atual:** no modo LAN, somente o anfitrião ajusta parâmetros e dispara, pausa ou reseta. Participantes observam a mesma simulação; exibir vetores e alternar abas são preferências locais. Transferência de controle ainda é planejada.
 
 O histórico atual preserva linhas e ápices; as cópias temporais são limpas a cada novo disparo. Não existe progresso educativo persistente.
 
@@ -163,18 +163,18 @@ A apresentação é um painel no laboratório, não uma nova cena. Pode ser disp
 
 | Interface | Conteúdo e ações | Situação |
 |---|---|---|
-| Entrada | Explorar sozinho, criar sala, entrar em sala, configurações | Planejada |
-| Modal criar | Apelido, nome da sala, criar/cancelar | Planejado |
-| Modal entrar | Apelido, IPv4, exemplo, conectar/cancelar | Planejado |
-| Sala de espera | IP, participantes, capacidade, pronto, sair | Planejada |
+| Entrada | Explorar sozinho, criar sala, entrar em sala | Implementada; configurações pendentes |
+| Criar sala | Apelido, nome da sala, criar/cancelar | Implementado |
+| Entrar na sala | Apelido, IPv4, exemplo, conectar/cancelar | Implementado |
+| Sala de espera | IP, participantes, capacidade, pronto, sair | Implementada |
 | HUB 1 | Quatro disciplinas | Atual; integrar papéis |
 | HUB 2 | Conteúdos, descrição, disponibilidade e iniciar | Atual; integrar papéis |
 | Parâmetros/Análise | Controles, fórmulas e resultados | Atual no lançamento oblíquo |
 | Menu do experimento | Pausa, ajuda, visualização e voltar ao Hub | Parcial; consolidar |
 | Roteiro/resumo | Objetivo, etapas e conclusão | Planejado |
-| Modais transversais | Carregamento, falha, desconexão e confirmações | Planejados |
+| Modais transversais | Conexão, falha, sala cheia, versão incompatível, perda de host e sair | Implementados para LAN; expandir para outras ações |
 
-A UI LAN lateral herdada será incorporada ao painel principal. Os HUBs existentes serão reutilizados. Não criar uma cena Unity para cada tela.
+A UI LAN lateral herdada está desativada, preservada como referência. O painel principal reutiliza os HUBs existentes, sem criar uma cena Unity para cada tela.
 
 ### Regras de navegação
 
@@ -374,6 +374,10 @@ Altura máxima prevista é diferente de altura máxima atingida até agora. A UI
 
 ### Arquitetura de rede
 
+**Implementação de 06/10/2026:** `LanLobbyController` gerencia aprovação, versão, limite de oito participantes e estado pronto. `LanExperimentSession` carrega a apresentação do laboratório aditivamente em cada dispositivo, mantendo transporte, avatares e rig XR do Hub. Os objetos didáticos não são `NetworkObject`; não adicionar objetos de rede à cena sem revisar esse ciclo. O rig recebe a posição de entrada já definida no laboratório e recupera sua pose do Hub ao retornar; os transforms salvos não são alterados.
+
+`ProjectileLanSync` envia snapshots confiáveis limitados a cinco lançamentos, a 10 Hz, com revisão de reset e sequência. Clientes reconstroem linhas, ápices, amostras, vetores e métricas pelas equações existentes. Há extrapolação máxima de 250 ms; pausa e fim usam o tempo autoritativo. Controles ficam bloqueados até os participantes confirmarem a carga. O anfitrião pode voltar todos à sala; participantes podem sair individualmente. Não há transferência de controle, descoberta automática ou migração de host.
+
 O template atual usa UnityTransport direto e conserva DistributedAuthority em **DAHost local**, sem CMB/Relay. Isso não significa nuvem.
 
 Preservar a conexão existente e implementar **autoridade lógica do anfitrião sobre o experimento**, validando remetente, permissão, versão e limites dos comandos. Não migrar cegamente a topologia do template.
@@ -539,7 +543,8 @@ Instaladores de UI/Hub são migrações iniciais e recusam duplicação. Depois,
 - Validação LAN de 01/10/2026: 18 casos de endereço e um teste de transporte loopback, além de host/reconexão no Hub; ver `docs/validation.md`.
 - Esse registro inclui build Windows anterior à proibição atual. Não comprova o estado recente nem valida Android/headsets.
 - UI/Hub recentes: navegação das quatro disciplinas, bloqueio de mockups e abertura do laboratório com um rig no Editor/Play Mode, sem erros reportados na verificação.
-- Não há evidência de experimento sincronizado, conforto em headset ou capacidade de oito dispositivos.
+- Em 06/10/2026, o teste `DirectLanReplicatesLobbyLateJoinPauseAndReset` passou com dois NetworkManagers via UDP loopback: sala/pronto, reconstrução de cinco disparos na entrada tardia, observador sem controle, pausa, retomada e reset. O teste isola a replicação; não substitui o ciclo completo em dois dispositivos.
+- Host, entrada e retorno ao laboratório foram exercitados no Editor com um único rig/câmera ativo. Não há validação de conforto em headset ou capacidade real de oito dispositivos. Nenhum build novo foi gerado.
 
 ## 14. Roadmap e critérios de aceite
 
@@ -553,7 +558,7 @@ Hub visual, catálogo/mockups, sala padrão, UI Figma e experimento individual. 
 
 - Complementos no Figma, entrada/configurações/estados.
 - Retorno ao Hub, carga recuperável e confirmações.
-- UI LAN integrada, sem prometer experimento coletivo antes de M3.
+- UI LAN integrada e MVP coletivo implementados; configurações e validação de hardware pendentes.
 - Legibilidade/controles no headset e redução da sobreposição de rótulos.
 - **Aceite:** usuário completa o percurso individual e retorna sem intervenção do Editor ou perda inesperada de configuração.
 
@@ -565,6 +570,8 @@ Hub visual, catálogo/mockups, sala padrão, UI Figma e experimento individual. 
 - **Aceite:** extremos corretos, cinco registros consistentes e roteiro com comparação/explicação; revisão científica antes de distribuição educativa.
 
 ### M3 — Experimento coletivo LAN
+
+MVP implementado e validado em loopback; aceite em dispositivos reais ainda pendente. Delegação de controle permanece planejada.
 
 - Sala de espera, papéis, delegação e carga coordenada.
 - Sincronização de lançamento, tempo, pausa/reset, histórico e entrada tardia.
@@ -616,7 +623,7 @@ Dependências externas restantes: equipamento para homologação, revisão educa
 5. Ajustar parâmetros e usar Disparar, Pausar/Retomar, Reiniciar e Parâmetros/Análise.
 6. Para trabalho isolado, abrir diretamente a cena ObliqueLaunch.
 
-O Hub ainda não tem a entrada unificada planejada. A conexão LAN atual usa controles do template e não habilita colaboração no lançamento oblíquo.
+No painel principal, escolha **Criar sala local**, informe nome e sala e compartilhe o IPv4 exibido. Nos demais dispositivos, escolha **Entrar em uma sala**. Participantes confirmam **Estou pronto**; o anfitrião seleciona Movimento e forças e usa **Iniciar para todos**. Dentro do laboratório, somente ele controla a simulação. A barra LAN permite retornar à sala (anfitrião) ou sair (participante), com confirmação. O modo individual continua disponível.
 
 ### Arquivos principais
 

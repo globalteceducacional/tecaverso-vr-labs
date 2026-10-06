@@ -26,6 +26,9 @@ namespace Tecaverso.Hub
         [SerializeField] Image detailIcon;
         int disciplineIndex, contentIndex;
         bool loading;
+        bool selectionOnly;
+        public event Action<HubCatalog.Content> ContentChosen;
+        public void SetSelectionMode(bool value) { selectionOnly=value; ShowDisciplines(); }
         public bool ShowingContents => contentsView.activeSelf;
         public string SelectedContent => catalog.disciplines[disciplineIndex].contents[contentIndex].title;
 
@@ -83,7 +86,7 @@ namespace Tecaverso.Hub
             detailTitle.text=content.title; description.text=content.description;
             objective.text="OBJETIVO  ·  "+content.objective; detailIcon.sprite=content.icon;
             launch.interactable=!string.IsNullOrEmpty(content.scenePath);
-            launchLabel.text=launch.interactable?"INICIAR SIMULAÇÃO":"EM BREVE";
+            launchLabel.text=launch.interactable?(selectionOnly?"SELECIONAR PARA A SALA":"INICIAR SIMULAÇÃO"):"EM BREVE";
             status.text=launch.interactable?"Disponível · Lançamento oblíquo":"MOCKUP · Esta simulação ainda não está disponível.";
         }
         public void LaunchSelected()
@@ -91,7 +94,7 @@ namespace Tecaverso.Hub
             if(loading||!ShowingContents) return;
             var path=catalog.disciplines[disciplineIndex].contents[contentIndex].scenePath;
             if(string.IsNullOrEmpty(path)) return;
-            // This experiment is not yet synchronized. Never silently terminate an existing LAN session.
+            if(selectionOnly) { ContentChosen?.Invoke(catalog.disciplines[disciplineIndex].contents[contentIndex]); return; }
             if(NetworkManager.Singleton!=null&&NetworkManager.Singleton.IsListening)
             { status.text="Desconecte da sala LAN para abrir este experimento local."; return; }
             if(!Application.CanStreamedLevelBeLoaded(path))

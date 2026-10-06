@@ -11,6 +11,15 @@ namespace Tecaverso.Labs.ObliqueLaunch
         [SerializeField] Button fire, pause, reset;
         [SerializeField] Toggle showVectors;
         bool hooked;
+        bool controlAuthority = true;
+        SimulationState displayedState;
+        public void SetControlAuthority(bool value) { controlAuthority=value; ShowState(displayedState); }
+        public void ApplyParameters(LaunchParameters p)
+        {
+            angle.SetValueWithoutNotify(p.Angle); speed.SetValueWithoutNotify(p.Speed);
+            height.SetValueWithoutNotify(p.Height); mass.SetValueWithoutNotify(p.Mass); gravity.SetValueWithoutNotify(p.Gravity);
+            RefreshValues();
+        }
         public bool VectorsVisible { get; private set; } = true;
         public event System.Action<bool> VectorVisibilityChanged;
         public event System.Action FireRequested, PauseRequested, ResetRequested;
@@ -60,10 +69,11 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public void ShowSample(in FlightSample s) => metrics.text=$"t = {s.Time:0.00} s\nY = {s.Position.y:0.00} m\nYmax = {s.MaximumHeight:0.00} m";
         public void ShowState(SimulationState state)
         {
+            displayedState=state;
             bool inFlight=state==SimulationState.Running||state==SimulationState.Paused;
             pauseLabel.text=state==SimulationState.Paused?"RETOMAR":"PAUSAR";
-            pause.interactable=inFlight; fire.interactable=!inFlight;
-            foreach(var slider in new[]{angle,speed,height,mass,gravity}) slider.interactable=!inFlight;
+            pause.interactable=controlAuthority&&inFlight; fire.interactable=controlAuthority&&!inFlight; reset.interactable=controlAuthority;
+            foreach(var slider in new[]{angle,speed,height,mass,gravity}) slider.interactable=controlAuthority&&!inFlight;
             if(state==SimulationState.Idle) metrics.text="t = 0,00 s    ·    y = 0,00 m";
         }
     }

@@ -11,6 +11,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public FlightSample Current { get; private set; }
         public LaunchParameters Parameters { get; private set; }
         public Vector3 Origin { get; private set; }
+        public bool RemoteDriven { get; set; }
         public event Action<FlightSample> SampleChanged;
         public event Action<SimulationState> StateChanged;
 
@@ -38,13 +39,23 @@ namespace Tecaverso.Labs.ObliqueLaunch
 
         void Update()
         {
-            if (State != SimulationState.Running) return;
-            Current = ProjectileKinematics.Evaluate(Parameters, Current.Time + Time.deltaTime, Origin);
-            if (Current.Position.y <= 0f && Current.Time > 0f)
+            if (RemoteDriven || State != SimulationState.Running) return;
+            ApplyTime(Current.Time + Time.deltaTime, SimulationState.Running);
+        }
+
+        // Both peers evaluate the same analytical flight, including the exact ground intersection.
+        public void ApplyTime(float time, SimulationState state)
+        {
+            float vy = Parameters.InitialVelocity.y;
+            float landing = (vy + Mathf.Sqrt(vy * vy + 2f * Parameters.Gravity * Mathf.Max(0f, Origin.y))) / Parameters.Gravity;
+            time = Mathf.Clamp(time, 0f, landing);
+            Current = ProjectileKinematics.Evaluate(Parameters, time, Origin);
+            if (time >= landing)
             {
                 Current = new FlightSample(Current.Time, new Vector3(Current.Position.x, 0f, Origin.z), Current.Velocity, Current.MaximumHeight);
-                SetState(SimulationState.Complete);
+                state = SimulationState.Complete;
             }
+            SetState(state);
             SampleChanged?.Invoke(Current);
         }
 
