@@ -14,7 +14,7 @@ namespace Tecaverso.Hub
         {
             var go=new GameObject("LAN session controls",typeof(RectTransform),typeof(Image),typeof(LanLabSessionBar));
             go.transform.SetParent(panel.transform,false); go.layer=panel.gameObject.layer;
-            var rect=go.GetComponent<RectTransform>(); rect.sizeDelta=new Vector2(470,110); rect.anchoredPosition=new Vector2(0,-460);
+            var rect=go.GetComponent<RectTransform>(); rect.sizeDelta=new Vector2(470,128); rect.anchoredPosition=new Vector2(0,-460);
             go.GetComponent<Image>().color=new Color32(232,230,254,255);
             var bar=go.GetComponent<LanLabSessionBar>(); bar.lobby=service;
             var font=panel.GetComponentInChildren<TMP_Text>(true).font;
@@ -26,6 +26,9 @@ namespace Tecaverso.Hub
             bar.actionLabel=Text(buttonRect,"Action",font,Vector2.zero,new Vector2(430,44)); bar.actionLabel.color=Color.white;
             buttonGO.GetComponent<Button>().onClick.AddListener(bar.Return);
             buttonGO.AddComponent<ButtonTweenFeedback>();
+            var layout=go.AddComponent<VerticalLayoutGroup>();layout.padding=new RectOffset(15,15,16,16);layout.spacing=8;
+            layout.childControlWidth=layout.childControlHeight=true;layout.childForceExpandWidth=true;layout.childForceExpandHeight=false;
+            foreach(var child in new[]{bar.label.gameObject,buttonGO}) { var item=child.AddComponent<LayoutElement>();item.minHeight=item.preferredHeight=44; }
             service.Changed+=bar.Refresh; bar.Refresh();
         }
         static TMP_Text Text(Transform parent,string name,TMP_FontAsset font,Vector2 position,Vector2 size)

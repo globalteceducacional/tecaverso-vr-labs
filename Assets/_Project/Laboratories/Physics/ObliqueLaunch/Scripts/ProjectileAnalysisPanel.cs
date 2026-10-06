@@ -2,6 +2,7 @@ using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Tecaverso.UI;
 
 namespace Tecaverso.Labs.ObliqueLaunch
 {
@@ -44,7 +45,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
         public void ShowAnalysis() => Select(true);
         void Select(bool analysis)
         {
-            parametersView.SetActive(!analysis); analysisView.SetActive(analysis);
+            UIVisibility.Set(parametersView,!analysis); UIVisibility.Set(analysisView,analysis);
             parametersTab.interactable=analysis; analysisTab.interactable=!analysis;
         }
         void OnStateChanged(SimulationState state) => ShowSample(simulation.Current);

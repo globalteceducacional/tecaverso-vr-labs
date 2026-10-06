@@ -4,6 +4,8 @@ Laboratórios educacionais em realidade virtual para investigar conceitos por me
 
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. O primeiro experimento funcional é **Física / Lançamento oblíquo**.
 
+Para construir ou alterar interfaces, siga [UI_GUIDELINES.md](UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). As páginas usam CanvasGroup; containers de layout organizam cards, formulários, ações e parâmetros. `UILayoutMigration` é uma migração pontual e idempotente, não um builder de cenário.
+
 **GDD 1.1 · Atualizado em 06/10/2026 · Idioma principal: pt-BR.**
 
 > Este documento distingue implementação de planejamento. **Atual** descreve código/cenas e verificações registradas; **Planejado** define o design a implementar. Nenhum build foi gerado nesta revisão.

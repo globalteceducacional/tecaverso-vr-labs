@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Tecaverso.UI;
 
 namespace Tecaverso.Hub
 {
@@ -29,7 +30,8 @@ namespace Tecaverso.Hub
         bool selectionOnly;
         public event Action<HubCatalog.Content> ContentChosen;
         public void SetSelectionMode(bool value) { selectionOnly=value; ShowDisciplines(); }
-        public bool ShowingContents => contentsView.activeSelf;
+        public bool ShowingContents => UIVisibility.IsVisible(contentsView);
+        public void Hide() { UIVisibility.Set(disciplinesView,false); UIVisibility.Set(contentsView,false); UIVisibility.Set(back.gameObject,false,true); }
         public string SelectedContent => catalog.disciplines[disciplineIndex].contents[contentIndex].title;
 
         public void Bind(HubCatalog data, GameObject disciplines, GameObject contents, Button[] buttons,
@@ -54,7 +56,7 @@ namespace Tecaverso.Hub
         public void ShowDisciplines()
         {
             if(loading) return;
-            disciplinesView.SetActive(true); contentsView.SetActive(false); back.gameObject.SetActive(false); status.text="";
+            UIVisibility.Set(disciplinesView,true); UIVisibility.Set(contentsView,false); UIVisibility.Set(back.gameObject,false,true); status.text="";
         }
         public void OpenDiscipline(int index)
         {
@@ -66,11 +68,11 @@ namespace Tecaverso.Hub
             for(int i=0;i<cards.Length;i++)
             {
                 bool available=i<discipline.contents.Length;
-                cards[i].button.gameObject.SetActive(available);
+                UIVisibility.Set(cards[i].button.gameObject,available,true);
                 if(!available) continue;
                 cards[i].label.text=discipline.contents[i].title; cards[i].icon.sprite=discipline.contents[i].icon;
             }
-            disciplinesView.SetActive(false); contentsView.SetActive(true); back.gameObject.SetActive(true);
+            UIVisibility.Set(disciplinesView,false); UIVisibility.Set(contentsView,true); UIVisibility.Set(back.gameObject,true,true);
             SelectContent(0);
         }
         public void SelectContent(int index)

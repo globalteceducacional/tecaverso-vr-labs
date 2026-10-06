@@ -14,6 +14,17 @@
 
 ## Registro anterior
 
+### Refatoração de UI — 06/10/2026
+
+- Guia `UI_GUIDELINES.md` e encaminhamento em `AGENTS.md` criados.
+- Migrados o prefab HubUI, Hub.unity e os painéis de ObliqueLaunch.unity: grids de cards, linhas/colunas de ações e parâmetros, rodapé separado, modal centralizado e CanvasGroups de páginas/abas.
+- Transforms externos dos Canvases comparados antes/depois pela migração e preservados.
+- Conferidos visualmente entrada, conteúdo, parâmetros e análise. Nove controles visíveis no HUB 2 sem interseções de suas áreas; navegação e bloqueio/restauração do fundo pelo modal exercitados.
+- Dois testes EditMode de visibilidade/recolhimento e uma regressão PlayMode LAN passaram. Testes não equivalem à validação de ponteiro/tracking em headset.
+- Tween de botão limitado ao filho Visual (até 1,02×), preservando o RectTransform do layout e o alvo de interação.
+- As capturas compostas do MCP produziram erro interno de PlayerLoop em ScreenshotUtility; a captura pela câmera explícita funcionou. Não foi identificado stack trace desse erro no código da aplicação.
+- Caches dinâmicos de fontes gerados durante a prévia foram limpos, mantendo os assets originais. Nenhum build.
+
 Unity 6000.3.25f1, Windows Editor, via MCP.
 
 - Build Windows x64 concluída: `Builds/LanValidation/Tecaverso Labs.exe`, 264,72 MB, 0 erros e 11 avisos. Duração: aproximadamente 6 minutos. Android ainda não foi compilado nem validado em headset.

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Tecaverso.Labs.ObliqueLaunch;
+using Tecaverso.UI;
 using Unity.Netcode;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -57,7 +58,7 @@ namespace Tecaverso.Hub
             foreach(var root in hubScene.GetRootGameObjects())
                 if(root.activeSelf && (root.name=="Environment" || root.name=="Tecaverso Standard Room" ||
                     root.name=="Tecaverso Hub UI" || root.name=="Connection Canvas"))
-                { suspended.Add(root); root.SetActive(false); }
+                { suspended.Add(root); if(root.GetComponent<Canvas>()!=null)UIVisibility.Set(root,false);else root.SetActive(false); }
             SceneManager.SetActiveScene(scene);
             var lab=roots.SelectMany(r=>r.GetComponentsInChildren<ObliqueLaunchLab>(true)).FirstOrDefault();
             if(lab==null) { transitioning=false; lobby.Leave(); Reconcile(); yield break; }
@@ -74,7 +75,7 @@ namespace Tecaverso.Hub
             if(replication!=null) { replication.enabled=false; Destroy(replication); }
             if(hubScene.IsValid()&&hubScene.isLoaded) SceneManager.SetActiveScene(hubScene);
             yield return SceneManager.UnloadSceneAsync(ExperimentPath);
-            foreach(var root in suspended) if(root!=null) root.SetActive(true);
+            foreach(var root in suspended) if(root!=null) { if(root.GetComponent<Canvas>()!=null)UIVisibility.Set(root,true);else root.SetActive(true); }
             suspended.Clear();
             if(rig!=null) rig.transform.SetPositionAndRotation(rigPosition,rigRotation);
             transitioning=false;

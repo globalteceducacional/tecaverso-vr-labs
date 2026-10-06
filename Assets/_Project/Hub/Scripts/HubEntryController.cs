@@ -2,6 +2,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Tecaverso.UI;
 using UnityEngine.XR.Interaction.Toolkit.Samples.SpatialKeyboard;
 
 namespace Tecaverso.Hub
@@ -17,17 +18,15 @@ namespace Tecaverso.Hub
         public TMP_InputField nickname, roomOrAddress;
         public TMP_Text formTitle, fieldLabel, fieldHint, formInfo, formError, submitLabel, roomTitle, roomAddress, participants, contentTitle, lobbyHint, readyLabel, errorTitle, errorBody, connectionText;
         bool hosting, selecting, readyValue;
-        GameObject[] originalViews;
         void Start()
         {
-            originalViews=transform.parent.Cast<Transform>().Where(t=>t!=transform).Select(t=>t.gameObject).ToArray();
             solo.onClick.AddListener(()=>Select(false)); create.onClick.AddListener(()=>Form(true)); join.onClick.AddListener(()=>Form(false));
             submit.onClick.AddListener(Submit); formBack.onClick.AddListener(Entry);
             chooseContent.onClick.AddListener(()=>Select(true)); start.onClick.AddListener(lobby.StartExperiment);
             ready.onClick.AddListener(()=>lobby.SetReady(!readyValue));
-            leave.onClick.AddListener(()=>leaveDialog.SetActive(true));
-            cancelLeave.onClick.AddListener(()=>leaveDialog.SetActive(false));
-            confirmLeave.onClick.AddListener(()=>{leaveDialog.SetActive(false);lobby.Leave();Entry();});
+            leave.onClick.AddListener(()=>ShowLeave(true));
+            cancelLeave.onClick.AddListener(()=>ShowLeave(false));
+            confirmLeave.onClick.AddListener(()=>{ShowLeave(false);lobby.Leave();Entry();});
             cancelConnection.onClick.AddListener(()=>{lobby.Leave();Form(hosting);});
             retry.onClick.AddListener(()=>Form(hosting)); errorBack.onClick.AddListener(()=>{lobby.Leave();Entry();});
             selectionBack.onClick.AddListener(()=>{selecting=false;if(lobby.IsHost)Refresh();else Entry();});
@@ -39,15 +38,23 @@ namespace Tecaverso.Hub
         }
         void OnDestroy() { if(lobby!=null)lobby.Changed-=Refresh; if(menu!=null)menu.ContentChosen-=Chosen; }
         static void Keyboard(TMP_InputField field) { if(GlobalNonNativeKeyboard.instance!=null) GlobalNonNativeKeyboard.instance.ShowKeyboard(field); }
+        void ShowLeave(bool visible)
+        {
+            UIVisibility.Set(leaveDialog,visible);
+            UIVisibility.SetInteraction(lobbyPage,!visible);
+            if(visible && UnityEngine.EventSystems.EventSystem.current!=null)
+                UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(cancelLeave.gameObject);
+        }
         void Page(GameObject page)
         {
             // Periodic lobby snapshots must not dismiss an open confirmation dialog.
-            bool changed=page==null || !page.activeSelf;
+            bool changed=page==null || !UIVisibility.IsVisible(page);
             // Do not render two coplanar world-space screens on top of each other.
-            if(page!=null && originalViews!=null) foreach(var view in originalViews)view.SetActive(false);
-            foreach(var view in new[]{entryPage,formPage,lobbyPage,errorPage,connectingPage}) view.SetActive(view==page);
-            selectionBack.gameObject.SetActive(page==null);
-            if(changed) leaveDialog.SetActive(false);
+            if(page!=null)menu.Hide();
+            foreach(var view in new[]{entryPage,formPage,lobbyPage,errorPage,connectingPage}) UIVisibility.Set(view,view==page);
+            UIVisibility.Set(selectionBack.gameObject,page==null,true);
+            if(changed)ShowLeave(false);
+            else if(UIVisibility.IsVisible(leaveDialog))UIVisibility.SetInteraction(lobbyPage,false);
         }
         void Entry() { selecting=false; Page(entryPage); }
         public void Form(bool host)
@@ -91,7 +98,7 @@ namespace Tecaverso.Hub
             roomAddress.text="IP LOCAL  ·  "+lobby.Address+"\nUDP 7777 · "+snapshot.participants.Length+" / 8 participantes";
             participants.text=string.Join("\n\n",snapshot.participants.Select(p=>p.name+(p.id==lobby.LocalId?" (você)":"")+"    ·    "+(p.host?"ANFITRIÃO":p.ready?"PRONTO":"AGUARDANDO")));
             contentTitle.text=string.IsNullOrEmpty(snapshot.contentTitle)?"Selecione um experimento":snapshot.contentTitle;
-            chooseContent.gameObject.SetActive(lobby.IsHost); start.gameObject.SetActive(lobby.IsHost); ready.gameObject.SetActive(!lobby.IsHost);
+            UIVisibility.Set(chooseContent.gameObject,lobby.IsHost,true); UIVisibility.Set(start.gameObject,lobby.IsHost,true); UIVisibility.Set(ready.gameObject,!lobby.IsHost,true);
             start.interactable=lobby.CanStart;
             readyValue=snapshot.participants.Any(p=>p.id==lobby.LocalId&&p.ready);
             readyLabel.text=readyValue?"PRONTO · CANCELAR":"ESTOU PRONTO";

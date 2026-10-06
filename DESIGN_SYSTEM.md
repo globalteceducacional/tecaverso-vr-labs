@@ -4,6 +4,8 @@
 
 Referência visual e de interação para interfaces, instrumentos e salas do Tecaverso Labs. Complementa o GDD em [README.md](README.md): o GDD define o produto; este documento define como ele deve se apresentar e responder visualmente.
 
+Implementação de layouts, anchors, visibilidade e interação: [UI_GUIDELINES.md](UI_GUIDELINES.md). A revisão de 06/10/2026 migrou Hub/entrada/LAN e os painéis do experimento para containers de layout e CanvasGroups, preservando os transforms externos.
+
 > **Atual** indica padrões já presentes nos assets/cenas. **Diretriz** estabelece o padrão para novos componentes e revisões, sem afirmar que tudo já está implementado. Valores de conforto são pontos de partida para validação no headset, não certificações de acessibilidade.
 
 ## 1. Princípios
@@ -278,7 +280,7 @@ Esses valores descrevem a montagem inicial, não limites universais. Preservar a
 
 | Feedback | Valores padrão no código |
 |---|---|
-| Botão hover | Escala 1,05× |
+| Botão hover | Até 1,02× no filho Visual; alvo de interação permanece estável |
 | Botão pressionado | Escala 0,96× |
 | Botão duração | 0,12 s, OutQuad |
 | Handle hover | Escala 1,15× |
