@@ -75,6 +75,8 @@ O histórico atual preserva linhas e ápices; as cópias temporais são limpas a
 
 ## 3. Público, plataformas e escopo
 
+**Preparação PC/Web (07/10/2026):** tela de espera reutilizável em `Assets/_Project/UI/Spectator/SpectatorWaiting.prefab`, com cena de prévia isolada, espaço para vídeo e estados de apresentação. Não há vídeo configurado nem cliente espectador conectado: câmeras, entrada sem XR e transporte Web continuam pendentes. Consulte [integração da tela de espera](Assets/_Project/UI/Spectator/README.md). O fluxo VR e as cenas de build não foram alterados.
+
 ### Público definido
 
 - Primário: alunos do Ensino Médio, em atividades mediadas por professor.
