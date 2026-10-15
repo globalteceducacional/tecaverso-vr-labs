@@ -349,6 +349,8 @@ O amarelo do vetor não deve virar texto pequeno sobre fundo claro. O azul da re
 
 ### Iluminação
 
+**Configuração compartilhada atual (15/10/2026):** `Assets/_Project/Shared/Rendering/TecaversoVR.asset` usa MSAA 4×, HDR e render scale 1. O Default Volume Profile `TecaversoLearningProfile` usa tonemapping Neutral, contraste +3 e bloom discreto (0,08, limiar 1,2, Quarter). As câmeras dos três ambientes principais habilitam pós-processamento. Sem efeitos de desfoque, distorção ou alteração temática das cores. Validação de desempenho em headset permanece pendente; consulte o README da pasta Rendering para reutilização.
+
 - Luz ambiente suficiente para identificar objetos; azul como acento, não iluminação monocromática total.
 - Priorizar iluminação de baixo custo e poucas luzes em tempo real.
 - Sombras, bloom e reflexos dependem de medição no headset. Não são requisitos para a identidade visual.

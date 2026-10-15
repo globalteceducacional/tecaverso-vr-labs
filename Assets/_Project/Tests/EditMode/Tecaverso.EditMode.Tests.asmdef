@@ -1,6 +1,6 @@
 {
     "name": "Tecaverso.EditMode.Tests",
-    "references": ["Tecaverso.Core"],
+    "references": ["Tecaverso.Core", "Tecaverso.InclinedPlane.Model"],
     "includePlatforms": ["Editor"],
     "optionalUnityReferences": ["TestAssemblies"]
 }

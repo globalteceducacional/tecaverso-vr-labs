@@ -29,5 +29,25 @@ namespace Tecaverso.Labs.ObliqueLaunch
         }
 
         public void Bind(Transform shaftTransform, Transform headTransform) { shaft = shaftTransform; head = headTransform; }
+
+        /// <summary>Explicit scale for other physical quantities. Does not change the legacy velocity rendering.</summary>
+        public void SetScaledVector(Vector3 vector, float worldUnitsPerUnit)
+        {
+            float length = vector.magnitude * Mathf.Max(0f, worldUnitsPerUnit);
+            gameObject.SetActive(length > .0001f);
+            if (!gameObject.activeSelf) return;
+            transform.rotation = Quaternion.FromToRotation(Vector3.up, vector.normalized);
+            float tip = Mathf.Min(headLength, length * .6f);
+            float stem = length - tip;
+            shaft.localPosition = Vector3.up * stem * .5f;
+            shaft.localRotation = Quaternion.identity;
+            // Keep very small arrows tapered instead of letting the cylinder hide the cone.
+            float radius = Mathf.Min(headRadius, tip * .5f);
+            float diameter = Mathf.Min(shaftDiameter, radius * .65f);
+            shaft.localScale = new Vector3(diameter, stem * .5f, diameter);
+            head.localPosition = Vector3.up * stem;
+            head.localRotation = Quaternion.identity;
+            head.localScale = new Vector3(radius, tip, radius);
+        }
     }
 }

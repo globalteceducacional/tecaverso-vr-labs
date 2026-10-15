@@ -25,6 +25,10 @@ namespace Tecaverso.Hub
         [SerializeField] Button back, launch;
         [SerializeField] TMP_Text heading, subtitle, detailTitle, description, objective, launchLabel, status;
         [SerializeField] Image detailIcon;
+        [SerializeField] Button previousPage, nextPage;
+        [SerializeField] TMP_Text pageLabel;
+        [SerializeField] GameObject pagination;
+        int pageStart;
         int disciplineIndex, contentIndex;
         bool loading;
         bool selectionOnly;
@@ -45,8 +49,10 @@ namespace Tecaverso.Hub
         void Awake()
         {
             for(int i=0;i<disciplineButtons.Length;i++){int index=i; disciplineButtons[i].onClick.AddListener(()=>OpenDiscipline(index));}
-            for(int i=0;i<cards.Length;i++){int index=i; cards[i].button.onClick.AddListener(()=>SelectContent(index));}
+            for(int i=0;i<cards.Length;i++){int index=i; cards[i].button.onClick.AddListener(()=>SelectContent(pageStart+index));}
             back.onClick.AddListener(ShowDisciplines); launch.onClick.AddListener(LaunchSelected);
+            if(previousPage!=null)previousPage.onClick.AddListener(()=>ChangePage(-1));
+            if(nextPage!=null)nextPage.onClick.AddListener(()=>ChangePage(1));
             ShowDisciplines();
         }
         void Update()
@@ -62,18 +68,36 @@ namespace Tecaverso.Hub
         {
             if(loading||index<0||index>=catalog.disciplines.Length) return;
             disciplineIndex=index;
+            pageStart=0;
             var discipline=catalog.disciplines[index];
             heading.text=discipline.title;
             subtitle.text=index==0?"SELECIONE O CONTEÚDO DA SIMULAÇÃO":"PRÉVIA DA DISCIPLINA · CONTEÚDOS EM DESENVOLVIMENTO";
-            for(int i=0;i<cards.Length;i++)
-            {
-                bool available=i<discipline.contents.Length;
-                UIVisibility.Set(cards[i].button.gameObject,available,true);
-                if(!available) continue;
-                cards[i].label.text=discipline.contents[i].title; cards[i].icon.sprite=discipline.contents[i].icon;
-            }
+            RenderCards();
             UIVisibility.Set(disciplinesView,false); UIVisibility.Set(contentsView,true); UIVisibility.Set(back.gameObject,true,true);
             SelectContent(0);
+        }
+        void ChangePage(int direction)
+        {
+            if(loading)return;
+            int count=catalog.disciplines[disciplineIndex].contents.Length;
+            pageStart=Mathf.Clamp(pageStart+direction*cards.Length,0,((count-1)/cards.Length)*cards.Length);
+            RenderCards();SelectContent(pageStart);
+        }
+        void RenderCards()
+        {
+            var discipline=catalog.disciplines[disciplineIndex];
+            for(int i=0;i<cards.Length;i++)
+            {
+                int index=pageStart+i;
+                bool available=index<discipline.contents.Length;
+                UIVisibility.Set(cards[i].button.gameObject,available,true);
+                if(!available) continue;
+                cards[i].label.text=discipline.contents[index].title; cards[i].icon.sprite=discipline.contents[index].icon;
+            }
+            if(pagination!=null)UIVisibility.Set(pagination,discipline.contents.Length>cards.Length);
+            if(previousPage!=null)previousPage.interactable=pageStart>0;
+            if(nextPage!=null)nextPage.interactable=pageStart+cards.Length<discipline.contents.Length;
+            if(pageLabel!=null)pageLabel.text=$"{pageStart/cards.Length+1} / {Mathf.CeilToInt(discipline.contents.Length/(float)cards.Length)}";
         }
         public void SelectContent(int index)
         {
@@ -82,14 +106,14 @@ namespace Tecaverso.Hub
             contentIndex=index; var content=entries[index];
             for(int i=0;i<cards.Length;i++)
             {
-                cards[i].surface.color=i==index?new Color32(40,78,160,255):new Color32(211,209,232,255);
-                cards[i].label.color=i==index?Color.white:new Color32(22,22,22,255);
+                cards[i].surface.color=pageStart+i==index?new Color32(40,78,160,255):new Color32(211,209,232,255);
+                cards[i].label.color=pageStart+i==index?Color.white:new Color32(22,22,22,255);
             }
             detailTitle.text=content.title; description.text=content.description;
             objective.text="OBJETIVO  ·  "+content.objective; detailIcon.sprite=content.icon;
             launch.interactable=!string.IsNullOrEmpty(content.scenePath);
             launchLabel.text=launch.interactable?(selectionOnly?"SELECIONAR PARA A SALA":"INICIAR SIMULAÇÃO"):"EM BREVE";
-            status.text=launch.interactable?"Disponível · Lançamento oblíquo":"MOCKUP · Esta simulação ainda não está disponível.";
+            status.text=launch.interactable?"Disponível · "+content.title:"MOCKUP · Esta simulação ainda não está disponível.";
         }
         public void LaunchSelected()
         {

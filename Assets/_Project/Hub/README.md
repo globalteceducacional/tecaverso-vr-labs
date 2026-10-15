@@ -9,12 +9,14 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - The fixed 2560×1440 composition is adapted to a world-space XR canvas. Actual
   ray-clickable buttons replace desktop keyboard-only hints. Escape also goes back.
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
-- Physics / Movimento e forças opens ObliqueLaunch in local mode. Other Physics
-  topics and Chemistry/Biology/Mathematics have non-launchable mockups.
-- The detail copy for the implemented experiment describes projectile motion,
-  not friction or Newton experiments which do not exist yet.
+- Physics / Movimento e forças opens ObliqueLaunch. Physics / Plano inclinado
+  opens the individual inclined-plane lab with force vectors on one block.
+  Other Physics topics and Chemistry/Biology/Mathematics remain mockups.
+- The catalog uses six cards per page; Previous/Next preserves access to all seven
+  Physics entries. Pagination is hidden for disciplines with at most six entries.
 - Existing LAN setup is preserved. A connected LAN session is not silently closed
-  when opening the currently local-only experiment; the UI asks to disconnect first.
+  when opening an individual experiment; the UI asks to disconnect first.
+  Only ObliqueLaunch currently supports collective LAN sessions.
 
 ## Standard visual room
 

@@ -4,6 +4,8 @@ Laboratórios educacionais em realidade virtual para investigar conceitos por me
 
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. O primeiro experimento funcional é **Física / Lançamento oblíquo**.
 
+**15/10/2026 — Plano inclinado:** segundo laboratório individual disponível em **Explorar sozinho → Física → Plano inclinado**. Inclui rampa ajustável, peso/normal/atrito no bloco, resultante e decomposição opcionais, pausa/reset e análise, sem réplicas temporais. O catálogo tem sete conteúdos de Física com paginação. O modo coletivo continua restrito ao lançamento oblíquo. Veja [implementação e validação](Assets/_Project/Laboratories/Physics/InclinedPlane/README.md).
+
 Para construir ou alterar interfaces, siga [UI_GUIDELINES.md](UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). As páginas usam CanvasGroup; containers de layout organizam cards, formulários, ações e parâmetros. `UILayoutMigration` é uma migração pontual e idempotente, não um builder de cenário.
 
 **GDD 1.1 · Atualizado em 06/10/2026 · Idioma principal: pt-BR.**
@@ -60,10 +62,11 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 |---|---|---|
 | Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
-| HUB 2 | Seis conteúdos de Física; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
+| HUB 2 | Sete conteúdos de Física em páginas de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Demais disciplinas | Mockups navegáveis de Química, Biologia e Matemática | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
+| Plano inclinado | Experimento individual com equilíbrio/atrito, vetores no bloco e análise | Roteiro educativo, sincronização LAN e validação em headset |
 | Histórico | Até cinco trajetórias e marcadores de ápice esmaecidos | Comparação identificada e amostras completas por registro |
 | LAN | Sala, pronto, entrada coletiva e estado do lançamento oblíquo via UDP direto | Validar headsets físicos, oito dispositivos e Wi-Fi escolar |
 | Educação | Estrutura e objetivos decididos neste GDD | Implementar atividades, feedback e conclusão |
@@ -260,12 +263,12 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Caminho de cena vazio s
 
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
-| Física | Movimento e forças; Eletricidade; Óptica; Termodinâmica; Ondas; Gravitação | Somente lançamento oblíquo é funcional |
+| Física | Movimento e forças; Plano inclinado; Eletricidade; Óptica; Termodinâmica; Ondas; Gravitação | Lançamento oblíquo e plano inclinado funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Geometria; Funções; Medidas | Mockups |
 
-“Movimento e forças” é uma categoria, não uma declaração de que atrito e leis de Newton já foram implementados. A descrição deve refletir o conteúdo realmente disponível.
+“Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
 
 Novo experimento exige objetivo educativo, modelo científico, controles, visualizações, roteiro mínimo, configuração/prefab, integração ao Hub e critérios de validação.
 
@@ -466,6 +469,7 @@ Assets/
     Hub/                       # Cena, UI, catálogo, navegação
     Laboratories/
       Physics/ObliqueLaunch/   # Cena, scripts, materiais e modelos
+      Physics/InclinedPlane/   # Modelo testável, cena e vetores de forças no bloco
       Chemistry/              # Reservada
       Biology/                # Reservada
       Mathematics/            # Reservada
@@ -627,16 +631,20 @@ Dependências externas restantes: equipamento para homologação, revisão educa
 5. Ajustar parâmetros e usar Disparar, Pausar/Retomar, Reiniciar e Parâmetros/Análise.
 6. Para trabalho isolado, abrir diretamente a cena ObliqueLaunch.
 
+Para o segundo experimento, selecione **Física → Plano inclinado**. Ajuste inclinação, massa, atrito e gravidade, use **Liberar**, e escolha as forças a visualizar. **Reiniciar** recoloca o bloco no início e libera os parâmetros; **Voltar ao Hub** pede confirmação. A cena também pode ser aberta diretamente em `Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity`.
+
 No painel principal, escolha **Criar sala local**, informe nome e sala e compartilhe o IPv4 exibido. Nos demais dispositivos, escolha **Entrar em uma sala**. Participantes confirmam **Estou pronto**; o anfitrião seleciona Movimento e forças e usa **Iniciar para todos**. Dentro do laboratório, somente ele controla a simulação. A barra LAN permite retornar à sala (anfitrião) ou sair (participante), com confirmação. O modo individual continua disponível.
 
 ### Arquivos principais
 
 - Entrada: `Assets/_Project/Hub/Scenes/Hub.unity`, primeira cena habilitada.
 - Laboratório: `Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity`, segunda cena habilitada.
+- Plano inclinado: `Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity`, terceira cena habilitada, modo individual.
 - Demo do template: `Assets/ThirdParty/VRMultiplayer/Scenes/SampleScene.unity`, fora do fluxo principal.
 - Catálogo: `Assets/_Project/Hub/HubCatalog.asset`.
 - UI: `Assets/_Project/Hub/HubUI.prefab`.
 - Sala: `Assets/_Project/Environments/StandardRoom/TecaversoStandardRoom.prefab`.
+- Renderização comum: `Assets/_Project/Shared/Rendering/` — pipeline URP com MSAA 4× e perfil global de pós-processamento neutro; instruções de reutilização no README da pasta.
 - Empresa/produto: Tecaverso / Tecaverso Labs; identificador configurado `com.tecaverso.labs`.
 
 ### Contribuição

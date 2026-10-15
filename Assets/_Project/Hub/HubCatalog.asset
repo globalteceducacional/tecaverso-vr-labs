@@ -24,6 +24,13 @@ MonoBehaviour:
       objective: "Relacionar velocidade, gravidade, alcance e altura m\xE1xima."
       icon: {fileID: 21300000, guid: b960a8b17a8b5c44da5c37529e2f5112, type: 3}
       scenePath: Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity
+    - title: Plano inclinado
+      description: "Investigue peso, normal e atrito em um bloco sobre uma rampa.
+        Dispon\xEDvel na explora\xE7\xE3o individual."
+      objective: "Relacionar inclina\xE7\xE3o, equil\xEDbrio, atrito e acelera\xE7\xE3o."
+      icon: {fileID: -1829311833489697943, guid: 5d869b5aa8ac23d4ea8526b37d40391d,
+        type: 3}
+      scenePath: Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity
     - title: Eletricidade
       description: "Pr\xE9via: explore cargas el\xE9tricas, circuitos e transfer\xEAncia
         de energia."

@@ -1,0 +1,6 @@
+{
+    "name": "Tecaverso.InclinedPlane.Model",
+    "rootNamespace": "Tecaverso.Labs.InclinedPlane",
+    "references": [],
+    "autoReferenced": true
+}
