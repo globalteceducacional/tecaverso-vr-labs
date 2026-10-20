@@ -4,6 +4,8 @@ Laboratórios educacionais em realidade virtual para investigar conceitos por me
 
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. O primeiro experimento funcional é **Física / Lançamento oblíquo**.
 
+**20/10/2026 — Gravitação:** terceiro laboratório individual, em cena própria, disponível em **Explorar sozinho → Física → Gravitação**. Inclui atração, lançamento de satélite com força/velocidade e trajetória, e oito planetas com órbitas visíveis. Usa texturas Solar System Scope com atribuição CC BY 4.0. Veja [modelo, limites e validação](Assets/_Project/Laboratories/Physics/Gravitation/README.md).
+
 **15/10/2026 — Plano inclinado:** segundo laboratório individual disponível em **Explorar sozinho → Física → Plano inclinado**. Inclui rampa ajustável, peso/normal/atrito no bloco, resultante e decomposição opcionais, pausa/reset e análise, sem réplicas temporais. O catálogo tem sete conteúdos de Física com paginação. O modo coletivo continua restrito ao lançamento oblíquo. Veja [implementação e validação](Assets/_Project/Laboratories/Physics/InclinedPlane/README.md).
 
 Para construir ou alterar interfaces, siga [UI_GUIDELINES.md](UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). As páginas usam CanvasGroup; containers de layout organizam cards, formulários, ações e parâmetros. `UILayoutMigration` é uma migração pontual e idempotente, não um builder de cenário.
@@ -67,6 +69,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
 | Plano inclinado | Experimento individual com equilíbrio/atrito, vetores no bloco e análise | Roteiro educativo, sincronização LAN e validação em headset |
+| Gravitação | Sala própria com atração, satélite e Sistema Solar; vetores e trajetórias | Roteiro educativo, sincronização LAN e validação em headset |
 | Histórico | Até cinco trajetórias e marcadores de ápice esmaecidos | Comparação identificada e amostras completas por registro |
 | LAN | Sala, pronto, entrada coletiva e estado do lançamento oblíquo via UDP direto | Validar headsets físicos, oito dispositivos e Wi-Fi escolar |
 | Educação | Estrutura e objetivos decididos neste GDD | Implementar atividades, feedback e conclusão |
@@ -263,7 +266,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Caminho de cena vazio s
 
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
-| Física | Movimento e forças; Plano inclinado; Eletricidade; Óptica; Termodinâmica; Ondas; Gravitação | Lançamento oblíquo e plano inclinado funcionais; apenas lançamento oblíquo em LAN |
+| Física | Movimento e forças; Plano inclinado; Eletricidade; Óptica; Termodinâmica; Ondas; Gravitação | Lançamento oblíquo, plano inclinado e gravitação funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Geometria; Funções; Medidas | Mockups |
@@ -470,6 +473,7 @@ Assets/
     Laboratories/
       Physics/ObliqueLaunch/   # Cena, scripts, materiais e modelos
       Physics/InclinedPlane/   # Modelo testável, cena e vetores de forças no bloco
+      Physics/Gravitation/     # Modelo orbital, sala, satélite e órbitas planetárias
       Chemistry/              # Reservada
       Biology/                # Reservada
       Mathematics/            # Reservada
@@ -640,6 +644,7 @@ No painel principal, escolha **Criar sala local**, informe nome e sala e compart
 - Entrada: `Assets/_Project/Hub/Scenes/Hub.unity`, primeira cena habilitada.
 - Laboratório: `Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity`, segunda cena habilitada.
 - Plano inclinado: `Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity`, terceira cena habilitada, modo individual.
+- Gravitação: `Assets/_Project/Laboratories/Physics/Gravitation/Scenes/Gravitation.unity`, quarta cena habilitada, modo individual. Alterne entre Atração, Satélite e Sistema Solar; use os controles de trajetória, pausa e escala de tempo.
 - Demo do template: `Assets/ThirdParty/VRMultiplayer/Scenes/SampleScene.unity`, fora do fluxo principal.
 - Catálogo: `Assets/_Project/Hub/HubCatalog.asset`.
 - UI: `Assets/_Project/Hub/HubUI.prefab`.

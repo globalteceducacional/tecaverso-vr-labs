@@ -56,11 +56,12 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 54accea0adcb27f4e9de34540603ab92, type: 3}
       scenePath: 
     - title: "Gravita\xE7\xE3o"
-      description: "Pr\xE9via: explore a atra\xE7\xE3o gravitacional e o movimento
-        dos corpos celestes."
-      objective: "Compreender massa, dist\xE2ncia e atra\xE7\xE3o gravitacional."
+      description: "Investigue a atra\xE7\xE3o gravitacional, lance um sat\xE9lite
+        e observe as \xF3rbitas dos oito planetas. Explora\xE7\xE3o individual."
+      objective: "Relacionar massa, dist\xE2ncia, for\xE7a gravitacional e movimento
+        orbital."
       icon: {fileID: 21300000, guid: db4bf1f1d5b09c449aeee8f9e4f9ce22, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Physics/Gravitation/Scenes/Gravitation.unity
   - title: "Qu\xEDmica"
     description: "Mat\xE9ria, propriedades, rea\xE7\xF5es e transforma\xE7\xF5es."
     accent: {r: 0.4627451, g: 0.28235295, b: 0.9098039, a: 1}
