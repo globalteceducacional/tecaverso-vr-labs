@@ -31,12 +31,13 @@ MonoBehaviour:
       icon: {fileID: -1829311833489697943, guid: 5d869b5aa8ac23d4ea8526b37d40391d,
         type: 3}
       scenePath: Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity
-    - title: Eletricidade
-      description: "Pr\xE9via: explore cargas el\xE9tricas, circuitos e transfer\xEAncia
-        de energia."
-      objective: "Relacionar tens\xE3o, corrente e resist\xEAncia."
+    - title: "Associa\xE7\xE3o de resistores"
+      description: "Monte circuitos em s\xE9rie e paralelo com fios e instrumentos
+        XR."
+      objective: "Relacionar resist\xEAncia, tens\xE3o, corrente e pot\xEAncia da
+        l\xE2mpada."
       icon: {fileID: 21300000, guid: 8e8a4f44e718e75419faec5c4fe911ff, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Physics/ResistorCircuits/Scenes/ResistorCircuits.unity
     - title: "\xD3ptica"
       description: "Pr\xE9via: observe como a luz se propaga e interage com espelhos
         e lentes."
