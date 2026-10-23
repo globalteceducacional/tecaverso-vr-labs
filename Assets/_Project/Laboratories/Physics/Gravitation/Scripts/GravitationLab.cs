@@ -53,7 +53,7 @@ namespace Tecaverso.Labs.Gravitation
             Model.Reset();
             Model.Configure(CelestialBody.Presets[panel.BodyIndex],panel.controls[0].value,panel.controls[1].value,
                 panel.controls[2].value,panel.controls[3].value);
-            solarDays=0;solarRunning=solarPaused=false;sampleCount=0;
+            solarDays=0;solarRunning=solarPaused=panel.Mode==GravityMode.SolarSystem;sampleCount=0;
             planetRenderer.sharedMaterial=bodyMaterials[panel.BodyIndex];
             trajectory.positionCount=0;
             Present();
@@ -67,7 +67,11 @@ namespace Tecaverso.Labs.Gravitation
         }
         public void Pause()
         {
-            if(panel.Mode==GravityMode.SolarSystem&&solarRunning)solarPaused=!solarPaused;
+            if(panel.Mode==GravityMode.SolarSystem&&solarRunning)
+            {
+                if(solarPaused)solar.GetComponent<PlanetInspection>()?.Close();
+                solarPaused=!solarPaused;
+            }
             else Model.TogglePause();
             Present();
         }

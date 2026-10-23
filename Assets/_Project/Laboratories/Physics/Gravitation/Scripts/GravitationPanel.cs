@@ -21,10 +21,14 @@ namespace Tecaverso.Labs.Gravitation
         public TMP_Text status, metrics, analysis, scale, formula, explanation, launchLabel, pauseLabel;
         public GameObject solarControls;
         public Button[] solarViews;
+        public Button[] timeSpeeds;
+        readonly UnityAction[] speedCallbacks=new UnityAction[3];
+        static readonly int[] DayRates={1,10,30};
+        int speedIndex;
         public TMP_Text solarGuide, introduction;
         public Toggle realScale;
         public bool InnerSystem { get; private set; }
-        public GravityMode Mode { get; private set; } = GravityMode.Satellite;
+        public GravityMode Mode { get; private set; } = GravityMode.SolarSystem;
         public int BodyIndex { get; private set; }
         public event Action SettingsChanged, ViewChanged, LaunchRequested, PauseRequested, ResetRequested;
         readonly UnityAction[] modeCallbacks=new UnityAction[3], bodyCallbacks=new UnityAction[3];
@@ -32,7 +36,7 @@ namespace Tecaverso.Labs.Gravitation
         static readonly string[] FieldNames={"ALTITUDE","VELOCIDADE INICIAL","MASSA DO SATÉLITE","MASSA DO ASTRO","ESCALA DE TEMPO"};
         bool loading, initialized;
         GravityMode? visibleMode;
-        public double Rate => controls[4].value;
+        public double Rate => Mode==GravityMode.SolarSystem?DayRates[speedIndex]:controls[4].value;
         public bool ForceVisible => options[0].isOn;
         public bool VelocityVisible => options[1].isOn;
         public bool PathsVisible => options[2].isOn;
@@ -40,6 +44,7 @@ namespace Tecaverso.Labs.Gravitation
         void Awake()
         {
             initialized=true;
+            if(timeSpeeds!=null)for(int i=0;i<timeSpeeds.Length;i++){int n=i;speedCallbacks[i]=()=>{speedIndex=n;ViewChanged?.Invoke();};timeSpeeds[i].onClick.AddListener(speedCallbacks[i]);}
             if(realScale!=null)realScale.onValueChanged.AddListener(VisibilityChanged);
             solarViews[0].onClick.AddListener(ShowCompleteSystem);
             solarViews[1].onClick.AddListener(ShowInnerSystem);
@@ -61,6 +66,7 @@ namespace Tecaverso.Labs.Gravitation
         void OnDestroy()
         {
             if(!initialized)return;
+            if(timeSpeeds!=null)for(int i=0;i<timeSpeeds.Length;i++)timeSpeeds[i].onClick.RemoveListener(speedCallbacks[i]);
             if(realScale!=null)realScale.onValueChanged.RemoveListener(VisibilityChanged);
             solarViews[0].onClick.RemoveListener(ShowCompleteSystem);
             solarViews[1].onClick.RemoveListener(ShowInnerSystem);
@@ -87,17 +93,23 @@ namespace Tecaverso.Labs.Gravitation
             if(visibleMode==Mode)return;
             visibleMode=Mode;
             bool solar=Mode==GravityMode.SolarSystem;
+            bool attraction=Mode==GravityMode.Attraction;
             UIVisibility.Set(bodies[0].transform.parent.gameObject,!solar,true);
             UIVisibility.Set(solarControls,solar,true);
-            for(int i=0;i<4;i++)UIVisibility.Set(controls[i].transform.parent.gameObject,!solar,true);
+            for(int i=0;i<5;i++)UIVisibility.Set(controls[i].transform.parent.gameObject,
+                i==4?!attraction:!solar&&(!attraction||i!=1),true);
             var fields=controls[0].transform.parent.parent.GetComponent<LayoutElement>();
-            fields.minHeight=fields.preferredHeight=solar?96:528;
+            fields.minHeight=fields.preferredHeight=solar?96:attraction?312:528;
             UIVisibility.Set(options[0].transform.parent.gameObject,!solar,true);
+            UIVisibility.Set(options[1].gameObject,!solar&&!attraction,true);
+            UIVisibility.Set(options[2].gameObject,!attraction,true);
+            UIVisibility.Set(actions[0].gameObject,!attraction,true);
+            UIVisibility.Set(actions[1].gameObject,!attraction,true);
             if(realScale!=null)UIVisibility.Set(realScale.gameObject,solar,true);
             options[2].GetComponentInChildren<TMP_Text>(true).text=solar?"EXIBIR ÓRBITAS":"TRAJETÓRIAS";
             var optionsLayout=options[2].transform.parent.GetComponent<LayoutElement>();
-            optionsLayout.minHeight=optionsLayout.preferredHeight=104;
-            introduction.text=solar?"Aponte para ler; selecione para ver de perto.\nOu escolha um planeta na lista abaixo.":
+            optionsLayout.minHeight=optionsLayout.preferredHeight=attraction?48:104;
+            introduction.text=solar?"Caminhe entre as órbitas; pause para observar.\nAmplie os rochosos ou selecione um planeta.":
                 Mode==GravityMode.Attraction?"Compare a atração ao mudar massa e distância.\nAs posições ficam fixas neste modo.":
                 "Coloque um satélite em órbita.\nTrocar modo ou astro reinicia a tentativa.";
         }
@@ -121,6 +133,7 @@ namespace Tecaverso.Labs.Gravitation
         }
         public void Show(OrbitalModel model,bool solarRunning,bool solarPaused,double days)
         {
+            if(Mode==GravityMode.SolarSystem){ShowObservatory(solarPaused,days);return;}
             UpdateModeLayout();
             bool solar=Mode==GravityMode.SolarSystem, attraction=Mode==GravityMode.Attraction;
             bool editable=model.State==OrbitState.Ready;
@@ -145,7 +158,7 @@ namespace Tecaverso.Labs.Gravitation
                 solarViews[0].GetComponentInChildren<TMP_Text>(true).text=InnerSystem?"SISTEMA COMPLETO":"COMPLETO · ATIVO";
                 solarViews[1].GetComponentInChildren<TMP_Text>(true).text=InnerSystem?"ROCHOSOS · ATIVO":"AMPLIAR ROCHOSOS";
                 bool exact=realScale!=null&&realScale.isOn;
-                solarGuide.text=(InnerSystem?"DISTÂNCIAS · 1 m = 0,25 UA":"DISTÂNCIAS · 1 m = 5 UA")+
+                solarGuide.text="DISTÂNCIAS · 1 m = "+(1/SolarScale.MetresPerAU(InnerSystem)).ToString("0.###",Pt)+" UA"+
                     "\nDIÂMETROS · 1 m = "+SolarScale.BodyKmPerMetre(InnerSystem,exact).ToString("N0",Pt)+" km"+
                     "\nMesmo fator para Sol e todos os planetas."+
                     "\nVER DE PERTO · escolha um planeta";
@@ -173,12 +186,45 @@ namespace Tecaverso.Labs.Gravitation
                 model.ForceNewtons,speed,Math.Max(0,model.RadiusKm-model.Body.RadiusKm),model.ElapsedSeconds);
             scale.text=string.Format(Pt,"1 m no modelo = {0:N0} km · satélite ampliado\nF: 1 m = {1:N0} N · v: 1 m = {2:0.00} km/s",
                 model.Body.RadiusKm/GravitationLab.PlanetRadius,model.SurfaceForce/.8,model.VelocityUnit);
+            if(attraction)
+            {
+                metrics.text=string.Format(Pt,"Força = {0:N1} N\nDistância entre centros = {1:N0} km",model.ForceNewtons,model.RadiusKm);
+                scale.text=string.Format(Pt,"1 m no modelo = {0:N0} km · satélite ampliado\nForça: 1 m = {1:N0} N",model.Body.RadiusKm/GravitationLab.PlanetRadius,model.SurfaceForce/.8);
+            }
             analysis.text=string.Format(Pt,
                 "{0}\nRaio do astro: {1:N0} km\nDistância entre centros: {2:N0} km\nMassa do satélite: {3:N0} kg\nForça gravitacional: {4:N1} N\n\nVelocidade circular local: {5:0.00} km/s\nVelocidade de escape local: {6:0.00} km/s\n\n{7}",
                 body,model.Body.RadiusKm,model.RadiusKm,model.SatelliteMass,model.ForceNewtons,model.CircularSpeedKm,model.EscapeSpeedKm,
                 attraction?"Sem integração do movimento neste modo.":model.SpecificEnergy>=0?"Energia orbital não negativa: trajetória aberta.":"Energia orbital negativa: órbita ligada;\npode interceptar a superfície do astro.");
             formula.text="F = G M m / r²      r = R + altitude\nvc = √(G M / r)      ve = √2 vc\n\nA gravidade muda a velocidade.\nA força aponta para o centro do astro.";
             explanation.text="AMARELO · força     AZUL · velocidade\nVetores com escalas independentes.\n\nAstro esférico fixo; satélite sem propulsão.\nSem atmosfera ou atração de outros corpos.\nTrajetória: até 2.048 pontos, sem cópias.\n\nTexturas: Solar System Scope · CC BY 4.0\nDados: NASA / JPL";
+        }
+        void ShowObservatory(bool paused,double days)
+        {
+            if(visibleMode!=GravityMode.SolarSystem)
+            {
+                visibleMode=GravityMode.SolarSystem;
+                UIVisibility.Set(modes[0].transform.parent.gameObject,false,true);
+                UIVisibility.Set(bodies[0].transform.parent.gameObject,false,true);
+                UIVisibility.Set(controls[0].transform.parent.parent.gameObject,false,true);
+                UIVisibility.Set(options[2].transform.parent.gameObject,false,true);
+                UIVisibility.Set(actions[3].transform.parent.gameObject,false,true);
+                UIVisibility.Set(actions[0].gameObject,false,true);
+                UIVisibility.Set(actions[2].gameObject,false,true);
+                UIVisibility.Set(solarControls,true,true);
+                introduction.text="Caminhe pelo observatório.\nAponte e selecione um planeta para conhecê-lo.";
+                solarGuide.text="VELOCIDADE DAS ÓRBITAS\nEscolha quantos dias passam por segundo.";
+                scale.text="Tamanhos e distâncias didáticos, sem escala real.\nRotação dos globos ilustrativa. Dados: NASA / JPL.\nTexturas: Solar System Scope · CC BY 4.0";
+            }
+            if(timeSpeeds!=null)for(int i=0;i<timeSpeeds.Length;i++)
+            {
+                timeSpeeds[i].interactable=true;
+                var label=timeSpeeds[i].GetComponentInChildren<TMP_Text>(true);
+                string value=DayRates[i]+" DIAS/S"+(i==speedIndex?" · ATIVO":"");
+                if(label.text!=value)label.text=value;
+            }
+            actions[1].interactable=true;pauseLabel.text=paused?"INICIAR ÓRBITAS":"PAUSAR ÓRBITAS";
+            status.text=paused?"ÓRBITAS PAUSADAS · explore os planetas":"ÓRBITAS EM MOVIMENTO";
+            metrics.text="Tempo orbital: "+days.ToString("N1",Pt)+" dias\nSelecionar um planeta pausa as órbitas.";
         }
     }
 }

@@ -3,6 +3,16 @@ using Tecaverso.Labs.Gravitation;
 
 public sealed class SolarScaleTests
 {
+    [Test]
+    public void WalkthroughDoublesDistancesAndDiametersWithoutChangingExaggeration()
+    {
+        foreach(bool inner in new[]{false,true})
+        {
+            Assert.That(SolarScale.MetresPerAU(inner),Is.EqualTo((inner?4:.2)*2));
+            Assert.That(SolarScale.BodyDiameter(SolarScale.DiameterKm[2],inner,false),
+                Is.EqualTo(SolarScale.DiameterKm[2]/(inner?700000:14000000)*2).Within(1e-12));
+        }
+    }
     [TestCase(false,false)]
     [TestCase(false,true)]
     [TestCase(true,false)]

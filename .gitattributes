@@ -5,6 +5,7 @@
 *.md text eol=lf
 *.unity text eol=lf whitespace=-blank-at-eol
 *.prefab text eol=lf whitespace=-blank-at-eol
+*.mat text eol=lf whitespace=-blank-at-eol
 *.asset text=auto whitespace=-blank-at-eol
 *.meta text eol=lf whitespace=-blank-at-eol
 *.png binary
@@ -14,3 +15,4 @@
 *.wav binary
 *.mp3 binary
 *.webm binary
+*.cubemap filter=lfs diff=lfs merge=lfs -text

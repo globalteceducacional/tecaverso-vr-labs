@@ -11,7 +11,7 @@ Implementação de layouts, anchors, visibilidade e interação: [UI_GUIDELINES.
 ## 1. Princípios
 
 1. **Clareza científica:** fenômeno, valores, unidades e controles são mais importantes que decoração.
-2. **Consistência:** mesma função usa o mesmo componente e vocabulário em todas as disciplinas.
+2. **Consistência:** mesma função usa o mesmo componente e vocabulário em todas as disciplinas. A tarefa e o tipo de dado determinam o controle; laboratórios não precisam repetir o formulário do lançamento oblíquo.
 3. **Presença sem distração:** laboratório tecnológico sóbrio, com iluminação azul como acento.
 4. **Interação previsível:** seleção, disponibilidade, ação e resultado precisam ser reconhecíveis.
 5. **Conforto espacial:** interfaces estáveis, legíveis e sem movimento involuntário da câmera.
@@ -201,6 +201,24 @@ Esses valores descrevem a montagem inicial, não limites universais. Preservar a
 
 ## 7. Componentes
 
+### 7.0 Escolha do controle por tarefa
+
+Diretriz de 23/10/2026: compartilhar identidade, estados e componentes, adaptando a composição ao experimento. Os templates são exemplos de composição, não formulários obrigatórios.
+
+| Necessidade | Controle indicado | Exemplo |
+|---|---|---|
+| Explorar uma grandeza contínua dentro de limites | Slider com valor e unidade | Massa, inclinação, velocidade do tempo |
+| Ajustar quantidade discreta ou passo exato | Botões − / +; entrada validada quando necessária | Número de amostras, incrementos de medida |
+| Escolher entre poucas alternativas nomeadas | Botões de seleção exclusiva ou grupo segmentado | Astro, modo, vista completa/rochosos |
+| Escolher entre muitas alternativas | Lista ou dropdown acessível em XR | Catálogo extenso de materiais |
+| Ativar uma apresentação independente | Toggle | Exibir órbitas, força, escala única real |
+| Consultar um resultado | Métrica ou texto com unidade | Tempo transcorrido, distância, total de planetas |
+| Executar uma ação | Botão com verbo | Iniciar, pausar, reiniciar |
+
+Não usar sliders para nomes, modos, resultados somente de leitura ou enumerações. Sliders existentes não obrigam novos experimentos a usá-los. Presets podem complementar ajustes contínuos; evitar múltiplos controles concorrentes para o mesmo estado. Controles sem significado no modo atual devem ser ocultados com seu espaço recolhido. Controles pertinentes mas temporariamente bloqueados permanecem legíveis, com motivo indicado.
+
+Em visualizações científicas, indicar separadamente escala de distâncias, de diâmetros e ampliações de inspeção. Aumentar a sala não autoriza distorcer apenas alguns astros ou aumentar fontes/rig junto com o modelo. Registrar dimensões e limites de leitura no README do laboratório.
+
 ### 7.1 Botões
 
 - Primário: azul `ui.action.primary`, texto branco; uma ação principal por contexto.
@@ -224,6 +242,7 @@ Esses valores descrevem a montagem inicial, não limites universais. Preservar a
 ### 7.3 Sliders e ajustes numéricos
 
 - Ordem: nome e valor na mesma linha; trilha abaixo.
+- Usar somente quando o ajuste contínuo faz sentido para a tarefa; aplicar a matriz da seção 7.0 antes de reutilizar um slider.
 - Referência atual: trilha de 6 unidades; handle 12 × 32; região de interação de 64 unidades de altura.
 - Trilha ativa azul e inativa `ui.track`; handle com contorno azul e centro branco.
 - A região de interação não deve mover com a animação do handle.
@@ -402,4 +421,5 @@ Pendências visuais prioritárias: fluxo LAN integrado, distinção consistente 
 
 ### Histórico
 
+- **23/10/2026:** seleção de controles por tarefa e tipo de dado; distinção entre identidade compartilhada e composição própria de cada laboratório. Não implica migração automática de todas as cenas nem atualização do Figma.
 - **1.0 — 05/10/2026:** consolidação da identidade já aplicada, tokens de UI, tipografia, escala de espaçamento, componentes, estados, direção 3D e critérios de VR. Melhorias futuras são identificadas como diretrizes, não como funcionalidades prontas.

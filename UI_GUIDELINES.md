@@ -21,6 +21,15 @@ Um componente deve ter um único responsável por posição e tamanho em cada ei
 
 ## 3. Catálogo de composição
 
+Antes de escolher o layout, aplicar a matriz de controles da seção 7.0 de `DESIGN_SYSTEM.md`. O painel de outro laboratório é uma referência visual, não uma lista obrigatória de campos.
+
+- Classificar cada item como ação, escolha exclusiva, preferência booleana, grandeza contínua, quantidade discreta ou resultado.
+- Sliders exigem mínimo/máximo, passo, unidade e semântica de aplicação explícitos. Não mapear índices de planetas/modos para trilhas numéricas.
+- Seleções exclusivas precisam comunicar a opção atual; uma opção selecionada não deve parecer indisponível por erro.
+- Ocultar e recolher controles que não se aplicam ao modo. Preservar seus valores/listeners para o retorno; não disparar reset como efeito colateral de layout.
+- Desabilitar apenas controles que continuam pertinentes, mas não podem ser alterados naquele estado ou papel LAN. Explicar o bloqueio.
+- Validar cada modo/aba separadamente, incluindo alternância de ida e volta, foco, maior valor e unidades. Uma captura de um modo não valida o formulário inteiro.
+
 | Caso | Organização | Overflow / cuidados |
 |---|---|---|
 | Formulário, parâmetros, menu lateral | VerticalLayoutGroup | Alturas mínimas; rolagem se exceder região |

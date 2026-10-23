@@ -109,6 +109,38 @@ namespace Tecaverso.Editor
             }
             solar.SetView(false);solar.Show(0,true);
             ConfigureScales(lab);
+            ConfigureWalkthrough(lab);
+            ObservatoryAuthoring.Configure(lab);
+            EditorUtility.SetDirty(inspection);EditorUtility.SetDirty(solar);
+        }
+        // Targeted update for the expanded exhibit; does not recreate objects or UI.
+        public static void ConfigureWalkthrough(GravitationLab lab)
+        {
+            var solar=lab.solar;
+            solar.transform.position=new Vector3(1,2.1f,8);
+            var room=lab.gameObject.scene.GetRootGameObjects().Single(g=>g.name=="TecaversoStandardRoom");
+            room.transform.position=new Vector3(0,0,4);
+            room.transform.localScale=new Vector3(32f/14f,1.2f,40f/14f);
+            PrefabUtility.RecordPrefabInstancePropertyModifications(room.transform);
+            var window=lab.transform.Find("Star observation window");
+            window.localPosition=new Vector3(0,4.2f,22.4f);window.localScale=new Vector3(30,7.6f,1);
+            foreach(var frame in lab.transform.Cast<Transform>().Where(t=>t.name=="Window frame"))
+            {
+                var at=frame.localPosition;at.z=22.3f;
+                if(frame.localScale.x<1)at.x=Mathf.Sign(at.x)*15.05f;
+                else frame.localScale=new Vector3(30.2f,.1f,.1f);
+                frame.localPosition=at;
+            }
+            foreach(var t in solar.transform.Cast<Transform>().Where(t=>t.name.StartsWith("Scale tick")||t.name.StartsWith("Ruler mark")||t.name=="Distance ruler"||t.name=="Distance scale"))
+            {
+                var at=t.localPosition;at.y=-1.85f;
+                // Place the existing metre ruler near the entrance; retain its one-metre spacing.
+                at.z=t.name=="Distance scale"?-9.9f:t.name.StartsWith("Scale tick")?-8.72f:-4.4f;
+                t.localPosition=at;
+            }
+            var inspection=solar.GetComponent<PlanetInspection>();
+            inspection.roomMin=new Vector2(-14.5f,-14.5f);inspection.roomMax=new Vector2(14.5f,22.5f);
+            solar.SetView(false);solar.Show(0,true);
             EditorUtility.SetDirty(inspection);EditorUtility.SetDirty(solar);
         }
         public static void ConfigureScales(GravitationLab lab)
