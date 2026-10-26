@@ -205,7 +205,7 @@ namespace Tecaverso.Editor
             var physics=catalog.disciplines.First(d=>d.title=="Física");
             if(!physics.contents.Any(c=>c.scenePath==ScenePath))
             {
-                var contents=physics.contents.ToList();contents.Insert(1,new HubCatalog.Content{title="Plano inclinado",description="Investigue peso, normal e atrito em um bloco sobre uma rampa. Disponível na exploração individual.",objective="Relacionar inclinação, equilíbrio, atrito e aceleração.",icon=AssetDatabase.LoadAssetAtPath<Sprite>(Folder+"/InclinedPlaneIcon.png")??contents[0].icon,scenePath=ScenePath});physics.contents=contents.ToArray();EditorUtility.SetDirty(catalog);
+                var contents=physics.contents.Where(c=>c.title!="Óptica").ToList();contents.Insert(1,new HubCatalog.Content{title="Plano inclinado",description="Investigue peso, normal e atrito em um bloco sobre uma rampa. Disponível na exploração individual.",objective="Relacionar inclinação, equilíbrio, atrito e aceleração.",icon=AssetDatabase.LoadAssetAtPath<Sprite>("Assets/_Project/UI/Art/Hub/InclinedPlane.png")??contents[0].icon,scenePath=ScenePath});physics.contents=contents.ToArray();EditorUtility.SetDirty(catalog);
             }
             const string prefabPath="Assets/_Project/Hub/HubUI.prefab";
             var prefab=PrefabUtility.LoadPrefabContents(prefabPath);

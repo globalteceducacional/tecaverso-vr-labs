@@ -5,15 +5,16 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - `HUB 1`: Figma Examples / Discipline Selection / Image Icons HUB 1, node 3053:200.
 - `HUB 2`: Content Selection / Image Icons HUB 2, node 3053:238.
 - Source: https://www.figma.com/design/ztbnAS5MZZmqOLbQAfm96E/Tecaverso-Game-UX-Kit
-- Original local PNG assets: `_Project/UI/Art/Figma/Hub`. Montserrat TMP fonts reused.
+- Original local PNG assets: `_Project/UI/Art/Figma/Hub`; the Inclined Plane illustration is in `_Project/UI/Art/Hub`. Montserrat TMP fonts reused.
 - The fixed 2560×1440 composition is adapted to a world-space XR canvas. Actual
   ray-clickable buttons replace desktop keyboard-only hints. Escape also goes back.
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
-- Physics / Movimento e forças opens ObliqueLaunch. Physics / Plano inclinado
-  opens the individual inclined-plane lab with force vectors on one block.
-  Other Physics topics and Chemistry/Biology/Mathematics remain mockups.
-- The catalog uses six cards per page; Previous/Next preserves access to all seven
-  Physics entries. Pagination is hidden for disciplines with at most six entries.
+- Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
+  Associação de resistores, Gravitação and Termologia open their individual labs.
+  Ondas and the other disciplines remain mockups.
+- Physics has six contents, including Inclined Plane in place of Optics. The Hub
+  shows all six cards together; pagination remains hidden for disciplines with
+  at most six entries.
 - Existing LAN setup is preserved. A connected LAN session is not silently closed
   when opening an individual experiment; the UI asks to disconnect first.
   Only ObliqueLaunch currently supports collective LAN sessions.

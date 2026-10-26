@@ -28,8 +28,7 @@ MonoBehaviour:
       description: "Investigue peso, normal e atrito em um bloco sobre uma rampa.
         Dispon\xEDvel na explora\xE7\xE3o individual."
       objective: "Relacionar inclina\xE7\xE3o, equil\xEDbrio, atrito e acelera\xE7\xE3o."
-      icon: {fileID: -1829311833489697943, guid: 5d869b5aa8ac23d4ea8526b37d40391d,
-        type: 3}
+      icon: {fileID: 21300000, guid: a88589cbabe651d47b99f40ffa953386, type: 3}
       scenePath: Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity
     - title: "Associa\xE7\xE3o de resistores"
       description: "Monte circuitos em s\xE9rie e paralelo com fios e instrumentos
@@ -38,18 +37,13 @@ MonoBehaviour:
         l\xE2mpada."
       icon: {fileID: 21300000, guid: 8e8a4f44e718e75419faec5c4fe911ff, type: 3}
       scenePath: Assets/_Project/Laboratories/Physics/ResistorCircuits/Scenes/ResistorCircuits.unity
-    - title: "\xD3ptica"
-      description: "Pr\xE9via: observe como a luz se propaga e interage com espelhos
-        e lentes."
-      objective: "Investigar reflex\xE3o e refra\xE7\xE3o da luz."
-      icon: {fileID: 21300000, guid: ee97be9b68bd0834e848fd097b3520cb, type: 3}
-      scenePath: 
-    - title: "Termodin\xE2mica"
-      description: "Pr\xE9via: investigue temperatura, calor e transforma\xE7\xF5es
-        de energia."
-      objective: Compreender trocas de calor entre sistemas.
+    - title: Termologia
+      description: "Explore press\xE3o, volume e temperatura com um pist\xE3o, part\xEDculas
+        e instrumentos XR. Compare transforma\xE7\xF5es e o trabalho do g\xE1s."
+      objective: "Relacionar as vari\xE1veis de estado e o trabalho realizado pelo
+        g\xE1s."
       icon: {fileID: 21300000, guid: 3e885bd86df25994e8b4d13a9c2ecbe2, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Physics/Thermology/Scenes/Thermology.unity
     - title: Ondas
       description: "Pr\xE9via: observe oscila\xE7\xF5es, propaga\xE7\xE3o e interfer\xEAncia
         de ondas."

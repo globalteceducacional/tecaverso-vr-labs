@@ -1,0 +1,6 @@
+{
+  "name": "Tecaverso.Thermology.Model",
+  "rootNamespace": "Tecaverso.Labs.Thermology",
+  "references": [],
+  "autoReferenced": true
+}

@@ -1,6 +1,6 @@
 {
     "name": "Tecaverso.EditMode.Tests",
-    "references": ["Tecaverso.Core", "Tecaverso.InclinedPlane.Model", "Tecaverso.Gravitation.Model"],
+    "references": ["Tecaverso.Core", "Tecaverso.InclinedPlane.Model", "Tecaverso.Gravitation.Model", "Tecaverso.Thermology.Model"],
     "includePlatforms": ["Editor"],
     "optionalUnityReferences": ["TestAssemblies"]
 }

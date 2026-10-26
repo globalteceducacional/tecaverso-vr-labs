@@ -8,7 +8,7 @@ Este README reúne o **Game Design Document (GDD)** e as orientações de entrad
 
 **23/10/2026 — Associação de resistores:** laboratório individual em sala própria, com bateria, resistores, lâmpada, interruptor, cabos com pontas XR, sockets, amperímetro e voltímetro. O circuito é resolvido pelos terminais conectados; fios flexíveis mostram a corrente convencional. Veja [montagem, modelo e validação](Assets/_Project/Laboratories/Physics/ResistorCircuits/README.md).
 
-**15/10/2026 — Plano inclinado:** segundo laboratório individual disponível em **Explorar sozinho → Física → Plano inclinado**. Inclui rampa ajustável, peso/normal/atrito no bloco, resultante e decomposição opcionais, pausa/reset e análise, sem réplicas temporais. O catálogo tem sete conteúdos de Física com paginação. O modo coletivo continua restrito ao lançamento oblíquo. Veja [implementação e validação](Assets/_Project/Laboratories/Physics/InclinedPlane/README.md).
+**15/10/2026 — Plano inclinado:** segundo laboratório individual disponível em **Explorar sozinho → Física → Plano inclinado**. Inclui rampa ajustável, peso/normal/atrito no bloco, resultante e decomposição opcionais, pausa/reset e análise, sem réplicas temporais. O catálogo tem seis conteúdos de Física em uma página. O modo coletivo continua restrito ao lançamento oblíquo. Veja [implementação e validação](Assets/_Project/Laboratories/Physics/InclinedPlane/README.md).
 
 Para construir ou alterar interfaces, siga [UI_GUIDELINES.md](UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](DESIGN_SYSTEM.md). As páginas usam CanvasGroup; containers de layout organizam cards, formulários, ações e parâmetros. `UILayoutMigration` é uma migração pontual e idempotente, não um builder de cenário.
 
@@ -68,7 +68,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 |---|---|---|
 | Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
-| HUB 2 | Sete conteúdos de Física em páginas de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
+| HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Demais disciplinas | Mockups navegáveis de Química, Biologia e Matemática | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
@@ -267,16 +267,18 @@ O laboratório balístico mantém dimensões maiores para acomodar a trajetória
 
 ## 8. Catálogo de disciplinas
 
-Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Caminho de cena vazio significa mockup. Evoluir para identificadores estáveis, evitando dependência do índice visual.
+Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresenta até seis simulações em uma grade 3 × 2. Caminho de cena vazio significa mockup. Evoluir para identificadores estáveis, evitando dependência do índice visual.
 
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
-| Física | Movimento e forças; Plano inclinado; Associação de resistores; Óptica; Termodinâmica; Ondas; Gravitação | Lançamento oblíquo, plano inclinado, gravitação e associação de resistores funcionais; apenas lançamento oblíquo em LAN |
+| Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondas; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores e termologia funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Geometria; Funções; Medidas | Mockups |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
+
+O laboratório individual de **Termologia** está disponível no Hub: câmara de gás com partículas, pistão e manopla XR, cargas encaixáveis, três transformações e gráfico de trabalho. Veja [uso, limites e validação](Assets/_Project/Laboratories/Physics/Thermology/README.md) e o [GDD curto](Assets/_Project/Laboratories/Physics/Thermology/GDD.md).
 
 Novo experimento exige objetivo educativo, modelo científico, controles, visualizações, roteiro mínimo, configuração/prefab, integração ao Hub e critérios de validação.
 
@@ -480,6 +482,7 @@ Assets/
       Physics/InclinedPlane/   # Modelo testável, cena e vetores de forças no bloco
       Physics/Gravitation/     # Modelo orbital, sala, satélite e órbitas planetárias
       Physics/ResistorCircuits/ # Sala de montagem de circuitos e modelo elétrico
+      Physics/Thermology/       # Câmara de gás, transformações e trabalho
       Chemistry/              # Reservada
       Biology/                # Reservada
       Mathematics/            # Reservada
@@ -605,7 +608,7 @@ MVP implementado e validado em loopback; aceite em dispositivos reais ainda pend
 ### M5 — Expansão controlada
 
 - Perfis locais opcionais, exportação e descoberta LAN conforme necessidade.
-- Próximo experimento proposto: Óptica/reflexão e refração, sujeito aos resultados do piloto; aproveita visualização espacial sem exigir um grande novo sistema de interação.
+- Escolher a próxima implementação entre os conteúdos já presentes na grade de seis simulações, sujeito aos resultados do piloto.
 - Expandir para outra disciplina após validar contrato comum em dois experimentos.
 - **Aceite:** novo conteúdo reutiliza fluxo, sessão e identidade sem duplicar infraestrutura.
 

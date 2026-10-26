@@ -231,6 +231,7 @@ Em visualizações científicas, indicar separadamente escala de distâncias, de
 
 ### 7.2 Cards de disciplina e conteúdo
 
+- Cada disciplina apresenta até seis simulações na grade 3 × 2 do Hub; a identidade visual é compartilhada, mas os ícones representam o experimento específico.
 - Disciplina: faixa de cor, imagem, nome, descrição e ação.
 - Conteúdo: imagem, título e seleção vinculada ao painel de detalhes.
 - Card inteiro pode ser interativo, evitando pequenos botões aninhados com ações conflitantes.

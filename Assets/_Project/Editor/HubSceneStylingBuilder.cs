@@ -18,6 +18,7 @@ namespace Tecaverso.Editor
     public static class HubSceneStylingBuilder
     {
         const string Art="Assets/_Project/UI/Art/Figma/Hub/";
+        const string InclinedPlaneIcon="Assets/_Project/UI/Art/Hub/InclinedPlane.png";
         const string RoomFolder="Assets/_Project/Environments/StandardRoom";
         const string Materials="Assets/_Project/Laboratories/Physics/ObliqueLaunch/Materials/Environment/";
         const string LabScene="Assets/_Project/Laboratories/Physics/ObliqueLaunch/Scenes/ObliqueLaunch.unity";
@@ -59,9 +60,9 @@ namespace Tecaverso.Editor
             catalog.disciplines=new[]{
                 new HubCatalog.Discipline{title="Física",description="Movimento, energia, ondas e fenômenos do mundo físico.",accent=Blue,icon=Icon("Physics"),contents=new[]{
                     Entry("Movimento e forças","ProjectileMotion","Explore o lançamento oblíquo: varie o ângulo, a velocidade inicial, a altura e a gravidade e observe a trajetória e os vetores.","Relacionar velocidade, gravidade, alcance e altura máxima.",LabScene),
+                    new HubCatalog.Content{title="Plano inclinado",icon=AssetDatabase.LoadAssetAtPath<Sprite>(InclinedPlaneIcon),description="Investigue peso, normal e atrito em um bloco sobre uma rampa.",objective="Relacionar inclinação, equilíbrio, atrito e aceleração.",scenePath="Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity"},
                     Entry("Eletricidade","Electricity","Prévia: explore cargas elétricas, circuitos e transferência de energia.","Relacionar tensão, corrente e resistência."),
-                    Entry("Óptica","Optics","Prévia: observe como a luz se propaga e interage com espelhos e lentes.","Investigar reflexão e refração da luz."),
-                    Entry("Termodinâmica","Thermodynamics","Prévia: investigue temperatura, calor e transformações de energia.","Compreender trocas de calor entre sistemas."),
+                    Entry("Termologia","Thermodynamics","Investigue pressão, volume e temperatura com uma câmara de gás e controles XR.","Relacionar as variáveis de estado e o trabalho realizado pelo gás.","Assets/_Project/Laboratories/Physics/Thermology/Scenes/Thermology.unity"),
                     Entry("Ondas","Waves","Prévia: observe oscilações, propagação e interferência de ondas.","Relacionar amplitude, frequência e comprimento de onda."),
                     Entry("Gravitação","Gravity","Prévia: explore a atração gravitacional e o movimento dos corpos celestes.","Compreender massa, distância e atração gravitacional.")}},
                 new HubCatalog.Discipline{title="Química",description="Matéria, propriedades, reações e transformações.",accent=Hex("7648E8"),icon=Icon("Chemistry"),contents=new[]{
