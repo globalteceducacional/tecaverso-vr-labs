@@ -10,8 +10,8 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
   ray-clickable buttons replace desktop keyboard-only hints. Escape also goes back.
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
 - Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
-  Associação de resistores, Gravitação and Termologia open their individual labs.
-  Ondas and the other disciplines remain mockups.
+  Associação de resistores, Gravitação, Termologia and Ondulatória open their individual labs.
+  The other disciplines remain mockups.
 - Physics has six contents, including Inclined Plane in place of Optics. The Hub
   shows all six cards together; pagination remains hidden for disciplines with
   at most six entries.

@@ -220,7 +220,7 @@ namespace Tecaverso.Editor
             {var copy=Object.Instantiate(template.GetRootGameObjects().Single(o=>o.name==name));copy.name=name;SceneManager.MoveGameObjectToScene(copy,scene);if(name=="XR Origin (XR Rig)")copy.transform.position=new Vector3(0,0,-4);}
             PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/_Project/Environments/StandardRoom/TecaversoStandardRoom.prefab"),scene);
             var volume=new GameObject("Shared learning post processing").AddComponent<Volume>();volume.isGlobal=true;volume.sharedProfile=AssetDatabase.LoadAssetAtPath<VolumeProfile>("Assets/_Project/Shared/Rendering/TecaversoLearningProfile.asset");
-            var root=new GameObject("Thermology Lab").transform;lab=root.gameObject.AddComponent<ThermologyLab>();Apparatus(root);Interface(root);
+            var root=new GameObject("Thermology Lab").transform;lab=root.gameObject.AddComponent<ThermologyLab>();Apparatus(root);Interface(root);Unity3DControlVisuals.Knob(lab.knob,3.5f);
             EditorSceneManager.SaveScene(scene,ScenePath);
             var catalog=AssetDatabase.LoadAssetAtPath<HubCatalog>("Assets/_Project/Hub/HubCatalog.asset");var entry=catalog.disciplines.First(d=>d.title=="Física").contents.Single(c=>c.title=="Termologia");
             entry.scenePath=ScenePath;entry.description="Explore pressão, volume e temperatura com um pistão, partículas e instrumentos XR. Compare transformações e o trabalho do gás.";EditorUtility.SetDirty(catalog);

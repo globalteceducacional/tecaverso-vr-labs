@@ -361,6 +361,8 @@ O amarelo do vetor não deve virar texto pequeno sobre fundo claro. O azul da re
 
 ### Forma
 
+- Controles físicos de UI devem priorizar os modelos oficiais Unity UI_3D (Dial, Lever e Slider), com materiais da aplicação, antes de composições de primitivas. Os prefabs compartilhados ficam em `Assets/_Project/Shared/XR/Controls/`; preserve pivôs, colliders, pontos de pega e eventos. Uma alavanca liga/desliga pelo movimento entre posições, não pelo simples ato de selecioná-la.
+
 - Modelos com silhueta clara, superfícies simples e detalhes moderados.
 - Canhão/base: metal escuro, carenagens claras e acentos azuis coerentes com a sala.
 - Movimento mecânico comunica a função: base telescópica muda altura, canhão muda ângulo.

@@ -1,6 +1,7 @@
 # Ondulatória — GDD curto
 
-**Estado:** conceito visual aprovado; laboratório ainda não implementado.  
+**Estado:** implementado como laboratório individual em 26/10/2026; veja [uso, modelo e validação](README.md).
+
 **Formato:** nova sala de Física, exploração individual em VR. Substitui a prévia “Ondas” no Hub, mantendo seis simulações na disciplina.  
 **Objetivo:** relacionar amplitude, frequência, período, comprimento de onda e velocidade; observar propagação, reflexão e formação de ondas estacionárias.
 

@@ -44,12 +44,13 @@ MonoBehaviour:
         g\xE1s."
       icon: {fileID: 21300000, guid: 3e885bd86df25994e8b4d13a9c2ecbe2, type: 3}
       scenePath: Assets/_Project/Laboratories/Physics/Thermology/Scenes/Thermology.unity
-    - title: Ondas
-      description: "Pr\xE9via: observe oscila\xE7\xF5es, propaga\xE7\xE3o e interfer\xEAncia
-        de ondas."
-      objective: "Relacionar amplitude, frequ\xEAncia e comprimento de onda."
+    - title: "Ondulat\xF3ria"
+      description: "Produza pulsos e ondas em uma corda. Explore reflex\xE3o, frequ\xEAncia,
+        comprimento de onda e ondas estacion\xE1rias."
+      objective: "Relacionar propaga\xE7\xE3o, oscila\xE7\xE3o e superposi\xE7\xE3o
+        por observa\xE7\xE3o e medi\xE7\xE3o."
       icon: {fileID: 21300000, guid: 54accea0adcb27f4e9de34540603ab92, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Physics/Waves/Scenes/Waves.unity
     - title: "Gravita\xE7\xE3o"
       description: "Investigue a atra\xE7\xE3o gravitacional, lance um sat\xE9lite
         e observe as \xF3rbitas dos oito planetas. Explora\xE7\xE3o individual."

@@ -182,6 +182,7 @@ namespace Tecaverso.Editor
                 }
             }
             Plugs(lab);
+            foreach(var control in lab.GetComponentsInChildren<XRLever>(true))Unity3DControlVisuals.Lever(control,2.2f);
             var marker=new GameObject("Visual model finish");marker.transform.SetParent(lab.transform,false);
             AssetDatabase.SaveAssets();
             UnityEditor.SceneManagement.EditorSceneManager.SaveScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene());

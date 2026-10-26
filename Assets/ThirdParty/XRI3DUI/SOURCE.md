@@ -1,0 +1,1 @@
+Official Unity XR Interaction Toolkit Examples UI_3D models. Source: https://github.com/Unity-Technologies/XR-Interaction-Toolkit-Examples/tree/881f7e197c7b0958621ebd1a05f249bbe254d36f/Assets/XRI_Examples/UI_3D/Models . Models unchanged; project materials applied separately. Commit: 881f7e197c7b0958621ebd1a05f249bbe254d36f

@@ -38,6 +38,8 @@ Os laboratórios compartilham identidade visual e componentes, com controles esc
 - [16. Abrir, executar e contribuir](#16-abrir-executar-e-contribuir)
 - [17. Referências e manutenção](#17-referências-e-manutenção)
 
+**Ondulatória:** sala individual disponível no Hub, com corda numérica, puxador e manoplas XR, reflexão, ondas estacionárias e medição. Veja [uso, modelo e validação](Assets/_Project/Laboratories/Physics/Waves/README.md).
+
 ## 1. Visão e objetivos
 
 ### Conceito
@@ -271,7 +273,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
-| Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondas; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores e termologia funcionais; apenas lançamento oblíquo em LAN |
+| Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Geometria; Funções; Medidas | Mockups |
@@ -483,6 +485,7 @@ Assets/
       Physics/Gravitation/     # Modelo orbital, sala, satélite e órbitas planetárias
       Physics/ResistorCircuits/ # Sala de montagem de circuitos e modelo elétrico
       Physics/Thermology/       # Câmara de gás, transformações e trabalho
+      Physics/Waves/            # Corda vibrante, reflexão, ressonância e medições
       Chemistry/              # Reservada
       Biology/                # Reservada
       Mathematics/            # Reservada

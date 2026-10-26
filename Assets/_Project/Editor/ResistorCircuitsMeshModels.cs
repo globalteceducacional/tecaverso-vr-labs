@@ -220,6 +220,7 @@ namespace Tecaverso.Editor
                 if(part.role==ElectricalRole.Switch)Lever(part.transform);
                 EditorUtility.SetDirty(part);
             }
+            foreach(var control in lab.GetComponentsInChildren<UnityEngine.XR.Content.Interaction.XRLever>(true))Unity3DControlVisuals.Lever(control,2.2f);
             EditorSceneManager.MarkSceneDirty(lab.gameObject.scene);
             EditorSceneManager.SaveScene(lab.gameObject.scene);
             return "Created editable ProBuilder meshes for 10 circuit devices; XR roots and sockets retained.";

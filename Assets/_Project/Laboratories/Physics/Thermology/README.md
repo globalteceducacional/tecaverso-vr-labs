@@ -30,7 +30,7 @@ Reiniciar devolve cargas soltas ao suporte; a carga encaixada permanece. Trocar 
 
 `Model/IdealGasModel.cs` contém a física sem dependência de Unity. `ThermologyLab` coordena estado, UI e instrumentos. `ThermalPiston`, `ThermalKnob`, `ThermalLoad` e `ThermalLoadSocket` controlam as interações XR. `GasParticles` representa moléculas e `GasPVGraph` desenha o gráfico.
 
-O aparelho usa malhas ProBuilder de revolução, materiais próprios e a sala padrão. `ThermologyAuthoring` cria somente a cena inicial e recusa sobrescrever uma cena existente; ajustes posteriores devem preservar a cena autoral.
+O aparelho usa malhas ProBuilder de revolução, materiais próprios e a sala padrão. A manopla térmica usa o modelo Dial oficial da Unity com materiais Tecaverso, compartilhado em `Assets/_Project/Shared/XR/Controls/`. `ThermologyAuthoring` cria somente a cena inicial e recusa sobrescrever uma cena existente; ajustes posteriores devem preservar a cena autoral.
 
 ## Validação em 26/10/2026
 
