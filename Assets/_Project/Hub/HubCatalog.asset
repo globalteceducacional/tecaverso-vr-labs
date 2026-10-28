@@ -104,11 +104,13 @@ MonoBehaviour:
     accent: {r: 0.90588236, g: 0.5058824, b: 0.105882354, a: 1}
     icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
     contents:
-    - title: Geometria
-      description: "Mockup: explore formas geom\xE9tricas no espa\xE7o."
-      objective: "Relacionar formas, \xE1reas e volumes."
+    - title: "Espa\xE7o cartesiano"
+      description: "Crie pontos, retas, superf\xEDcies e s\xF3lidos. Manipule coordenadas
+        e investigue medidas no espa\xE7o."
+      objective: "Relacionar coordenadas, vetores, \xE1reas e volumes por constru\xE7\xE3o
+        e observa\xE7\xE3o."
       icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Mathematics/CartesianSpace/Scenes/CartesianSpace.unity
     - title: "Fun\xE7\xF5es"
       description: "Mockup: observe rela\xE7\xF5es entre vari\xE1veis e gr\xE1ficos."
       objective: "Interpretar o comportamento de fun\xE7\xF5es."

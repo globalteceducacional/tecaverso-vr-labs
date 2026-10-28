@@ -71,7 +71,7 @@ namespace Tecaverso.Hub
             pageStart=0;
             var discipline=catalog.disciplines[index];
             heading.text=discipline.title;
-            subtitle.text=index==0?"SELECIONE O CONTEÚDO DA SIMULAÇÃO":"PRÉVIA DA DISCIPLINA · CONTEÚDOS EM DESENVOLVIMENTO";
+            subtitle.text=Array.Exists(discipline.contents,c=>!string.IsNullOrEmpty(c.scenePath))?"SELECIONE O CONTEÚDO DA SIMULAÇÃO":"PRÉVIA DA DISCIPLINA · CONTEÚDOS EM DESENVOLVIMENTO";
             RenderCards();
             UIVisibility.Set(disciplinesView,false); UIVisibility.Set(contentsView,true); UIVisibility.Set(back.gameObject,true,true);
             SelectContent(0);
