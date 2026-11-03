@@ -2,9 +2,11 @@
 
 Laboratórios educacionais em realidade virtual para investigar conceitos por meio de experimentos interativos, visualização de grandezas e comparação de resultados.
 
-Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e dois de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
+Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e três de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
 
 **Matemática:** [Espaço cartesiano](Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) permite construir e manipular pontos, retas, superfícies e sólidos, com magnetismo opcional, escala de 0,5 m por unidade matemática e grades XY/XZ/YZ independentes. [Formas geométricas](Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) é uma galeria de onze sólidos, com nomes e fórmulas de volume acima das peças; possui somente toggles de vértices, arestas e rotação e retorno ao Hub. O [GDD da galeria](Assets/_Project/Laboratories/Mathematics/GeometricShapes/GDD.md) substitui o antigo fluxo de edição e estudo A/B.
+
+**Geometria plana:** [nova galeria individual](Assets/_Project/Laboratories/Mathematics/PlanarGeometry/README.md), com treze figuras, fórmulas de área e controles independentes de vértices, contornos e medidas auxiliares. Figuras estáveis em disposição em U, sem edição ou rotação. Veja o [GDD aprovado](docs/gdd-geometria-plana.md).
 
 **20/10/2026 — Gravitação:** terceiro laboratório individual, em cena própria, disponível em **Explorar sozinho → Física → Gravitação**. Revisado em 23/10/2026 como observatório: oito planetas com tamanhos didáticos, nomes e cartões por seleção direta; controles de tempo, pausa e retorno ao Hub. Usa texturas Solar System Scope com atribuição CC BY 4.0. Veja [modelo, limites e validação](Assets/_Project/Laboratories/Physics/Gravitation/README.md).
 
@@ -73,7 +75,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
-| Matemática | Espaço cartesiano e Formas geométricas disponíveis individualmente; Funções e Medidas são mockups | Novos conteúdos, roteiros e validação em headset |
+| Matemática | Espaço cartesiano, Formas geométricas e Geometria plana disponíveis individualmente; Funções e Medidas são mockups | Novos conteúdos, roteiros e validação em headset |
 | Química e Biologia | Mockups navegáveis | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
@@ -281,7 +283,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
-| Matemática | Espaço cartesiano; Funções; Medidas; Formas geométricas | Espaço cartesiano e Formas geométricas individuais; Funções e Medidas são mockups |
+| Matemática | Espaço cartesiano; Funções; Medidas; Formas geométricas; Geometria plana | Três laboratórios individuais; Funções e Medidas são mockups |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
 
@@ -495,6 +497,7 @@ Assets/
       Biology/                # Reservada
       Mathematics/CartesianSpace/  # Construções XR, coordenadas, magnetismo e grades
       Mathematics/GeometricShapes/ # Galeria de sólidos, fórmulas e destaques geométricos
+      Mathematics/PlanarGeometry/  # Galeria plana, áreas, contornos e medidas auxiliares
     UI/                        # Fontes, ícones, identidade
     Shared/                    # Compartilhados em consolidação
     Tests/                     # EditMode e PlayMode
@@ -578,6 +581,7 @@ Instaladores de UI/Hub são migrações iniciais e recusam duplicação. Depois,
 - Em 06/10/2026, o teste `DirectLanReplicatesLobbyLateJoinPauseAndReset` passou com dois NetworkManagers via UDP loopback: sala/pronto, reconstrução de cinco disparos na entrada tardia, observador sem controle, pausa, retomada e reset. O teste isola a replicação; não substitui o ciclo completo em dois dispositivos.
 - Host, entrada e retorno ao laboratório foram exercitados no Editor com um único rig/câmera ativo. Não há validação de conforto em headset ou capacidade real de oito dispositivos. Nenhum build novo foi gerado.
 - Matemática: os READMEs locais registram 11 testes de Espaço cartesiano e 20 de Formas geométricas, além de verificações em Play Mode. São resultados de etapas anteriores, não testes reexecutados por esta revisão documental. Consulte o [índice de validações](docs/validation.md).
+- Geometria plana: 15 testes EditMode aprovados em 03/11/2026, alternância dos três toggles e retorno ao Hub via raio XR sintético; abertura da nova sala pelo catálogo confirmada. Headset permanece pendente.
 
 ## 14. Roadmap e critérios de aceite
 
@@ -621,7 +625,7 @@ MVP implementado e validado em loopback; aceite em dispositivos reais ainda pend
 
 - Perfis locais opcionais, exportação e descoberta LAN conforme necessidade.
 - Escolher a próxima implementação entre os conteúdos já presentes na grade de seis simulações, sujeito aos resultados do piloto.
-- Consolidar os dois laboratórios de Matemática e expandir os conteúdos de Química e Biologia conforme o roteiro e a validação dos componentes compartilhados.
+- Consolidar os três laboratórios de Matemática e expandir os conteúdos de Química e Biologia conforme o roteiro e a validação dos componentes compartilhados.
 - **Aceite:** novo conteúdo reutiliza fluxo, sessão e identidade sem duplicar infraestrutura.
 
 ## 15. Decisões, riscos e dependências
@@ -660,6 +664,8 @@ Para o segundo experimento, selecione **Física → Plano inclinado**. Ajuste in
 
 Em **Matemática → Espaço cartesiano**, crie pontos e use as ferramentas de construção; alterne o magnético e cada grade conforme a atividade. Em **Matemática → Formas geométricas**, as onze peças já estão expostas: caminhe, leia as fórmulas e use os três toggles junto à entrada. Essa galeria não possui edição, planificação ou estudo A/B.
 
+Em **Matemática → Geometria plana**, observe treze figuras regulares, irregulares e o círculo. Ative vértices, contornos e medidas auxiliares; relacione bases, alturas, diagonais, apótemas e raio às fórmulas de área.
+
 No painel principal, escolha **Criar sala local**, informe nome e sala e compartilhe o IPv4 exibido. Nos demais dispositivos, escolha **Entrar em uma sala**. Participantes confirmam **Estou pronto**; o anfitrião seleciona Movimento e forças e usa **Iniciar para todos**. Dentro do laboratório, somente ele controla a simulação. A barra LAN permite retornar à sala (anfitrião) ou sair (participante), com confirmação. O modo individual continua disponível.
 
 ### Arquivos principais
@@ -673,6 +679,7 @@ No painel principal, escolha **Criar sala local**, informe nome e sala e compart
 - Ondulatória: `Assets/_Project/Laboratories/Physics/Waves/Scenes/Waves.unity`, sétima cena habilitada, modo individual.
 - Espaço cartesiano: `Assets/_Project/Laboratories/Mathematics/CartesianSpace/Scenes/CartesianSpace.unity`, oitava cena habilitada, modo individual.
 - Formas geométricas: `Assets/_Project/Laboratories/Mathematics/GeometricShapes/Scenes/GeometricShapes.unity`, nona cena habilitada, modo individual.
+- Geometria plana: `Assets/_Project/Laboratories/Mathematics/PlanarGeometry/Scenes/PlanarGeometry.unity`, décima cena habilitada, modo individual.
 - Demo do template: `Assets/ThirdParty/VRMultiplayer/Scenes/SampleScene.unity`, fora do fluxo principal.
 - Catálogo: `Assets/_Project/Hub/HubCatalog.asset`.
 - UI: `Assets/_Project/Hub/HubUI.prefab`.
@@ -705,5 +712,6 @@ Este README é referência de **design do produto**. Código/cenas e registros d
 
 ### Histórico
 
+- **03/11/2026 — Geometria plana:** terceira sala individual de Matemática, com treze figuras e três toggles, integrada ao Hub; testes de geometria e verificações no Editor, sem build.
 - **1.2 — 03/11/2026:** catálogo com seis laboratórios de Física e dois de Matemática; arquitetura e navegação atualizadas; galeria de sólidos simplificada; política de mídias geradas documentada. Revisão de documentação, sem novas execuções de testes ou builds.
 - **1.0 — 05/10/2026:** consolidação do GDD; correção do retrato do Hub; decisões de fluxo, educação, LAN, dados, arquitetura, critérios de aceite e roadmap. A arquitetura educacional passa a estar definida como design, ainda pendente de implementação.

@@ -128,3 +128,9 @@ MonoBehaviour:
         e f\xF3rmulas de volume."
       icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
       scenePath: Assets/_Project/Laboratories/Mathematics/GeometricShapes/Scenes/GeometricShapes.unity
+    - title: Geometria plana
+      description: "Explore figuras regulares, irregulares e o c\xEDrculo. Observe
+        \xE1reas, contornos e medidas auxiliares."
+      objective: "Relacionar lados, v\xE9rtices, per\xEDmetro e f\xF3rmulas de \xE1rea."
+      icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+      scenePath: Assets/_Project/Laboratories/Mathematics/PlanarGeometry/Scenes/PlanarGeometry.unity
