@@ -1,0 +1,50 @@
+[
+  {
+    "id": "01-abertura",
+    "start": 0.5,
+    "end": 5.3,
+    "text": "Tecaverso Labs. Ciência em realidade virtual."
+  },
+  {
+    "id": "02-lancamento",
+    "start": 6.1,
+    "end": 18.4,
+    "text": "No lançamento oblíquo, explore o movimento de um projétil. Compare ângulos e acompanhe a trajetória, a velocidade e a gravidade."
+  },
+  {
+    "id": "03-plano",
+    "start": 19.6,
+    "end": 29.9,
+    "text": "No plano inclinado, observe a caixa deslizar. Visualize as forças de peso, normal e atrito durante o movimento."
+  },
+  {
+    "id": "04-gravitacao",
+    "start": 31.1,
+    "end": 42.4,
+    "text": "Em gravitação, explore o Sistema Solar. Acompanhe as órbitas e consulte as informações dos planetas, em uma representação didática."
+  },
+  {
+    "id": "05-resistores",
+    "start": 43.6,
+    "end": 54.9,
+    "text": "Na associação de resistores, investigue o circuito elétrico. Acione o interruptor e observe a lâmpada, a corrente e os instrumentos."
+  },
+  {
+    "id": "06-termologia",
+    "start": 56.1,
+    "end": 69.4,
+    "text": "Em termologia, investigue as transformações de um gás. Relacione pressão, volume e temperatura em processos isotérmicos, isométricos e isobáricos."
+  },
+  {
+    "id": "07-ondas",
+    "start": 70.6,
+    "end": 83.9,
+    "text": "Em ondulatória, produza pulsos e acompanhe sua propagação na corda. Explore ondas periódicas e estacionárias, variando a frequência e a amplitude."
+  },
+  {
+    "id": "08-final",
+    "start": 85.1,
+    "end": 89.9,
+    "text": "Tecaverso Labs. Experimente e compreenda."
+  }
+]

@@ -110,3 +110,31 @@ InitTestScene*.unity*
 /Assets/XR/Temp.meta
 /Assets/Resources/PerformanceTestRunInfo.json*
 /Assets/Resources/PerformanceTestRunSettings.json*
+
+# Local generated media: recordings, screenshots, previews and visual validation.
+# Keep generated exports in these folders; do not ignore PNG/JPG/MP4 globally,
+# because textures, icons and other runtime assets must remain versioned.
+# /Recordings/ and /Temp/ are already covered by the Unity rules above.
+/[Tt]mp/
+/[Cc]aptures/
+/[Ss]creenshots/
+/[Gg]enerated[Mm]edia/
+
+# MCP for Unity screenshots and Recorder exports imported under Assets.
+# Ignore the matching folder .meta as well, avoiding orphaned Unity metadata.
+/Assets/[Ss]creenshots/
+/Assets/[Ss]creenshots.meta
+/Assets/[Cc]aptures/
+/Assets/[Cc]aptures.meta
+/Assets/[Rr]ecordings/
+/Assets/[Rr]ecordings.meta
+/Assets/[Gg]enerated[Mm]edia/
+/Assets/[Gg]enerated[Mm]edia.meta
+
+# Local demonstration production: rendered videos, QA stills and generated audio.
+# Preserve the source code and configuration used to reproduce the demonstration.
+/Tools/tecaverso-demo/out/
+/Tools/tecaverso-demo/qa/
+/Tools/tecaverso-demo/public/media/
+/Tools/tecaverso-demo/public/audio/
+/Tools/tecaverso-demo/public/voiceover/

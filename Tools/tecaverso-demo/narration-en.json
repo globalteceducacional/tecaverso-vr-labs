@@ -1,0 +1,50 @@
+[
+  {
+    "id": "01-abertura",
+    "start": 0.5,
+    "end": 5.3,
+    "text": "Tecaverso Labs. Science in virtual reality."
+  },
+  {
+    "id": "02-lancamento",
+    "start": 6.1,
+    "end": 18.4,
+    "text": "In projectile motion, explore how an object moves through the air. Compare launch angles and follow its trajectory, velocity and the effects of gravity."
+  },
+  {
+    "id": "03-plano",
+    "start": 19.6,
+    "end": 29.9,
+    "text": "On the inclined plane, watch the box slide. See how weight, the normal force and friction affect its motion."
+  },
+  {
+    "id": "04-gravitacao",
+    "start": 31.1,
+    "end": 42.4,
+    "text": "Explore the Solar System in the gravitation lab. Follow planetary orbits and discover facts about each planet in a model designed for learning."
+  },
+  {
+    "id": "05-resistores",
+    "start": 43.6,
+    "end": 54.9,
+    "text": "In resistor circuits, investigate an electrical circuit. Flip the switch and observe the light bulb, the current and the instrument readings."
+  },
+  {
+    "id": "06-termologia",
+    "start": 56.1,
+    "end": 69.4,
+    "text": "In thermodynamics, investigate how a gas changes. Explore pressure, volume and temperature in processes with constant temperature, constant volume or constant pressure."
+  },
+  {
+    "id": "07-ondas",
+    "start": 70.6,
+    "end": 83.9,
+    "text": "In the waves lab, create pulses and follow them along a string. Explore periodic and standing waves, changing the frequency and amplitude."
+  },
+  {
+    "id": "08-final",
+    "start": 85.1,
+    "end": 89.9,
+    "text": "Tecaverso Labs. Experiment and understand."
+  }
+]
