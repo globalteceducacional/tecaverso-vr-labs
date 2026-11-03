@@ -203,6 +203,8 @@ Esses valores descrevem a montagem inicial, não limites universais. Preservar a
 
 ### 7.0 Escolha do controle por tarefa
 
+Antes de escolher componentes, decidir se a tarefa precisa de UI. Galerias de observação podem usar apenas rótulos junto aos objetos, toggles de visualização e navegação padrão. Painéis, abas, formulários, modos e áreas de estudo não são requisitos de um laboratório. Reutilizar a identidade visual não significa repetir a estrutura de interação de outra sala. Priorizar interação direta com a peça quando ela satisfizer o objetivo pedagógico.
+
 Diretriz de 23/10/2026: compartilhar identidade, estados e componentes, adaptando a composição ao experimento. Os templates são exemplos de composição, não formulários obrigatórios.
 
 | Necessidade | Controle indicado | Exemplo |

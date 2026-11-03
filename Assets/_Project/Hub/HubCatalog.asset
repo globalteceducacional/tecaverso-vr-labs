@@ -121,3 +121,10 @@ MonoBehaviour:
       objective: "Estimar e medir grandezas no espa\xE7o."
       icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
       scenePath: 
+    - title: "Formas geom\xE9tricas"
+      description: "Caminhe entre os s\xF3lidos, observe suas f\xF3rmulas de volume
+        e destaque v\xE9rtices e arestas."
+      objective: "Reconhecer s\xF3lidos e relacionar faces, arestas, v\xE9rtices
+        e f\xF3rmulas de volume."
+      icon: {fileID: 21300000, guid: b3d2cc4a6f464ce4ab9633f8b98da50e, type: 3}
+      scenePath: Assets/_Project/Laboratories/Mathematics/GeometricShapes/Scenes/GeometricShapes.unity

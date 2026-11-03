@@ -21,6 +21,8 @@ Um componente deve ter um único responsável por posição e tamanho em cada ei
 
 ## 3. Catálogo de composição
 
+Primeiro justificar a necessidade de cada controle. Não criar um painel principal, abas ou etapas de seleção por padrão. Para observar uma coleção, preferir informações junto às peças e uma faixa compacta com as opções de visualização necessárias. Não exigir levar ou copiar objetos para outra área antes de observá-los. Adicionar fluxos de edição, comparação ou desafios somente quando fizerem parte do escopo solicitado.
+
 Antes de escolher o layout, aplicar a matriz de controles da seção 7.0 de `DESIGN_SYSTEM.md`. O painel de outro laboratório é uma referência visual, não uma lista obrigatória de campos.
 
 - Classificar cada item como ação, escolha exclusiva, preferência booleana, grandeza contínua, quantidade discreta ou resultado.
