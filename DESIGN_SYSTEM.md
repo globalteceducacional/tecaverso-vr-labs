@@ -205,6 +205,8 @@ Esses valores descrevem a montagem inicial, não limites universais. Preservar a
 
 Antes de escolher componentes, decidir se a tarefa precisa de UI. Galerias de observação podem usar apenas rótulos junto aos objetos, toggles de visualização e navegação padrão. Painéis, abas, formulários, modos e áreas de estudo não são requisitos de um laboratório. Reutilizar a identidade visual não significa repetir a estrutura de interação de outra sala. Priorizar interação direta com a peça quando ela satisfizer o objetivo pedagógico.
 
+Exemplos implementados em Matemática: [Espaço cartesiano](Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) usa ferramentas de construção; [Formas geométricas](Assets/_Project/Laboratories/Mathematics/GeometricShapes/GDD.md) usa rótulos junto aos sólidos, três toggles e retorno ao Hub. A galeria não exige selecionar ou copiar uma peça antes de observá-la.
+
 Diretriz de 23/10/2026: compartilhar identidade, estados e componentes, adaptando a composição ao experimento. Os templates são exemplos de composição, não formulários obrigatórios.
 
 | Necessidade | Controle indicado | Exemplo |

@@ -2,6 +2,8 @@
 
 Laboratório individual de Matemática, acessível pelo Hub. Cena: `Scenes/CartesianSpace.unity`.
 
+Esta sala é destinada à construção e edição. A observação de uma coleção pronta de sólidos, com fórmulas e destaques de vértices/arestas, fica na sala separada de [Formas geométricas](../GeometricShapes/README.md). Os dois laboratórios compartilham identidade visual e componentes XR, mas possuem controles distintos.
+
 ## Interações
 
 - Criar ponto: nasce na origem e pode ser agarrado diretamente ou pelo raio XR. O rig compartilhado mantém a manipulação de distância pelo analógico.

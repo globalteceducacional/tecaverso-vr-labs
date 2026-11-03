@@ -11,13 +11,29 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
 - Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
   Associação de resistores, Gravitação, Termologia and Ondulatória open their individual labs.
-  The other disciplines remain mockups.
+  Mathematics / Espaço cartesiano and Formas geométricas open individual labs.
+  Mathematics / Funções and Medidas, and all Chemistry/Biology entries, remain mockups.
 - Physics has six contents, including Inclined Plane in place of Optics. The Hub
   shows all six cards together; pagination remains hidden for disciplines with
   at most six entries.
 - Existing LAN setup is preserved. A connected LAN session is not silently closed
   when opening an individual experiment; the UI asks to disconnect first.
   Only ObliqueLaunch currently supports collective LAN sessions.
+
+## Mathematics
+
+- **Espaço cartesiano:** construct points, lines, surfaces and solids; optional integer
+  snapping, 0.5 m per mathematical unit and independent XY/XZ/YZ grid visibility.
+  See the [lab README](../Laboratories/Mathematics/CartesianSpace/README.md).
+- **Formas geométricas:** eleven solids already displayed in the room, with names,
+  topology counts and volume formulas. Only vertex, edge and rotation toggles and
+  Back to Hub are exposed. No editing, study A/B, challenges or unfolding UI.
+  See the [lab README](../Laboratories/Mathematics/GeometricShapes/README.md) and
+  [approved GDD](../Laboratories/Mathematics/GeometricShapes/GDD.md).
+
+The current catalog contains six Physics cards and four Mathematics cards. Six is
+the maximum per discipline, not a requirement to add placeholder content. Keep
+`HubCatalog.asset` and `ProjectSettings/EditorBuildSettings.asset` consistent.
 
 ## Standard visual room
 
@@ -32,10 +48,16 @@ Editor installer: Tecaverso > Hub > Apply Standard Room and Figma UI.
 It refuses a second installation; edit the existing prefabs/scene for adjustments.
 No player builds are part of this workflow.
 
-## Focused verification
+## Recorded verification
 
-Editor compilation and console: no errors. Play Mode: all four disciplines open;
-only the implemented Physics content enables Start; Back restores HUB 1.
+The original Hub verification covered all four disciplines, mockup blocking and
+Back restoring HUB 1. At that stage, only Physics had implemented content.
 Invoking the bound Physics/Start buttons loaded ObliqueLaunch with one XR rig.
 Visual checks cover both Figma screens and the room. No build or headset/LAN
 multi-device test was performed; physical comfort still needs a headset check.
+
+The Mathematics READMEs record subsequent Editor checks. The solids gallery was
+verified with eleven exhibits, three toggles, one Back button and a Hub round trip
+with one XR rig. Its initialization reported OpenXR configuration warnings; no
+missing scripts were found on scene GameObjects. These are historical results,
+not new tests performed during this documentation revision.

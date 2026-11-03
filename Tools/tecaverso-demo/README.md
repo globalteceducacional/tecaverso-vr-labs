@@ -6,7 +6,15 @@ Edição Remotion em português: 1920 × 1080, 30 fps, 2715 quadros (90,5 segund
 
 Nesta pasta, execute `npm install` e `npm run dev`. Abra a composição `Tecaverso-Labs`. Cada laboratório também tem sua própria composição em `Cenas`, com cortes independentes na timeline.
 
-As mídias estão em `public/media`. Para restaurá-las, execute `./prepare-media.ps1`. Esse comando copia as gravações e fontes do repositório, preservando os originais.
+As mídias de entrada ficam em `public/media`. Com as seis gravações originais disponíveis localmente em `Recordings/Physics/`, execute `./prepare-media.ps1`. Esse comando copia os MP4 locais e as fontes do projeto, preservando os originais. As gravações são ignoradas pelo Git: clonar o repositório não as recupera, e esse script não as grava nem baixa.
+
+## Arquivos locais e Git
+
+As pastas `out/`, `qa/`, `public/media/`, `public/audio/` e `public/voiceover/` são saídas ou cópias locais ignoradas pelo `.gitignore` da raiz. Vídeos exportados, imagens de conferência, trilhas sintetizadas e narrações não devem entrar em commits. As regras locais também ignoram `node_modules/` e `dist/`.
+
+Versionar código em `src/`, scripts de preparação/geração, roteiros JSON, configurações, lockfile e documentação. As fontes e suas licenças são recursos reutilizados, não capturas temporárias.
+
+Para preparar outro checkout, disponibilizar as gravações locais, executar `prepare-media.ps1` e gerar os áudios conforme as seções abaixo. A geração Neural depende do serviço online indicado; os WAV não acompanham o clone. Os nomes de arquivos descritos neste README indicam destinos de geração, não arquivos distribuídos pelo Git. Veja a [política de mídias geradas](../../docs/development-guidelines.md#midias-geradas).
 
 ## Montagem
 

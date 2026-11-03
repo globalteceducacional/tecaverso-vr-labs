@@ -10,6 +10,8 @@ A coleção reúne tetraedro, pirâmide de base quadrada, prismas triangular/pen
 
 Foram removidos da cena os painéis de edição e comparação A/B, abas, campos, desafios e planificação. Nenhum menu precisa ser usado para disponibilizar uma peça.
 
+Para construir e editar pontos, retas, superfícies e sólidos, use a sala separada de [Espaço cartesiano](../CartesianSpace/README.md). Esta galeria apresenta somente sólidos 3D e fórmulas simbólicas de volume.
+
 ## Organização
 
 - `Scenes/GeometricShapes.unity`: cena serializada, com as onze peças disponíveis também em Edit Mode. Ambiente, rig, iluminação e pós-processamento preservados.
@@ -35,3 +37,5 @@ Sala existente preservada. Sete sólidos no fundo e quatro à frente, com aproxi
 - A inicialização do OpenXR reportou avisos de referências de scripts ausentes nas configurações do pacote. Nenhum GameObject da sala tem script ausente. Configurações XR pré-existentes foram preservadas; a recarga da sala dentro de Play Mode não gerou novos erros ou avisos.
 
 Ainda requer homologação com headset para legibilidade, alcance dos controles e desempenho. Sala individual, sem sincronização LAN ou persistência. Não foi gerado build.
+
+As malhas em `Meshes/`, os materiais e a cena são recursos necessários ao laboratório e devem ser versionados com seus `.meta`. Capturas de conferência ficam em `Temp/ShapesQA/`, ignorada pelo Git; não são dependências da sala. Consulte a [política de mídias geradas](../../../../../docs/development-guidelines.md#midias-geradas).

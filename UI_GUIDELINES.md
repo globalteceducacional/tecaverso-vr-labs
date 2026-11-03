@@ -116,7 +116,7 @@ Usar `Tecaverso.UI.UIVisibility` nas páginas, abas, modais e ações condiciona
 2. Alterar apenas componentes em escopo; manter referências serializadas e listeners.
 3. Migrar scripts que consultam activeSelf ou dependem de OnDisable antes de trocar visibilidade.
 4. Confirmar compilação, navegação, modal e alternância de papéis/abas.
-5. Conferir limites de RectTransforms e capturas: sem sobreposição de controles simultaneamente visíveis, cortes ou cliques invisíveis.
+5. Conferir limites de RectTransforms e capturas: sem sobreposição de controles simultaneamente visíveis, cortes ou cliques invisíveis. Salvar evidências nas pastas locais ignoradas, conforme [mídias geradas](docs/development-guidelines.md#midias-geradas); não adicionar capturas ao diretório de assets de runtime.
 6. Verificar hover, conteúdo longo e ausência de mudanças nos transforms externos.
 7. Salvar as cenas/prefabs alterados e registrar limites da validação. Não afirmar validação física sem testar hardware.
 

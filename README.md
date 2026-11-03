@@ -2,7 +2,9 @@
 
 Laboratórios educacionais em realidade virtual para investigar conceitos por meio de experimentos interativos, visualização de grandezas e comparação de resultados.
 
-Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. O primeiro experimento funcional é **Física / Lançamento oblíquo**.
+Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e dois de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
+
+**Matemática:** [Espaço cartesiano](Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) permite construir e manipular pontos, retas, superfícies e sólidos, com magnetismo opcional, escala de 0,5 m por unidade matemática e grades XY/XZ/YZ independentes. [Formas geométricas](Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) é uma galeria de onze sólidos, com nomes e fórmulas de volume acima das peças; possui somente toggles de vértices, arestas e rotação e retorno ao Hub. O [GDD da galeria](Assets/_Project/Laboratories/Mathematics/GeometricShapes/GDD.md) substitui o antigo fluxo de edição e estudo A/B.
 
 **20/10/2026 — Gravitação:** terceiro laboratório individual, em cena própria, disponível em **Explorar sozinho → Física → Gravitação**. Revisado em 23/10/2026 como observatório: oito planetas com tamanhos didáticos, nomes e cartões por seleção direta; controles de tempo, pausa e retorno ao Hub. Usa texturas Solar System Scope com atribuição CC BY 4.0. Veja [modelo, limites e validação](Assets/_Project/Laboratories/Physics/Gravitation/README.md).
 
@@ -14,7 +16,7 @@ Para construir ou alterar interfaces, siga [UI_GUIDELINES.md](UI_GUIDELINES.md) 
 
 Os laboratórios compartilham identidade visual e componentes, com controles escolhidos pela tarefa: sliders para ajustes contínuos, seletores para alternativas e métricas para resultados. O formulário do lançamento oblíquo não é obrigatório nas demais simulações. As regras de escolha ficam no Design System; composição e ciclo de vida ficam nas UI Guidelines.
 
-**GDD 1.1 · Atualizado em 06/10/2026 · Idioma principal: pt-BR.**
+**GDD 1.2 · Revisão documental em 03/11/2026 · Idioma principal: pt-BR.**
 
 > Este documento distingue implementação de planejamento. **Atual** descreve código/cenas e verificações registradas; **Planejado** define o design a implementar. Nenhum build foi gerado nesta revisão.
 
@@ -71,12 +73,15 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
-| Demais disciplinas | Mockups navegáveis de Química, Biologia e Matemática | Simulações e atividades educativas |
+| Matemática | Espaço cartesiano e Formas geométricas disponíveis individualmente; Funções e Medidas são mockups | Novos conteúdos, roteiros e validação em headset |
+| Química e Biologia | Mockups navegáveis | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
 | Plano inclinado | Experimento individual com equilíbrio/atrito, vetores no bloco e análise | Roteiro educativo, sincronização LAN e validação em headset |
 | Gravitação | Observatório com oito planetas, órbitas didáticas, cartões por seleção direta e controle de tempo | Roteiro educativo, sincronização LAN e validação em headset |
 | Associação de resistores | Montagem XR de circuitos DC em série e paralelo, instrumentos e lâmpada | Roteiro educativo, sincronização LAN e validação em headset |
+| Termologia | Gás ideal, partículas, pistão, cargas XR, três transformações e trabalho no gráfico P × V | Roteiro educativo, sincronização LAN e validação em headset |
+| Ondulatória | Corda, pulsos, reflexão, ondas estacionárias e instrumentos XR | Sincronização LAN e validação em headset |
 | Histórico | Até cinco trajetórias e marcadores de ápice esmaecidos | Comparação identificada e amostras completas por registro |
 | LAN | Sala, pronto, entrada coletiva e estado do lançamento oblíquo via UDP direto | Validar headsets físicos, oito dispositivos e Wi-Fi escolar |
 | Educação | Estrutura e objetivos decididos neste GDD | Implementar atividades, feedback e conclusão |
@@ -276,7 +281,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
-| Matemática | Geometria; Funções; Medidas | Mockups |
+| Matemática | Espaço cartesiano; Funções; Medidas; Formas geométricas | Espaço cartesiano e Formas geométricas individuais; Funções e Medidas são mockups |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
 
@@ -488,7 +493,8 @@ Assets/
       Physics/Waves/            # Corda vibrante, reflexão, ressonância e medições
       Chemistry/              # Reservada
       Biology/                # Reservada
-      Mathematics/            # Reservada
+      Mathematics/CartesianSpace/  # Construções XR, coordenadas, magnetismo e grades
+      Mathematics/GeometricShapes/ # Galeria de sólidos, fórmulas e destaques geométricos
     UI/                        # Fontes, ícones, identidade
     Shared/                    # Compartilhados em consolidação
     Tests/                     # EditMode e PlayMode
@@ -519,6 +525,8 @@ Hoje `ProjectileKinematics` calcula, `ObliqueLaunchSimulation` controla tempo/es
 - Extrair materiais/helpers/feedbacks compartilhados para pastas apropriadas, preservando GUIDs. Hoje o Hub depende de alguns recursos dentro de Física: dívida técnica conhecida.
 - Interfaces nas fronteiras que realmente variam: relógio, persistência, autoridade e carregamento.
 - Não criar um framework genérico antes de validar um segundo experimento.
+
+Nos laboratórios de Matemática, `CartesianModel` concentra construções e medidas; `CartesianLab` coordena edição e interação XR. Na galeria, `SolidGalleryCatalog` define a coleção e as fórmulas, `SolidGallery` coordena os três toggles e a saída, e `SolidExhibit` controla rotação e hover. As peças da galeria estão serializadas na cena. Os scripts antigos `ShapesLab` e suas views permanecem como legado sem referências nessa cena; não representam o fluxo atual.
 
 ### Padrão de código
 
@@ -569,6 +577,7 @@ Instaladores de UI/Hub são migrações iniciais e recusam duplicação. Depois,
 - UI/Hub recentes: navegação das quatro disciplinas, bloqueio de mockups e abertura do laboratório com um rig no Editor/Play Mode, sem erros reportados na verificação.
 - Em 06/10/2026, o teste `DirectLanReplicatesLobbyLateJoinPauseAndReset` passou com dois NetworkManagers via UDP loopback: sala/pronto, reconstrução de cinco disparos na entrada tardia, observador sem controle, pausa, retomada e reset. O teste isola a replicação; não substitui o ciclo completo em dois dispositivos.
 - Host, entrada e retorno ao laboratório foram exercitados no Editor com um único rig/câmera ativo. Não há validação de conforto em headset ou capacidade real de oito dispositivos. Nenhum build novo foi gerado.
+- Matemática: os READMEs locais registram 11 testes de Espaço cartesiano e 20 de Formas geométricas, além de verificações em Play Mode. São resultados de etapas anteriores, não testes reexecutados por esta revisão documental. Consulte o [índice de validações](docs/validation.md).
 
 ## 14. Roadmap e critérios de aceite
 
@@ -612,7 +621,7 @@ MVP implementado e validado em loopback; aceite em dispositivos reais ainda pend
 
 - Perfis locais opcionais, exportação e descoberta LAN conforme necessidade.
 - Escolher a próxima implementação entre os conteúdos já presentes na grade de seis simulações, sujeito aos resultados do piloto.
-- Expandir para outra disciplina após validar contrato comum em dois experimentos.
+- Consolidar os dois laboratórios de Matemática e expandir os conteúdos de Química e Biologia conforme o roteiro e a validação dos componentes compartilhados.
 - **Aceite:** novo conteúdo reutiliza fluxo, sessão e identidade sem duplicar infraestrutura.
 
 ## 15. Decisões, riscos e dependências
@@ -649,6 +658,8 @@ Dependências externas restantes: equipamento para homologação, revisão educa
 
 Para o segundo experimento, selecione **Física → Plano inclinado**. Ajuste inclinação, massa, atrito e gravidade, use **Liberar**, e escolha as forças a visualizar. **Reiniciar** recoloca o bloco no início e libera os parâmetros; **Voltar ao Hub** pede confirmação. A cena também pode ser aberta diretamente em `Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity`.
 
+Em **Matemática → Espaço cartesiano**, crie pontos e use as ferramentas de construção; alterne o magnético e cada grade conforme a atividade. Em **Matemática → Formas geométricas**, as onze peças já estão expostas: caminhe, leia as fórmulas e use os três toggles junto à entrada. Essa galeria não possui edição, planificação ou estudo A/B.
+
 No painel principal, escolha **Criar sala local**, informe nome e sala e compartilhe o IPv4 exibido. Nos demais dispositivos, escolha **Entrar em uma sala**. Participantes confirmam **Estou pronto**; o anfitrião seleciona Movimento e forças e usa **Iniciar para todos**. Dentro do laboratório, somente ele controla a simulação. A barra LAN permite retornar à sala (anfitrião) ou sair (participante), com confirmação. O modo individual continua disponível.
 
 ### Arquivos principais
@@ -658,6 +669,10 @@ No painel principal, escolha **Criar sala local**, informe nome e sala e compart
 - Plano inclinado: `Assets/_Project/Laboratories/Physics/InclinedPlane/Scenes/InclinedPlane.unity`, terceira cena habilitada, modo individual.
 - Gravitação: `Assets/_Project/Laboratories/Physics/Gravitation/Scenes/Gravitation.unity`, quarta cena habilitada, modo individual. Explore os oito planetas e selecione-os para ler informações; controle a velocidade orbital e a pausa.
 - Associação de resistores: `Assets/_Project/Laboratories/Physics/ResistorCircuits/Scenes/ResistorCircuits.unity`, quinta cena habilitada, modo individual. Pegue os plugues XR, conecte bateria, interruptor, resistores e lâmpada, e compare leituras em série e paralelo.
+- Termologia: `Assets/_Project/Laboratories/Physics/Thermology/Scenes/Thermology.unity`, sexta cena habilitada, modo individual.
+- Ondulatória: `Assets/_Project/Laboratories/Physics/Waves/Scenes/Waves.unity`, sétima cena habilitada, modo individual.
+- Espaço cartesiano: `Assets/_Project/Laboratories/Mathematics/CartesianSpace/Scenes/CartesianSpace.unity`, oitava cena habilitada, modo individual.
+- Formas geométricas: `Assets/_Project/Laboratories/Mathematics/GeometricShapes/Scenes/GeometricShapes.unity`, nona cena habilitada, modo individual.
 - Demo do template: `Assets/ThirdParty/VRMultiplayer/Scenes/SampleScene.unity`, fora do fluxo principal.
 - Catálogo: `Assets/_Project/Hub/HubCatalog.asset`.
 - UI: `Assets/_Project/Hub/HubUI.prefab`.
@@ -669,6 +684,7 @@ No painel principal, escolha **Criar sala local**, informe nome e sala e compart
 
 - Versionar Assets com seus .meta, Packages, ProjectSettings e documentação.
 - Não versionar Library, Temp, Logs, UserSettings ou builds.
+- Salvar capturas, gravações, prévias e áudios gerados nas pastas ignoradas pelo Git. Consultar [mídias geradas e versionamento](docs/development-guidelines.md#midias-geradas). Texturas, ícones, malhas e materiais usados pelos laboratórios continuam versionados com seus `.meta`.
 - Mover assets pela Unity para preservar GUIDs.
 - Preservar alterações locais anteriores; não fazer limpezas/reset em massa.
 - Não remover samples/terceiros sem verificar dependências.
@@ -689,4 +705,5 @@ Este README é referência de **design do produto**. Código/cenas e registros d
 
 ### Histórico
 
+- **1.2 — 03/11/2026:** catálogo com seis laboratórios de Física e dois de Matemática; arquitetura e navegação atualizadas; galeria de sólidos simplificada; política de mídias geradas documentada. Revisão de documentação, sem novas execuções de testes ou builds.
 - **1.0 — 05/10/2026:** consolidação do GDD; correção do retrato do Hub; decisões de fluxo, educação, LAN, dados, arquitetura, critérios de aceite e roadmap. A arquitetura educacional passa a estar definida como design, ainda pendente de implementação.

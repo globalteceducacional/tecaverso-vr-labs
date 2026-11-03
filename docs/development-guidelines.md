@@ -16,7 +16,37 @@ Estas diretrizes adaptam ao projeto os princípios do guia da Unity sobre SOLID 
 - Evite singletons novos. Quando um serviço global for inevitável, limite sua API e ciclo de vida.
 - Otimize depois de medir. Dirty flags, flyweights e DOTS só entram quando o perfil justificar a complexidade.
 - Prefira nomes que expressem intenção, campos serializados privados e namespaces por laboratório.
-- Para cada alteração, faça a menor validação que cobre o risco: compilação e console sempre; Play Mode para comportamento; testes automatizados apenas para regras críticas ou regressões prováveis; builds somente quando solicitadas.
+- Para cada alteração, faça a menor validação que cobre o risco: documentação exige revisão de conteúdo, links e diff; scripts exigem compilação e console; Play Mode para comportamento; testes automatizados apenas para regras críticas ou regressões prováveis; builds somente quando solicitadas.
+
+## UI conforme a atividade
+
+Leia [UI_GUIDELINES.md](../UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](../DESIGN_SYSTEM.md) antes de modificar interfaces. Reutilize identidade e componentes; a tarefa define se um painel, slider ou fluxo de edição é necessário.
+
+O Espaço cartesiano tem ferramentas de construção e edição. Formas geométricas é uma galeria de observação: nomes e fórmulas junto às peças, três toggles independentes e retorno ao Hub. Não reintroduzir estudo A/B, abas ou campos numéricos na galeria por copiar a estrutura do outro laboratório. O GDD específico aprovado delimita o escopo.
+
+<a id="midias-geradas"></a>
+## Mídias geradas e versionamento
+
+As regras ficam no [`.gitignore`](../.gitignore). Use os destinos abaixo para saídas locais:
+
+| Saída | Destino |
+|---|---|
+| Gravações Unity Recorder | `Recordings/`, incluindo `Recordings/Physics/` |
+| Capturas do Editor/MCP e validações | `Temp/`, `tmp/`, `Captures/` ou `Screenshots/` |
+| Storyboards, conceitos e outras prévias geradas | `GeneratedMedia/` |
+| Capturas que precisem ser importadas no Editor | `Assets/Screenshots/`, `Assets/Captures/`, `Assets/Recordings/` ou `Assets/GeneratedMedia/` |
+| Exportações e quadros da demonstração Remotion | `Tools/tecaverso-demo/out/` e `Tools/tecaverso-demo/qa/` |
+| Cópias de gravações, trilhas e narrações da demonstração | `Tools/tecaverso-demo/public/media/`, `public/audio/` e `public/voiceover/` |
+
+As pastas de saída sob `Assets/` e seus `.meta` de pasta são ignorados. Não referencie esses arquivos locais em cenas, prefabs ou materiais que precisem funcionar em outro checkout.
+
+Texturas, ícones, malhas, materiais e áudio usados pelo aplicativo são dependências do projeto, mesmo quando gerados com auxílio de IA: devem ficar em suas pastas definitivas e ser versionados com seus `.meta`, licenças e atribuições pertinentes. Não adicionar regras globais para `*.png`, `*.jpg`, `*.mp4`, `*.wav` ou `*.mat`.
+
+Versionar os scripts de geração, roteiros e configurações permite reproduzir as saídas. As gravações locais precisam existir para montar o demonstrativo; um clone do repositório não as recupera automaticamente.
+
+Antes de commitar, conferir `git status --short`, `git diff --cached --check` e usar `git check-ignore -v -- caminho` para verificar a regra aplicada. Para arquivos já rastreados, `git check-ignore --no-index -v -- caminho` verifica somente a regra. `.gitignore` não retira arquivos do índice nem apaga o histórico: imagens antigas já versionadas, inclusive em `tmp/`, permanecem rastreadas até uma limpeza específica. Não reescrever histórico automaticamente.
+
+Ao revisar assets grandes, conferir `git lfs fsck --pointers` e `git lfs fsck --objects`. Mídia de demonstração deve ser ignorada, não enviada ao LFS como alternativa. As verificações são locais e não comprovam disponibilidade dos objetos no remoto.
 
 ## Movimento oblíquo
 
@@ -24,7 +54,7 @@ O MVP separa `ProjectileKinematics` (equações), `ObliqueLaunchSimulation` (est
 
 ### Orientação espacial padrão
 
-- Os experimentos são apresentados lateralmente, com o movimento principal ocorrendo da esquerda para a direita no campo de visão do aluno.
+- A apresentação lateral, da esquerda para a direita, é própria do lançamento oblíquo. Escolher a disposição conforme o fenômeno: sistema solar horizontal, espaço cartesiano tridimensional e galeria com circulação entre sólidos.
 - O XR Origin deve ficar voltado para a área do experimento.
 - Canvas e demais interfaces espaciais devem ser orientados para a posição dos olhos do jogador, sem depender de rotações fixas específicas da cena.
 - Geradores de cena devem preservar ajustes autorais sempre que possível e nunca reaplicar uma orientação fixa sobre uma UI já posicionada manualmente.

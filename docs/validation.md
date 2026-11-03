@@ -1,4 +1,32 @@
-# Validação da preparação LAN — 2026-10-01
+# Registros de validação — Tecaverso Labs
+
+Este documento reúne evidências históricas e aponta para os registros específicos de cada laboratório. A revisão documental de 03/11/2026 conferiu catálogo, cenas habilitadas, links e regras de mídia; não reexecutou testes nem gerou builds. Aprovação no Editor não certifica conforto ou desempenho em headset.
+
+## Matemática — registros consolidados em 03/11/2026
+
+| Laboratório | Evidência registrada | Limites |
+|---|---|---|
+| [Espaço cartesiano](../Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) | 11 testes EditMode; ferramentas, coordenadas, prévias, histórico e navegação em Play Mode; interator XR sintético | Headset, alcance, manipulação pelo analógico e desempenho pendentes; sem LAN |
+| [Formas geométricas](../Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) | 20 testes EditMode; 11 peças, três toggles, saída ao Hub, pausa por hover e retomada; superfícies sem orientação invertida e textos sem overflow | Headset pendente; sem LAN. Avisos de configuração OpenXR na inicialização, sem scripts ausentes nos GameObjects da sala |
+
+O GDD vigente de Formas geométricas descreve a galeria simplificada. Verificações antigas de edição A/B ou planificação não são critérios de aceite da sala atual.
+
+## Física — registros por laboratório
+
+- Lançamento oblíquo e LAN: registros históricos abaixo.
+- [Plano inclinado](../Assets/_Project/Laboratories/Physics/InclinedPlane/README.md).
+- [Gravitação](../Assets/_Project/Laboratories/Physics/Gravitation/README.md).
+- [Associação de resistores](../Assets/_Project/Laboratories/Physics/ResistorCircuits/README.md).
+- [Termologia](../Assets/_Project/Laboratories/Physics/Thermology/README.md).
+- [Ondulatória](../Assets/_Project/Laboratories/Physics/Waves/README.md).
+
+## Capturas e integridade Git — 03/11/2026
+
+Na preparação do commit `85d450c`, `git lfs fsck --pointers` e `git lfs fsck --objects` passaram. São verificações do armazenamento local, sem push ou comprovação dos objetos remotos.
+
+As regras de mídia foram conferidas com `git check-ignore`, incluindo pastas de capturas, exportações, áudios de demonstração e `.meta` de pastas sob `Assets/`. Ícones, texturas e materiais de runtime permanecem versionáveis. Imagens antigas já rastreadas não foram retiradas do índice. Destinos e procedimento em [mídias geradas](development-guidelines.md#midias-geradas).
+
+## Histórico LAN — iniciado em 01/10/2026
 
 ## Atualização — entrada e experimento LAN — 2026-10-06
 
