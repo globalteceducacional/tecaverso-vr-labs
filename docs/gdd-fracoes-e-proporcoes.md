@@ -1,6 +1,6 @@
 # Short GDD — Frações e proporções
 
-**Status:** proposta para revisão; implementação não autorizada por este documento.  
+**Status:** aprovado pelo usuário; implementado em sala própria em 04/11/2026.
 **Data:** 04/11/2026 · Matemática · Exploração individual offline · Sessão sugerida: 10–15 minutos.
 
 ## Conceito e objetivo
@@ -76,4 +76,8 @@ Reutilizar rig, locomoção, XR Grab Interactables, sockets compatíveis, contro
 
 Fora do primeiro escopo: líquidos, discos fracionários, frações negativas, multiplicação/divisão geral de frações, porcentagens financeiras, editor livre de denominadores, persistência e LAN. Atividades são sugestões, sem pontuação ou bloqueio sequencial.
 
-Aceite futuro: unidade comum preservada; encaixes sem sobreposição; peças pequenas acessíveis por raio; igualdade racional e simplificação corretas; frações impróprias e arredondamento bem identificados; receita distingue razão de participação no total; desfazer coerente e recuperação de peças fora de alcance. Validar matemática no Editor e ergonomia física separadamente. Builds somente por solicitação.
+Critérios de aceite: unidade comum preservada; encaixes sem sobreposição; peças pequenas acessíveis por raio; igualdade racional e simplificação corretas; frações impróprias e arredondamento bem identificados; receita distingue razão de participação no total; desfazer coerente e recuperação de peças fora de alcance. Validar matemática no Editor e ergonomia física separadamente. Builds somente por solicitação.
+
+## Implementação
+
+Consultar o [README do laboratório](../Assets/_Project/Laboratories/Mathematics/Fractions/README.md) para controles, arquitetura e evidências. Cálculos exatos com unidades racionais; peças XR e sockets de soltura; validação de ergonomia em headset pendente. As marcas de divisão delimitam cada parcela, sem grade de denominador comum.

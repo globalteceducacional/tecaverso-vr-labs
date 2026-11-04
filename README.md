@@ -2,7 +2,7 @@
 
 Laboratórios educacionais em realidade virtual para investigar conceitos por meio de experimentos interativos, visualização de grandezas e comparação de resultados.
 
-Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e quatro de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
+Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e seis de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
 
 **Matemática:** [Espaço cartesiano](Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) permite construir e manipular pontos, retas, superfícies e sólidos, com magnetismo opcional, escala de 0,5 m por unidade matemática e grades XY/XZ/YZ independentes. [Formas geométricas](Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) é uma galeria de onze sólidos, com nomes e fórmulas de volume acima das peças; possui somente toggles de vértices, arestas e rotação e retorno ao Hub. O [GDD da galeria](Assets/_Project/Laboratories/Mathematics/GeometricShapes/GDD.md) substitui o antigo fluxo de edição e estudo A/B.
 
@@ -20,7 +20,7 @@ Os laboratórios compartilham identidade visual e componentes, com controles esc
 
 **Funções e gráficos — 04/11/2026:** [quarta sala individual de Matemática](Assets/_Project/Laboratories/Mathematics/Functions/README.md), com funções afins/quadráticas, manoplas oficiais XR, ponto móvel, raízes/vértice e referência tracejada. Implementa o [GDD aprovado](docs/gdd-funcoes-e-graficos.md) e substitui o mockup Funções.
 
-**Planejamento de Matemática:** [Probabilidade e estatística](docs/gdd-probabilidade-e-estatistica.md) e [Frações e proporções](docs/gdd-fracoes-e-proporcoes.md) têm short GDDs separados e não foram implementados nesta etapa. A composição futura completa seis laboratórios, substituindo o mockup de Medidas e acrescentando uma entrada; o catálogo atual permanece com cinco conteúdos.
+**Probabilidade e estatística — 04/11/2026:** [quinta sala individual de Matemática](Assets/_Project/Laboratories/Mathematics/Probability/README.md), com moeda, dado, urna, lotes e gráficos. Substitui Medidas. [Frações e proporções](Assets/_Project/Laboratories/Mathematics/Fractions/README.md) completa a sexta sala, com barras XR, comparação de frações e receita 2:3.
 
 **GDD 1.2 · Revisão documental em 03/11/2026 · Idioma principal: pt-BR.**
 
@@ -79,7 +79,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | Entrada | `Hub.unity`: explorar sozinho, criar sala e entrar por IP no painel principal | Configurações e tutorial XR |
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
-| Matemática | Espaço cartesiano, Formas geométricas, Geometria plana e Funções e gráficos disponíveis individualmente; Medidas é mockup | Novos conteúdos, roteiros e validação em headset |
+| Matemática | Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística e Frações e proporções disponíveis individualmente | Novos conteúdos, roteiros e validação em headset |
 | Química e Biologia | Mockups navegáveis | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
@@ -287,7 +287,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Estrutura da matéria; Reações químicas; Soluções | Mockups |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
-| Matemática | Espaço cartesiano; Funções e gráficos; Medidas; Formas geométricas; Geometria plana | Quatro laboratórios individuais; Medidas é mockup |
+| Matemática | Espaço cartesiano; Funções e gráficos; Probabilidade e estatística; Formas geométricas; Geometria plana; Frações e proporções | Seis laboratórios individuais |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
 
@@ -502,6 +502,8 @@ Assets/
       Mathematics/CartesianSpace/  # Construções XR, coordenadas, magnetismo e grades
       Mathematics/GeometricShapes/ # Galeria de sólidos, fórmulas e destaques geométricos
       Mathematics/PlanarGeometry/  # Galeria plana, áreas, contornos e medidas auxiliares
+      Mathematics/Fractions/       # Barras XR, equivalência e receitas proporcionais
+      Mathematics/Probability/     # Sorteios, frequências, urna e estatísticas
       Mathematics/Functions/       # Curvas, coeficientes XR, ponto móvel e referência
     UI/                        # Fontes, ícones, identidade
     Shared/                    # Compartilhados em consolidação
@@ -630,7 +632,7 @@ MVP implementado e validado em loopback; aceite em dispositivos reais ainda pend
 
 - Perfis locais opcionais, exportação e descoberta LAN conforme necessidade.
 - Escolher a próxima implementação entre os conteúdos já presentes na grade de seis simulações, sujeito aos resultados do piloto.
-- Consolidar os quatro laboratórios de Matemática e expandir os conteúdos de Química e Biologia conforme o roteiro e a validação dos componentes compartilhados.
+- Consolidar os seis laboratórios de Matemática e expandir os conteúdos de Química e Biologia conforme o roteiro e a validação dos componentes compartilhados.
 - **Aceite:** novo conteúdo reutiliza fluxo, sessão e identidade sem duplicar infraestrutura.
 
 ## 15. Decisões, riscos e dependências
@@ -724,3 +726,7 @@ Este README é referência de **design do produto**. Código/cenas e registros d
 - **03/11/2026 — Geometria plana:** terceira sala individual de Matemática, com treze figuras e três toggles, integrada ao Hub; testes de geometria e verificações no Editor, sem build.
 - **1.2 — 03/11/2026:** catálogo com seis laboratórios de Física e dois de Matemática; arquitetura e navegação atualizadas; galeria de sólidos simplificada; política de mídias geradas documentada. Revisão de documentação, sem novas execuções de testes ou builds.
 - **1.0 — 05/10/2026:** consolidação do GDD; correção do retrato do Hub; decisões de fluxo, educação, LAN, dados, arquitetura, critérios de aceite e roadmap. A arquitetura educacional passa a estar definida como design, ainda pendente de implementação.
+
+- **04/11/2026 — Probabilidade e estatística:** quinta sala individual de Matemática; 11 testes EditMode, verificações de lotes, urna e controles XR no Editor. Cena: `Assets/_Project/Laboratories/Mathematics/Probability/Scenes/Probability.unity`, décima segunda habilitada. Sem build; headset pendente.
+
+- **04/11/2026 — Frações e proporções:** sexta sala de Matemática; peças XR com sockets, linhas A/B de dois inteiros e receita 2:3; 17 testes EditMode aprovados e fluxos de montagem no Editor. Cena: `Assets/_Project/Laboratories/Mathematics/Fractions/Scenes/Fractions.unity`, décima terceira habilitada. Headset pendente; sem build.

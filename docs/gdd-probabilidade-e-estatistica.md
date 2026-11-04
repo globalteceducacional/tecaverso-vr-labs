@@ -1,6 +1,6 @@
 # Short GDD — Probabilidade e estatística
 
-**Status:** proposta para revisão; implementação não autorizada por este documento.  
+**Status:** aprovado pelo usuário; implementado em cena própria, com validação no Editor em 04/11/2026.
 **Data:** 04/11/2026 · Matemática · Exploração individual offline · Sessão sugerida: 10–15 minutos.
 
 ## Conceito e objetivo
@@ -68,4 +68,9 @@ Reutilizar rig, locomoção, alavancas e botões oficiais compartilhados, identi
 
 Fora do primeiro escopo: dados viciados configuráveis, combinatória geral, testes de hipótese, regressão, edição livre de dados, exportação, persistência e LAN. Não há ranking ou acerto obrigatório.
 
-Aceite futuro: amostras e contagens coerentes; sorteio ponderado pela composição real; pausa sem perda/duplicação; urna vazia tratada; estatísticas corretas em séries conhecidas e empates; gráficos distinguindo teoria e observação; ausência de crescimento ilimitado de objetos. Testes usam sementes controladas, sem exigir coincidência exata de frequências aleatórias. Validar interação e leitura no headset separadamente; builds somente por solicitação.
+Critérios de aceite: amostras e contagens coerentes; sorteio ponderado pela composição real; pausa sem perda/duplicação; urna vazia tratada; estatísticas corretas em séries conhecidas e empates; gráficos distinguindo teoria e observação; ausência de crescimento ilimitado de objetos. Testes usam sementes controladas, sem exigir coincidência exata de frequências aleatórias. Validar interação e leitura no headset separadamente; builds somente por solicitação.
+
+
+## Implementação
+
+Cena, arquitetura e evidências de validação: [README do laboratório](../Assets/_Project/Laboratories/Mathematics/Probability/README.md). Os três instrumentos compartilham a identidade e a locomoção do projeto, com controles locais específicos de sorteio. Validação física em headset pendente; sem build.

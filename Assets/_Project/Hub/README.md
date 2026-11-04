@@ -11,8 +11,8 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
 - Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
   Associação de resistores, Gravitação, Termologia and Ondulatória open their individual labs.
-  Mathematics / Espaço cartesiano, Formas geométricas, Geometria plana and Funções e gráficos open individual labs.
-  Mathematics / Medidas, and all Chemistry/Biology entries, remain mockups.
+  Mathematics / Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística and Frações e proporções open individual labs.
+  All Chemistry/Biology entries remain mockups. Probability replaces the former Medidas entry.
 - Physics has six contents, including Inclined Plane in place of Optics. The Hub
   shows all six cards together; pagination remains hidden for disciplines with
   at most six entries.
@@ -39,7 +39,7 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
   grab point, optional grid/analytic features and one fixed reference curve.
   See the [lab README](../Laboratories/Mathematics/Functions/README.md).
 
-The current catalog contains six Physics cards and five Mathematics cards. Six is
+The current catalog contains six Physics cards and six Mathematics cards. Six is
 the maximum per discipline, not a requirement to add placeholder content. Keep
 `HubCatalog.asset` and `ProjectSettings/EditorBuildSettings.asset` consistent.
 
@@ -79,3 +79,7 @@ On 04/11/2026, Funções e gráficos passed sixteen mathematical EditMode tests 
 focused Play Mode checks, including synthetic XR UI rays, a temporary XR interactor
 for point dragging/dial rotation, confirmations and a Hub round trip with one rig.
 No player build or physical headset test was performed.
+
+Probability and statistics: coin, dice and urn stations with XR levers, batch sampling and frequency charts. See [lab README](../Laboratories/Mathematics/Probability/README.md). Individual offline mode only.
+
+Fractions and proportions completes the six Mathematics entries. Fraction bars use XR grabs and release sockets; a separate token recipe explores 2:3. See [lab README](../Laboratories/Mathematics/Fractions/README.md). Individual offline mode only.
