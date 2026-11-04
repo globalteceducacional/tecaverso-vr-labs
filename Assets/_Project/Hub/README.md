@@ -11,8 +11,8 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - `HubCatalog.asset` is the editable catalog; an empty scene path marks a mockup.
 - Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
   Associação de resistores, Gravitação, Termologia and Ondulatória open their individual labs.
-  Mathematics / Espaço cartesiano, Formas geométricas and Geometria plana open individual labs.
-  Mathematics / Funções and Medidas, and all Chemistry/Biology entries, remain mockups.
+  Mathematics / Espaço cartesiano, Formas geométricas, Geometria plana and Funções e gráficos open individual labs.
+  Mathematics / Medidas, and all Chemistry/Biology entries, remain mockups.
 - Physics has six contents, including Inclined Plane in place of Optics. The Hub
   shows all six cards together; pagination remains hidden for disciplines with
   at most six entries.
@@ -34,6 +34,10 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - **Geometria plana:** thirteen fixed planar figures with area formulas, vertex,
   contour and auxiliary-measure toggles. No editing or automatic rotation.
   See the [lab README](../Laboratories/Mathematics/PlanarGeometry/README.md).
+
+- **Funções e gráficos:** affine/quadratic curves, official Unity XR dials, a constrained
+  grab point, optional grid/analytic features and one fixed reference curve.
+  See the [lab README](../Laboratories/Mathematics/Functions/README.md).
 
 The current catalog contains six Physics cards and five Mathematics cards. Six is
 the maximum per discipline, not a requirement to add placeholder content. Keep
@@ -70,3 +74,8 @@ Geometria plana was subsequently tested with fifteen EditMode cases, independent
 toggles and Back through a synthetic XR ray, and entry through the Mathematics
 catalog. All thirteen figures and a single XR rig were present on reentry. This
 does not constitute headset validation.
+
+On 04/11/2026, Funções e gráficos passed sixteen mathematical EditMode tests and
+focused Play Mode checks, including synthetic XR UI rays, a temporary XR interactor
+for point dragging/dial rotation, confirmations and a Hub round trip with one rig.
+No player build or physical headset test was performed.

@@ -2,13 +2,14 @@
 
 Este documento reúne evidências históricas e aponta para os registros específicos de cada laboratório. A revisão documental de 03/11/2026 conferiu catálogo, cenas habilitadas, links e regras de mídia; não reexecutou testes nem gerou builds. Aprovação no Editor não certifica conforto ou desempenho em headset.
 
-## Matemática — registros consolidados em 03/11/2026
+## Matemática — registros consolidados em 04/11/2026
 
 | Laboratório | Evidência registrada | Limites |
 |---|---|---|
 | [Espaço cartesiano](../Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) | 11 testes EditMode; ferramentas, coordenadas, prévias, histórico e navegação em Play Mode; interator XR sintético | Headset, alcance, manipulação pelo analógico e desempenho pendentes; sem LAN |
 | [Formas geométricas](../Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) | 20 testes EditMode; 11 peças, três toggles, saída ao Hub, pausa por hover e retomada; superfícies sem orientação invertida e textos sem overflow | Headset pendente; sem LAN. Avisos de configuração OpenXR na inicialização, sem scripts ausentes nos GameObjects da sala |
 | [Geometria plana](../Assets/_Project/Laboratories/Mathematics/PlanarGeometry/README.md) | 15 testes EditMode; 13 figuras e três toggles independentes; toggles e retorno acionados por raio XR sintético; entrada pela seleção do Hub e reentrada com um rig; sem overflow | Headset pendente; sem LAN. Implementação e verificações posteriores à revisão documental inicial, em 03/11/2026 |
+| [Funções e gráficos](../Assets/_Project/Laboratories/Mathematics/Functions/README.md) | 16 testes EditMode em 04/11/2026; casos degenerados, recorte/tangência e estado; Play Mode com famílias, referência, restauração, confirmações; UI por raio XR sintético e pega/giro por interator temporário; Hub com um rig | Headset pendente; sem LAN ou build. A validação XR identificou e corrigiu a mudança de referencial do ponto durante a pega |
 
 O GDD vigente de Formas geométricas descreve a galeria simplificada. Verificações antigas de edição A/B ou planificação não são critérios de aceite da sala atual.
 
