@@ -317,7 +317,7 @@ Valores serializados podem variar por componente. Para novos componentes, animar
 - Pausar a simulação não congela menus: feedback de UI usa tempo independente.
 - Cancelar tweens concorrentes e restaurar escala ao desativar/resetar.
 - Nunca animar câmera, referência de medição ou origem física para reforçar feedback.
-- Animações reduzidas substituem escala/pulso por mudança discreta de cor/contorno; opção ainda planejada.
+- Animações reduzidas substituem escala/pulso por mudança discreta de cor/contorno; preferência compartilhada implementada (ver Motion compartilhado obrigatório).
 - Sons e haptics são opcionais, breves e acompanhados por sinal visual. Não há voz integrada no MVP.
 
 ## 9. Visualização científica
@@ -430,3 +430,16 @@ Pendências visuais prioritárias: fluxo LAN integrado, distinção consistente 
 
 - **23/10/2026:** seleção de controles por tarefa e tipo de dado; distinção entre identidade compartilhada e composição própria de cada laboratório. Não implica migração automática de todas as cenas nem atualização do Figma.
 - **1.0 — 05/10/2026:** consolidação da identidade já aplicada, tokens de UI, tipografia, escala de espaçamento, componentes, estados, direção 3D e critérios de VR. Melhorias futuras são identificadas como diretrizes, não como funcionalidades prontas.
+
+## Motion compartilhado obrigatório — 09/11/2026
+
+Todo controle ou objeto interativo deve responder visualmente ao foco, à ação e à mudança de estado. Isso vale para todas as disciplinas, incluindo objetos criados durante a execução. Motion comunica interação; não exige animação contínua de objetos em repouso.
+
+- Reutilizar `ControlMotion` para Selectables sem feedback próprio e `XRInteractionMotion` para objetos XR. Preservar `ButtonTweenFeedback`/`SliderTweenFeedback` existentes, sem empilhar efeitos. Cubos da tabela usam `PeriodicElementCube` com DOTween.
+- Hover/foco: transição curta de contorno/realce, aproximadamente 0,12–0,16 s. Ação: pulso discreto de aproximadamente 0,22 s. Seleção permanece reconhecível depois do pulso e da saída do ponteiro.
+- Animar uma decoração ou filho visual. Não animar collider, Rigidbody, área clicável, layout, câmera, origem de medidas ou geometria científica. Movimento real de alavancas/manoplas continua sob responsabilidade do componente XR.
+- Usar tempo independente da simulação. Cancelar e restaurar feedback ao ocultar/desabilitar. Não deixar pulsos repetidos ou foco em páginas invisíveis.
+- Respeitar `MotionPreferences.Reduced`, persistida localmente: feedback instantâneo de cor/contorno substitui escala, pulso e fades. A preferência não interrompe órbitas, ondas, partículas ou outros movimentos que são o conteúdo da simulação.
+- A migração de 09/11 adicionou feedback aos controles das seis salas de Física, seis de Matemática, Tabela periódica e Hub. O bootstrap cobre entradas de cena e registro de novos interactables XR, sem busca global por frame. Novos controles uGUI criados após a carga devem chamar `InteractionMotionBootstrap.Ensure` ou herdar o componente de seu prefab.
+
+O controle de movimento reduzido está disponível na ficha da Tabela periódica e vale também ao navegar para outras salas. A configuração é local, não altera autoridade LAN. Conferir hover, ação, saída, desabilitação e movimento reduzido antes de aceitar um novo controle. A migração não certifica conforto/desempenho em headset.

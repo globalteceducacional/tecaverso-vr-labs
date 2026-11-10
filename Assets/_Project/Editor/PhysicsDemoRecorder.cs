@@ -27,13 +27,14 @@ public static class PhysicsDemoRecorder
     static string lab;
     static int firstFrame, lastFrame, stage;
     static float duration;
+    static readonly System.Collections.Generic.List<(Camera camera,bool enabled,string tag)> previousCameras=new();
     public static string Status { get; private set; }="Idle";
     static T Find<T>() where T:UnityEngine.Object => UnityEngine.Object.FindFirstObjectByType<T>();
     public static void Begin(string name, string output)
     {
         if(!EditorApplication.isPlaying) throw new InvalidOperationException("Enter Play Mode first.");
-        lab=name; stage=0; duration=name=="Waves"?36:30;
-        foreach(var c in UnityEngine.Object.FindObjectsByType<Camera>(FindObjectsSortMode.None)){c.enabled=false;if(c.CompareTag("MainCamera"))c.tag="Untagged";}
+        lab=name; stage=0; duration=name=="PeriodicExplorer"?PeriodicExplorerDemo.Duration:name=="PeriodicBonds"?64:name=="Waves"?36:name.StartsWith("Math")?34:30;
+        foreach(var c in UnityEngine.Object.FindObjectsByType<Camera>(FindObjectsSortMode.None)){previousCameras.Add((c,c.enabled,c.tag));c.enabled=false;if(c.CompareTag("MainCamera"))c.tag="Untagged";}
         camera=new GameObject("Temporary recording camera").AddComponent<Camera>();camera.tag="MainCamera";
         camera.nearClipPlane=.05f;camera.farClipPlane=150;camera.fieldOfView=65;
         camera.gameObject.AddComponent<UniversalAdditionalCameraData>().renderPostProcessing=true;
@@ -41,12 +42,20 @@ public static class PhysicsDemoRecorder
         string title=name;
         switch(name)
         {
+            case "PeriodicExplorer": title="TABELA PERIÓDICA 3D";PeriodicExplorerDemo.Reset();View(new Vector3(-.6f,3,-4.8f),new Vector3(0,2.9f,4.2f));break;
+            case "PeriodicBonds": title="TABELA PERIÓDICA E LIGAÇÕES";PeriodicBondsDemo.Reset();View(new Vector3(0,2.5f,-1.3f),new Vector3(0,2.5f,4.65f));break;
             case "Waves": title="ONDULATÓRIA";Find<WavesLab>().ResetRun();break;
             case "Thermology": title="TERMOLOGIA";View(new Vector3(.7f,2.6f,-4.6f),new Vector3(.7f,1.7f,1.5f));Find<ThermologyLab>().ResetRun();break;
             case "InclinedPlane": title="PLANO INCLINADO";View(new Vector3(3,4,-6.5f),new Vector3(3,3,0));Time.timeScale=.5f;Find<InclinedPlaneLab>().ResetLab();break;
             case "ObliqueLaunch":title="LANÇAMENTO OBLÍQUO";View(new Vector3(3,3.5f,-6.5f),new Vector3(3,2,0));Time.timeScale=.5f;Find<ObliqueLaunchLab>().ClearRemoteHistory();break;
             case "Gravitation":title="GRAVITAÇÃO";var g=Find<GravitationLab>();var center=g.solar.transform.position;View(center+new Vector3(0,13,-22),center);g.panel.timeSpeeds[2].onClick.Invoke();if(g.SolarPaused)g.Pause();break;
             case "ResistorCircuits":title="ASSOCIAÇÃO DE RESISTORES";View(new Vector3(0,4,-6),new Vector3(0,1.4f,1));WireCircuit();break;
+            case "MathCartesian":title="ESPAÇO CARTESIANO";View(new Vector3(-3.6f,4.1f,-2.5f),new Vector3(0,2.7f,1.5f));break;
+            case "MathSolids":title="FORMAS GEOMÉTRICAS";View(new Vector3(0,3.2f,-4.8f),new Vector3(0,1.5f,.3f));break;
+            case "MathPlanar":title="GEOMETRIA PLANA";View(new Vector3(0,2.5f,-.5f),new Vector3(-5.4f,1.55f,-1f));break;
+            case "MathFunctions":title="FUNÇÕES E GRÁFICOS";View(new Vector3(0,2.8f,-.8f),new Vector3(0,2.4f,4.6f));break;
+            case "MathProbability":title="PROBABILIDADE E ESTATÍSTICA";View(new Vector3(-.7f,2.4f,0),new Vector3(-4.8f,1.6f,0));break;
+            case "MathFractions":title="FRAÇÕES E PROPORÇÕES";View(new Vector3(0,2.5f,-1),new Vector3(0,1.8f,2.5f));break;
         }
         var canvas=new GameObject("Temporary recording captions",typeof(Canvas),typeof(CanvasScaler));
         var cv=canvas.GetComponent<Canvas>();cv.renderMode=RenderMode.ScreenSpaceCamera;cv.worldCamera=camera;cv.planeDistance=.5f;cv.sortingOrder=100;
@@ -69,6 +78,7 @@ public static class PhysicsDemoRecorder
         firstFrame=Time.frameCount;lastFrame=-1;Status="Recording "+name;
         EditorApplication.update-=Tick;EditorApplication.update+=Tick;
     }
+    static void Finish(){if(recorder!=null&&recorder.IsRecording())recorder.StopRecording();EditorApplication.update-=Tick;Time.timeScale=1;if(camera)UnityEngine.Object.Destroy(camera.gameObject);foreach(var entry in previousCameras)if(entry.camera){entry.camera.tag=entry.tag;entry.camera.enabled=entry.enabled;}previousCameras.Clear();}
     static void View(Vector3 position,Vector3 target){camera.transform.SetPositionAndRotation(position,Quaternion.LookRotation(target-position));}
     static void Say(string text){caption.text=text;}
     static bool At(float t,float threshold,int next){if(t<threshold||stage>=next)return false;stage=next;return true;}
@@ -82,6 +92,8 @@ public static class PhysicsDemoRecorder
             Status=$"Recording {lab}: {t:0.0}/{duration} s";
             switch(lab)
             {
+                case "PeriodicExplorer": PeriodicExplorerDemo.Tick(t,View,Say);break;
+                case "PeriodicBonds": PeriodicBondsDemo.Tick(t,View,Say);break;
                 case "Waves":
                     var w=Find<WavesLab>();
                     if(t>2&&t<2.6f){w.Pull(.2f*Mathf.Sin((t-2)/.6f*Mathf.PI));Say("ONDULATÓRIA · Pulso\nPerturbação da corda, propagação e reflexão na extremidade.");}
@@ -107,10 +119,53 @@ public static class PhysicsDemoRecorder
                     var c=Find<CircuitLab>();var s=c.parts.First(x=>x.role==ElectricalRole.Switch);
                     if(At(t,3,1)||At(t,24,3)){SetSwitch(s,true);Say("ASSOCIAÇÃO DE RESISTORES · Circuito fechado\nCorrente nos fios, lâmpada acesa e leituras dos instrumentos.");}
                     if(At(t,19,2)){SetSwitch(s,false);Say("ASSOCIAÇÃO DE RESISTORES · Circuito aberto\nAlavanca desligada: a corrente cessa e a lâmpada apaga.");}break;
+                case "MathCartesian":
+                    var cart=Find<Tecaverso.Labs.Cartesian.CartesianLab>();
+                    if(At(t,1,1)){cart.CreatePoint();cart.Model.Move(cart.SelectedPoint,new Vector3(-2,1,0));cart.Sync();Say("ESPAÇO CARTESIANO · Ponto A\nO ponto sai da origem e revela suas componentes x, y e z.");}
+                    if(At(t,5,2)){cart.CreatePoint();cart.Model.Move(cart.SelectedPoint,new Vector3(2,1,0));cart.Sync();Say("ESPAÇO CARTESIANO · Ponto B\nDois pontos posicionados no espaço tridimensional.");}
+                    if(At(t,8,3)){cart.Select(0,false);cart.BeginTool(Tecaverso.Labs.Cartesian.ConstructionKind.Line);cart.Select(1,false);Say("ESPAÇO CARTESIANO · Reta AB\nOs dois pontos determinam a reta.");}
+                    if(At(t,13,4)){cart.CreatePoint();cart.Model.Move(cart.SelectedPoint,new Vector3(0,3,1));cart.Sync();cart.Select(0,false);cart.BeginTool(Tecaverso.Labs.Cartesian.ConstructionKind.Triangle);cart.Select(1,false);cart.Select(2,false);Say("ESPAÇO CARTESIANO · Superfície ABC\nUm terceiro ponto forma o triângulo no plano.");}
+                    if(At(t,19,5)){cart.CreatePoint();cart.Model.Move(cart.SelectedPoint,new Vector3(0,1,3));cart.Sync();cart.Select(0,false);cart.BeginTool(Tecaverso.Labs.Cartesian.ConstructionKind.Tetrahedron);cart.Select(1,false);cart.Select(2,false);cart.Select(3,false);Say("ESPAÇO CARTESIANO · Sólido ABCD\nQuatro vértices não coplanares formam um tetraedro.");}
+                    if(At(t,26,6)){cart.Model.Move(3,new Vector3(0,2,4));cart.Sync();Say("ESPAÇO CARTESIANO · Geometria dinâmica\nMover D atualiza o sólido e suas medidas.");}break;
+                case "MathSolids":
+                    var solids=Find<Tecaverso.Labs.Shapes.SolidGallery>();
+                    if(At(t,2,1)){solids.verticesToggle.isOn=true;Say("FORMAS GEOMÉTRICAS · Vértices\nObserve os marcadores nos prismas e no cubo.");}
+                    if(At(t,7,2)){solids.edgesToggle.isOn=true;Say("FORMAS GEOMÉTRICAS · Arestas\nConte os encontros entre faces planas.");}
+                    if(At(t,12,3)){solids.rotationToggle.isOn=true;View(new Vector3(0,3.2f,1.7f),new Vector3(0,2.3f,4.25f));Say("FORMAS GEOMÉTRICAS · Poliedros\nA rotação revela pirâmide, tetraedro e octaedro.");}
+                    if(At(t,20,4)){View(new Vector3(3.5f,3.2f,1.8f),new Vector3(4.4f,2.3f,4.25f));Say("FORMAS GEOMÉTRICAS · Mais faces\nDodecaedro, icosaedro e esfera: compare faces, arestas e vértices.");}
+                    if(At(t,27,5)){solids.rotationToggle.isOn=false;View(new Vector3(0,5.2f,-2.3f),new Vector3(0,1.7f,2.4f));Say("FORMAS GEOMÉTRICAS · Galeria\nNomes e fórmulas de volume aparecem acima dos sólidos.");}break;
+                case "MathPlanar":
+                    var planar=Find<Tecaverso.Labs.PlanarGeometry.PlanarGallery>();
+                    if(At(t,2,1)){planar.verticesToggle.isOn=true;Say("GEOMETRIA PLANA · Vértices\nMarcadores identificam os vértices das figuras planas.");}
+                    if(At(t,7,2)){planar.contoursToggle.isOn=true;View(new Vector3(0,2.5f,-.5f),new Vector3(5.4f,1.55f,-1));Say("GEOMETRIA PLANA · Contornos\nCompare lados e perímetros na parede oposta.");}
+                    if(At(t,13,3)){planar.dimensionsToggle.isOn=true;View(new Vector3(0,2.8f,1.3f),new Vector3(0,1.55f,5.45f));Say("GEOMETRIA PLANA · Medidas\nBase, altura e dimensões acompanham as fórmulas de área.");}
+                    if(At(t,21,4)){View(new Vector3(1.1f,2.4f,1.2f),new Vector3(2.2f,1.55f,5.45f));Say("GEOMETRIA PLANA · Polígono côncavo\nO formato em L pode ser decomposto para calcular sua área.");}
+                    if(At(t,27,5)){View(new Vector3(2.8f,2.3f,1.6f),new Vector3(4.4f,1.55f,5.45f));Say("GEOMETRIA PLANA · Círculo\nÁrea πr²; a borda curva não possui vértices ou arestas.");}break;
+                case "MathFunctions":
+                    var f=Find<Tecaverso.Labs.Functions.FunctionsLab>();
+                    if(At(t,1,1)){f.SelectFamily(0);f.SetCoefficient(0,1);f.SetCoefficient(1,0);f.DragMarker(-2);Say("FUNÇÕES · Reta\nFunção afim: P percorre a curva e mostra suas coordenadas.");}
+                    if(At(t,7,2)){f.RequestReference();f.SetCoefficient(0,2);f.SetCoefficient(1,1);f.DragMarker(1);Say("FUNÇÕES · Coeficientes e referência\nInclinação e intercepto mudam; a reta anterior fica como comparação.");}
+                    if(At(t,14,3)){f.SelectFamily(1);f.SetCoefficient(0,1);f.SetCoefficient(1,0);f.SetCoefficient(2,-1);f.DragMarker(-1);Say("FUNÇÕES · Parábola\nRaízes em −1 e +1; observe o vértice e o ponto P.");}
+                    if(At(t,21,4)){f.SetCoefficient(0,-1);f.SetCoefficient(2,2);f.DragMarker(0);Say("FUNÇÕES · Concavidade\nCoeficiente a negativo inverte a parábola; P vai ao vértice.");}
+                    if(At(t,28,5)){f.DragMarker(1.4);Say("FUNÇÕES · Leitura do gráfico\nO deslocamento de P atualiza x, f(x) e as projeções nos eixos.");}break;
+                case "MathProbability":
+                    var probability=Find<Tecaverso.Labs.Probability.ProbabilityLab>();
+                    if(At(t,1,1)){probability.stations[0].Single();Say("PROBABILIDADE · Moeda\nUm lançamento produz cara ou coroa.");}
+                    if(At(t,5,2)){probability.stations[0].StartBatch();Say("PROBABILIDADE · Frequência\nVários lançamentos fazem as barras se aproximarem de 50%.");}
+                    if(At(t,12,3)){View(new Vector3(0,2.5f,.1f),new Vector3(0,1.6f,4.8f));probability.stations[1].StartBatch();Say("ESTATÍSTICA · Dado\nAs frequências, média, mediana e moda são atualizadas.");}
+                    if(At(t,21,4)){View(new Vector3(.7f,2.4f,0),new Vector3(4.8f,1.6f,0));probability.stations[2].Series.Configure(2,8,false);probability.stations[2].Refresh();probability.stations[2].Single();Say("PROBABILIDADE · Urna 2:8\nSem reposição: a chance seguinte muda após cada retirada.");}
+                    if(At(t,26,5)){probability.stations[2].StartBatch();Say("PROBABILIDADE · Urna\nA composição restante e as chances são recalculadas.");}break;
+                case "MathFractions":
+                    var fractions=Find<Tecaverso.Labs.Fractions.FractionsLab>();
+                    if(At(t,1,1)){DockFraction(fractions,1,0);Say("FRAÇÕES · Metade\nPegue a peça 1/2 e encaixe na linha A.");}
+                    if(At(t,5,2)){DockFraction(fractions,3,1);DockFraction(fractions,3,1);fractions.equivalence.isOn=true;Say("FRAÇÕES · Equivalência\nDuas peças de 1/4 em B têm o mesmo comprimento que 1/2 em A.");}
+                    if(At(t,12,3)){fractions.Session.ClearRows();fractions.SendMessage("RestoreRows");DockFraction(fractions,2,0);DockFraction(fractions,5,0);DockFraction(fractions,1,1);Say("FRAÇÕES · Soma\n1/3 + 1/6 = 1/2, comparado com a linha B.");}
+                    if(At(t,19,4)){fractions.Session.ClearRows();fractions.SendMessage("RestoreRows");DockFraction(fractions,1,0);DockFraction(fractions,1,0);DockFraction(fractions,1,0);fractions.decimals.isOn=true;Say("FRAÇÕES · Imprópria\n3/2 corresponde a 1,5 inteiro ou 150%.");}
+                    if(At(t,26,5)){View(new Vector3(.8f,2.7f,.4f),new Vector3(4,1.8f,.4f));DockFraction(fractions,9,2);DockFraction(fractions,9,2);DockFraction(fractions,10,3);DockFraction(fractions,10,3);DockFraction(fractions,10,3);Say("PROPORÇÕES · Receita 2:3\nDuas peças A e três B atingem a razão proposta.");}break;
             }
-            if(t>=duration){recorder.StopRecording();EditorApplication.update-=Tick;Time.timeScale=1;Status="Complete "+lab;Debug.Log(Status);}
+            if(t>=duration){Finish();Status="Complete "+lab;Debug.Log(Status);}
         }
-        catch(Exception ex){recorder.StopRecording();EditorApplication.update-=Tick;Time.timeScale=1;Status="Failed: "+ex;Debug.LogException(ex);}
+        catch(Exception ex){Finish();Status="Failed: "+ex;Debug.LogException(ex);}
     }
     static void SetSwitch(CircuitPart part,bool value)
     {
@@ -129,7 +184,9 @@ public static class PhysicsDemoRecorder
         end.transform.position=terminal.transform.position;
         var socket=terminal.GetComponent<XRSocketInteractor>();socket.interactionManager.SelectEnter((IXRSelectInteractor)socket,(IXRSelectInteractable)end.GetComponent<XRGrabInteractable>());
     }
+    static void DockFraction(Tecaverso.Labs.Fractions.FractionsLab lab,int kind,int dock)
+    {
+        var piece=lab.Pieces.First(p=>p.gameObject.activeSelf&&p.supply&&p.kind==kind);
+        lab.Take(piece);piece.transform.position=lab.End(dock);if(!lab.Dock(piece,dock))throw new Exception("Fraction piece could not dock: "+kind+" to "+dock);
+    }
 }
-
-
-

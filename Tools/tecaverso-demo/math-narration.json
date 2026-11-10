@@ -1,0 +1,10 @@
+[
+  { "id": "01-open", "start": 0.4, "end": 5.6, "text": "Conheça os seis laboratórios de matemática do Tecaverso Labs." },
+  { "id": "02-shapes", "start": 6.5, "end": 18.9, "text": "Explore formas geométricas e descubra como suas propriedades aparecem em modelos tridimensionais." },
+  { "id": "03-functions", "start": 19.5, "end": 31.9, "text": "Observe funções e gráficos. Conecte expressões algébricas às curvas que elas produzem." },
+  { "id": "04-probability", "start": 32.5, "end": 44.9, "text": "Investigue probabilidade e estatística. Compare resultados, distribuições e padrões nos dados." },
+  { "id": "05-cartesian", "start": 45.5, "end": 57.9, "text": "No espaço cartesiano, localize pontos e relacione coordenadas às posições no plano." },
+  { "id": "06-plane-geometry", "start": 58.5, "end": 70.9, "text": "Explore a geometria plana e compare formas, medidas e relações entre figuras." },
+  { "id": "07-fractions", "start": 71.5, "end": 83.9, "text": "Com frações e proporções, compare quantidades e reconheça relações equivalentes." },
+  { "id": "08-close", "start": 84.5, "end": 90.2, "text": "Aprenda matemática de forma interativa com Tecaverso Labs." }
+]

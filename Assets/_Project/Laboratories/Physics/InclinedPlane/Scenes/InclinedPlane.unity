@@ -8781,6 +8781,7 @@ GameObject:
   - component: {fileID: 631029309}
   - component: {fileID: 631029311}
   - component: {fileID: 631029308}
+  - component: {fileID: 631029312}
   m_Layer: 0
   m_Name: RESULTANTE
   m_TagString: Untagged
@@ -8915,6 +8916,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &631029312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631029306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &631333672
 GameObject:
   m_ObjectHideFlags: 0
@@ -14886,6 +14899,7 @@ GameObject:
   - component: {fileID: 1065841536}
   - component: {fileID: 1065841538}
   - component: {fileID: 1065841535}
+  - component: {fileID: 1065841539}
   m_Layer: 0
   m_Name: "DECOMPOR PESO \xB7 substitui a seta P"
   m_TagString: Untagged
@@ -15020,6 +15034,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &1065841539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065841533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1068559970
 GameObject:
   m_ObjectHideFlags: 0
@@ -25678,6 +25704,7 @@ GameObject:
   - component: {fileID: 1917874934}
   - component: {fileID: 1917874936}
   - component: {fileID: 1917874933}
+  - component: {fileID: 1917874937}
   m_Layer: 0
   m_Name: "FOR\xC7AS"
   m_TagString: Untagged
@@ -25812,6 +25839,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &1917874937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917874931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1923304913
 GameObject:
   m_ObjectHideFlags: 0

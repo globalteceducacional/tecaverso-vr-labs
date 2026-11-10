@@ -1122,6 +1122,7 @@ GameObject:
   - component: {fileID: 86588663}
   - component: {fileID: 86588662}
   - component: {fileID: 86588661}
+  - component: {fileID: 86588664}
   m_Layer: 0
   m_Name: Marte
   m_TagString: Untagged
@@ -1311,6 +1312,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0.000002861023, y: 0, z: 0}
+--- !u!114 &86588664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86588657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &87359510
 GameObject:
   m_ObjectHideFlags: 0
@@ -4255,6 +4268,7 @@ GameObject:
   - component: {fileID: 202449233}
   - component: {fileID: 202449232}
   - component: {fileID: 202449231}
+  - component: {fileID: 202449234}
   m_Layer: 0
   m_Name: Netuno
   m_TagString: Untagged
@@ -4444,6 +4458,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0, y: -0.0000009536743, z: 0}
+--- !u!114 &202449234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202449227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &203254263
 GameObject:
   m_ObjectHideFlags: 0
@@ -9676,6 +9702,7 @@ GameObject:
   - component: {fileID: 426765946}
   - component: {fileID: 426765945}
   - component: {fileID: 426765944}
+  - component: {fileID: 426765947}
   m_Layer: 0
   m_Name: Saturno
   m_TagString: Untagged
@@ -9866,6 +9893,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &426765947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426765940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &427789396
 GameObject:
   m_ObjectHideFlags: 0
@@ -11234,6 +11273,7 @@ GameObject:
   - component: {fileID: 477208433}
   - component: {fileID: 477208432}
   - component: {fileID: 477208431}
+  - component: {fileID: 477208434}
   m_Layer: 0
   m_Name: "J\xFApiter"
   m_TagString: Untagged
@@ -11423,6 +11463,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &477208434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477208427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &481261503
 GameObject:
   m_ObjectHideFlags: 0
@@ -13010,6 +13062,7 @@ GameObject:
   - component: {fileID: 581628226}
   - component: {fileID: 581628225}
   - component: {fileID: 581628224}
+  - component: {fileID: 581628227}
   m_Layer: 0
   m_Name: Terra
   m_TagString: Untagged
@@ -13199,6 +13252,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0.00000023841858, y: 0, z: 0.0000019073486}
+--- !u!114 &581628227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581628220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &582807081
 GameObject:
   m_ObjectHideFlags: 0
@@ -19428,6 +19493,7 @@ GameObject:
   - component: {fileID: 799359541}
   - component: {fileID: 799359540}
   - component: {fileID: 799359539}
+  - component: {fileID: 799359544}
   m_Layer: 0
   m_Name: Unified physical scale
   m_TagString: Untagged
@@ -19574,6 +19640,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799359537}
   m_CullTransparentMesh: 1
+--- !u!114 &799359544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799359537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &813817157
 GameObject:
   m_ObjectHideFlags: 0
@@ -30229,6 +30307,7 @@ GameObject:
   - component: {fileID: 1146136409}
   - component: {fileID: 1146136408}
   - component: {fileID: 1146136407}
+  - component: {fileID: 1146136410}
   m_Layer: 0
   m_Name: "V\xEAnus"
   m_TagString: Untagged
@@ -30418,6 +30497,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: -0.000006198883, y: 0, z: -0.0000019073486}
+--- !u!114 &1146136410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146136403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &1146309481
 GameObject:
   m_ObjectHideFlags: 0
@@ -36218,6 +36309,7 @@ GameObject:
   - component: {fileID: 1422586491}
   - component: {fileID: 1422586490}
   - component: {fileID: 1422586489}
+  - component: {fileID: 1422586492}
   m_Layer: 0
   m_Name: "Merc\xFArio"
   m_TagString: Untagged
@@ -36407,6 +36499,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: -0.0000038146973, y: -0.0000076293945, z: 0}
+--- !u!114 &1422586492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422586485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &1425440714
 GameObject:
   m_ObjectHideFlags: 0
@@ -47328,6 +47432,7 @@ GameObject:
   - component: {fileID: 1871632875}
   - component: {fileID: 1871632874}
   - component: {fileID: 1871632873}
+  - component: {fileID: 1871632876}
   m_Layer: 0
   m_Name: Urano
   m_TagString: Untagged
@@ -47517,6 +47622,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.55
   m_Center: {x: 0.00000029802322, y: -0.00000047683716, z: 0.0000009536743}
+--- !u!114 &1871632876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871632869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &1884383313
 GameObject:
   m_ObjectHideFlags: 0
@@ -50517,6 +50634,7 @@ GameObject:
   - component: {fileID: 1975967578}
   - component: {fileID: 1975967575}
   - component: {fileID: 1975967579}
+  - component: {fileID: 1975967580}
   m_Layer: 0
   m_Name: "DECOMPOR PESO \xB7 substitui a seta P"
   m_TagString: Untagged
@@ -50663,6 +50781,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1975967580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975967573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1981886834
 GameObject:
   m_ObjectHideFlags: 0
@@ -51704,6 +51834,7 @@ GameObject:
   - component: {fileID: 2018694926}
   - component: {fileID: 2018694923}
   - component: {fileID: 2018694927}
+  - component: {fileID: 2018694928}
   m_Layer: 0
   m_Name: RESULTANTE
   m_TagString: Untagged
@@ -51850,6 +51981,18 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2018694928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018694921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &2023521529
 GameObject:
   m_ObjectHideFlags: 0
@@ -53282,6 +53425,7 @@ GameObject:
   - component: {fileID: 2122635139}
   - component: {fileID: 2122635141}
   - component: {fileID: 2122635138}
+  - component: {fileID: 2122635142}
   m_Layer: 0
   m_Name: "FOR\xC7AS"
   m_TagString: Untagged
@@ -53416,6 +53560,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &2122635142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2122635136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &2132617190
 GameObject:
   m_ObjectHideFlags: 0

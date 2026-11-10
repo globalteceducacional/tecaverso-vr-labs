@@ -1,0 +1,10 @@
+[
+  { "id": "01-open", "start": 0.4, "end": 5.6, "text": "Discover six mathematics labs from Tecaverso Labs." },
+  { "id": "02-shapes", "start": 6.5, "end": 18.9, "text": "Explore geometric shapes and see how their properties appear in three-dimensional models." },
+  { "id": "03-functions", "start": 19.5, "end": 31.9, "text": "Explore functions and graphs. Connect algebraic expressions to the curves they produce." },
+  { "id": "04-probability", "start": 32.5, "end": 44.9, "text": "Investigate probability and statistics. Compare outcomes, distributions, and patterns in data." },
+  { "id": "05-cartesian", "start": 45.5, "end": 57.9, "text": "On the Cartesian plane, locate points and connect coordinates to their positions." },
+  { "id": "06-plane-geometry", "start": 58.5, "end": 70.9, "text": "Explore plane geometry and compare shapes, measurements, and relationships between figures." },
+  { "id": "07-fractions", "start": 71.5, "end": 83.9, "text": "With fractions and proportions, compare quantities and identify equivalent relationships." },
+  { "id": "08-close", "start": 84.5, "end": 90.2, "text": "Learn mathematics interactively with Tecaverso Labs." }
+]

@@ -79,6 +79,12 @@ MonoBehaviour:
       objective: "Relacionar soluto, solvente e concentra\xE7\xE3o."
       icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
       scenePath: 
+    - title: "Tabela peri\xF3dica"
+      description: Explore 118 elementos em uma tabela 3D e consulte suas propriedades.
+      objective: "Relacionar organiza\xE7\xE3o peri\xF3dica, propriedades e ocorr\xEAncia
+        dos elementos."
+      icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
+      scenePath: Assets/_Project/Laboratories/Chemistry/PeriodicBonds/Scenes/PeriodicBonds.unity
   - title: Biologia
     description: Vida, organismos, sistemas e ecossistemas.
     accent: {r: 0.24313726, g: 0.827451, b: 0.6117647, a: 1}

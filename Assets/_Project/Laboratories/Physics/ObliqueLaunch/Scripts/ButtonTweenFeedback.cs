@@ -37,7 +37,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
                 background.color=Color.clear;control.targetGraphic=copy;
             }
         }
-        void OnEnable() { wasInteractable=button.IsInteractable(); }
+        void OnEnable() { wasInteractable=button.IsInteractable(); Tecaverso.Interaction.MotionPreferences.Changed+=Refresh; }
         void Update()
         {
             bool available=button.IsInteractable();
@@ -55,10 +55,11 @@ namespace Tecaverso.Labs.ObliqueLaunch
         {
             tween?.Kill();
             float factor=button.IsInteractable() ? (pressed ? pressedScale : hovered ? Mathf.Min(hoverScale,1.02f) : 1f) : 1f;
+            if(Tecaverso.Interaction.MotionPreferences.Reduced){visual.localScale=restScale;return;}
             tween=visual.DOScale(restScale*factor,duration).SetEase(Ease.OutQuad).SetUpdate(true);
         }
         public void ResetFeedback()
         { tween?.Kill(); tween=null; hovered=pressed=false; if(visual!=null)visual.localScale=restScale==Vector3.zero?Vector3.one:restScale; }
-        void OnDisable() => ResetFeedback();
+        void OnDisable() { Tecaverso.Interaction.MotionPreferences.Changed-=Refresh; ResetFeedback(); }
     }
 }

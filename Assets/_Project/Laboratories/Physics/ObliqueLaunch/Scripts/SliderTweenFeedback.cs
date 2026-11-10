@@ -17,6 +17,7 @@ namespace Tecaverso.Labs.ObliqueLaunch
         Tween tween;
         bool hovered, pressed, available;
 
+        void OnEnable() => Tecaverso.Interaction.MotionPreferences.Changed+=Refresh;
         void Start()
         {
             slider=GetComponent<Slider>(); handle=slider.handleRect;
@@ -39,12 +40,18 @@ namespace Tecaverso.Labs.ObliqueLaunch
             if(handle==null) return;
             tween?.Kill();
             float factor=slider.IsInteractable() ? (pressed ? pressedScale : hovered ? hoverScale : 1f) : 1f;
+            if(Tecaverso.Interaction.MotionPreferences.Reduced){handle.localScale=restScale;return;}
             tween=handle.DOScale(restScale*factor,duration).SetEase(Ease.OutQuad).SetUpdate(true);
         }
-        void OnDisable()
+        public void ResetFeedback()
         {
             tween?.Kill(); tween=null; hovered=pressed=false;
             if(handle!=null) handle.localScale=restScale;
+        }
+        void OnDisable()
+        {
+            Tecaverso.Interaction.MotionPreferences.Changed-=Refresh;
+            ResetFeedback();
         }
     }
 }

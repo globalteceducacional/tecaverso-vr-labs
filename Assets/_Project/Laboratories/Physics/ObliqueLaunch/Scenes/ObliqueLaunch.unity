@@ -7318,6 +7318,7 @@ GameObject:
   - component: {fileID: 66500650}
   - component: {fileID: 66500649}
   - component: {fileID: 66500647}
+  - component: {fileID: 66500651}
   m_Layer: 0
   m_Name: Show Vectors Toggle
   m_TagString: Untagged
@@ -7432,6 +7433,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 66500646}
   m_CullTransparentMesh: 1
+--- !u!114 &66500651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66500646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &67689307
 GameObject:
   m_ObjectHideFlags: 0
@@ -68738,6 +68751,7 @@ GameObject:
   - component: {fileID: 660876264}
   - component: {fileID: 660876262}
   - component: {fileID: 660876266}
+  - component: {fileID: 660876267}
   m_Layer: 0
   m_Name: Exibir vetores
   m_TagString: Untagged
@@ -68872,6 +68886,18 @@ MonoBehaviour:
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
+--- !u!114 &660876267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660876261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &663049648
 GameObject:
   m_ObjectHideFlags: 0

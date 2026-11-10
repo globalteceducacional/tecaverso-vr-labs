@@ -58,3 +58,9 @@ O MVP separa `ProjectileKinematics` (equações), `ObliqueLaunchSimulation` (est
 - O XR Origin deve ficar voltado para a área do experimento.
 - Canvas e demais interfaces espaciais devem ser orientados para a posição dos olhos do jogador, sem depender de rotações fixas específicas da cena.
 - Geradores de cena devem preservar ajustes autorais sempre que possível e nunca reaplicar uma orientação fixa sobre uma UI já posicionada manualmente.
+
+## Aceite de motion
+
+Toda nova interação deve aplicar a diretriz de motion do Design System. Testar normal, hover/foco, ação, saída, ocultação, desabilitação e preferência reduzida. Confirmar que transforms/colliders físicos e valores científicos não mudam pelo feedback. Reutilizar `Shared/Interaction`; não adicionar loops decorativos em todas as peças. Estado selecionado precisa continuar evidente sem animação.
+
+`InteractionMotionVerification.Start()` no Editor em Play Mode percorre as cenas de laboratório habilitadas e registra cobertura de Selectables e interactables em `Temp/interaction-motion-verification.txt`; não salva nem regenera cenas. Esse teste não substitui interação XR real ou medição de desempenho no dispositivo.

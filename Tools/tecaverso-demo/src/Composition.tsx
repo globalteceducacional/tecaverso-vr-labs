@@ -18,6 +18,7 @@ import { Circuits } from "./Circuits";
 import { Thermology } from "./Thermology";
 import { Waves } from "./Waves";
 import { Closing } from "./Closing";
+import { MathShowcase } from "./MathShowcase";
 export const Demo = () => {
   const english = useContext(EnglishContext);
   const { fps } = useVideoConfig();
@@ -137,11 +138,37 @@ export const EnglishDemo = () => (
     <Demo />
   </EnglishContext.Provider>
 );
+export const MathDemo = () => (
+  <EnglishContext.Provider value={false}>
+    <MathShowcase />
+  </EnglishContext.Provider>
+);
+export const MathDemoEnglish = () => (
+  <EnglishContext.Provider value={true}>
+    <MathShowcase />
+  </EnglishContext.Provider>
+);
 export const MyComposition = () => (
   <>
     <Composition
       id="Tecaverso-Labs-English"
       component={EnglishDemo}
+      durationInFrames={2715}
+      fps={30}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="Tecaverso-Math-PT"
+      component={MathDemo}
+      durationInFrames={2715}
+      fps={30}
+      width={1920}
+      height={1080}
+    />
+    <Composition
+      id="Tecaverso-Math-English"
+      component={MathDemoEnglish}
       durationInFrames={2715}
       fps={30}
       width={1920}

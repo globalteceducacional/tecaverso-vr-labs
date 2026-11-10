@@ -1796,6 +1796,7 @@ GameObject:
   - component: {fileID: 154560880}
   - component: {fileID: 154560879}
   - component: {fileID: 154560882}
+  - component: {fileID: 154560883}
   m_Layer: 0
   m_Name: "Restaurar fun\xE7\xE3o"
   m_TagString: Untagged
@@ -1925,6 +1926,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &154560883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154560877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &154694639
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,6 +2573,7 @@ GameObject:
   - component: {fileID: 207668098}
   - component: {fileID: 207668097}
   - component: {fileID: 207668100}
+  - component: {fileID: 207668101}
   m_Layer: 0
   m_Name: Cancelar
   m_TagString: Untagged
@@ -2689,6 +2703,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &207668101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207668095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &209228417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5346,6 +5372,7 @@ GameObject:
   - component: {fileID: 365706272}
   - component: {fileID: 365706271}
   - component: {fileID: 365706274}
+  - component: {fileID: 365706275}
   m_Layer: 0
   m_Name: "Guardar refer\xEAncia"
   m_TagString: Untagged
@@ -5475,6 +5502,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &365706275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365706269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &369065950
 GameObject:
   m_ObjectHideFlags: 0
@@ -7127,6 +7166,7 @@ GameObject:
   - component: {fileID: 489536808}
   - component: {fileID: 489536807}
   - component: {fileID: 489536810}
+  - component: {fileID: 489536811}
   m_Layer: 0
   m_Name: Confirmar
   m_TagString: Untagged
@@ -7256,6 +7296,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &489536811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489536805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &491106909
 GameObject:
   m_ObjectHideFlags: 0
@@ -8026,6 +8078,7 @@ GameObject:
   - component: {fileID: 557643574}
   - component: {fileID: 557643573}
   - component: {fileID: 557643576}
+  - component: {fileID: 557643577}
   m_Layer: 0
   m_Name: Exibir grade
   m_TagString: Untagged
@@ -8160,6 +8213,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 1
+--- !u!114 &557643577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557643571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &591431789
 GameObject:
   m_ObjectHideFlags: 0
@@ -11423,6 +11488,7 @@ GameObject:
   - component: {fileID: 751406355}
   - component: {fileID: 751406354}
   - component: {fileID: 751406357}
+  - component: {fileID: 751406358}
   m_Layer: 0
   m_Name: + 0,1
   m_TagString: Untagged
@@ -11552,6 +11618,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &751406358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751406352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &760017270
 GameObject:
   m_ObjectHideFlags: 0
@@ -13564,6 +13642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861050097}
   - component: {fileID: 861050098}
+  - component: {fileID: 861050099}
   m_Layer: 0
   m_Name: Unity dial
   m_TagString: Untagged
@@ -13676,6 +13755,18 @@ MonoBehaviour:
       m_Calls: []
   lab: {fileID: 1895420629}
   index: 0
+--- !u!114 &861050099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861050096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &861935550
 GameObject:
   m_ObjectHideFlags: 0
@@ -17810,6 +17901,7 @@ GameObject:
   - component: {fileID: 1079305014}
   - component: {fileID: 1079305013}
   - component: {fileID: 1079305016}
+  - component: {fileID: 1079305017}
   m_Layer: 0
   m_Name: x + 0,1
   m_TagString: Untagged
@@ -17939,6 +18031,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1079305017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1079305011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1091235880
 GameObject:
   m_ObjectHideFlags: 0
@@ -18132,6 +18236,7 @@ GameObject:
   - component: {fileID: 1105131400}
   - component: {fileID: 1105131399}
   - component: {fileID: 1105131402}
+  - component: {fileID: 1105131403}
   m_Layer: 0
   m_Name: "x \u2212 0,1"
   m_TagString: Untagged
@@ -18261,6 +18366,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1105131403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105131397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1114142175
 GameObject:
   m_ObjectHideFlags: 0
@@ -20883,6 +21000,7 @@ GameObject:
   - component: {fileID: 1256327904}
   - component: {fileID: 1256327907}
   - component: {fileID: 1256327903}
+  - component: {fileID: 1256327908}
   m_Layer: 0
   m_Name: "Remover refer\xEAncia"
   m_TagString: Untagged
@@ -21024,6 +21142,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1256327908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256327901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1266228190
 GameObject:
   m_ObjectHideFlags: 0
@@ -26303,6 +26433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549645427}
   - component: {fileID: 1549645428}
+  - component: {fileID: 1549645429}
   m_Layer: 0
   m_Name: Unity dial
   m_TagString: Untagged
@@ -26415,6 +26546,18 @@ MonoBehaviour:
       m_Calls: []
   lab: {fileID: 1895420629}
   index: 1
+--- !u!114 &1549645429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549645426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &1554727746
 GameObject:
   m_ObjectHideFlags: 0
@@ -27675,6 +27818,7 @@ GameObject:
   - component: {fileID: 1624580591}
   - component: {fileID: 1624580594}
   - component: {fileID: 1624580590}
+  - component: {fileID: 1624580595}
   m_Layer: 0
   m_Name: "Desfazer restaura\xE7\xE3o"
   m_TagString: Untagged
@@ -27816,6 +27960,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1624580595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624580588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1630845973
 GameObject:
   m_ObjectHideFlags: 0
@@ -27866,6 +28022,7 @@ GameObject:
   - component: {fileID: 1633932627}
   - component: {fileID: 1633932626}
   - component: {fileID: 1633932629}
+  - component: {fileID: 1633932630}
   m_Layer: 0
   m_Name: Afim
   m_TagString: Untagged
@@ -27995,6 +28152,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1633932630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633932624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1634240171
 GameObject:
   m_ObjectHideFlags: 0
@@ -28008,6 +28177,7 @@ GameObject:
   - component: {fileID: 1634240174}
   - component: {fileID: 1634240173}
   - component: {fileID: 1634240176}
+  - component: {fileID: 1634240177}
   m_Layer: 0
   m_Name: "\u2212 0,1"
   m_TagString: Untagged
@@ -28137,6 +28307,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1634240177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1634240171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1635605353
 GameObject:
   m_ObjectHideFlags: 0
@@ -28363,6 +28545,7 @@ GameObject:
   - component: {fileID: 1643887995}
   - component: {fileID: 1643887994}
   - component: {fileID: 1643887997}
+  - component: {fileID: 1643887998}
   m_Layer: 0
   m_Name: Voltar ao Hub
   m_TagString: Untagged
@@ -28492,6 +28675,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1643887998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643887992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1646065062
 GameObject:
   m_ObjectHideFlags: 0
@@ -28595,6 +28790,7 @@ GameObject:
   - component: {fileID: 1656010005}
   - component: {fileID: 1656010004}
   - component: {fileID: 1656010007}
+  - component: {fileID: 1656010008}
   m_Layer: 0
   m_Name: "Quadr\xE1tica"
   m_TagString: Untagged
@@ -28724,6 +28920,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1656010008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656010002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1659598476
 GameObject:
   m_ObjectHideFlags: 0
@@ -28836,6 +29044,7 @@ GameObject:
   - component: {fileID: 1676525146}
   - component: {fileID: 1676525145}
   - component: {fileID: 1676525148}
+  - component: {fileID: 1676525149}
   m_Layer: 0
   m_Name: + 0,1
   m_TagString: Untagged
@@ -28965,6 +29174,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1676525149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676525143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1677386927
 GameObject:
   m_ObjectHideFlags: 0
@@ -31901,6 +32122,7 @@ GameObject:
   - component: {fileID: 1899559943}
   - component: {fileID: 1899559942}
   - component: {fileID: 1899559945}
+  - component: {fileID: 1899559946}
   m_Layer: 0
   m_Name: + 0,1
   m_TagString: Untagged
@@ -32030,6 +32252,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1899559946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899559940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &1904247608
 GameObject:
   m_ObjectHideFlags: 0
@@ -33016,6 +33250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988997233}
   - component: {fileID: 1988997234}
+  - component: {fileID: 1988997235}
   m_Layer: 0
   m_Name: Unity dial
   m_TagString: Untagged
@@ -33128,6 +33363,18 @@ MonoBehaviour:
       m_Calls: []
   lab: {fileID: 1895420629}
   index: 2
+--- !u!114 &1988997235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1988997232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &1989292948
 GameObject:
   m_ObjectHideFlags: 0
@@ -33478,6 +33725,7 @@ GameObject:
   - component: {fileID: 2021500668}
   - component: {fileID: 2021500667}
   - component: {fileID: 2021500670}
+  - component: {fileID: 2021500671}
   m_Layer: 0
   m_Name: "Exibir ra\xEDzes e v\xE9rtice"
   m_TagString: Untagged
@@ -33612,6 +33860,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_IsOn: 0
+--- !u!114 &2021500671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021500665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &2036212593
 GameObject:
   m_ObjectHideFlags: 0
@@ -33715,6 +33975,7 @@ GameObject:
   - component: {fileID: 2036319415}
   - component: {fileID: 2036319414}
   - component: {fileID: 2036319417}
+  - component: {fileID: 2036319418}
   m_Layer: 0
   m_Name: "\u2212 0,1"
   m_TagString: Untagged
@@ -33844,6 +34105,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2036319418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036319412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &2040170801
 GameObject:
   m_ObjectHideFlags: 0
@@ -34166,6 +34439,7 @@ GameObject:
   - component: {fileID: 2064560632}
   - component: {fileID: 2064560631}
   - component: {fileID: 2064560635}
+  - component: {fileID: 2064560636}
   m_Layer: 0
   m_Name: Grab point P
   m_TagString: Untagged
@@ -34424,6 +34698,18 @@ MonoBehaviour:
   m_MaxLinearVelocityDelta: 10
   m_MaxAngularVelocityDelta: 20
   lab: {fileID: 1895420629}
+--- !u!114 &2064560636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064560629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b20c66abde9fef947a2e61afd8321f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.XRInteractionMotion
 --- !u!1 &2068554413
 GameObject:
   m_ObjectHideFlags: 0
@@ -35329,6 +35615,7 @@ GameObject:
   - component: {fileID: 2106024430}
   - component: {fileID: 2106024429}
   - component: {fileID: 2106024432}
+  - component: {fileID: 2106024433}
   m_Layer: 0
   m_Name: "\u2212 0,1"
   m_TagString: Untagged
@@ -35458,6 +35745,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2106024433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106024427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1952aec6d11279744a1fb5cd9951277f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Tecaverso.Interaction.ControlMotion
 --- !u!1 &2106661573
 GameObject:
   m_ObjectHideFlags: 0

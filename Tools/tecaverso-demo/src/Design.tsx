@@ -39,12 +39,14 @@ export const LabFrame = ({
   title,
   description,
   note,
+  header = "FÍSICA EM REALIDADE VIRTUAL",
 }: {
   children: ReactNode;
   number: string;
   title: string;
   description: string;
   note?: string;
+  header?: string;
 }) => {
   const t = useText();
   const frame = useCurrentFrame();
@@ -76,7 +78,7 @@ export const LabFrame = ({
           fontSize: 24,
         }}
       >
-        {t("FÍSICA EM REALIDADE VIRTUAL")}
+        {t(header)}
       </div>
       <div
         style={{
@@ -103,8 +105,12 @@ export const LabFrame = ({
             paddingRight: 36,
           }}
         >
-          {number}
-          <span style={{ fontSize: 22, color: "#E8E6FE" }}> / 06</span>
+          {number ? (
+            <>
+              {number}
+              <span style={{ fontSize: 22, color: "#E8E6FE" }}> / 06</span>
+            </>
+          ) : null}
         </div>
         <div
           style={{

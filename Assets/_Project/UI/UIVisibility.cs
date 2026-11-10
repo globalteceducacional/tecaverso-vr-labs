@@ -26,6 +26,8 @@ namespace Tecaverso.UI
             {
                 var selected=EventSystem.current!=null?EventSystem.current.currentSelectedGameObject:null;
                 if(selected!=null && selected.transform.IsChildOf(view.transform))EventSystem.current.SetSelectedGameObject(null);
+                foreach(var motion in view.GetComponentsInChildren<Tecaverso.Interaction.ControlMotion>(true))motion.ResetFeedback();
+                foreach(var feedback in view.GetComponentsInChildren<SliderTweenFeedback>(true))feedback.ResetFeedback();
                 if(group.alpha>0)foreach(var feedback in view.GetComponentsInChildren<ButtonTweenFeedback>(true))feedback.ResetFeedback();
             }
             group.alpha=visible?1:0;group.interactable=visible;group.blocksRaycasts=visible;

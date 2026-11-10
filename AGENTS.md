@@ -7,3 +7,4 @@ Não regenere cenas para mudanças pontuais. Use componentes e layouts reutiliz�
 Não faça builds sem autorização explícita. Prefira verificações focadas no Editor.
 Escolha os controles conforme a tarefa e o GDD específico; não repita painéis de edição em galerias de observação.
 Salve capturas e mídias geradas nas pastas ignoradas pelo Git, conforme `docs/development-guidelines.md`. Preserve o versionamento dos assets usados pelo aplicativo e seus `.meta`.
+Toda interação deve ter motion discreto conforme DESIGN_SYSTEM.md: feedback de foco/ação/estado, preferência reduzida e restauração ao ocultar. Preserve áreas clicáveis, colliders, transforms científicos e câmera; reutilize Shared/Interaction sem duplicar efeitos.

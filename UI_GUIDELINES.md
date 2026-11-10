@@ -99,7 +99,9 @@ Usar `Tecaverso.UI.UIVisibility` nas páginas, abas, modais e ações condiciona
 - Tween de escala atua em um filho `Visual`, com margem para a expansão. Não animar o tamanho controlado pelo LayoutGroup.
 - Cancelar/restaurar tweens ao ocultar, desabilitar ou destruir; ocultar por CanvasGroup não chama OnDisable.
 - Não deslocar câmera, posição de leitura, física ou foco para produzir feedback.
-- Respeitar preferência futura de movimento reduzido. Priorizar animações curtas e discretas.
+- Todo elemento interativo deve ter feedback de motion, inclusive toggles, objetos XR e controles criados em runtime. Reutilizar os componentes de `Assets/_Project/Shared/Interaction/`, sem duplicar efeitos existentes.
+- Respeitar `MotionPreferences.Reduced`, já implementada e persistida localmente. Usar realce estático no lugar de pulsos, escalas e fades. Motion não altera equações nem movimento científico.
+- Controles uGUI criados após sceneLoaded precisam herdar feedback de um prefab ou chamar `InteractionMotionBootstrap.Ensure`. Objetos XR são cobertos pelo registro no XRInteractionManager.
 
 ## 8. Texto, foco e XR
 
