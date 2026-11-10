@@ -22,7 +22,7 @@ Os laboratórios compartilham identidade visual e componentes, com controles esc
 
 **Probabilidade e estatística — 04/11/2026:** [quinta sala individual de Matemática](Assets/_Project/Laboratories/Mathematics/Probability/README.md), com moeda, dado, urna, lotes e gráficos. Substitui Medidas. [Frações e proporções](Assets/_Project/Laboratories/Mathematics/Fractions/README.md) completa a sexta sala, com barras XR, comparação de frações e receita 2:3.
 
-**Química — 09/11/2026:** [Tabela periódica](Assets/_Project/Laboratories/Chemistry/PeriodicBonds/README.md) é a primeira sala individual, com 118 cubos XR selecionáveis e fichas de consulta; não inclui montagem de ligações. Os outros cinco laboratórios estão descritos nos [GDDs de Química](docs/gdd-quimica.md); os três conteúdos anteriores do Hub continuam mockups.
+**Química — 10/11/2026:** [Tabela periódica](Assets/_Project/Laboratories/Chemistry/PeriodicBonds/README.md) oferece 118 cubos XR e fichas locais. [Reações químicas](Assets/_Project/Laboratories/Chemistry/Reactions/README.md) oferece 12 reagentes em três degraus e 12 receitas, sonda térmica XR (HCl/NaOH e HCl/KOH), seleção física pelos suportes A/B, frascos/colheres XR, líquido com Shader Graph Unity, perdas e uma ficha opcional de resultados. Ambas são individuais e offline; headset pendente. Os demais laboratórios estão nos [GDDs de Química](docs/gdd-quimica.md); Estrutura da matéria e Soluções continuam mockups no Hub.
 
 **Redesign de Química — 09/11/2026:** o [GDD de Tabela periódica](docs/gdd-quimica-tabela-e-ligacoes.md) agora prevê 118 cubos 3D selecionáveis, destaque individual, fichas de propriedades e ocorrência na natureza, sem montagem de ligações. A cena já usa os 118 cubos selecionáveis e uma base local de propriedades, sem rede durante a execução. Os 118 elementos têm textos de ocorrência e aplicações. Há 90 fotografias reais com legendas/licenças e explicação para as 28 ausências, tudo local. Referências históricas a ligações descrevem a versão anterior.
 
@@ -84,7 +84,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | HUB 1 | Quatro disciplinas com ícones Figma e navegação | Papéis de anfitrião/participante |
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Matemática | Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística e Frações e proporções disponíveis individualmente | Novos conteúdos, roteiros e validação em headset |
-| Química | Tabela periódica 3D disponível; três mockups anteriores | Validar a sala em headset e desenvolver os demais GDDs |
+| Química | Tabela periódica 3D e Reações químicas disponíveis; dois mockups no Hub | Validar em headset e desenvolver os demais GDDs |
 | Biologia | Mockups navegáveis | Simulações e atividades educativas |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
@@ -194,6 +194,10 @@ A apresentação é um painel no laboratório, não uma nova cena. Pode ser disp
 
 ### Inventário de interfaces
 
+GDDs novos e revisados devem declarar seu próprio inventário de UI/HUD, rótulos e controles 3D, incluindo visibilidade inicial e simultânea. Usar o [modelo de short GDD](docs/gdd-template.md) e as [diretrizes de desenvolvimento](docs/development-guidelines.md). A lista geral abaixo não é um conjunto de painéis obrigatório para cada laboratório.
+
+Também devem incorporar **imagens das interfaces propostas antes da implementação**, incluindo estados relevantes e disposição espacial. A [revisão de Reações químicas](docs/gdd-quimica-reacoes.md) exemplifica esse processo com mesa de reagentes, seleção física A/B e uma ficha opcional; foi aprovada e aplicada à cena. HTML e script ficam em `docs/prototypes/`; capturas locais ignoradas em `GeneratedMedia/GDD/`.
+
 | Interface | Conteúdo e ações | Situação |
 |---|---|---|
 | Entrada | Explorar sozinho, criar sala, entrar em sala | Implementada; configurações pendentes |
@@ -290,7 +294,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
-| Química | Hub: Tabela periódica 3D disponível; Estrutura da matéria, Reações químicas e Soluções como mockups. GDDs para seis salas | Primeira sala individual; validação em headset pendente |
+| Química | Hub: Tabela periódica 3D e Reações químicas disponíveis; Estrutura da matéria e Soluções como mockups. GDDs para seis salas | Duas salas individuais offline; validação em headset pendente |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Espaço cartesiano; Funções e gráficos; Probabilidade e estatística; Formas geométricas; Geometria plana; Frações e proporções | Seis laboratórios individuais |
 

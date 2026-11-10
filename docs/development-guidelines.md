@@ -24,6 +24,31 @@ Leia [UI_GUIDELINES.md](../UI_GUIDELINES.md) e [DESIGN_SYSTEM.md](../DESIGN_SYST
 
 O Espaço cartesiano tem ferramentas de construção e edição. Formas geométricas é uma galeria de observação: nomes e fórmulas junto às peças, três toggles independentes e retorno ao Hub. Não reintroduzir estudo A/B, abas ou campos numéricos na galeria por copiar a estrutura do outro laboratório. O GDD específico aprovado delimita o escopo.
 
+### Inventário obrigatório de interfaces nos GDDs — 10/11/2026
+
+Todo GDD novo ou revisado deve usar o [modelo de GDD](gdd-template.md) para tornar a interface avaliável antes da implementação. Uma lista de funcionalidades não basta: ela pode esconder muitos painéis simultâneos.
+
+- Listar cada painel, HUD, modal, rótulo junto ao objeto e controle físico 3D. Distinguir conteúdo de leitura de controles interativos e distinguir interface espacial de HUD preso à câmera.
+- Para cada item, declarar finalidade, localização, conteúdo/ações exatas, estado inicial, gatilho de abertura, forma de fechamento e quais outras interfaces aparecem junto dele.
+- Descrever a visão de entrada e a carga de informação durante manipulação, consulta e confirmação. Informações opcionais não devem ocupar o campo de visão por padrão sem justificativa pedagógica.
+- Justificar por que um painel é necessário e se rótulo, graduação, controle físico ou ação direta no objeto pode cumprir sua função. Reutilizar identidade visual não autoriza copiar a quantidade de painéis de outra sala.
+- Registrar o inventário de materiais/objetos e as combinações realmente suportadas: seleção livre ou casos fixos, itens manipuláveis ou apenas resultados, quantidades, efeitos e limites. Não confundir combinação não implementada com reação quimicamente impossível.
+- Legendas e ponteiros de gravações ficam separados do inventário da aplicação.
+- A implementação deve refletir o inventário do GDD. Mudanças significativas de quantidade, finalidade ou presença simultânea de interfaces devem aparecer na revisão da proposta, com status explícito; ajustes rotineiros de layout dentro do escopo continuam autorizados.
+
+Esta regra vale daqui para frente e nas revisões dos GDDs existentes. Não representa migração automática das salas nem aprovação de um novo layout.
+
+### Prévias visuais obrigatórias antes da implementação — 10/11/2026
+
+- Todo GDD novo ou revisado inclui **imagens incorporadas das interfaces/HUD propostas**, antes de implementar ou reformular a UI. Não substituir por descrição textual, diagrama abstrato ou apenas link para HTML.
+- Pode-se criar um protótipo HTML e capturá-lo ou gerar imagens conceituais. Mostrar visão espacial de entrada, posição em relação aos objetos, leitura das interfaces e estados de escolha/manipulação/consulta/recusa/confirmação que existirem. Se não houver HUD, mostrar visualmente os rótulos e controles necessários.
+- Cada imagem identifica seu estado e corresponde ao inventário: nomes, ações, abertura/fechamento e interfaces simultâneas. Navegação do protótipo, anotações e legendas de vídeo são externas à aplicação e precisam ser identificadas como tal.
+- Marcar proposta, aprovação e implementação separadamente. Revisões significativas de interação ou layout exigem atualizar GDD e prévias antes de implementar; screenshots antigos não aprovam um fluxo novo. Não é necessário pedir nova aprovação de ajustes rotineiros já autorizados.
+- Salvar imagens em `GeneratedMedia/GDD/<laboratorio>/`, ignorado pelo Git. Versionar fonte HTML e script de captura em `docs/prototypes/<laboratorio>/`, com instruções de reprodução offline e dependências explícitas. Quando usar imagem gerada sem HTML, guardar prompt/receita; a reprodução pode exigir o provedor. Não afirmar que imagens ignoradas acompanham um clone. Ao compartilhar o GDD fora do workspace, entregar as imagens juntas ou exportá-lo com imagens incorporadas.
+- Revisar imagens geradas para cortes, sobreposições, ações não inventariadas e excesso de informação. Essas prévias não substituem verificação real de tamanho angular, alcance e conforto XR.
+
+Referência de aplicação: [Reações químicas — proposta da mesa e seleção física A/B](gdd-quimica-reacoes.md).
+
 <a id="midias-geradas"></a>
 ## Mídias geradas e versionamento
 

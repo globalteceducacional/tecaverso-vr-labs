@@ -69,11 +69,12 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
       scenePath: 
     - title: "Rea\xE7\xF5es qu\xEDmicas"
-      description: "Mockup: observe reagentes e produtos em transforma\xE7\xF5es
-        qu\xEDmicas."
-      objective: "Identificar evid\xEAncias de uma rea\xE7\xE3o qu\xEDmica."
+      description: "Incline frascos, dose reagentes e observe g\xE1s, precipitado
+        e neutraliza\xE7\xE3o."
+      objective: "Relacionar evid\xEAncias, reagente limitante e conserva\xE7\xE3o
+        dos \xE1tomos."
       icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Chemistry/Reactions/Scenes/Reactions.unity
     - title: "Solu\xE7\xF5es"
       description: "Mockup: prepare misturas e compare concentra\xE7\xF5es."
       objective: "Relacionar soluto, solvente e concentra\xE7\xE3o."

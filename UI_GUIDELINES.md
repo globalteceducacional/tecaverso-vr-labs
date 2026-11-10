@@ -25,6 +25,8 @@ Primeiro justificar a necessidade de cada controle. Não criar um painel princip
 
 Antes de escolher o layout, aplicar a matriz de controles da seção 7.0 de `DESIGN_SYSTEM.md`. O painel de outro laboratório é uma referência visual, não uma lista obrigatória de campos.
 
+Antes de implementar UI nova ou reformulada, o GDD deve incorporar imagens das interfaces e dos estados relevantes, além do inventário. Mostrar disposição espacial, manipulação, consulta e recusas/confirmações quando aplicáveis. HTML capturado ou imagem conceitual são válidos; indicar proposta versus implementação. Seguir o [modelo de GDD](docs/gdd-template.md) e as [diretrizes de prévias visuais](docs/development-guidelines.md).
+
 - Classificar cada item como ação, escolha exclusiva, preferência booleana, grandeza contínua, quantidade discreta ou resultado.
 - Sliders exigem mínimo/máximo, passo, unidade e semântica de aplicação explícitos. Não mapear índices de planetas/modos para trilhas numéricas.
 - Seleções exclusivas precisam comunicar a opção atual; uma opção selecionada não deve parecer indisponível por erro.
@@ -104,6 +106,8 @@ Usar `Tecaverso.UI.UIVisibility` nas páginas, abas, modais e ações condiciona
 - Controles uGUI criados após sceneLoaded precisam herdar feedback de um prefab ou chamar `InteractionMotionBootstrap.Ensure`. Objetos XR são cobertos pelo registro no XRInteractionManager.
 
 ## 8. Texto, foco e XR
+
+- Em objetos manipuláveis, priorizar rótulos impressos no material, gravados ou aderentes à geometria. Não anexar painéis flutuantes aos frascos, ferramentas ou peças para substituir sua identificação física. Valores extensos e instruções ficam no suporte fixo ou na consulta opcional; visores pertencentes ao instrumento, como o de um termômetro, são apropriados. Não encobrir bicos, conteúdo ou a área de pega.
 
 - Escolher explicitamente quebra, truncamento, paginação ou rolagem. Nunca usar overflow livre para conteúdo variável.
 - Não reduzir fonte indefinidamente. Nomes longos e oito participantes devem caber na estrutura prevista.

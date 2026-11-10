@@ -368,6 +368,7 @@ O amarelo do vetor não deve virar texto pequeno sobre fundo claro. O azul da re
 - Controles físicos de UI devem priorizar os modelos oficiais Unity UI_3D (Dial, Lever e Slider), com materiais da aplicação, antes de composições de primitivas. Os prefabs compartilhados ficam em `Assets/_Project/Shared/XR/Controls/`; preserve pivôs, colliders, pontos de pega e eventos. Uma alavanca liga/desliga pelo movimento entre posições, não pelo simples ato de selecioná-la.
 
 - Modelos com silhueta clara, superfícies simples e detalhes moderados.
+- Identificação de objetos manipuláveis deve integrar a superfície: rótulo no material, gravação ou faixa aderente. Não carregar cartões ou HUDs junto a frascos e ferramentas. Estoques/instruções extensos ficam no suporte fixo ou consulta opcional; instrumentos de medição podem ter seu próprio visor. Preservar a visualização do conteúdo e a área de pega.
 - Canhão/base: metal escuro, carenagens claras e acentos azuis coerentes com a sala.
 - Movimento mecânico comunica a função: base telescópica muda altura, canhão muda ângulo.
 - Não escalar detalhes do modelo de forma que deslocamento visual altere a referência científica.
@@ -419,6 +420,7 @@ Para documentação, revisar coerência e referências; não compilar ou gerar b
 
 1. Reutilizar tokens/componentes antes de adicionar novos.
 2. Uma nova variante precisa ter propósito e estados documentados.
+   GDDs novos ou revisados incorporam imagens dos layouts e estados de UI/HUD antes da implementação, incluindo contexto espacial e interações relevantes. Prévia pode ser HTML capturado ou imagem conceitual; distinguir proposta, aprovação e cena real. Inventário textual não substitui a prévia visual.
 3. Atualizar Figma, implementação e este documento ao mudar um padrão compartilhado.
 4. Não propagar alterações em massa sem verificar impacto nas cenas existentes.
 5. Consolidar futuramente tokens em configuração compartilhada, evitando valores divergentes em scripts de autoria.

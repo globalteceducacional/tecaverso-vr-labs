@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reações químicas — proposta de interação</title>
+<style>
+@font-face{font-family:Montserrat;src:url('../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Regular.ttf')}
+@font-face{font-family:Montserrat;src:url('../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Bold.ttf');font-weight:700}
+*{box-sizing:border-box}body{margin:0;background:#e8e6fe;color:#161616;font-family:Montserrat,sans-serif}main{max-width:1600px;margin:auto;padding:28px 40px}header{display:flex;justify-content:space-between;align-items:start}h1{font-size:30px;margin:6px 0 12px}.eyebrow{font-size:12px;letter-spacing:2px;color:#284ea0;font-weight:700}.badge{background:#d3d1e8;padding:12px;font-size:12px}nav{display:flex;gap:8px;margin:4px 0 18px;flex-wrap:wrap}button{font:700 14px Montserrat;border:2px solid #07386f;background:#284ea0;color:white;padding:12px 16px;cursor:pointer}button:hover,button:focus-visible{outline:3px solid #7648e8;outline-offset:3px}nav button{background:transparent;color:#284ea0}nav button[aria-pressed=true]{background:#284ea0;color:white}.scene{height:675px;position:relative;background:#111e35;overflow:hidden}.scene svg{width:100%;height:100%}.scene text{font-family:Montserrat,sans-serif}.plaque{position:absolute;background:#e8e6fe;color:#161616;border:2px solid #07386f;padding:16px 20px}.local{left:3%;top:70%;width:30%;font-size:15px;border-left:5px solid #7648e8}.local strong{display:block;margin-bottom:6px}.consult{right:2%;top:13%;width:35%;padding:24px}.consult h2{font-size:26px;margin:12px 0}.consult p{font-size:16px;line-height:1.5}.formula{padding:16px;background:#d3d1e8;color:#284ea0;font-weight:700;line-height:1.7}.row{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid #aaa8c0;font-size:15px}.controls{position:absolute;bottom:22px;right:3%;display:flex;gap:8px;background:#d3d1e8;padding:10px}.controls button{font-size:13px}.legend{position:absolute;top:18px;left:24px;color:#b5c9e8;font-size:12px;letter-spacing:1px}.modal{width:440px;left:calc(50% - 220px);top:150px;padding:28px;z-index:2}.modal h2{margin:0 0 16px;font-size:25px}.modal p{font-size:17px;line-height:1.5}.modal div{display:flex;gap:12px}.veil{position:absolute;inset:0;background:#070c1b99}footer{display:flex;gap:28px;margin-top:22px;align-items:start}footer b{color:#284ea0;min-width:220px;font-size:20px}footer p{font-size:17px;line-height:1.55;margin:0;max-width:1100px}.note{font-size:11px;color:#51596b;margin-top:12px}.hidden{display:none}@media(max-width:1000px){main{min-width:960px;padding:20px}.consult{width:40%}.local{width:40%;left:25%}}@media(prefers-reduced-motion:no-preference){button{transition:background .12s,outline-color .12s}}
+button:disabled{background:#85829d;border-color:#85829d;color:#fff;cursor:default;outline:none}.consult{top:2%}.modal{left:auto;right:2%;top:13%;width:35%}
+</style>
+<main>
+ <header><div><div class="eyebrow">TECAVERSO · QUÍMICA · REVISÃO DO GDD</div><h1>Escolher com as mãos. Misturar. Observar.</h1></div><div class="badge">REVISÃO APROVADA · IMPLEMENTADA<br>Esquema espacial, não captura da Unity</div></header>
+ <nav aria-label="Estados do storyboard"></nav>
+ <section class="scene" aria-label="Prévia da sala e interfaces"></section>
+ <footer><b id="heading"></b><p id="description"></p></footer>
+ <div class="note">A navegação acima e esta legenda pertencem ao protótipo. Na sala não existe HUD preso à câmera. Líquidos e partículas: preservar os assets atuais.</div>
+</main>
+<script>
+const states = [
+ ['entrada','01 · Ao chegar','Três de cada grupo','Doze reagentes: três ácidos, três bases, três sais e três óxidos. Cada substância participa de pelo menos uma das 12 receitas cadastradas. Os suportes A/B definem o par.'],
+ ['escolha','02 · Escolher A','A orienta a escolha de B','Ao encaixar HCl em A, sete parceiros cadastrados recebem marca “B disponível”. Os demais continuam legíveis e podem ser pegos para leitura, mas não entram no suporte B.'],
+ ['mistura','03 · Dosar o par','Par definido; dosagem livre','CaCl₂ e Na₂CO₃ formam o par desta tentativa. Retire os frascos dos suportes e despeje. Pode voltar a adicionar A ou B em qualquer ordem; a quantidade altera o excesso e o produto formado.'],
+ ['consulta','04 · Consultar','Uma ficha, só quando pedida','O comando Consultar abre esta ficha ao lado do recipiente. Equação e resultados são leitura opcional. Fechar devolve espaço ao experimento; não há painel permanente de moléculas ou coeficientes.'],
+ ['limite','05 · Terceiro reagente','Explicar antes de consumir','HCl não pertence ao par CaCl₂ + Na₂CO₃ já escolhido. Ao tentar verter sobre o béquer, o fluxo é bloqueado antes de sair do frasco. A mistura existente e o estoque são preservados.'],
+ ['temperatura','07 · Medir temperatura','Medir com a sonda XR','Coloque a ponta metálica dentro do líquido. HCl/NaOH e HCl/KOH têm estimativa térmica quantitativa. Fora do líquido não há leitura; os demais pares informam modelo indisponível.'],
+ ['reinicio','06 · Reiniciar','Descarte explícito','Nova mistura confirma o descarte e a reposição dos estoques. Cancelar conserva tudo. É preciso devolver os instrumentos antes de confirmar; nenhuma peça segurada é teletransportada.']
+];
+const compounds=[
+ {id:'acetic',f:'CH₃COOH',name:['Ácido','acético'],x:140,g:'ÁCIDOS'},
+ {id:'hcl',f:'HCl',name:['Ácido','clorídrico'],x:230,g:'ÁCIDOS'},
+ {id:'sulfuric',f:'H₂SO₄',name:['Ácido sulfúrico','diluído'],x:320,g:'ÁCIDOS'},
+ {id:'naoh',f:'NaOH',name:['Hidróxido','de sódio'],x:450,g:'BASES'},
+ {id:'koh',f:'KOH',name:['Hidróxido','de potássio'],x:540,g:'BASES'},
+ {id:'mgoh',f:'Mg(OH)₂',name:['Hidróxido','de magnésio'],x:630,g:'BASES',solid:true},
+ {id:'bicarb',f:'NaHCO₃',name:['Bicarbonato','de sódio'],x:760,g:'SAIS',solid:true},
+ {id:'cacl',f:'CaCl₂',name:['Cloreto','de cálcio'],x:850,g:'SAIS'},
+ {id:'carb',f:'Na₂CO₃',name:['Carbonato','de sódio'],x:940,g:'SAIS'},
+ {id:'mgo',f:'MgO',name:['Óxido de','magnésio'],x:1070,g:'ÓXIDOS',solid:true},
+ {id:'cuo',f:'CuO',name:['Óxido de','cobre(II)'],x:1160,g:'ÓXIDOS',solid:true,color:'#20242a'},
+ {id:'zno',f:'ZnO',name:['Óxido','de zinco'],x:1250,g:'ÓXIDOS',solid:true}
+];
+function bottle(c,x,y,scale=1,highlight=false,angle=0){return `<g transform="translate(${x} ${y}) scale(${scale}) rotate(${angle} 0 80)">
+ ${highlight?'<rect x="-62" y="-10" width="124" height="185" rx="8" fill="none" stroke="#93ddff" stroke-width="4"/>':''}
+ <path d="M-23 12 V38 Q-49 50 -49 68 V147 Q-49 160 -35 160 H35 Q49 160 49 147 V68 Q49 50 23 38 V12Z" fill="#cce9f5" fill-opacity=".18" stroke="#aec7d8" stroke-width="3"/>
+ <path d="M-46 100 H46 V145 Q46 156 34 156 H-34 Q-46 156 -46 145Z" fill="${c.color||(c.solid?'#deded5':'#e4e4e4')}" opacity=".65"/>
+ <rect x="-27" y="0" width="54" height="19" rx="3" fill="#284ea0"/>
+ <rect x="-46" y="65" width="92" height="80" fill="#e8e6fe"/>
+ <text y="86" text-anchor="middle" fill="#161616" font-size="15" font-weight="700">${c.f}</text>
+ <text y="104" text-anchor="middle" fill="#161616" font-size="10">${c.name[0]}</text><text y="117" text-anchor="middle" fill="#161616" font-size="10">${c.name[1]}</text>
+ <text y="132" text-anchor="middle" fill="#284ea0" font-size="8">${c.solid?'Sólido · 6 g':'Solução · 0,10 mol/L'}</text><text y="142" text-anchor="middle" fill="#284ea0" font-size="8">${c.solid?'Colher dedicada':'300 mL inicialmente'}</text>
+ </g>`}
+function beaker(filled,thermal=false){return `<g transform="translate(660 365)"><ellipse cy="150" rx="89" ry="20" fill="#071121"/>
+ <path d="M-76 0 L-76 125 Q-76 148 0 148 Q76 148 76 125 V0 L91 -8" fill="#c4e6ee" fill-opacity=".08" stroke="#c1e2ef" stroke-width="3"/>
+ ${filled?'<path d="M-72 75 Q0 87 72 75 V123 Q72 144 0 144 Q-72 144 -72 123Z" fill="#e4e4e4" opacity=".35"/><ellipse cy="75" rx="72" ry="12" fill="#e4e4e4" opacity=".4"/>'+(thermal?'':'<ellipse cy="132" rx="68" ry="11" fill="#ecece0"/>'):''}
+ <ellipse rx="76" ry="14" fill="none" stroke="#bcd6e4" stroke-width="3"/>
+ ${[30,55,80,105].map((y,i)=>`<path d="M-62 ${y} h17" stroke="#e8e6fe" stroke-width="2"/><text x="-40" y="${y+4}" fill="#e8e6fe" font-size="10">${400-i*100}</text>`).join('')}
+ <text y="174" text-anchor="middle" fill="#e8e6fe" font-size="16">${filled?(thermal?'200 mL · solução incolor':'250 mL · precipitado'): '500 mL · capacidade'}</text></g>`}
+function slot(x,letter,formula,ready){return `<g transform="translate(${x} 420)"><ellipse rx="73" ry="24" fill="#182944" stroke="${ready?'#93ddff':'#748aaf'}" stroke-width="3"/>
+ <text y="8" text-anchor="middle" fill="#e8e6fe" font-size="24" font-weight="700">${letter}</text><text y="50" text-anchor="middle" fill="#e8e6fe" font-size="15">${formula||'Encaixe o frasco'}</text></g>`}
+function render(){
+ const key=new URLSearchParams(location.search).get('estado')||'entrada'; const state=states.find(s=>s[0]===key)||states[0];
+ const chosen=state[0]==='escolha', used=['mistura','consulta','limite','reinicio','temperatura'].includes(state[0]);
+ document.querySelector('nav').innerHTML=states.map(s=>`<button aria-pressed="${s[0]===state[0]}" data-state="${s[0]}">${s[1]}</button>`).join('');
+ document.querySelectorAll('[data-state]').forEach(b=>b.onclick=()=>go(b.dataset.state));
+ document.getElementById('heading').textContent=state[2];document.getElementById('description').textContent=state[3];
+ let svg=`<svg viewBox="0 0 1480 675" role="img" aria-label="Mesa em degraus, reagentes agrupados, suportes A e B, béquer central">
+ <path d="M0 0 H1480 V310 H0Z" fill="#202f49"/><path d="M0 305 H1480" stroke="#284ea0" stroke-width="5"/>
+ ${[0,220,440,660,880,1100,1320,1480].map(x=>`<path d="M740 285 L${x} 675" stroke="#1e365c"/>`).join('')}
+ <path d="M90 130 H1330 V160 H90Z M65 225 H1360 V260 H65Z M40 325 H1390 V365 H40Z" fill="#69788e" stroke="#94a7bf" stroke-width="3"/>
+ <path d="M90 160 H1330 V225 H90Z M65 260 H1360 V325 H65Z" fill="#283a55"/>
+ <path d="M370 440 H1010 L1100 555 H280Z" fill="#34465f" stroke="#667995" stroke-width="3"/>
+ ${['ÁCIDOS','BASES','SAIS','ÓXIDOS'].map((t,g)=>`<text x="${230+310*g}" y="32" text-anchor="middle" fill="#e8e6fe" font-size="18" font-weight="700">${t} · 3</text>`).join('')}`; for(const c of compounds){if((c.id==='hcl'&&(chosen||state[0]==='limite'))||(c.id==='carb'&&state[0]==='mistura'))continue;const hi=chosen&&['naoh','koh','mgoh','bicarb','carb','mgo','zno'].includes(c.id);svg+=bottle(c,230+310*Math.floor(compounds.indexOf(c)/3)+(compounds.indexOf(c)%3-1)*24,245-(compounds.indexOf(c)%3)*94,.55,hi);if(hi)svg+=`<text x="${c.x}" y="305" text-anchor="middle" fill="#a5e5ff" font-size="11">✓ B disponível</text>`;}
+ svg+=slot(460,'A',state[0]==='temperatura'?'HCl':chosen?'HCl':used?'CaCl₂':'',chosen||used)+slot(880,'B',state[0]==='temperatura'?'NaOH':used?'Na₂CO₃':'',used)+beaker(used,state[0]==='temperatura');
+ svg+=`<g transform="translate(1100 400)"><rect width="110" height="65" fill="#284158"/><text x="55" y="27" text-anchor="middle" fill="#e8e6fe" font-size="11">INSTRUMENTOS</text><path d="M20 45 h70" stroke="#a6bccb" stroke-width="6"/><text x="55" y="85" text-anchor="middle" fill="#c4d5ec" font-size="11">colheres · indicador · sonda</text></g>`;
+ if(chosen)svg+=bottle(compounds[1],460,310,.6);
+ if(state[0]==='mistura'){svg+=bottle(compounds.find(c=>c.id==='carb'),745,250,.65,false,-65)+`<path d="M712 321 Q695 341 684 435" stroke="#a2d9e8" stroke-width="6" fill="none"/>`;}
+ if(state[0]==='limite')svg+=bottle(compounds[1],740,260,.65,true,-65);
+ if(state[0]==='temperatura')svg+=`<g transform="translate(920 350)"><rect x="-72" y="-30" width="144" height="142" rx="12" fill="#284ea0"/><rect x="-62" y="-16" width="124" height="110" fill="#e8e6fe"/><path d="M0 112 V180 L-210 180 L-235 130" stroke="#c8cdd4" stroke-width="7" fill="none"/><text x="0" y="5" text-anchor="middle" font-size="12">SONDA IMERSA</text><text y="35" text-anchor="middle" font-size="23">25,61 °C</text><text y="56" text-anchor="middle" font-size="12">Inicial: 25,00 °C</text><text y="73" text-anchor="middle" font-size="12">Variação: +0,61 °C</text><text y="88" text-anchor="middle" font-size="9">Estimativa ideal</text></g>`;
+ svg+='</svg>';
+ let overlay='';
+ if(state[0]==='entrada')overlay+='<div class="plaque local"><strong>1. Escolha A → 2. Escolha B</strong>Os suportes definem o par desta mistura.</div>';
+ if(chosen)overlay+='<div class="plaque local"><strong>A: ácido clorídrico</strong>Encaixe em B um dos sete parceiros destacados.</div>';
+ if(state[0]==='mistura')overlay+='<div class="plaque local"><strong>Par: CaCl₂ + Na₂CO₃</strong>Formação de sólido branco. Consulte para entender.</div>';
+ if(state[0]==='limite')overlay+='<div class="plaque local"><strong>HCl não faz parte deste par</strong>Use A ou B. Para trocar, inicie uma nova mistura.<br><small>Fluxo bloqueado; estoque preservado.</small></div>';
+ if(state[0]==='consulta')overlay+=`<article class="plaque consult"><div class="eyebrow">FICHA DA MISTURA · LEITURA</div><h2>Formação de um sólido</h2><p>O carbonato de cálcio aparece como um precipitado branco.</p><div class="formula">CaCl₂ + Na₂CO₃<br>→ CaCO₃(s) + 2 NaCl</div><div class="row"><span>Volume recebido</span><strong>250 mL</strong></div><div class="row"><span>CaCO₃ formado</span><strong>1,00 g</strong></div><div class="row"><span>Reagente limitante</span><strong>CaCl₂</strong></div><p>CaCl₂: 100 mL; Na₂CO₃: 150 mL.<br>Ambas as soluções: 0,10 mol/L.<br>Restam 5,0 mmol de Na₂CO₃.</p><button onclick="go('mistura')">Fechar ficha</button></article>`;
+ overlay+=`<div class="controls"><button onclick="${used?"go('consulta')":"help()"}">Consultar</button><button ${state[0]==='entrada'?'disabled':''} onclick="go('${used?'reinicio':'entrada'}')">${used?'Nova mistura':'Trocar par'}</button><button onclick="document.getElementById('description').textContent='Na aplicação: volta ao Hub; com mistura usada, solicita confirmação. Esta prévia não altera a Unity.'">Voltar ao Hub</button></div>`;
+ if(state[0]==='reinicio')overlay+='<div class="veil"></div><section class="plaque modal"><h2>Iniciar nova mistura?</h2><p>A mistura será descartada e os estoques serão repostos. Devolva os instrumentos antes de confirmar.</p><div><button onclick="go(\'mistura\')">Cancelar</button><button onclick="go(\'entrada\')">Confirmar reinício</button></div></section>';
+ document.querySelector('.scene').innerHTML=svg+overlay;
+ document.body.dataset.previewReady='true';
+}
+function help(){document.querySelector('.consult')?.remove();document.querySelector('.local')?.remove();document.querySelector('.scene').insertAdjacentHTML('beforeend','<article class="plaque consult"><div class="eyebrow">COMO ESCOLHER</div><h2>Dois reagentes por mistura</h2><p>Encaixe o primeiro frasco em A. Os parceiros disponíveis recebem a marca B disponível.</p><p>Encaixe um deles em B. Depois, retire os frascos e despeje no béquer. Pode alternar doses dos mesmos reagentes.</p><p>Para outro par, use Trocar par ou Nova mistura.</p><button onclick="render()">Fechar ficha</button></article>')}
+function go(state){history.replaceState(null,'','?estado='+state);render()};render();
+</script>
+</html>
