@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Modelos atômicos · protótipo interativo XR</title>
+  <style>
+    @font-face{font-family:Montserrat;src:url('../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Regular.ttf')}@font-face{font-family:Montserrat;src:url('../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Bold.ttf');font-weight:700}@font-face{font-family:Montserrat;src:url('../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-ExtraBold.ttf');font-weight:800}
+    :root{font-family:Montserrat,Arial,sans-serif;color:#eaf2ff;background:#071226}
+    *{box-sizing:border-box}body{margin:0}button{font:inherit;cursor:pointer}
+    button:focus-visible,[tabindex]:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .app{width:1600px;height:900px;position:absolute;left:50%;top:0;transform:translateX(-50%) scale(var(--scale,1));transform-origin:top center;overflow:hidden;background:radial-gradient(ellipse at 50% 65%,#1c3b66,#081a36 65%,#050f21)}
+    .room-edge{position:absolute;inset:0;border:12px solid #112e55;pointer-events:none}.header{height:118px;background:#0f2a4e;border-bottom:4px solid #269fe8;padding:22px 42px;display:flex;justify-content:space-between;align-items:center}
+    h1{margin:0;font-size:29px;letter-spacing:1px}.subtitle{margin-top:6px;font-size:14px;color:#bdd3ee}.hub{align-self:flex-start}
+    .btn{border:2px solid #72b5e8;color:white;background:#284ea0;padding:12px 18px;border-radius:9px;font-size:15px;font-weight:700;transition:transform .16s,box-shadow .16s,background .16s}
+    .btn:hover,.btn:focus-visible{transform:scale(1.035);box-shadow:0 0 16px #66c7ff88}.btn:active{transform:scale(.98)}.btn.secondary{background:#123b70}.btn.selected{background:#57b5d8;color:#09233f}.btn.ghost{color:#21467e;background:#edf1ff;border-color:#6381ad}
+    .tour{position:absolute;top:130px;left:36px;right:36px;height:226px;display:flex;gap:10px}.tour.particles{left:250px;right:250px;gap:24px}.tour.particles .station .visual{width:190px}
+    .station{flex:1;min-width:0;border:2px solid #3979b3;background:linear-gradient(#17365b,#0d2543);border-radius:12px;color:#eaf2ff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;transition:transform .18s,border-color .18s,box-shadow .18s}
+    .station:hover,.station:focus-visible{transform:translateY(-5px);border-color:#a9e7ff;box-shadow:0 0 19px #49b8f477}.station.active{border-color:#a9e7ff;box-shadow:0 0 20px #49b8f477}
+    .station .visual{height:112px;width:155px;display:grid;place-items:center}.station .visual svg{width:100%;height:100%;filter:drop-shadow(0 0 9px #5acfff88)}.station .name{font-size:21px;font-weight:700}.station .date{font-size:14px;color:#bfd2eb}
+    .milestone{position:absolute;right:42px;top:366px;color:#b9d4e6;font-size:13px;background:#193c59;border:1px solid #4aa4d6;padding:6px 12px;border-radius:6px}.wallnav{position:absolute;left:42px;top:365px;padding:7px 14px;font-size:13px;z-index:8}
+    .workspace{position:absolute;left:34px;right:34px;top:402px;bottom:32px;display:grid;grid-template-columns:280px 1fr 300px;gap:20px}
+    .bay,.readout,.help{border:2px solid #3d83b9;border-radius:15px;box-shadow:0 12px 28px #0008}.bay{background:#102b4e;padding:19px;align-self:end}.bay h2,.readout h2{font-size:18px;margin:0 0 13px}.bay p{font-size:13px;line-height:1.35;color:#c4d9f0;margin:0 0 15px}
+    .particle-row{border:1px solid #538cb7;border-radius:9px;background:#173c67;display:grid;grid-template-columns:36px 1fr 40px 40px;align-items:center;gap:7px;padding:8px;margin:10px 0;font-size:15px}.particle-row .adjust{height:38px;width:38px;border:2px solid #88bce5;border-radius:8px;background:#284ea0;color:white;font-size:25px;font-weight:700;line-height:1;transition:transform .15s,background .15s}.particle-row .adjust:hover,.particle-row .adjust:focus-visible{transform:scale(1.1);background:#56a7cf}.particle-row .adjust:active{transform:scale(.94)}
+    .ball{width:36px;height:36px;border-radius:50%;display:inline-block;flex:none;box-shadow:inset -7px -7px 10px #0006,0 0 13px currentColor}.ball.p{background:#ef6c81;color:#ef6c81}.ball.n{background:#bcbde4;color:#bcbde4}.ball.e{background:#70d9ff;color:#70d9ff}
+    .arena{position:relative;border:5px solid #329bd4;border-radius:50%;background:radial-gradient(ellipse,#1c4966,#0e2747 65%,#0d1c36);box-shadow:0 0 33px #2793d760;align-self:stretch;min-width:0;cursor:grab;touch-action:none}.arena.dragging{cursor:grabbing;box-shadow:0 0 42px #7ccfff99}.orbit-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+    .target{position:absolute;border:2px dashed #81c8ea;display:flex;align-items:center;justify-content:center;text-align:center;color:#d4ecff;font-size:15px;font-weight:bold;z-index:2;pointer-events:none}
+    .nucleus-target{left:50%;top:49%;width:220px;height:220px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 30%,#a64375,#512c78);border:4px solid #c9b4eb;color:white}
+    .electron-target{inset:56px 132px;border-radius:50%;z-index:1;background:transparent;border-color:transparent}.electron-target .target-label{position:absolute;bottom:-3px;background:#12365a;padding:4px 10px;border-radius:5px}
+    .cloud{position:absolute;inset:42px 80px;border-radius:50%;background:radial-gradient(ellipse,#72d5fb66,#70c5ef22 55%,transparent 75%);filter:blur(10px);display:none;pointer-events:none}.arena.cloud-view .cloud{display:block}.arena.cloud-view .orbit-svg,.arena.cloud-view .target-label{display:none}
+    .placed{position:absolute;z-index:4;border:2px solid white;border-radius:50%;width:30px;height:30px;display:grid;place-items:center;font-weight:bold;font-size:16px;box-shadow:0 0 15px currentColor;pointer-events:none}.placed.p,.placed.n{width:24px;height:24px;font-size:12px}.placed.p{background:#ef6c81;color:#ef6c81}.placed.n{background:#bcbde4;color:#bcbde4}.placed.e{background:#70d9ff;color:#70d9ff}.placed span{color:#13223e}
+    .arena.cloud-view .placed.e{display:none}.arena .label{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-size:13px;color:#c7e0f2;pointer-events:none}.arena .empty-hint{position:absolute;left:25%;right:25%;top:43%;text-align:center;line-height:1.3;font-weight:bold;z-index:3;pointer-events:none;text-shadow:0 2px 4px #071126}
+    .right{display:flex;flex-direction:column;gap:10px;justify-content:flex-end}.switches{display:flex;gap:7px}.switches .btn{padding:10px 8px;flex:1;font-size:13px}.readout{padding:20px;background:#e8e6fe;color:#142b4c;min-height:215px}.readout h2{color:#284ea0}.element-name{font-size:23px;font-weight:800;margin:5px 0 14px}.counts{font-size:18px;margin:7px 0}.result-note{font-size:14px;color:#526583;line-height:1.3;margin-top:13px}.actions{display:flex;gap:8px}.actions .btn{flex:1;font-size:14px;padding:11px 5px}
+    .help{position:absolute;left:34px;top:12px;z-index:8;background:#e8e6fe;color:#162747;width:390px;padding:14px 18px;border-color:#8eabca;display:none}.help h2{font-size:18px;margin:0 0 8px}.help ol{font-size:14px;line-height:1.4;margin:0;padding-left:20px}.help.show{display:block}.helpclose{float:right;background:none;border:none;color:#284ea0;font-weight:bold}
+    .detail{position:absolute;right:34px;top:365px;z-index:10;width:440px;max-height:520px;overflow:auto;background:#e8e6fe;color:#172c4c;border:2px solid #7da9d0;border-radius:12px;padding:17px;box-shadow:0 18px 36px #0009;display:none}.detail.show{display:block}.detail h2{font-size:22px;margin:0 50px 10px 0;color:#284ea0}.detail p{font-size:14px;line-height:1.3;margin:7px 0}.detail .close{position:absolute;right:12px;top:12px}.detail-visual{height:128px;border-radius:9px;background:#102b4e;display:grid;place-items:center;margin:10px 0}.detail-visual svg{height:116px;width:210px}.detail .fact{background:#d7dff5;border-left:4px solid #7651cf;border-radius:3px;padding:6px 9px}.detail .disclaimer{font-size:12px;color:#566783}
+    .toast{position:absolute;left:50%;bottom:35px;z-index:20;transform:translateX(-50%);max-width:650px;background:#fff2d5;color:#523918;border-left:6px solid #d89b30;border-radius:7px;padding:12px 18px;font-size:15px;box-shadow:0 12px 25px #0008;display:none}.toast.show{display:block}
+    .modal{position:absolute;inset:0;z-index:30;background:#000a;display:none;place-items:center}.modal.show{display:grid}.modal-card{width:420px;background:#e8e6fe;color:#192d4c;border-radius:14px;padding:26px;text-align:center}.modal-card h2{margin:0 0 8px}.modal-card p{line-height:1.35}.modal-card .btn{margin:5px}
+    .method{position:absolute;left:34px;bottom:4px;font-size:12px;color:#c6d9ed}.hintbar{position:absolute;left:49%;top:379px;transform:translateX(-50%);background:#234d78;color:#fff;padding:8px 13px;border-radius:8px;font-size:13px;z-index:7}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+<main class="app" id="app">
+  <div class="room-edge"></div>
+  <header class="header">
+    <div><h1>MODELOS ATÔMICOS</h1><div class="subtitle">MUSEU + OFICINA DE ÁTOMOS · PROTÓTIPO INTERATIVO, NÃO CENA UNITY</div></div>
+    <button class="btn hub" id="hub" type="button">VOLTAR AO HUB</button>
+  </header>
+  <section class="tour" id="tour" aria-label="Estações históricas"></section>
+  <button class="btn secondary wallnav" id="turnWall" type="button">VIRAR PARA A ALA DAS PARTÍCULAS ↻</button>
+  <button class="milestone" id="chadwick" type="button">CHADWICK · 1932 · NÊUTRON</button>
+  <div class="hintbar" id="hintbar">Selecione uma vitrine · Use + e − para construir e comparar átomos</div>
+  <section class="workspace">
+    <aside class="bay" aria-label="Controles físicos de partículas">
+      <h2>CONSTRUA O ÁTOMO</h2>
+      <p>Toque nos botões físicos para adicionar ou retirar uma partícula. Observe o núcleo, os elétrons e o estado ao lado.</p>
+      <div class="particle-row"><i class="ball p"></i><b>Próton p⁺</b><button type="button" class="adjust" data-type="p" data-delta="-1" aria-label="Retirar um próton">−</button><button type="button" class="adjust" data-type="p" data-delta="1" aria-label="Adicionar um próton">+</button></div>
+      <div class="particle-row"><i class="ball n"></i><b>Nêutron n⁰</b><button type="button" class="adjust" data-type="n" data-delta="-1" aria-label="Retirar um nêutron">−</button><button type="button" class="adjust" data-type="n" data-delta="1" aria-label="Adicionar um nêutron">+</button></div>
+      <div class="particle-row"><i class="ball e"></i><b>Elétron e⁻</b><button type="button" class="adjust" data-type="e" data-delta="-1" aria-label="Retirar um elétron">−</button><button type="button" class="adjust" data-type="e" data-delta="1" aria-label="Adicionar um elétron">+</button></div>
+    </aside>
+    <div class="arena" id="arena" role="group" tabindex="0" aria-label="Átomo fixo; arraste para girar ou use as setas">
+      <div class="cloud"></div><svg class="orbit-svg" id="orbitSvg" aria-hidden="true"></svg>
+      <div class="target electron-target" id="electronTarget"><span class="target-label">REPRESENTAÇÃO DOS ELÉTRONS</span></div>
+      <div class="target nucleus-target" id="nucleusTarget">NÚCLEO<br>0 PARTÍCULAS</div>
+      <div id="placed"></div>
+      <div class="label" id="modelNote">ÓRBITAS DIDÁTICAS DE BOHR · NÃO SÃO TRAJETÓRIAS REAIS</div>
+    </div>
+    <aside class="right">
+      <div class="switches" role="group" aria-label="Representação dos elétrons">
+        <button class="btn selected" type="button" id="layers">CAMADAS</button>
+        <button class="btn secondary" type="button" id="cloudButton">NUVEM</button>
+      </div>
+      <div class="readout" aria-live="polite"><h2>ESTADO DA MONTAGEM</h2><div class="element-name" id="element">Nenhum elemento</div><div class="counts" id="counts">p 0 · n 0 · e 0</div><div class="counts" id="numbers">Z — · A — · carga —</div><div class="result-note" id="resultNote">O elemento é definido pelos prótons.</div></div>
+      <div class="actions"><button class="btn secondary" type="button" id="resetView">RECENTRALIZAR</button><button class="btn secondary" type="button" id="clear">LIMPAR</button></div>
+      <div class="actions"><button class="btn secondary" type="button" id="helpButton">COMO USAR</button></div>
+    </aside>
+  </section>
+  <section class="help" id="help" aria-label="Como usar"><button class="helpclose" id="helpClose" type="button">FECHAR ×</button><h2>Como usar em VR</h2><ol><li>Selecione uma vitrine na parede; caminhe até a ala oposta para ver as partículas. No navegador, use “Virar”.</li><li>Use +/− no console para montar o átomo.</li><li>Segure e gire o modelo no lugar. No navegador, arraste com mouse ou toque; “Recentralizar” restaura a vista.</li><li>Compare Camadas e Nuvem; a composição permanece.</li></ol></section>
+  <section class="detail" id="detail" aria-live="polite"><button class="btn ghost close" id="detailClose" type="button">FECHAR ×</button><h2 id="detailTitle"></h2><div class="detail-visual" id="detailVisual"></div><p class="fact" id="detailIdea"></p><p class="fact" id="detailEvidence"></p><p class="fact" id="detailAdvance"></p><p class="fact" id="detailLimit"></p><p class="disclaimer" id="detailDisclaimer"></p></section>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-card"><h2 id="modalTitle">Limpar montagem?</h2><p id="modalText">As contagens voltam a zero.</p><button class="btn ghost" id="cancel" type="button">CANCELAR</button><button class="btn" id="confirm" type="button">LIMPAR</button></div></div>
+  <div class="method">Protótipo: clique/toque simula controle 3D; arrastar simula girar o átomo fixo. “Virar” simula caminhar até a parede oposta.</div>
+</main>
+<script>
+(()=>{
+  const $=id=>document.getElementById(id);
+  const stations=[
+    {name:"Ideia de átomo",date:"Antiguidade · conceito",glyph:"●",idea:"Leucipo e Demócrito propuseram que a matéria fosse composta de partes indivisíveis.",evidence:"Argumentação filosófica, sem teste experimental do átomo.",advance:"Abriu uma maneira de pensar a matéria como composta de unidades.",limit:"Não determina estrutura, partículas ou propriedades mensuráveis."},
+    {name:"Dalton",date:"1803 · esfera",glyph:"◯",idea:"Átomos de cada elemento eram tratados como unidades próprias na explicação das combinações químicas.",evidence:"Regularidades de composição e proporções nas reações.",advance:"Relacionou átomos à formação de compostos.",limit:"A esfera indivisível não explica elétrons, núcleo nem isótopos."},
+    {name:"Thomson",date:"1904 · elétron",glyph:"◉",idea:"Elétrons negativos inseridos em uma distribuição positiva.",evidence:"Experimentos com raios catódicos revelaram o elétron.",advance:"Mostrou que o átomo possui estrutura interna.",limit:"Não descreve o pequeno núcleo observado depois."},
+    {name:"Rutherford",date:"1911 · núcleo",glyph:"☼",idea:"A carga positiva e grande parte da massa concentram-se em um pequeno núcleo.",evidence:"Espalhamento de partículas alfa em folha metálica.",advance:"Explicou grandes deflexões e o espaço relativamente vazio.",limit:"Sozinho, não explica estabilidade e espectros atômicos."},
+    {name:"Bohr",date:"1913 · níveis",glyph:"◎",idea:"Elétrons ocupam níveis de energia discretos no modelo para hidrogênio.",evidence:"Linhas do espectro de emissão do hidrogênio.",advance:"Explicou parte do espectro do hidrogênio.",limit:"Círculos são um esquema histórico; não são trajetórias reais no modelo quântico."},
+    {name:"Modelo quântico",date:"1926+ · orbitais",glyph:"✺",idea:"O elétron é descrito por estados e orbitais associados a probabilidades.",evidence:"A mecânica quântica explica espectros e estrutura eletrônica com maior alcance.",advance:"Substitui órbitas definidas por uma descrição probabilística.",limit:"A nuvem aqui é qualitativa, sem escala nem probabilidade calculada."},
+    {name:"Chadwick",date:"1932 · nêutron",idea:"Identificou o nêutron como componente do núcleo.",evidence:"Experimentos com radiação neutra produzida por bombardeamento de berílio.",advance:"Ajudou a explicar massas nucleares e isótopos.",limit:"É uma descoberta importante, não um modelo atômico completo separado."}
+  ];
+  const particleStations=[
+    {name:"Elétron",date:"e⁻ · carga −1",idea:"Partícula elementar da família dos léptons; não é composta de quarks.",evidence:"Raios catódicos revelaram partículas negativas menores que o átomo.",advance:"Seu número determina a carga do átomo e participa das ligações químicas.",limit:"O ponto luminoso é um símbolo visual; não mostra tamanho ou trajetória real."},
+    {name:"Próton",date:"p⁺ · carga +1",idea:"Partícula composta por dois quarks up e um down (uud), ligados pela interação forte com glúons.",evidence:"Experimentos de espalhamento revelaram a estrutura do núcleo e, depois, subestrutura dos núcleons.",advance:"A quantidade de prótons é o número atômico Z e define o elemento.",limit:"Quarks e glúons não são peças soltas para encaixar no átomo."},
+    {name:"Nêutron",date:"n⁰ · carga 0",idea:"Partícula composta por um quark up e dois down (udd), ligados pela interação forte com glúons.",evidence:"Chadwick identificou o nêutron em 1932.",advance:"Adicionar ou retirar nêutrons muda o número de massa e o isótopo.",limit:"O museu não calcula estabilidade nuclear nem decaimento."}
+  ];
+  const elementNames=["","Hidrogênio","Hélio","Lítio","Berílio","Boro","Carbono","Nitrogênio","Oxigênio","Flúor","Neônio","Sódio","Magnésio","Alumínio","Silício","Fósforo","Enxofre","Cloro","Argônio","Potássio","Cálcio"];
+  const symbols=["","H","He","Li","Be","B","C","N","O","F","Ne","Na","Mg","Al","Si","P","S","Cl","Ar","K","Ca"];
+  function diagram(index){
+    const start='<svg viewBox="0 0 220 130" role="img" aria-label="Ilustração do modelo" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="sphere"><stop stop-color="#dbf7ff"/><stop offset=".6" stop-color="#7fc6ed"/><stop offset="1" stop-color="#28629c"/></radialGradient><radialGradient id="cloud"><stop stop-color="#dbf5ff" stop-opacity=".8"/><stop offset=".48" stop-color="#56baf2" stop-opacity=".45"/><stop offset="1" stop-color="#56baf2" stop-opacity="0"/></radialGradient></defs>';
+    const end='</svg>';
+    const dot=(x,y,r=6,fill="#70deff")=>'<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+fill+'"/>';
+    if(index===0)return start+'<text x="110" y="21" text-anchor="middle" fill="#d4eaff" font-size="12">matéria</text>'+[52,77,104,132,160].map((x,i)=>dot(x,66+(i%2)*13,14,"url(#sphere)")).join('')+'<text x="110" y="111" text-anchor="middle" fill="#bdddf1" font-size="11">partes indivisíveis?</text>'+end;
+    if(index===1)return start+dot(110,65,48,"url(#sphere)")+end;
+    if(index===2)return start+dot(110,65,48,"url(#sphere)")+[[87,47],[130,47],[101,72],[130,83],[80,86]].map(([x,y])=>dot(x,y,5,"#173b75")).join('')+end;
+    if(index===3)return start+'<ellipse cx="110" cy="65" rx="80" ry="31" fill="none" stroke="#98dfff" stroke-width="2" transform="rotate(-18 110 65)"/><ellipse cx="110" cy="65" rx="64" ry="49" fill="none" stroke="#6899c8" stroke-width="1.5" transform="rotate(27 110 65)"/>'+dot(110,65,14,"#f47c92")+dot(38,76,5)+dot(163,38,5)+end;
+    if(index===4)return start+'<circle cx="110" cy="65" r="32" fill="none" stroke="#8bd6fa" stroke-width="2"/><circle cx="110" cy="65" r="53" fill="none" stroke="#8bd6fa" stroke-width="2"/>'+dot(110,65,12,"#f47c92")+dot(110,33,5)+dot(163,65,5)+dot(57,65,5)+end;
+    if(index===5)return start+'<ellipse cx="110" cy="65" rx="77" ry="50" fill="url(#cloud)"/><ellipse cx="110" cy="65" rx="52" ry="33" fill="url(#cloud)"/>'+dot(110,65,11,"#f47c92")+end;
+    return start+'<circle cx="110" cy="65" r="48" fill="none" stroke="#97d7fa" stroke-width="2"/>'+dot(94,60,15,"#f47c92")+dot(123,60,15,"#c4c4e8")+dot(110,84,15,"#c4c4e8")+end;
+  }
+  function particleDiagram(index){
+    const open='<svg viewBox="0 0 220 130" role="img" aria-label="Ilustração de partícula" xmlns="http://www.w3.org/2000/svg">';
+    const close='</svg>';
+    if(index===0)return open+'<circle cx="110" cy="64" r="43" fill="#70d9ff" opacity=".2"/><circle cx="110" cy="64" r="24" fill="#74dbff" stroke="white" stroke-width="3"/><text x="110" y="72" text-anchor="middle" fill="#092e50" font-size="28" font-weight="bold">−</text><text x="110" y="121" text-anchor="middle" fill="#c9eaff" font-size="12">lépton elementar</text>'+close;
+    const names=index===1?["u","u","d"]:["u","d","d"];
+    const fill=index===1?"#ee7486":"#bdbee4";
+    return open+'<circle cx="110" cy="61" r="54" fill="'+fill+'" opacity=".22" stroke="#dcecff" stroke-width="2"/><path d="M110 29 Q49 65 88 94 Q157 108 146 48 Q110 10 77 57" fill="none" stroke="#7ee1ff" stroke-width="3" stroke-dasharray="6 5"/>'+[[110,35],[81,82],[139,82]].map(([x,y],i)=>'<circle cx="'+x+'" cy="'+y+'" r="17" fill="'+(names[i]==="u"?"#f1798b":"#79c8f1")+'" stroke="white" stroke-width="2"/><text x="'+x+'" y="'+(y+5)+'" text-anchor="middle" fill="#102a4b" font-size="17" font-weight="bold">'+names[i]+'</text>').join('')+'<text x="110" y="126" text-anchor="middle" fill="#c9eaff" font-size="11">quarks + glúons (esquema)</text>'+close;
+  }
+  const max={p:20,n:24,e:20}; const state={p:0,n:0,e:0,view:"layers",detail:null,modal:null,museumMode:"history",yaw:0,pitch:-31};
+  const shells=[
+    {capacity:2,radius:165,period:7,tiltX:0,tiltZ:0},
+    {capacity:8,radius:225,period:10,tiltX:8,tiltZ:9},
+    {capacity:8,radius:275,period:13,tiltX:-10,tiltZ:-12},
+    {capacity:2,radius:325,period:16,tiltX:12,tiltZ:17}
+  ];
+  let toastTimer=0;let electronVisuals=[];let dragging=null;let yawVelocity=0,pitchVelocity=0,resetting=false,projectionScale=1;const orbitStart=performance.now();const reducedMotion=matchMedia("(prefers-reduced-motion: reduce)");
+  function resize(){const scale=Math.min(innerWidth/1600,innerHeight/900);document.documentElement.style.setProperty("--scale",scale);document.body.style.minHeight=(900*scale)+"px"}addEventListener("resize",resize);resize();
+  function toast(message){$("toast").textContent=message;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("show"),4200)}
+  function openDetail(index){state.detail=index;render();$("detailClose").focus()}
+  function renderMuseum(){
+    const particleMode=state.museumMode==="particles",items=particleMode?particleStations:stations.slice(0,6);
+    $("tour").replaceChildren();$("tour").classList.toggle("particles",particleMode);
+    $("tour").setAttribute("aria-label",particleMode?"Ala das partículas":"Estações históricas");
+    items.forEach((d,i)=>{const b=document.createElement("button");b.type="button";b.className="station";b.innerHTML='<span class="visual">'+(particleMode?particleDiagram(i):diagram(i))+'</span><span class="name">'+d.name+'</span><span class="date">'+d.date+"</span>";b.addEventListener("click",()=>openDetail(i));$("tour").appendChild(b)});
+    $("chadwick").style.display=particleMode?"none":"block";
+    $("turnWall").textContent=particleMode?"↺ VIRAR PARA A ALA DOS MODELOS":"VIRAR PARA A ALA DAS PARTÍCULAS ↻";
+  }
+  function render(){
+    [...$("tour").children].forEach((el,i)=>el.classList.toggle("active",i===state.detail));
+    if(state.detail===null){$("detail").classList.remove("show")}else{const particleMode=state.museumMode==="particles",d=particleMode?particleStations[state.detail]:stations[state.detail];$("detailTitle").textContent=d.name+" · "+d.date;$("detailVisual").innerHTML=particleMode?particleDiagram(state.detail):diagram(state.detail);$("detailIdea").innerHTML="<b>"+(particleMode?"Composição":"Proposta")+":</b> "+d.idea;$("detailEvidence").innerHTML="<b>"+(particleMode?"Descoberta":"Evidência")+":</b> "+d.evidence;$("detailAdvance").innerHTML="<b>"+(particleMode?"Papel no átomo":"Avanço")+":</b> "+d.advance;$("detailLimit").innerHTML="<b>Limite:</b> "+d.limit;$("detailDisclaimer").textContent=particleMode?"Esquema de partículas: posições, tamanhos e cores são didáticos.":"Ilustração histórica didática; tamanhos e distâncias não estão em escala.";$("detail").classList.add("show")}
+    $("arena").classList.toggle("cloud-view",state.view==="cloud");
+    $("layers").classList.toggle("selected",state.view==="layers");$("cloudButton").classList.toggle("selected",state.view==="cloud");
+    $("modelNote").textContent=state.view==="layers"?"ÓRBITAS DIDÁTICAS DE BOHR · NÃO SÃO TRAJETÓRIAS REAIS":"NUVEM QUALITATIVA · NÃO É PROBABILIDADE CALCULADA";
+    const z=state.p,a=z+state.n,charge=z-state.e;
+    $("element").textContent=z?elementNames[z]+"-"+a+" ("+symbols[z]+") · "+(charge===0?"neutro":charge>0?"cátion":"ânion"):"Nenhum elemento";
+    $("counts").textContent="p "+state.p+" · n "+state.n+" · e "+state.e;
+    $("numbers").textContent="Z "+(z||"—")+" · A "+(z?a:"—")+" · carga "+(z?(charge>0?"+":"")+charge:"—");
+    $("resultNote").textContent=!z?"Adicione um próton para definir o elemento.":state.n===0?"Nêutrons mudam A; elétrons mudam a carga.":charge!==0?"A carga mudou; o elemento continua "+elementNames[z]+".":"A identidade depende dos "+z+" prótons.";
+    $("nucleusTarget").innerHTML=state.p+state.n?state.p+" p⁺<br>"+state.n+" n⁰":"NÚCLEO<br>VAZIO";
+    $("modal").classList.toggle("show",state.modal!==null);
+    $("modalTitle").textContent=state.modal==="hub"?"Sair do protótipo?":"Limpar montagem?";
+    $("modalText").textContent=state.modal==="hub"?"Esta é apenas uma prévia HTML. Voltar reinicia a demonstração.":"As contagens voltam a zero. Cancelar mantém a montagem.";
+    $("confirm").textContent=state.modal==="hub"?"VOLTAR":"LIMPAR";
+    renderParticles();
+  }
+  function orbitDelta(shell,angle){
+    const s=shells[shell],rad=Math.PI/180;
+    let x=s.radius*Math.cos(angle),y=0,z=s.radius*Math.sin(angle);
+    const tx=s.tiltX*rad,tz=s.tiltZ*rad,cy=Math.cos(state.yaw*rad),sy=Math.sin(state.yaw*rad),cp=Math.cos(state.pitch*rad),sp=Math.sin(state.pitch*rad);
+    const tiltedY=-z*Math.sin(tx),tiltedZ=z*Math.cos(tx);
+    const tiltedX=x*Math.cos(tz)-tiltedY*Math.sin(tz);
+    y=x*Math.sin(tz)+tiltedY*Math.cos(tz);x=tiltedX;z=tiltedZ;
+    const turnedX=x*cy+z*sy,turnedZ=-x*sy+z*cy;
+    return [turnedX,y*cp-turnedZ*sp];
+  }
+  function projectOrbit(shell,angle){
+    const [x,y]=orbitDelta(shell,angle);
+    return [($("arena").clientWidth-10)/2+x*projectionScale,($("arena").clientHeight-10)*.49+y*projectionScale];
+  }
+  function renderParticles(){
+    const host=$("placed");host.replaceChildren();
+    const positions=[];
+    electronVisuals=[];
+    const centerX=($("arena").clientWidth-10)/2,centerY=($("arena").clientHeight-10)*.49;
+    let protons=state.p,neutrons=state.n;
+    for(let j=0;j<state.p+state.n;j++){const preferProton=j%2===0,type=(preferProton&&protons>0)||neutrons===0?"p":"n";if(type==="p")protons--;else neutrons--;const angle=j*2.39996,r=10+13*Math.sqrt(j);positions.push([type,centerX+Math.cos(angle)*r,centerY+Math.sin(angle)*r])}
+    let remaining=state.e;
+    for(let shell=0;shell<shells.length;shell++){const count=Math.min(remaining,shells[shell].capacity);remaining-=count;for(let i=0;i<count;i++){const angle=-Math.PI/2+2*Math.PI*i/count,[x,y]=projectOrbit(shell,angle);positions.push(["e",x,y,{shell,phase:angle}])}}
+    for(const [type,x,y] of positions){const b=document.createElement("span");b.className="placed "+type;const half=type==="e"?15:12;b.style.left=(x-half)+"px";b.style.top=(y-half)+"px";b.setAttribute("aria-hidden","true");b.innerHTML="<span>"+({p:"+",n:"·",e:"−"}[type])+"</span>";host.appendChild(b)}
+    [...host.children].forEach((b,i)=>{const item=positions[i];if(item[0]==="e")electronVisuals.push({node:b,shell:item[3].shell,phase:item[3].phase})});
+  }
+  function animateOrbits(now){
+    if(!dragging&&!reducedMotion.matches){
+      if(resetting){state.yaw+=(0-state.yaw)*.12;state.pitch+=(-31-state.pitch)*.12;if(Math.abs(state.yaw)<.1&&Math.abs(state.pitch+31)<.1){state.yaw=0;state.pitch=-31;resetting=false}}
+      else{state.yaw+=yawVelocity;state.pitch=Math.max(-62,Math.min(-12,state.pitch+pitchVelocity));yawVelocity*=.93;pitchVelocity*=.9;if(Math.abs(yawVelocity)<.01)yawVelocity=0;if(Math.abs(pitchVelocity)<.01)pitchVelocity=0}
+    }
+    if(state.view==="layers"){
+      let maxY=1;for(let shell=0;shell<shells.length;shell++)for(let step=0;step<32;step++)maxY=Math.max(maxY,Math.abs(orbitDelta(shell,step*2*Math.PI/32)[1]));
+      projectionScale=Math.min(1,(($("arena").clientHeight-10)*.49-25)/maxY);
+      const paths=[];
+      for(let shell=0;shell<shells.length;shell++){
+        let d="";
+        for(let step=0;step<=96;step++){const [x,y]=projectOrbit(shell,step*2*Math.PI/96);d+=(step?"L":"M")+x.toFixed(1)+" "+y.toFixed(1)}
+        paths.push('<path d="'+d+'" fill="none" stroke="#89d6f5" stroke-opacity="'+(.48+shell*.08)+'" stroke-width="2" stroke-dasharray="6 5"/>');
+      }
+      $("orbitSvg").innerHTML=paths.join("");
+      for(const item of electronVisuals){const s=shells[item.shell],seconds=reducedMotion.matches?0:(now-orbitStart)/1000,angle=item.phase+seconds*2*Math.PI/s.period,[x,y]=projectOrbit(item.shell,angle);item.node.style.left=(x-15)+"px";item.node.style.top=(y-15)+"px"}
+    }
+    requestAnimationFrame(animateOrbits);
+  }
+  function adjust(type,delta){
+    if(state.modal)return;
+    const label={p:"prótons",n:"nêutrons",e:"elétrons"}[type];
+    if(delta<0&&state[type]===0){toast("Não há "+label+" para retirar.");return}
+    if(delta>0&&state[type]>=max[type]){toast("Limite desta oficina: "+max[type]+" "+label+". A contagem não mudou.");return}
+    state[type]+=delta;render();toast((delta>0?"Adicionou":"Retirou")+" um "+({p:"próton",n:"nêutron",e:"elétron"}[type])+". Confira o resultado ao lado.");
+  }
+  renderMuseum();
+  $("turnWall").addEventListener("click",()=>{state.museumMode=state.museumMode==="history"?"particles":"history";state.detail=null;renderMuseum();render()});
+  $("chadwick").addEventListener("click",()=>openDetail(6));
+  $("detailClose").addEventListener("click",()=>{state.detail=null;render()});
+  $("helpButton").addEventListener("click",()=>$("help").classList.toggle("show"));
+  $("helpClose").addEventListener("click",()=>$("help").classList.remove("show"));
+  document.querySelectorAll(".adjust").forEach(b=>{
+    let delay,repeat,repeated=false;
+    const stop=()=>{clearTimeout(delay);clearInterval(repeat)};
+    b.addEventListener("pointerdown",e=>{repeated=false;b.setPointerCapture(e.pointerId);delay=setTimeout(()=>{repeated=true;const delta=Number(b.dataset.delta),type=b.dataset.type;adjust(type,delta);repeat=setInterval(()=>{if(delta>0?state[type]>=max[type]:state[type]<=0){stop();return}adjust(type,delta)},140)},520)});
+    b.addEventListener("pointerup",stop);b.addEventListener("pointercancel",stop);
+    b.addEventListener("click",()=>{if(repeated){repeated=false;return}adjust(b.dataset.type,Number(b.dataset.delta))});
+  });
+  $("layers").addEventListener("click",()=>{state.view="layers";render()});
+  $("cloudButton").addEventListener("click",()=>{state.view="cloud";render()});
+  $("arena").addEventListener("pointerdown",e=>{if(state.modal)return;dragging={x:e.clientX,y:e.clientY};yawVelocity=pitchVelocity=0;resetting=false;$("arena").setPointerCapture(e.pointerId);$("arena").classList.add("dragging")});
+  $("arena").addEventListener("pointermove",e=>{if(!dragging)return;const scale=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--scale"))||1,dx=(e.clientX-dragging.x)/scale,dy=(e.clientY-dragging.y)/scale;dragging.x=e.clientX;dragging.y=e.clientY;state.yaw+=dx*.42;state.pitch=Math.max(-62,Math.min(-12,state.pitch+dy*.32));yawVelocity=dx*.13;pitchVelocity=dy*.10});
+  const endRotation=()=>{dragging=null;$("arena").classList.remove("dragging");if(reducedMotion.matches)yawVelocity=pitchVelocity=0};
+  $("arena").addEventListener("pointerup",endRotation);$("arena").addEventListener("pointercancel",endRotation);
+  $("arena").addEventListener("keydown",e=>{if(["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key)){e.preventDefault();state.yaw+=(e.key==="ArrowLeft"?-8:e.key==="ArrowRight"?8:0);state.pitch=Math.max(-62,Math.min(-12,state.pitch+(e.key==="ArrowUp"?-6:e.key==="ArrowDown"?6:0)))}});
+  $("resetView").addEventListener("click",()=>{yawVelocity=pitchVelocity=0;if(reducedMotion.matches){state.yaw=0;state.pitch=-31}else resetting=true;toast("Orientação inicial restaurada; o átomo permanece no lugar.")});
+  $("clear").addEventListener("click",()=>{if(!(state.p+state.n+state.e)){toast("A montagem já está vazia.");return}state.modal="clear";render();$("cancel").focus()});
+  $("hub").addEventListener("click",()=>{state.modal="hub";render();$("cancel").focus()});
+  $("cancel").addEventListener("click",()=>{state.modal=null;render()});
+  $("confirm").addEventListener("click",()=>{const mode=state.modal;state.p=state.n=state.e=0;state.detail=null;state.view="layers";state.modal=null;render();toast(mode==="hub"?"Demonstração reiniciada. Na aplicação, este botão volta ao Hub.":"Montagem limpa.")});
+  $("modal").addEventListener("click",e=>{if(e.target===$("modal")){$("cancel").click()}});
+  addEventListener("keydown",e=>{if(e.key==="Escape"){if(state.modal)$("cancel").click();else if(state.detail!==null){state.detail=null;render()}else $("help").classList.remove("show")}});
+  const demo=new URLSearchParams(location.search).get("demo");
+  const presets={assembly:[6,6,6],isotope:[6,7,6],ion:[6,6,5],cloud:[6,6,6],error:[20,20,20],calcium:[20,20,20],clear:[6,6,6],rotation:[6,6,6]};
+  if(presets[demo]){[state.p,state.n,state.e]=presets[demo]}
+  if(demo==="museum")state.detail=3;
+  if(demo==="particles"){state.museumMode="particles";renderMuseum()}
+  if(demo==="proton"){state.museumMode="particles";state.detail=1;renderMuseum()}
+  if(demo==="rotation"){state.yaw=54;state.pitch=-48}
+  if(demo==="cloud")state.view="cloud";
+  if(demo==="clear")state.modal="clear";
+  render();
+  reducedMotion.addEventListener("change",render);
+  requestAnimationFrame(animateOrbits);
+  if(demo==="error")toast("Limite desta oficina: 20 prótons. A contagem não mudou.");
+})();
+</script>
+</body></html>

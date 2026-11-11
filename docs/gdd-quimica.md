@@ -4,7 +4,7 @@
 
 | Sala | Ação central | Conceito e documento |
 |---|---|---|
-| 1. Estrutura da matéria | Encaixar partículas | [Elemento, isótopo e íon](gdd-quimica-estrutura-da-materia.md) |
+| 1. Modelos atômicos e estrutura atômica | Percorrer alas históricas e de partículas; montar e girar um átomo com botões 3D +/− | [Modelos, partículas, elemento, isótopo e íon; GDD e mockups em revisão](gdd-quimica-estrutura-da-materia.md) |
 | 2. Tabela periódica | Selecionar cubos 3D e consultar os 118 elementos | [Propriedades, organização e ocorrência na natureza](gdd-quimica-tabela-e-ligacoes.md) |
 | 3. Reações químicas | Implementado: 12 reagentes em degraus e sonda térmica XR, escolha física A/B, dosagem e consulta opcional | [Produtos, conservação e reagente limitante; GDD e mockups aprovados](gdd-quimica-reacoes.md) |
 | 4. Soluções | Preparar e transferir líquidos | [Concentração, diluição e saturação](gdd-quimica-solucoes.md) |
@@ -30,7 +30,7 @@ Critérios transversais de aceite: a quantidade exibida coincide com a quantidad
 ## Próximas etapas de prototipagem
 
 1. **Tabela periódica**: migrar a cena existente para 118 cubos selecionáveis, destaque, fichas completas e aparência/ocorrência com fontes. Remover montagem de ligações; importar dados e imagens revisados para uso offline e validar a interação XR.
-2. **Estrutura da matéria** amplia o conjunto visual de partículas e diferencia elemento, isótopo e íon.
+2. **Modelos atômicos e estrutura atômica** propõe seis estações históricas, três vitrines de partículas e uma oficina com controles 3D +/− e modelo girável; GDD e mockups estão em revisão, sem cena implementada.
 3. **Reações químicas** valida o kit de frascos, transferência, líquido e efeitos específicos.
 4. **Soluções** e **pH** reutilizam a transferência, com modelos matemáticos próprios.
 5. **Separação de misturas** completa o catálogo com processos encadeados.

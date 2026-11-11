@@ -294,7 +294,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 | Disciplina | Conteúdos | Disponibilidade |
 |---|---|---|
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
-| Química | Hub: Tabela periódica 3D e Reações químicas disponíveis; Estrutura da matéria e Soluções como mockups. GDDs para seis salas | Duas salas individuais offline; validação em headset pendente |
+| Química | Hub: Tabela periódica 3D, Reações químicas e Modelos atômicos disponíveis; Soluções como mockup. GDDs para seis salas | Três salas individuais offline; validação em headset pendente |
 | Biologia | Células; Corpo humano; Ecossistemas | Mockups |
 | Matemática | Espaço cartesiano; Funções e gráficos; Probabilidade e estatística; Formas geométricas; Geometria plana; Frações e proporções | Seis laboratórios individuais |
 
@@ -743,3 +743,7 @@ Este README é referência de **design do produto**. Código/cenas e registros d
 
 
 **Motion compartilhado — 09/11/2026:** feedback de foco, ação e seleção aplicado às 13 salas implementadas e ao Hub, preservando DOTween existente. Cubos da tabela interpolam cor e pulso de contorno. Componentes em [Shared/Interaction](Assets/_Project/Shared/Interaction/README.md); diretriz obrigatória no Design System e UI Guidelines. Preferência reduzida persistida localmente, acessível na ficha periódica. Feedback não altera física, geometria científica, área clicável ou câmera.
+
+### Modelos atômicos — 11/11/2026
+
+Nova sala individual offline de Química: museu histórico, partículas e montagem de H a Ca com controles XR +/−, rotação ancorada e Camadas/Nuvem. Consulte [uso e limites](Assets/_Project/Laboratories/Chemistry/AtomicModels/README.md) e [GDD](docs/gdd-quimica-estrutura-da-materia.md). Sem sincronização LAN; validação em headset pendente.

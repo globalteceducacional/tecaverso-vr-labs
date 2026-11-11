@@ -63,11 +63,12 @@ MonoBehaviour:
     accent: {r: 0.4627451, g: 0.28235295, b: 0.9098039, a: 1}
     icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
     contents:
-    - title: "Estrutura da mat\xE9ria"
-      description: "Mockup: explore \xE1tomos, mol\xE9culas e propriedades da mat\xE9ria."
-      objective: "Reconhecer modelos e estruturas da mat\xE9ria."
+    - title: "Modelos at\xF4micos"
+      description: "Explore a hist\xF3ria dos modelos at\xF4micos e monte \xE1tomos
+        com pr\xF3tons, n\xEAutrons e el\xE9trons."
+      objective: "Relacionar n\xFAmero at\xF4mico, is\xF3topos, carga e modelos hist\xF3ricos."
       icon: {fileID: 21300000, guid: 2c42d3c5abdc0a140ac2c1a26c3b0f33, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Chemistry/AtomicModels/Scenes/AtomicModels.unity
     - title: "Rea\xE7\xF5es qu\xEDmicas"
       description: "Incline frascos, dose reagentes e observe g\xE1s, precipitado
         e neutraliza\xE7\xE3o."

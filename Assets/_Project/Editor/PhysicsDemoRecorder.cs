@@ -42,6 +42,7 @@ public static class PhysicsDemoRecorder
         string title=name;
         switch(name)
         {
+            case "AtomicModels": title="MODELOS ATÔMICOS";AtomicModelsDemo.Reset();duration=AtomicModelsDemo.Duration;break;
             case "Reactions": title="REAÇÕES QUÍMICAS";ReactionsDemo.Reset();duration=ReactionsDemo.Duration;View(new Vector3(-.6f,2.5f,-3.1f),new Vector3(0,1.4f,.5f));break;
             case "PeriodicExplorer": title="TABELA PERIÓDICA 3D";PeriodicExplorerDemo.Reset();View(new Vector3(-.6f,3,-4.8f),new Vector3(0,2.9f,4.2f));break;
             case "PeriodicBonds": title="TABELA PERIÓDICA E LIGAÇÕES";PeriodicBondsDemo.Reset();View(new Vector3(0,2.5f,-1.3f),new Vector3(0,2.5f,4.65f));break;
@@ -79,7 +80,7 @@ public static class PhysicsDemoRecorder
         firstFrame=Time.frameCount;lastFrame=-1;Status="Recording "+name;
         EditorApplication.update-=Tick;EditorApplication.update+=Tick;
     }
-    static void Finish(){if(recorder!=null&&recorder.IsRecording())recorder.StopRecording();EditorApplication.update-=Tick;if(lab=="Reactions")ReactionsDemo.Cleanup();Time.timeScale=1;if(camera)UnityEngine.Object.Destroy(camera.gameObject);if(caption)UnityEngine.Object.Destroy(caption.canvas.gameObject);foreach(var entry in previousCameras)if(entry.camera){entry.camera.tag=entry.tag;entry.camera.enabled=entry.enabled;}previousCameras.Clear();}
+    static void Finish(){if(recorder!=null&&recorder.IsRecording())recorder.StopRecording();EditorApplication.update-=Tick;if(lab=="AtomicModels")AtomicModelsDemo.Cleanup();if(lab=="Reactions")ReactionsDemo.Cleanup();Time.timeScale=1;if(camera)UnityEngine.Object.Destroy(camera.gameObject);if(caption)UnityEngine.Object.Destroy(caption.canvas.gameObject);foreach(var entry in previousCameras)if(entry.camera){entry.camera.tag=entry.tag;entry.camera.enabled=entry.enabled;}previousCameras.Clear();}
     static void View(Vector3 position,Vector3 target){camera.transform.SetPositionAndRotation(position,Quaternion.LookRotation(target-position));}
     static void Say(string text){caption.text=text;}
     static bool At(float t,float threshold,int next){if(t<threshold||stage>=next)return false;stage=next;return true;}
@@ -93,6 +94,7 @@ public static class PhysicsDemoRecorder
             Status=$"Recording {lab}: {t:0.0}/{duration} s";
             switch(lab)
             {
+                case "AtomicModels": AtomicModelsDemo.Tick(t,View,Say);break;
                 case "Reactions": ReactionsDemo.Tick(t,View,Say);break;
                 case "PeriodicExplorer": PeriodicExplorerDemo.Tick(t,View,Say);break;
                 case "PeriodicBonds": PeriodicBondsDemo.Tick(t,View,Say);break;
