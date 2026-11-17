@@ -1,0 +1,882 @@
+fileFormatVersion: 2
+guid: fb0432ec10961584b982d0309f3a2c90
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Adrenal_Gland_Left
+    second: {fileID: 2100000, guid: a47a20dcdad32b14c8caaa45e1ddd21c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Adrenal_Gland_Right
+    second: {fileID: 2100000, guid: 88f96b64757d21e4ea7990468ef54065, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Arm_Left
+    second: {fileID: 2100000, guid: 5e602050903e0214997f8b6ae13cd8b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Arm_Right
+    second: {fileID: 2100000, guid: a1fa9ba59fa4099449741169fe55aa30, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Head
+    second: {fileID: 2100000, guid: 271d090ad25c51b44bb9ce86d697dd03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Leg_Left
+    second: {fileID: 2100000, guid: 03ee7d14392443840ba1bd3f84ee15f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Leg_Right
+    second: {fileID: 2100000, guid: 9193066f645453849afd992c77a0501c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArterialSystem_Torso
+    second: {fileID: 2100000, guid: 0340ad8816440114390d1afa2665b3ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasalGanglia_Putamen_Left
+    second: {fileID: 2100000, guid: 8d9d0eda8ac062f42a63b1466d153f70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasalGanglia_Putamen_Right
+    second: {fileID: 2100000, guid: 66e8e59ec9372c64c9bc4c1ecdc28517, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bile_Duct
+    second: {fileID: 2100000, guid: e0983e094dda06e469d0abc94ed2d4cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bladder
+    second: {fileID: 2100000, guid: 5dacf45a2c8c9704385ab80519556555, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 2b520bf0ae48315429396b6944c3fc74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brainstem_Thalamus_Left
+    second: {fileID: 2100000, guid: 82c5bd83f5bd5454d892fb57e0849e75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brainstem_Thalamus_Right
+    second: {fileID: 2100000, guid: 6c5534a73d706594d851c69dccc79410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronchi
+    second: {fileID: 2100000, guid: e2b84076b11c85a40bbbdc73513f684f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bronchi_Vessels
+    second: {fileID: 2100000, guid: 0e6106fa062d7674aa4db25d6ab7fb61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CentralBrain_Left
+    second: {fileID: 2100000, guid: e4d5e34364828cc428260c43a4eb7f48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CentralBrain_Right
+    second: {fileID: 2100000, guid: 05e0ee42d8dbcff4c9cb5965895ea3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerebellum_Left
+    second: {fileID: 2100000, guid: c99b9414cb905404fb484c8a9e86e2e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cerebellum_Right
+    second: {fileID: 2100000, guid: 242035be462dbe04abcc3769ed5d9e3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Colon
+    second: {fileID: 2100000, guid: a90a4961ed11b6a4cb8577090db3b512, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cremaster
+    second: {fileID: 2100000, guid: bf9c2fddf869bdc4580e068cc4311eea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Diaphragm
+    second: {fileID: 2100000, guid: 114d52f9e6f045b44bd9b30698be14da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ears
+    second: {fileID: 2100000, guid: bd45d0e0ae9ad024db9e203639da6680, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Esophagus_Head
+    second: {fileID: 2100000, guid: 44f55d8e0b6220f42be3b3fe9856c0b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Esophagus_Torso
+    second: {fileID: 2100000, guid: d70e4384421fd6e41987b9aa34b15188, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EustachianTubes
+    second: {fileID: 2100000, guid: ec3ecab09b7783d4f8e7881b368d03ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: External_Genetalia
+    second: {fileID: 2100000, guid: 8360d0bc85f15ef4685fe7a150b17a60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_Iris_Left
+    second: {fileID: 2100000, guid: 73ac56fd6672e2449b0ff741f5426625, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_Iris_Right
+    second: {fileID: 2100000, guid: 23bff17808abaa843a75c3a6305a869f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_Top_Left
+    second: {fileID: 2100000, guid: 4017a0ac2c179e24f8867bb57734b4eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eye_Top_Right
+    second: {fileID: 2100000, guid: b6efe985187062c4da3018de7f995fc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: FatPads_Buccal
+    second: {fileID: 2100000, guid: 66e5c397b7344ed42a6ebca1f6713229, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gallbladder
+    second: {fileID: 2100000, guid: 9b30adf3a64f69140a7a55453c4cd88c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glands_Mandibular_Lingual
+    second: {fileID: 2100000, guid: 30c391de726371b488c7737737a75f31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glands_Parotid
+    second: {fileID: 2100000, guid: d65b6d921e3b45544be8d3eb055578f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heart
+    second: {fileID: 2100000, guid: 09746181145a88b40a102bbd12c06917, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heart_Vessels
+    second: {fileID: 2100000, guid: 5d0da08651416804fb4168f867abcf5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Heart_Vessels_Big
+    second: {fileID: 2100000, guid: dd26ed60e43bc7d469e2be10f341a385, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hippocampus_Amygdala_Fornix_Left
+    second: {fileID: 2100000, guid: 07bb7f09d89738240a28fa8ec4c8e4dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hippocampus_Amygdala_Fornix_Right
+    second: {fileID: 2100000, guid: bf47fd56ef0f98242ab405ae8e684a02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hyoid
+    second: {fileID: 2100000, guid: e62c5d65a25f3fe49b0e4738578656bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Internal_Genetalia_Left
+    second: {fileID: 2100000, guid: 426864c316f68284892044808ffb84bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Internal_Genetalia_Right
+    second: {fileID: 2100000, guid: 64bdbed52d941de41b19b183c9504f7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Intervertebral_Discs
+    second: {fileID: 2100000, guid: 9cc3b3db4484adf42aa836d5b5ca6013, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kidney_Left
+    second: {fileID: 2100000, guid: ab7cc3b8f37ca8f4b9eb0d01c5e64654, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Kidney_Right
+    second: {fileID: 2100000, guid: 12c867f491b577d4ebb3d9dfcb4987c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Larynx_External
+    second: {fileID: 2100000, guid: b52b85cb608af774dac6f78aefe05d7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Larynx_Internal
+    second: {fileID: 2100000, guid: 0f88a3a41b7d3c64d85cff12c7e71115, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Liver
+    second: {fileID: 2100000, guid: 2aad30ad8bf913348b780334e0c56d01, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Frontal_Left
+    second: {fileID: 2100000, guid: 35669424592501345b94878f8e411786, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Frontal_Right
+    second: {fileID: 2100000, guid: 76645e37281cfb44dac0245dcfb52d57, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Insular_Left
+    second: {fileID: 2100000, guid: 776fec473b4a1a747b7deddfedeb1731, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Insular_Right
+    second: {fileID: 2100000, guid: df7c1de6de91d604894f07faaae023db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Limbic_Left
+    second: {fileID: 2100000, guid: d18a1742357b601429af1ef033cce53e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Limbic_Right
+    second: {fileID: 2100000, guid: a3e7309a742b690459d2bbc45c43f797, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Occipital_Left
+    second: {fileID: 2100000, guid: 15afbcbe6cbf1fa41b7211763678cb3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Occipital_Right
+    second: {fileID: 2100000, guid: 03379bd424d071c40bc47409bae2f0be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Parietal_Left
+    second: {fileID: 2100000, guid: fde9f52d8d220bc4ea697b22f8752181, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Parietal_Right
+    second: {fileID: 2100000, guid: 02adcef1110f2d94fa9b8c90266bbb78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Temporal_Left
+    second: {fileID: 2100000, guid: fa9436b020e77344cad95f26de553271, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lobe_Temporal_Right
+    second: {fileID: 2100000, guid: 99b014cf292affd4ca146eb8a4d35097, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lung_Left
+    second: {fileID: 2100000, guid: 3b4904bef5ce2374a82ab8ea644e563f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lung_Right
+    second: {fileID: 2100000, guid: 2aa59ab1db7302548ab84388a146a797, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Arm_Left
+    second: {fileID: 2100000, guid: d4b20c2351aad4c46ad04557486cb82a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Arm_Right
+    second: {fileID: 2100000, guid: 4f6b482909e2c7c4bbb7c53472402641, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Head
+    second: {fileID: 2100000, guid: f35dc8c4dfeaf8b469f12a4a7bb7d1b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Leg_Left
+    second: {fileID: 2100000, guid: bd821d7235b764d4192eb5f379e4ffdf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Leg_Right
+    second: {fileID: 2100000, guid: ce90539354e1b7748ae9e58e2aa3c1bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticNodes_Torso
+    second: {fileID: 2100000, guid: 7f85ee3f435a1584eb1fb68215ddd1ee, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Arm_Left
+    second: {fileID: 2100000, guid: 1b420d9576df9d849b61c0a831107ac6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Arm_Right
+    second: {fileID: 2100000, guid: a725f8693e9e1ac46b59663f9230d156, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Head
+    second: {fileID: 2100000, guid: 437fbb451cc410541b43afcfe457c2de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Leg_Left
+    second: {fileID: 2100000, guid: c4b58ddda06ac7b44b2fa8747e0ad1b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Leg_Right
+    second: {fileID: 2100000, guid: cfcb5e3543ebc5e468c7e91b3163f3de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LymphaticSystem_Troso
+    second: {fileID: 2100000, guid: 3637f1849f685a1479c592eed9aaa923, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MaxillaryHighmoreSinus
+    second: {fileID: 2100000, guid: 1ced64bcec126c64e8bec0aade7adb3a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Abdomen_External
+    second: {fileID: 2100000, guid: 6d45c90923f72cd4897ae0c4a9bd8bfc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Abdomen_Internal
+    second: {fileID: 2100000, guid: a9efcbc550918574592bbcb37270a012, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Back_External
+    second: {fileID: 2100000, guid: f365577f35b92d74094e50f38694a3a6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Back_Internal
+    second: {fileID: 2100000, guid: 8131779dce966aa468af3b255730b967, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Calf_Left
+    second: {fileID: 2100000, guid: 79f39879e346ba5478972419a45934f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Calf_Right
+    second: {fileID: 2100000, guid: be73f7669162f8f47a33f5ab68364ecd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Craniofacial
+    second: {fileID: 2100000, guid: 79cf1e41bd9f10d429335e2e2611b7ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Eye_Left
+    second: {fileID: 2100000, guid: f541f2cc129f04e4390d634c913ca5ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Eye_Right
+    second: {fileID: 2100000, guid: 2191196a26267ba46a9cc2ba60449989, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Floor
+    second: {fileID: 2100000, guid: e700fb33432e2ee4facb9b345b5ab129, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Forearm_Left
+    second: {fileID: 2100000, guid: 9e13f4015821d1b4b8376b478b87fbc7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Forearm_Right
+    second: {fileID: 2100000, guid: 5322fe843cfa999458543336ea6d0cf1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Hip_Back_Left
+    second: {fileID: 2100000, guid: efee4651c478dbe42987622ae349ab48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Hip_Back_Right
+    second: {fileID: 2100000, guid: 0d1e68f914569ed4a837a53236ec5763, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Hip_Front_Left
+    second: {fileID: 2100000, guid: 045d3f4fd1967ef43a2f3eac491f864a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Hip_Front_Right
+    second: {fileID: 2100000, guid: 780e53a324a70d84b8e00d6756aa1b8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Neck_External
+    second: {fileID: 2100000, guid: 06be26654f0ea064bb09352214466240, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Neck_Internal
+    second: {fileID: 2100000, guid: e8a4d54275eb0d844ad3654246b49903, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_PostAbdominalWall
+    second: {fileID: 2100000, guid: 2f2919a265e0d6b4db73dd47501660af, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Shin_Foot_Left
+    second: {fileID: 2100000, guid: eee61e111aa7d1f448f75a6e9d1899fc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Shin_Foot_Right
+    second: {fileID: 2100000, guid: 43ca0246d610a4e4bbe60de8ee698b9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_Thorax
+    second: {fileID: 2100000, guid: d6526a16316d5cd49b801d7e14a0058b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_UpperArm_Left
+    second: {fileID: 2100000, guid: 17db93cd7058fbe4dbc735b143fd6a18, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_UpperArm_Right
+    second: {fileID: 2100000, guid: 6708ec42ee9393244939568456c75e5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Muscles_UpperLimb
+    second: {fileID: 2100000, guid: 0bc331ebab69ebc49b4f3503e44dabcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NasalCavity
+    second: {fileID: 2100000, guid: 1b9e47e67bd2880468d12b38f484ed61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Arm_Left
+    second: {fileID: 2100000, guid: 997966c1d2fa7ac458f3f7a0b3357e55, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Arm_Right
+    second: {fileID: 2100000, guid: b344550c6693df94aa8cb99383262240, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Head
+    second: {fileID: 2100000, guid: 044773f268653a34ba2740c0f37a40d6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Leg_Left
+    second: {fileID: 2100000, guid: dfba6f50ba09e264bbefa1c521f0c6e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Leg_Right
+    second: {fileID: 2100000, guid: 3109ef4a3b639114ea613e36e435039c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Neck
+    second: {fileID: 2100000, guid: 28bdeaa2c815948458a288e9569f1e64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NervousSystem_Torso
+    second: {fileID: 2100000, guid: 8f067d8261fd3b044a87d919dee7fec7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Optic_OlfactoryTract_Left
+    second: {fileID: 2100000, guid: b06469227c5adcb43bad8d8e2d26e011, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Optic_OlfactoryTract_Right
+    second: {fileID: 2100000, guid: 7dc2e92a2a9b8a64ca231b8dd74a4a7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OralCavity
+    second: {fileID: 2100000, guid: 5433a17254c8cca438260230ab53fadc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pancreas
+    second: {fileID: 2100000, guid: 8963dcf043fc6b944af028e341dee101, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pharynx
+    second: {fileID: 2100000, guid: 26892225297c8114c8e92cb2138f7fce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Prostate_Uretra
+    second: {fileID: 2100000, guid: 0073058edcb8b85409cf41af28475406, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Arm_Left
+    second: {fileID: 2100000, guid: 54773ef77bc6bd14ba07f2e8658dd9a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Arm_Right
+    second: {fileID: 2100000, guid: adb93ac57326d8447865295f10607c13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Foot_Left
+    second: {fileID: 2100000, guid: 905a5a679d3df5245b3a0fd881cab08f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Foot_Right
+    second: {fileID: 2100000, guid: d1fe54b04eb9a7847a18212d319568db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Hand_Left
+    second: {fileID: 2100000, guid: f9bedadf9bdec594690ba67467cd9952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Hand_Right
+    second: {fileID: 2100000, guid: 0d8361d181879cc45aaaad00e2b55fe9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Leg_Left
+    second: {fileID: 2100000, guid: db0c1cabd68ddb2449fcbad0b2f2291e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Leg_Right
+    second: {fileID: 2100000, guid: 9a1e0cc5793c56542aff962beb559ffa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Pelvis
+    second: {fileID: 2100000, guid: 38751e3db9a9d434d9b7be131e6643d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Rib_Cage
+    second: {fileID: 2100000, guid: 4387335826995674e85ea72e565b8eb7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Skull
+    second: {fileID: 2100000, guid: 6c0806d869d22f546a8c521db2082c62, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skeleton_Spine
+    second: {fileID: 2100000, guid: 040a12c142fe06942832b7dd269778aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Small_Inestines
+    second: {fileID: 2100000, guid: 6b2dd036ac9081f4c9b9060b0cb7921d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpinalCord_Neck
+    second: {fileID: 2100000, guid: 96551780cb044894383188cdbbcafa08, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SpinalCord_Torso
+    second: {fileID: 2100000, guid: f8b1b0cfb870edf4a81c66f107a4cfef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spleen
+    second: {fileID: 2100000, guid: de814964dfb4953459891c331cd4ccd9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stomach
+    second: {fileID: 2100000, guid: 2f38a0369d666d84bbdc013e084b0fdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teeth_Bottom
+    second: {fileID: 2100000, guid: aa0efe7d6e3cb484996f27188e5c0538, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Teeth_Top
+    second: {fileID: 2100000, guid: e4ac4e1b5b1e7ed409f886fcc70236b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thymus
+    second: {fileID: 2100000, guid: 315aae16749d8d444989e5a5c8b39f4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thyroid
+    second: {fileID: 2100000, guid: e9d4f27ed4eb1ed48a715f9d0f5fd475, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Arm_Left
+    second: {fileID: 2100000, guid: 8fb667426a9989846bd166e2e4472cc0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Arm_Right
+    second: {fileID: 2100000, guid: 167bf6c992d765740ade8350e89f5a9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Head
+    second: {fileID: 2100000, guid: 02057e53bbcace74b8e37b29b3d460d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Leg_Left
+    second: {fileID: 2100000, guid: e7f87b42619bef8488baea281c5fdf31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Leg_Right
+    second: {fileID: 2100000, guid: a24a465369dc37e4494728f0d74f8b8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tissue_Torso
+    second: {fileID: 2100000, guid: 86f55993b66e91843b688c342bfb1f81, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Trachea
+    second: {fileID: 2100000, guid: 8ff3103ab3166854aa5ca81d59e35649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Urinary_Ureter_Left
+    second: {fileID: 2100000, guid: d90209c2b3d95d94f91f8ef5dc386d6f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Urinary_Ureter_Right
+    second: {fileID: 2100000, guid: dca6ba4864adf9f4098adddce852e89a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Arm_Left
+    second: {fileID: 2100000, guid: 2f1d84478acc167488d9136c169344e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Arm_Right
+    second: {fileID: 2100000, guid: 6b30c1afae44ff340b5b1e8bff0aad23, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Head
+    second: {fileID: 2100000, guid: 931d454f1f0c05046a21662d22c6590f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Leg_Left
+    second: {fileID: 2100000, guid: 5400146366e86ed4e899010b6bab345f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Leg_Right
+    second: {fileID: 2100000, guid: e5c96f522b4e5664082fee3701af8337, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: VenousSystem_Torso
+    second: {fileID: 2100000, guid: 0a1aa542432f4d24e87ae264b5086236, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ventricles_Left
+    second: {fileID: 2100000, guid: 825076a6d9b1b624d8ea982194a3e1b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ventricles_Right
+    second: {fileID: 2100000, guid: ec45ff550dcb2dd41a55365da4255f99, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
