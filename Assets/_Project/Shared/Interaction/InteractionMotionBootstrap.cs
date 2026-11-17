@@ -29,7 +29,7 @@ namespace Tecaverso.Interaction
         }
         public static void Ensure(XRBaseInteractable x)
         {
-            if(x.GetComponent<XRInteractionMotion>()||x.GetComponent<Tecaverso.Labs.Chemistry.PeriodicBonds.PeriodicElementCube>()||x.GetType().Name.Contains("Teleportation"))return;
+            if(x.GetComponent<XRInteractionMotion>()||x.GetType().Name.Contains("Teleportation"))return;
             x.gameObject.AddComponent<XRInteractionMotion>();
         }
         void OnDestroy(){SceneManager.sceneLoaded-=Loaded;foreach(var m in managers)if(m)m.interactableRegistered-=Registered;}

@@ -1,37 +1,108 @@
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+
 namespace Tecaverso.Interaction
 {
-    // A local presentation frame: no Rigidbody, collider, domain value or scientific mesh is animated.
+    // State only. The URP feature outlines visible geometry without touching its materials or pose.
     [DisallowMultipleComponent,RequireComponent(typeof(XRBaseInteractable))]
     public sealed class XRInteractionMotion : MonoBehaviour
     {
-        XRBaseInteractable xr;LineRenderer line;float amount,pulse;bool hover,selected;static Material material;
-        readonly Vector3[] points=new Vector3[16];
-        static readonly int[] order={0,1,3,2,0,4,5,1,5,7,3,7,6,2,6,4};
+        public Transform visualRoot;
+        public Renderer[] visualTargets;
+        public bool PersistentSelected { get; private set; }
+        public float Amount { get; private set; }
+        public IReadOnlyList<Renderer> Surfaces => surfaces;
+        public static readonly List<XRInteractionMotion> Instances=new();
+        readonly List<Renderer> surfaces=new();
+        readonly HashSet<IXRHoverInteractor> pointers=new();
+        readonly HashSet<IXRSelectInteractor> hands=new();
+        XRBaseInteractable xr;
+        bool hovered,held;
+        float pulse;
+        public Color HighlightColor
+        {
+            get
+            {
+                var color=PersistentSelected?new Color(1,.76f,.36f):new Color(.30f,.72f,1);
+                color.a=Amount*(held?.38f:PersistentSelected?.92f:.72f);
+                if(!MotionPreferences.Reduced)color.a=Mathf.Clamp01(color.a+pulse*.45f*Amount);
+                return color;
+            }
+        }
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]static void ResetInstances()=>Instances.Clear();
         void Awake()
         {
-            xr=GetComponent<XRBaseInteractable>();xr.firstHoverEntered.AddListener(Enter);xr.lastHoverExited.AddListener(Exit);xr.firstSelectEntered.AddListener(Select);xr.lastSelectExited.AddListener(Release);
-            if(!material){material=new Material(Shader.Find("Universal Render Pipeline/Unlit"));material.SetColor("_BaseColor",new Color(.18f,.65f,1));}
-            var go=new GameObject("XR motion outline");go.transform.SetParent(transform,false);line=go.AddComponent<LineRenderer>();line.sharedMaterial=material;line.positionCount=16;line.useWorldSpace=true;line.loop=false;line.enabled=false;
-            line.shadowCastingMode=UnityEngine.Rendering.ShadowCastingMode.Off;line.receiveShadows=false;
+            xr=GetComponent<XRBaseInteractable>();
+            xr.hoverEntered.AddListener(Enter);xr.hoverExited.AddListener(Exit);
+            xr.selectEntered.AddListener(Select);xr.selectExited.AddListener(Release);
         }
-        void Enter(HoverEnterEventArgs _){hover=true;}void Exit(HoverExitEventArgs _){hover=false;}
-        void Select(SelectEnterEventArgs _){selected=true;pulse=.22f;}void Release(SelectExitEventArgs _){selected=false;pulse=.22f;}
+        void OnEnable()
+        {
+            Instances.Add(this);
+            if(!xr || !xr.isActiveAndEnabled)return;
+            foreach(var pointer in xr.interactorsHovering)if(!(pointer is XRSocketInteractor))pointers.Add(pointer);
+            foreach(var hand in xr.interactorsSelecting)if(!(hand is XRSocketInteractor))hands.Add(hand);
+            hovered=pointers.Count>0;held=hands.Count>0;
+        }
+        void Start()=>RefreshVisuals();
+        public void RefreshVisuals()
+        {
+            surfaces.Clear();if(!xr)xr=GetComponent<XRBaseInteractable>();
+            Transform root=visualRoot;
+            if(!root)
+            {
+                if(xr is XRKnob knob)root=knob.handle;
+                else if(xr is XRLever lever)root=lever.handle;
+            }
+            if(!root)root=transform;
+            var candidates=visualTargets!=null&&visualTargets.Length>0?visualTargets:root.GetComponentsInChildren<Renderer>(true);
+            foreach(var r in candidates)
+            {
+                if(!r || !(r is MeshRenderer || r is SkinnedMeshRenderer) || r.GetComponent<TMP_Text>())continue;
+                if(r.GetComponentInParent<XRBaseInteractable>()!=xr)continue;
+                var liquid=r.GetComponentInParent<Tecaverso.Liquids.LiquidPresentation>();
+                if(liquid && liquid.surface==r)continue;
+                if(r.gameObject.name.IndexOf("label",System.StringComparison.OrdinalIgnoreCase)>=0 || r.gameObject.name.IndexOf("rótulo",System.StringComparison.OrdinalIgnoreCase)>=0)continue;
+                if(!surfaces.Contains(r))surfaces.Add(r);
+            }
+        }
+        public void SetPersistentSelected(bool value)
+        {
+            if(PersistentSelected==value)return;
+            PersistentSelected=value;if(value)RefreshVisuals();
+        }
+        void Enter(HoverEnterEventArgs e)
+        {
+            if(e.interactorObject is XRSocketInteractor)return;
+            pointers.Add(e.interactorObject);hovered=true;RefreshVisuals();
+        }
+        void Exit(HoverExitEventArgs e){pointers.Remove(e.interactorObject);hovered=pointers.Count>0;}
+        void Select(SelectEnterEventArgs e)
+        {
+            if(e.interactorObject is XRSocketInteractor)return;
+            hands.Add(e.interactorObject);held=true;pulse=.22f;RefreshVisuals();
+        }
+        void Release(SelectExitEventArgs e){hands.Remove(e.interactorObject);held=hands.Count>0;}
         void LateUpdate()
         {
-            pulse=Mathf.Max(0,pulse-Time.unscaledDeltaTime);float target=hover||selected||pulse>0?1:0;
-            amount=MotionPreferences.Reduced?target:Mathf.MoveTowards(amount,target,Time.unscaledDeltaTime/.12f);
-            line.enabled=amount>.001f;if(!line.enabled)return;
-            Bounds bounds=new Bounds(transform.position,Vector3.zero);bool found=false;
-            foreach(var collider in xr.colliders){if(!collider||!collider.enabled)continue;if(!found){bounds=collider.bounds;found=true;}else bounds.Encapsulate(collider.bounds);}
-            if(!found){line.enabled=false;return;}
-            float grow=MotionPreferences.Reduced?.008f:.008f+Mathf.Sin(pulse/.22f*Mathf.PI)*.012f;
-            bounds.Expand(grow);var min=bounds.min;var max=bounds.max;
-            for(int i=0;i<16;i++){int k=order[i];points[i]=new Vector3((k&1)==0?min.x:max.x,(k&2)==0?min.y:max.y,(k&4)==0?min.z:max.z);}
-            line.SetPositions(points);line.widthMultiplier=.004f*amount;
+            if(!xr || !xr.enabled){ResetFeedback();return;}
+            if(!hovered&&!held&&!PersistentSelected&&Amount<=0)return;
+            pulse=Mathf.Max(0,pulse-Time.unscaledDeltaTime);
+            float target=hovered||held||PersistentSelected?1:0;
+            Amount=MotionPreferences.Reduced?target:Mathf.MoveTowards(Amount,target,Time.unscaledDeltaTime/.12f);
         }
-        void OnDisable(){hover=selected=false;amount=pulse=0;if(line)line.enabled=false;}
+        public void ResetFeedback(){pointers.Clear();hands.Clear();hovered=held=PersistentSelected=false;Amount=pulse=0;}
+        void OnDisable(){Instances.Remove(this);ResetFeedback();}
+        void OnDestroy()
+        {
+            if(!xr)return;
+            xr.hoverEntered.RemoveListener(Enter);xr.hoverExited.RemoveListener(Exit);
+            xr.selectEntered.RemoveListener(Select);xr.selectExited.RemoveListener(Release);
+        }
     }
 }

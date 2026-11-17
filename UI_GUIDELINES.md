@@ -104,6 +104,7 @@ Usar `Tecaverso.UI.UIVisibility` nas páginas, abas, modais e ações condiciona
 - Todo elemento interativo deve ter feedback de motion, inclusive toggles, objetos XR e controles criados em runtime. Reutilizar os componentes de `Assets/_Project/Shared/Interaction/`, sem duplicar efeitos existentes.
 - Respeitar `MotionPreferences.Reduced`, já implementada e persistida localmente. Usar realce estático no lugar de pulsos, escalas e fades. Motion não altera equações nem movimento científico.
 - Controles uGUI criados após sceneLoaded precisam herdar feedback de um prefab ou chamar `InteractionMotionBootstrap.Ensure`. Objetos XR são cobertos pelo registro no XRInteractionManager.
+- Em todas as disciplinas, objetos 3D usam o [padrão de silhueta](docs/gdd-interaction-feedback.md) de `Shared/Interaction`. Proibido usar caixas dos bounds/colliders como feedback de produto ou empilhar um segundo contorno de seleção. Delimitar a peça móvel/semântica; excluir líquido e rótulos; preservar materiais e linhas científicas. Registrar foco, seleção, pega e limpeza de estado no aceite dos próximos laboratórios.
 
 ## 8. Texto, foco e XR
 

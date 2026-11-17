@@ -6,6 +6,8 @@
 # See: https://github.com/github/gitignore/tree/main/Global
 #
 .utmp/
+# Local reference project. Only audited Biology assets are migrated deliberately.
+/PROJETO ANTIGO/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/

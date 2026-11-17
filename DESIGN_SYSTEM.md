@@ -355,6 +355,8 @@ O amarelo do vetor não deve virar texto pequeno sobre fundo claro. O azul da re
 
 ## 10. Ambientes e modelos 3D
 
+**Biologia — proposta de 17/11/2026:** [aplicação do Design System](docs/biology/design-system.md) e [seis GDDs](docs/gdd-biologia.md). Preservar cores informativas dos modelos, usar acento verde somente na identificação da disciplina e priorizar peças/consultas contextuais. Fontes antigas foram preservadas para migração seletiva; isso não indica novas cenas disponíveis.
+
 ### Materiais e acabamento
 
 - Painéis perolados de grandes superfícies, rodapés azul-escuros e estrutura grafite.
@@ -438,10 +440,22 @@ Pendências visuais prioritárias: fluxo LAN integrado, distinção consistente 
 Todo controle ou objeto interativo deve responder visualmente ao foco, à ação e à mudança de estado. Isso vale para todas as disciplinas, incluindo objetos criados durante a execução. Motion comunica interação; não exige animação contínua de objetos em repouso.
 
 - Reutilizar `ControlMotion` para Selectables sem feedback próprio e `XRInteractionMotion` para objetos XR. Preservar `ButtonTweenFeedback`/`SliderTweenFeedback` existentes, sem empilhar efeitos. Cubos da tabela usam `PeriodicElementCube` com DOTween.
-- Hover/foco: transição curta de contorno/realce, aproximadamente 0,12–0,16 s. Ação: pulso discreto de aproximadamente 0,22 s. Seleção permanece reconhecível depois do pulso e da saída do ponteiro.
+- Hover/foco: transição curta de contorno/realce, aproximadamente 0,12–0,16 s. Ação: confirmação discreta de aproximadamente 0,22 s. Seleção permanece reconhecível depois da ação e da saída do ponteiro. Para objetos 3D, aplicar a revisão de silhueta abaixo; não usar caixas de bounds.
 - Animar uma decoração ou filho visual. Não animar collider, Rigidbody, área clicável, layout, câmera, origem de medidas ou geometria científica. Movimento real de alavancas/manoplas continua sob responsabilidade do componente XR.
 - Usar tempo independente da simulação. Cancelar e restaurar feedback ao ocultar/desabilitar. Não deixar pulsos repetidos ou foco em páginas invisíveis.
 - Respeitar `MotionPreferences.Reduced`, persistida localmente: feedback instantâneo de cor/contorno substitui escala, pulso e fades. A preferência não interrompe órbitas, ondas, partículas ou outros movimentos que são o conteúdo da simulação.
 - A migração de 09/11 adicionou feedback aos controles das seis salas de Física, seis de Matemática, Tabela periódica e Hub. O bootstrap cobre entradas de cena e registro de novos interactables XR, sem busca global por frame. Novos controles uGUI criados após a carga devem chamar `InteractionMotionBootstrap.Ensure` ou herdar o componente de seu prefab.
 
 O controle de movimento reduzido está disponível na ficha da Tabela periódica e vale também ao navegar para outras salas. A configuração é local, não altera autoridade LAN. Conferir hover, ação, saída, desabilitação e movimento reduzido antes de aceitar um novo controle. A migração não certifica conforto/desempenho em headset.
+
+## Feedback 3D por silhueta — revisão global de 17/11/2026
+
+Válido para todas as disciplinas, salas anteriores e objetos futuros. [Especificação e prévia visual](docs/gdd-interaction-feedback.md). Esta revisão substitui a apresentação por caixas dos colliders da implementação de 09/11; preserva motion e os controles existentes.
+
+- Repouso sem marcação; foco com silhueta azul fina; consulta/seleção persistente âmbar; pega com intensidade reduzida. Um único responsável por estado/efeito no mesmo alvo. Saída, ocultação e desabilitação limpam o destaque.
+- Contornar somente a geometria visível da peça semântica, sem desenhar caixas, grades de submalhas ou realce através de superfícies opacas. A profundidade respeita a oclusão; espessura de tela discreta, sem brilho intenso ou pulsação contínua.
+- Manopla e alavanca usam a peça móvel, sem realçar a base. Frascos excluem líquido, partículas e rótulos. Objetos compostos usam o conjunto correto; pai e filho interativos não disputam a mesma malha.
+- Não converter materiais, tintas de reagentes ou cores científicas para produzir foco. Não deslocar/escalar collider, geometria, Rigidbody, layout ou câmera. Linhas científicas, arestas, órbitas, vetores e retorno ao socket não são caixas de interação e permanecem.
+- Reutilizar `XRInteractionMotion` e `InteractionSilhouetteFeature` com o renderer compartilhado. O bootstrap cobre componentes serializados e registro em runtime. `visualRoot`/`visualTargets` permitem delimitar uma peça quando o padrão automático não representa a ação. Seleção persistente vem do domínio por `SetPersistentSelected`; não deduzir consulta de uma peça apenas por hover.
+- Preferência reduzida mantém os mesmos estados com transição imediata. uGUI continua com `ControlMotion`/DOTween próprios, sem duplicar efeitos. Nenhum painel novo é necessário para esta revisão.
+- Aceite obrigatório: repouso, foco/saída, pega/soltura, seleção/troca, desabilitação, troca de cena e motion reduzido. Conferir alvos, ausência de caixas/duplicação, integridade dos materiais/colliders/transforms e leitura junto à UI. Testar captura do Editor; estéreo, alcance e custo de GPU dependem de homologação em headset.

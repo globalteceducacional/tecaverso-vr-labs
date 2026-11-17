@@ -2,6 +2,8 @@
 
 `TecaversoVR.asset` é o pipeline URP padrão em Graphics Settings e nos três níveis de qualidade. Reaproveita o renderer Forward do projeto, com MSAA 4×, render scale 1 e HDR habilitado. MSAA já estava em 4× no pipeline anterior; esta configuração o consolida em um asset próprio do projeto.
 
+Desde 17/11/2026 usa `TecaversoVRRenderer.asset`, cópia derivada do Forward original preservando suas opções, com o feature de [silhueta compartilhada](../Interaction/README.md). O asset de renderer de terceiros foi preservado. Novas salas devem continuar usando o pipeline/renderer compartilhados para herdar a qualidade de interação. A silhueta acrescenta máscaras somente quando há alvo ativo; seu custo em headset precisa ser medido.
+
 `TecaversoLearningProfile.asset` é o **Default Volume Profile** nas configurações globais da URP. Aplica-se a todas as disciplinas, inclusive ao Hub preservado no carregamento LAN aditivo, sem GameObjects de Volume duplicados.
 
 - Tonemapping Neutral; exposição, balanço de branco e saturação neutros; contraste +3.

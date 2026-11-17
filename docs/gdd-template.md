@@ -64,4 +64,5 @@ Definir as grandezas calculadas, as representações didáticas, unidades, resul
 - O GDD inclui imagens das interfaces antes de implementar; mockups, inventário e fluxo concordam. Não confundir protótipo com evidência da cena executada.
 - Objetos e resultados relevantes ficam visíveis durante a manipulação. Detalhes opcionais têm acesso e fechamento claros.
 - Foco, seleção, confirmação/cancelamento, reinício e retorno funcionam sem estado invisível bloqueando interação.
+- Objetos 3D seguem o [feedback compartilhado por silhueta](gdd-interaction-feedback.md): indicar a peça visual alvo, testar foco/saída, pega/soltura, seleção persistente, desabilitação e movimento reduzido. Sem caixas de collider, contornos duplicados ou alteração das cores científicas. Casos de encaixe mantêm indicação contextual e filtros próprios.
 - Separar validação do modelo, Editor, headset e performance. Não afirmar testes não realizados; nenhum build sem autorização.

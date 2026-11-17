@@ -2,6 +2,8 @@
 
 Laboratórios educacionais em realidade virtual para investigar conceitos por meio de experimentos interativos, visualização de grandezas e comparação de resultados.
 
+**Biologia — 17/11/2026:** [Células animal e vegetal](Assets/_Project/Laboratories/Biology/Cells/README.md) é a primeira sala individual offline da disciplina: duas células ampliadas, oito alvos de consulta, seis organelas destacáveis, sockets de retorno, giro por dials Unity, rótulos e recomposição. Verificada no Editor; headset pendente. Os [seis GDDs aprovados](docs/gdd-biologia.md) consolidam o acervo antigo; os demais cinco conteúdos permanecem em desenvolvimento. Química segue preservada, em pausa.
+
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e seis de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
 
 **Matemática:** [Espaço cartesiano](Assets/_Project/Laboratories/Mathematics/CartesianSpace/README.md) permite construir e manipular pontos, retas, superfícies e sólidos, com magnetismo opcional, escala de 0,5 m por unidade matemática e grades XY/XZ/YZ independentes. [Formas geométricas](Assets/_Project/Laboratories/Mathematics/GeometricShapes/README.md) é uma galeria de onze sólidos, com nomes e fórmulas de volume acima das peças; possui somente toggles de vértices, arestas e rotação e retorno ao Hub. O [GDD da galeria](Assets/_Project/Laboratories/Mathematics/GeometricShapes/GDD.md) substitui o antigo fluxo de edição e estudo A/B.
@@ -85,7 +87,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Matemática | Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística e Frações e proporções disponíveis individualmente | Novos conteúdos, roteiros e validação em headset |
 | Química | Tabela periódica 3D e Reações químicas disponíveis; dois mockups no Hub | Validar em headset e desenvolver os demais GDDs |
-| Biologia | Mockups navegáveis | Simulações e atividades educativas |
+| Biologia | Células animal e vegetal disponível; outras cinco salas em desenvolvimento | Exploração individual offline |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
 | Plano inclinado | Experimento individual com equilíbrio/atrito, vetores no bloco e análise | Roteiro educativo, sincronização LAN e validação em headset |
@@ -295,7 +297,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 |---|---|---|
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Hub: Tabela periódica 3D, Reações químicas e Modelos atômicos disponíveis; Soluções como mockup. GDDs para seis salas | Três salas individuais offline; validação em headset pendente |
-| Biologia | Células; Corpo humano; Ecossistemas | Mockups |
+| Biologia | Células animal e vegetal; Corpo humano e sistemas; Microrganismos e vírus; DNA, RNA e informação; Ecossistemas e relações; Evolução e seleção natural | Células implementado e verificado no Editor; cinco mockups, headset pendente |
 | Matemática | Espaço cartesiano; Funções e gráficos; Probabilidade e estatística; Formas geométricas; Geometria plana; Frações e proporções | Seis laboratórios individuais |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.
@@ -742,7 +744,7 @@ Este README é referência de **design do produto**. Código/cenas e registros d
 
 
 
-**Motion compartilhado — 09/11/2026:** feedback de foco, ação e seleção aplicado às 13 salas implementadas e ao Hub, preservando DOTween existente. Cubos da tabela interpolam cor e pulso de contorno. Componentes em [Shared/Interaction](Assets/_Project/Shared/Interaction/README.md); diretriz obrigatória no Design System e UI Guidelines. Preferência reduzida persistida localmente, acessível na ficha periódica. Feedback não altera física, geometria científica, área clicável ou câmera.
+**Feedback compartilhado — revisão de 17/11/2026:** as salas anteriores das quatro disciplinas e os objetos futuros usam silhueta da peça, substituindo caixas de bounds. Foco, pega e seleção persistente usam um responsável compartilhado, com sockets excluídos do foco. uGUI mantém DOTween/ControlMotion; cores científicas, colliders e transforms são preservados. [Padrão, inventário e prévia](docs/gdd-interaction-feedback.md); [componentes e validação](Assets/_Project/Shared/Interaction/README.md). Diretriz obrigatória no Design System, UI Guidelines, AGENTS e template de GDD. Preferência reduzida continua local; headset/performance pendentes.
 
 ### Modelos atômicos — 11/11/2026
 

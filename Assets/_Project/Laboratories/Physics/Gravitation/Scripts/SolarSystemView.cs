@@ -19,7 +19,15 @@ namespace Tecaverso.Labs.Gravitation
         public static float DisplaySemiMajor(int index)=>(float)ObservatoryScale.OrbitRadius[index];
         // Kept for the original installer; selection no longer hides the exhibit.
         public void SetInspectionVisible(bool visible) { }
-        public void Highlight(int hover,int selection){hovered=hover;selected=selection;}
+        public void Highlight(int hover,int selection)
+        {
+            hovered=hover;selected=selection;
+            for(int i=0;i<planets.Length;i++)
+            {
+                var feedback=planets[i].GetComponent<Tecaverso.Interaction.XRInteractionMotion>();
+                if(feedback)feedback.SetPersistentSelected(i==selected);
+            }
+        }
         public void SetView(bool inner,bool realScale=false)
         {
             if(geometryReady)return;geometryReady=true;

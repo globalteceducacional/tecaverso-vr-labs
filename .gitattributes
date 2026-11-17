@@ -16,3 +16,9 @@
 *.mp3 binary
 *.webm binary
 *.cubemap filter=lfs diff=lfs merge=lfs -text
+# Audited legacy Biology sources: retain source binaries without bloating Git objects.
+SourceAssets/BiologyLegacy/**/*.png filter=lfs diff=lfs merge=lfs -text
+SourceAssets/BiologyLegacy/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+SourceAssets/BiologyLegacy/**/*.FBX filter=lfs diff=lfs merge=lfs -text
+Assets/_Project/Art/Biology/**/*.fbx filter=lfs diff=lfs merge=lfs -text
+Assets/_Project/Art/Biology/**/*.FBX filter=lfs diff=lfs merge=lfs -text

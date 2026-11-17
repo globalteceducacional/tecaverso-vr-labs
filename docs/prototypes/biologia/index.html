@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Biologia · Tecaverso · propostas</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="?" class="brand">TECAVERSO <span>LABS</span></a
+      ><span class="proposal">BIOLOGIA · PROPOSTA 17/11/2026</span
+      ><button id="reduced" aria-pressed="false">Reduzir motion</button>
+    </header>
+    <main>
+      <div id="hub">
+        <p class="eyebrow">SEIS SALAS · UM ACERVO REAPROVEITADO</p>
+        <h1>Investigar a vida.</h1>
+        <p class="intro">
+          Escolha uma sala e experimente as ações. Modelos ilustrativos em HTML;
+          a arte final virá dos assets auditados da versão antiga.
+        </p>
+        <div id="cards" class="cards"></div>
+      </div>
+      <div id="lab" hidden>
+        <div class="labhead">
+          <div>
+            <p id="number" class="eyebrow"></p>
+            <h1 id="title"></h1>
+            <p id="question"></p>
+          </div>
+          <button id="hubButton">Voltar ao Hub</button>
+        </div>
+        <div class="experiment">
+          <section class="world" aria-label="Visão espacial conceitual">
+            <div class="room-caption">
+              Pérolas · grafite · luz azul · acento de Biologia
+            </div>
+            <svg
+              id="scene"
+              viewBox="0 0 900 510"
+              role="group"
+              aria-label="Objetos interativos do laboratório"
+            ></svg>
+            <div id="legend" class="legend"></div>
+          </section>
+          <aside id="detail" hidden>
+            <p class="eyebrow">CONSULTA LOCAL</p>
+            <h2 id="detailTitle"></h2>
+            <p id="detailText"></p>
+            <p id="detailExtra" class="caption"></p>
+            <button id="closeDetail">Fechar consulta</button>
+          </aside>
+        </div>
+        <div
+          id="controls"
+          class="controls"
+          aria-label="Controles da sala"
+        ></div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <details class="xr">
+          <summary>Como isso funciona em RV?</summary>
+          <p id="xrText"></p>
+          <div id="gestureControls"></div>
+          <p>
+            Os comandos tracejados simulam gestos físicos neste protótipo. Não
+            são painéis adicionais na sala.
+          </p>
+        </details>
+      </div>
+    </main>
+    <dialog id="resetDialog">
+      <h2>Restaurar a experiência?</h2>
+      <p>A montagem e a comparação desta sala serão restauradas.</p>
+      <div class="controls">
+        <button id="cancel">Cancelar</button
+        ><button id="confirm">Restaurar</button>
+      </div>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
