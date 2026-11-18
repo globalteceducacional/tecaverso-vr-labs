@@ -12,7 +12,7 @@
 - Documentação: seis GDDs individuais; 37 links de imagens e referências locais dos documentos de Biologia conferidos, sem destino ausente.
 - Git: pasta antiga e mídias de revisão ignoradas; regras LFS confirmadas para FBX/FBX e texturas da pasta de fontes. Isso não equivale a upload ou validação de um commit dessas fontes. Nenhum commit/push nesta etapa.
 
-Os seis GDDs foram aprovados posteriormente. Células e Corpo humano foram implementados conforme as seções seguintes. As outras quatro continuam pendentes, assim como procedência/licença para distribuição, revisão científica e homologação em headset. Não houve build, substituição de cenas atuais ou importação em massa do legado.
+Os seis GDDs foram aprovados posteriormente. Os registros abaixo descrevem a execução de cada etapa. A homologação em headset, a revisão científica externa e a verificação de procedência/licença para distribuição continuam pendentes.
 
 ## Células animal e vegetal — Editor e Play Mode
 
@@ -54,3 +54,16 @@ Capturas reais em `GeneratedMedia/Anatomy/`, ignoradas pelo Git, separadas das p
 - O teste de raio alcançou primeiro o collider da manopla a partir de alturas de olhos de 1,15 m e 1,65 m. Um interator direto acionou o XRKnob por torção. Capturas frontal, oblíqua e dorsal ajudam a inspecionar sobreposições e profundidade. Os arquivos estão em [RevisaoFinal](../../GeneratedMedia/Anatomy/RevisaoFinal/).
 
 A avaliação ocorreu no Editor, com interatores de teste. Conforto, desempenho no headset e revisão independente da anatomia permanecem pendentes.
+
+## Quatro salas seguintes e revisão transversal · 18/11/2026
+
+| Sala | Ação conferida em Play Mode | Ajuste conferido nas capturas |
+|---|---|---|
+| Microrganismos e vírus | Seleção XR dos nove objetos, fichas completas, toggle de rótulos, três etapas manuais e restauração com cancelamento | Ficha alargada, cromossomo na vertical e diorama na lateral para liberar a vista dos exemplares |
+| DNA, RNA e informação | Oito encaixes, recusa de par incompatível, retirada e reposição, devolução fora do alcance, duas fitas independentes e consulta do cromossomo | Apoios e texto de confirmação legível nas vistas frontal e oblíqua |
+| Ecossistemas e relações | Três encaixes por papel, recusa do predador na posição do produtor, interrupção e recomposição do fluxo, consulta aos decompositores e restauração | Percursos sobre o terreno, ramos de calor por nível e legendas separadas na vista oblíqua |
+| Evolução e seleção natural | 64 sequências de ambientes em seis gerações, comparação com G0, cancelamento, limite e movimento reduzido | 24 mariposas à vista, contagens ampliadas e apoios sob a casca inclinada |
+
+Em cada uma das quatro entradas do Hub, a ação de iniciar carregou a cena individual com um único XR Origin e zero componentes com scripts ausentes. O botão da própria sala retornou ao Hub. O teste do protótipo HTML verificou dez fluxos e gerou 37 imagens locais. As capturas do Editor estão nos GDDs e em [BiologyReview](../../GeneratedMedia/BiologyReview/).
+
+Em Física, o circuito de demonstração fechado apresentou 0,408 A no primeiro cabo. O shader desenhou o sentido da corrente sobre a curva do fio. Foram conferidos o sinal inverso no componente de apresentação, a fase fixa com movimento reduzido e o desaparecimento das marcas ao abrir o interruptor. Os dois enquadramentos usam a mesma câmera. [Antes](../../GeneratedMedia/BiologyReview/corrente-antes.png) · [Depois](../../GeneratedMedia/BiologyReview/corrente-depois.png)

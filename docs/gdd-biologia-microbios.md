@@ -1,6 +1,6 @@
 # Short GDD — Microrganismos e vírus
 
-**Status:** aprovado para desenvolvimento; ainda não implementado. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. Uma das **seis** salas propostas, conforme [índice](gdd-biologia.md).
+Sala de Biologia implementada para exploração individual offline no Ensino Médio. [Índice das seis salas](gdd-biologia.md)
 
 ## Objetivo e experiência
 
@@ -103,3 +103,17 @@ Modo inicial individual offline; textos, malhas, texturas e metadados embarcados
 - Ocultar um objeto cancela foco e interação; não manter colisores ou seleção invisíveis. Voltar ao Hub não exige navegar por telas de estudo.
 - Restaurar respeita estado autoral de cada peça; a preferência reduzida não altera o conteúdo científico.
 - Compilação, testes de domínio e captura no Editor serão exigidos na implementação. Alcance, conforto e desempenho em headset são etapas separadas. Nenhum build sem autorização.
+
+### Cena implementada e revisão no Editor
+
+Os quatro exemplares bacterianos, três virais e duas estruturas ocupam nove suportes em arco. Cada manopla gira exclusivamente sua peça. A ficha lateral se abre ao selecionar um exemplar, e o botão junto ao diorama troca a ilustração da etapa e sua legenda. O aluno define o ritmo de leitura.
+
+Na revisão em Play Mode, a consulta do bacilo truncava a última linha. A ficha ganhou largura e altura, mantendo o tamanho físico das letras. O cromossomo passou à vertical para que as cromátides fiquem visíveis na aproximação frontal. O teste `MicrobesValidation.Run()` selecionou os nove exemplares pelo XR Interaction Manager, verificou os limites locais das malhas, o texto das fichas, o giro restaurado e os estados de avanço, cancelamento e restauração.
+
+![Galeria no Editor com os rótulos ativados](../GeneratedMedia/BiologyReview/microbios-galeria.png)
+
+![Diorama na segunda etapa, que permanece disponível para leitura](../GeneratedMedia/BiologyReview/microbios-diorama.png)
+
+A disposição final deixa o diorama na lateral direita e libera a vista das duas vitrines de estruturas a partir da entrada.
+
+![Consulta completa do modelo Bacillus](../GeneratedMedia/BiologyReview/microbios-consulta.png)

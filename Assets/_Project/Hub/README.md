@@ -12,7 +12,7 @@ Entry scene: `Scenes/Hub.unity` (first enabled scene).
 - Physics / Movimento e forças opens ObliqueLaunch. Plano inclinado,
   Associação de resistores, Gravitação, Termologia and Ondulatória open their individual labs.
   Mathematics / Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística and Frações e proporções open individual labs.
-  All Chemistry/Biology entries remain mockups. Probability replaces the former Medidas entry.
+  Biology opens six individual rooms. The [Biology catalog](../../../docs/gdd-biologia.md) describes their activities. Chemistry opens Atomic Models, Reactions and the Periodic Table. Probability replaces the former Medidas entry.
 - Physics has six contents, including Inclined Plane in place of Optics. The Hub
   shows all six cards together; pagination remains hidden for disciplines with
   at most six entries.

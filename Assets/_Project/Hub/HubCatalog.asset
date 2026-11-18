@@ -107,26 +107,29 @@ MonoBehaviour:
       icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
       scenePath: Assets/_Project/Laboratories/Biology/Anatomy/Scenes/Anatomy.unity
     - title: "Microrganismos e v\xEDrus"
-      description: "Compare bact\xE9rias, v\xEDrus e estruturas celulares. Em desenvolvimento."
+      description: "Examine sete exemplares, compare duas estruturas e percorra as
+        etapas de um bacteri\xF3fago."
       objective: "Compare bact\xE9rias, v\xEDrus e estruturas celulares."
       icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Biology/Microbes/Scenes/Microbes.unity
     - title: "DNA, RNA e informa\xE7\xE3o"
-      description: Explore complementaridade entre DNA e RNA. Em desenvolvimento.
+      description: "Encaixe as bases na fita e compare DNA complementar e transcri\xE7\xE3o
+        em RNA."
       objective: Explore complementaridade entre DNA e RNA.
       icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Biology/Dna/Scenes/Dna.unity
     - title: "Ecossistemas e rela\xE7\xF5es"
-      description: "Investigue cadeias alimentares, energia e mat\xE9ria. Em desenvolvimento."
+      description: "Monte uma cadeia alimentar e acompanhe a energia e o retorno
+        de mat\xE9ria."
       objective: "Compreender intera\xE7\xF5es nos ecossistemas."
       icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Biology/Ecosystems/Scenes/Ecosystems.unity
     - title: "Evolu\xE7\xE3o e sele\xE7\xE3o natural"
-      description: "Compare caracter\xEDsticas de popula\xE7\xF5es entre gera\xE7\xF5es.
-        Em desenvolvimento."
+      description: "Compare mariposas claras e escuras ao longo de seis gera\xE7\xF5es
+        em dois ambientes."
       objective: "Compare caracter\xEDsticas de popula\xE7\xF5es entre gera\xE7\xF5es."
       icon: {fileID: 21300000, guid: 36628de42318d7146ba842258cdc7e57, type: 3}
-      scenePath: 
+      scenePath: Assets/_Project/Laboratories/Biology/Evolution/Scenes/Evolution.unity
   - title: "Matem\xE1tica"
     description: "Formas, rela\xE7\xF5es, medidas e racioc\xEDnio l\xF3gico."
     accent: {r: 0.90588236, g: 0.5058824, b: 0.105882354, a: 1}

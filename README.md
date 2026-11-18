@@ -2,7 +2,7 @@
 
 Laboratórios educacionais em realidade virtual para investigar conceitos por meio de experimentos interativos, visualização de grandezas e comparação de resultados.
 
-**Biologia — 17/11/2026:** duas salas individuais offline: [Células animal e vegetal](Assets/_Project/Laboratories/Biology/Cells/README.md), com seis organelas destacáveis, e [Corpo humano e sistemas](Assets/_Project/Laboratories/Biology/Anatomy/README.md), com nove sistemas, 60 estruturas consultáveis, 24 unidades destacáveis, giro por manopla e quatro percursos pausáveis. Ambas reutilizam assets antigos, identidade atual e silhuetas de interação compartilhadas. Verificadas no Editor; headset pendente. Os [seis GDDs aprovados](docs/gdd-biologia.md) consolidam o acervo antigo; quatro conteúdos permanecem em desenvolvimento. Química segue preservada, em pausa.
+**Biologia** reúne seis salas individuais offline. O aluno pode examinar organelas e órgãos, comparar bactérias e vírus, montar fitas complementares, construir uma cadeia alimentar e acompanhar frequências de fenótipos entre gerações. O catálogo reúne os GDDs, protótipos e registros de validação. [Laboratórios de Biologia](docs/gdd-biologia.md)
 
 Este README reúne o **Game Design Document (GDD)** e as orientações de entrada no projeto. Estão disponíveis **seis laboratórios de Física e seis de Matemática**, cada um em sua cena. Somente **Física / Lançamento oblíquo** possui implementação coletiva LAN.
 
@@ -87,7 +87,7 @@ Não haverá ranking, recompensa por velocidade ou pontuação competitiva. O su
 | HUB 2 | Seis conteúdos de Física em uma grade de seis cards; anfitrião seleciona o conteúdo da sala | Expandir os conteúdos sincronizados |
 | Matemática | Espaço cartesiano, Formas geométricas, Geometria plana, Funções e gráficos, Probabilidade e estatística e Frações e proporções disponíveis individualmente | Novos conteúdos, roteiros e validação em headset |
 | Química | Tabela periódica 3D e Reações químicas disponíveis; dois mockups no Hub | Validar em headset e desenvolver os demais GDDs |
-| Biologia | Células animal e vegetal e Corpo humano e sistemas disponíveis; outras quatro salas em desenvolvimento | Exploração individual offline |
+| Biologia | Seis salas disponíveis pelo Hub | Exploração individual offline |
 | Ambiente | Sala padrão reutilizável e laboratório com acabamento equivalente | Consolidar recursos compartilhados fora de Física |
 | Experimento | Parâmetros, simulação, pausa/reset, vetores, trajetória, réguas e análise | Precisão temporal nos extremos, roteiro e refinamentos de leitura |
 | Plano inclinado | Experimento individual com equilíbrio/atrito, vetores no bloco e análise | Roteiro educativo, sincronização LAN e validação em headset |
@@ -297,7 +297,7 @@ Catálogo atual: `Assets/_Project/Hub/HubCatalog.asset`. Cada disciplina apresen
 |---|---|---|
 | Física | Movimento e forças; Plano inclinado; Associação de resistores; Termologia; Ondulatória; Gravitação | Lançamento oblíquo, plano inclinado, gravitação, associação de resistores, termologia e ondulatória funcionais; apenas lançamento oblíquo em LAN |
 | Química | Hub: Tabela periódica 3D, Reações químicas e Modelos atômicos disponíveis; Soluções como mockup. GDDs para seis salas | Três salas individuais offline; validação em headset pendente |
-| Biologia | Células animal e vegetal; Corpo humano e sistemas; Microrganismos e vírus; DNA, RNA e informação; Ecossistemas e relações; Evolução e seleção natural | Células e Corpo humano implementados/verificados no Editor; quatro mockups, headset pendente |
+| Biologia | Células animal e vegetal, Corpo humano e sistemas, Microrganismos e vírus, DNA, RNA e informação, Ecossistemas e relações, Evolução e seleção natural | Seis cenas individuais. Conforto e desempenho em headset aguardam homologação. |
 | Matemática | Espaço cartesiano; Funções e gráficos; Probabilidade e estatística; Formas geométricas; Geometria plana; Frações e proporções | Seis laboratórios individuais |
 
 “Movimento e forças” abre o lançamento oblíquo. “Plano inclinado” tem entrada própria para equilíbrio e atrito. As descrições devem refletir o conteúdo realmente disponível.

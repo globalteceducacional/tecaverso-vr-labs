@@ -1,6 +1,6 @@
 # Protótipos de Biologia
 
-Protótipos das propostas aprovadas de 17/11/2026. Células e Corpo humano já possuem cenas próprias; as outras quatro aguardam implementação. Abrir [index.html](index.html) no navegador: seis salas navegáveis, sem servidor, CDN ou API. Montserrat é carregada da pasta de fontes local do projeto. Diagramas SVG são representações para testar escolhas e estados; não são renders dos FBX antigos. Capturas reais estão nos respectivos GDDs.
+Os protótipos das seis salas acompanham os GDDs aprovados. Abra [index.html](index.html) no navegador para testar as interações e os estados offline. Os diagramas SVG representam as propostas de interação. A fonte Montserrat é carregada do próprio projeto. Os GDDs identificam separadamente as capturas do Editor.
 
 ## O que experimentar
 

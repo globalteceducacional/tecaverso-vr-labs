@@ -139,7 +139,9 @@ namespace Tecaverso.Editor
             Ensure(Folder+"/Scenes");Ensure(Folder+"/Materials");
             font=AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/_Project/UI/Fonts/Montserrat/Montserrat-Bold SDF.asset");
             bodyMat=Mat("Instrument graphite",Graphite);terminalMat=Mat("Terminal metal",new Color(.55f,.65f,.75f));redMat=Mat("Positive red",new Color(.85f,.18f,.22f));blackMat=Mat("Negative blue",new Color(.12f,.37f,.72f));
-            bulbMat=Mat("Bulb glass",new Color(.95f,.82f,.6f),true);flowMat=Mat("Current blue",new Color(.3f,.8f,1),true);
+            bulbMat=Mat("Bulb glass",new Color(.95f,.82f,.6f),true);
+            flowMat=AssetDatabase.LoadAssetAtPath<Material>(Folder+"/Materials/Current blue.mat");
+            if (!flowMat) throw new InvalidOperationException("Importe o material de corrente convencional dos cabos.");
             var source=SceneManager.GetActiveScene();var roots=source.GetRootGameObjects();
             var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Additive);SceneManager.SetActiveScene(scene);
             foreach(var name in new[]{"XR Origin (XR Rig)","XR Interaction Manager","EventSystem","Directional Light"})

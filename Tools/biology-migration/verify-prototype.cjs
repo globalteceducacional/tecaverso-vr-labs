@@ -83,6 +83,7 @@ const ids = [
     );
     checks.push("Six proposal entries");
     await go("dna");
+    assert.equal(await page.evaluate(() => document.querySelector('[data-base="U"]') === null), true);
     await click("Base A");
     assert.match(await message(), /recusada/);
     await click("Base T");
@@ -91,7 +92,8 @@ const ids = [
     await click("Base G");
     assert.match(await message(), /concluída/);
     await click("RNA");
-    await click("Base T");
+    assert.equal(await page.evaluate(() => document.querySelector('[data-base="T"]') === null), true);
+    await click("Base C");
     assert.match(await message(), /recusada/);
     await click("Base U");
     await click("Base A");
@@ -191,7 +193,7 @@ const ids = [
       "Anatomy switch stops irrelevant path and closes hidden selection",
     );
     await go("microbios");
-    for (let i = 0; i < 3; i++) await click("Próxima etapa do fago");
+    for (let i = 0; i < 2; i++) await click("Próxima etapa do fago");
     assert.equal(
       await page.evaluate(() =>
         document
@@ -200,7 +202,9 @@ const ids = [
       ),
       true,
     );
-    checks.push("Three phage stages");
+    await click("Próxima etapa do fago");
+    assert.ok((await page.evaluate(() => document.getElementById("scene").textContent)).includes("Contato e entrada"));
+    checks.push("Three phage stages and return to the initial stage");
     await go();
     await capture("hub");
     for (const id of ids) {

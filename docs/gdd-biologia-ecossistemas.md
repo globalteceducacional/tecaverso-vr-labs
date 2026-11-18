@@ -1,6 +1,6 @@
 # Short GDD — Ecossistemas e relações
 
-**Status:** aprovado para desenvolvimento; ainda não implementado. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. Uma das **seis** salas propostas, conforme [índice](gdd-biologia.md).
+**Status:** cena implementada em Unity; conforto e alcance em headset pendentes. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. Uma das **seis** salas propostas, conforme [índice](gdd-biologia.md).
 
 ## Objetivo e experiência
 
@@ -10,7 +10,7 @@ Construir uma cadeia alimentar simples e distinguir fluxo de energia de ciclagem
 
 **Cenas antigas consolidadas:** EcossistemaInterativo.
 
-**Reaproveitamento comprovado por arquivos:** A cena antiga contém ambiente/estrutura inicial, sem um ecossistema funcional identificado. Diorama, capim, gafanhoto e sapo são conteúdo novo a modelar ou obter com procedência registrada. Os modelos bacterianos existentes podem ilustrar decompositores, com identificação genérica e ressalva de escala.
+**Acervo e autoria.** A cena antiga continha a estrutura inicial de ambiente. A sala usa o rig XR, a iluminação e a arquitetura da versão atual. A pradaria elevada, as três fichas e os fungos sobre madeira morta foram modelados para este laboratório. O [modelador dos espécimes](../Assets/_Project/Editor/EcosystemsSpecimens.cs) gera malhas locais com cores por vértice. As representações indicam grupos de organismos, em escalas ampliadas independentes.
 
 **Catálogo fechado desta entrega:** Um cenário terrestre didático; três fichas com relevo/silhueta e nome (capim, gafanhoto, sapo), três sockets de papéis tróficos e um módulo de decomposição fixo. Não usar Salmonella como exemplo obrigatório de decompositor. Esta versão não é simulador populacional ou editor de teias livres.
 
@@ -20,7 +20,7 @@ Construir uma cadeia alimentar simples e distinguir fluxo de energia de ciclagem
 | Suportes e sockets da atividade | Ancoragem, retorno e alcance | Controles 3D e filtros de encaixe | Preservar referência espacial e evitar seleção concorrente |
 | Consulta e navegação | Apoio opcional | Apontar/tocar e fechar; voltar ao Hub | Uma consulta simultânea; sem HUD na câmera |
 
-**Disposição proposta:** Diorama horizontal elevado a 1,1 m, com largura aproximada de 2,4 m, acessível pelo lado frontal e laterais. Bandeja na borda frontal, controles em suporte lateral. Decomposição em seção lateral distinta; sem mesa ocupando todo o espaço de caminhada.
+**Disposição.** Diorama horizontal com superfície a 1,08 m, largura de 2,67 m e acesso frontal e lateral. Na borda próxima ficam as três fichas em ordem embaralhada. No campo, os três encaixes seguem da esquerda para a direita. A luz solar se encontra à esquerda e o tronco com fungos à direita. A alavanca fica na borda direita. O estado da montagem e as ações de restaurar e voltar estão na frente inclinada da bancada. A consulta e a confirmação compartilham o suporte à direita.
 
 **Controles escolhidos pela tarefa:** Três fichas XR e três encaixes; toggle Exibir fluxo; Restaurar diorama; consulta tocando o módulo de matéria/energia. Sem sliders de população, chuva ou temperatura.
 
@@ -30,12 +30,12 @@ Construir uma cadeia alimentar simples e distinguir fluxo de energia de ciclagem
 
 | ID | Tipo e localização | Finalidade e ação | Inicial | Abre/fecha | Simultâneo |
 |---|---|---|---|---|---|
-| R1 | Nomes nos suportes e legenda junto ao modelo | Identificar o objeto e informar ampliação didática; rótulos extras só quando solicitados | Nomes visíveis; extras ocultos | Toggle quando houver; seleção realça uma estrutura | C1, S1; Q1 pode consultar a selecionada |
-| C1 | Controles 3D no suporte e objetos da atividade | Três fichas XR e três encaixes; toggle Exibir fluxo; Restaurar diorama; consulta tocando o módulo de matéria/energia. Sem sliders de população, chuva ou temperatura. | Visíveis; estado inicial da atividade | Pega/toque/raio, evento de domínio | R1, E1, Q1 e S1; bloqueados por X1 |
-| Q1 | Ficha clara fixa à lateral do suporte | Nome, função, contexto, limite do modelo; Fechar | Oculta | Selecionar uma parte ou símbolo de consulta; Fechar ou trocar alvo fecha/substitui | Objetos e C1 permanecem visíveis; uma Q1 por vez |
+| R1 | Nomes nas três posições da bandeja, papéis nos encaixes e legenda acima do campo | Identificar as fichas, seus destinos e o significado das setas | Visíveis | Permanentes | C1, E1, S1 e eventual Q1 ou X1 |
+| C1 | Fichas XR na bandeja, encaixes no campo, alavanca na borda direita e Restaurar na frente da bancada | Pegar, encaixar, retirar, exibir fluxo e restaurar | Três fichas disponíveis, encaixes vazios e alavanca desligada | Mão ou raio XR nas peças, alavanca da Unity e botão Restaurar | R1, E1, Q1 e S1. X1 suspende a interação |
+| Q1 | Ficha clara fixa à direita da bancada | Explicar a decomposição, o retorno de nutrientes e a dissipação de energia | Oculta | Selecionar os fungos sobre o tronco para abrir. Fechar encerra a leitura | Objetos e C1 visíveis. X1 assume o espaço da consulta |
 | E1 | Uma linha no suporte, sem painel flutuante | Confirmar ação ou explicar recusa/limite; não depender apenas de cor | Instrução inicial curta | Atualiza por evento; erro persiste até correção ou outra ação pertinente | R1, C1 e Q1 |
-| X1 | Confirmação no espaço da consulta | Cancelar/Restaurar quando houver perda de montagem/população | Oculta | Ação Restaurar; decisão fecha | Objetos ao fundo visíveis; C1, Q1 e S1 sem interação |
-| S1 | Voltar ao Hub, junto à saída e ao suporte | Retorno padrão à disciplina, sem confirmação se não houver estado relevante | Visível | Permanente | Todos, exceto bloqueio por X1 |
+| X1 | Confirmação no espaço da consulta | Cancelar, restaurar ou voltar ao Hub quando houver estado a descartar | Oculta | Restaurar ou Voltar abre a decisão. Cancelar preserva a montagem e a consulta que estava aberta | Objetos ao fundo visíveis. C1, Q1 e S1 aguardam a decisão |
+| S1 | Voltar ao Hub na frente da bancada | Retornar ao Hub. Com montagem ou fluxo ativo, X1 permite escolher entre descartar e continuar | Visível | Permanente | Todos, exceto bloqueio por X1 |
 
 O cabeçalho de revisão e a seção “Como isso funciona em RV?” do HTML não são interfaces a implementar na sala. Motion reduzido é preferência geral do produto, exposta no menu padrão; não exige outro painel permanente de Biologia.
 
@@ -46,7 +46,7 @@ O cabeçalho de revisão e a seção “Como isso funciona em RV?” do HTML nã
 3. Fechar a consulta, comparar outro caso e retornar ao estado de exploração.
 4. Restaurar quando aplicável: X1 pede confirmação; cancelar preserva os objetos; S1 retorna ao Hub.
 
-**Recusas e recuperação:** Ficha em papel trófico errado é recusada com explicação local, permanece na mão e pode ser tentada novamente. Partículas de transferência só aparecem nas conexões completas; nenhuma cadeia inexistente é animada.
+**Recusas e recuperação.** Ao aproximar um sapo do produtor ou tentar colocar o herbívoro primeiro, o suporte explica qual papel falta e a ficha continua na mão. Soltar fora de um encaixe válido devolve a ficha à bandeja. Retirar o produtor interrompe todos os percursos. As peças já colocadas nos demais suportes conservam suas posições para a remontagem. A confirmação só abre depois que o aluno solta a peça.
 
 ## Modelo científico e limites
 
@@ -54,7 +54,7 @@ As setas vão do recurso alimentar ao consumidor. Energia não circula de volta 
 
 Referência de revisão: [OpenStax — conteúdo relacionado](https://openstax.org/books/biology-2e/pages/46-2-energy-flow-through-ecosystems). Os modelos artísticos precisam de validação semântica; nomes de arquivos não são autoridade taxonômica/anatômica. Reutilização técnica não substitui revisão do conteúdo.
 
-**Critério específico:** Recusar predador no socket produtor. Montagem completa gera setas corretas. Matéria e energia têm legendas e percursos distintos; energia não aparece como ciclo fechado.
+**Leitura dos percursos.** Com a alavanca ligada, luz → capim, capim → gafanhoto e gafanhoto → sapo aparecem à medida que as ligações são completadas. Cada nível conectado possui uma derivação curta em salmão que indica dissipação de calor. Com a cadeia completa, trilhas turquesa unem resíduos dos três níveis à madeira em decomposição e outro trajeto mostra nutrientes do solo voltando ao produtor. Um shader desloca o brilho sobre as fitas aderentes à superfície. As pontas das setas indicam a direção mesmo com motion reduzido.
 
 ## Interação, feedback e ergonomia
 
@@ -92,7 +92,7 @@ Impedimento: E1 descreve a recuperação sem modal. O estado válido anterior é
 
 Confirmação: X1 bloqueia manipulação e navegação, Cancelar preserva tudo; Restaurar retorna à entrada. Só existe onde há restauração destrutiva.
 
-Capturas locais ignoradas em `GeneratedMedia/GDD/biologia/`. Para compartilhar o GDD, enviar também essas imagens; elas não acompanham Git. Fonte e reprodução em [README do protótipo](prototypes/biologia/README.md).
+Capturas locais ignoradas em `GeneratedMedia/GDD/biologia/`. Para compartilhar o GDD, enviar também essas imagens; elas não acompanham Git. Verificação e reprodução das cinco prévias com [o teste local do protótipo](../Tools/biology-migration/check-ecology.cjs). No diagrama, selecione uma ficha e depois o encaixe. O tronco com fungos abre a consulta.
 
 ## Execução e aceite
 
@@ -102,4 +102,14 @@ Modo inicial individual offline; textos, malhas, texturas e metadados embarcados
 - Rótulos e controles correspondem ao inventário; objetos e área de pega ficam legíveis durante consultas.
 - Ocultar um objeto cancela foco e interação; não manter colisores ou seleção invisíveis. Voltar ao Hub não exige navegar por telas de estudo.
 - Restaurar respeita estado autoral de cada peça; a preferência reduzida não altera o conteúdo científico.
-- Compilação, testes de domínio e captura no Editor serão exigidos na implementação. Alcance, conforto e desempenho em headset são etapas separadas. Nenhum build sem autorização.
+- A [cena](../Assets/_Project/Laboratories/Biology/Ecosystems/Scenes/Ecosystems.unity) usa os materiais e os modelos incluídos em `Ecosystems/Art`. A [validação do Editor](../Assets/_Project/Editor/EcosystemsValidation.cs) exercita encaixe XR, retirada, preservação da cadeia, consulta, cancelamento, restauração, textos e shaders. Alcance, conforto e desempenho em headset exigem verificação no dispositivo.
+
+## Verificação da cena implementada
+
+O teste em Play Mode passou para os três encaixes, a recusa de papel incorreto, a retirada do produtor e a recomposição da cadeia. A consulta abriu por um evento de seleção XR. Cancelar a restauração preservou as peças e o fluxo. Confirmar devolveu os três organismos à bandeja. Os textos da consulta couberam na ficha e os shaders carregaram no Editor.
+
+![Bancada com a cadeia montada, vista frontal no Unity](../GeneratedMedia/BiologyReview/ecossistemas-frente.png)
+
+![Vista oblíqua dos trajetos de alimentação, calor e nutrientes no Unity](../GeneratedMedia/BiologyReview/ecossistemas-cadeia.png)
+
+A vista oblíqua permite seguir os três tipos de seta sobre a pradaria. A revisão substituiu a fileira regular de pedras por pequenas concentrações de rocha e vegetação, aumentou as legendas e afastou a identificação dos fungos da placa do predador.

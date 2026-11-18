@@ -10,7 +10,7 @@ Os corpos dos dez dispositivos e a alavanca são malhas **ProBuilder editáveis*
 
 O aluno conecta o positivo da fonte ao interruptor, componentes e lâmpada, e fecha o circuito voltando ao negativo. O amperímetro participa do ramo em série; o voltímetro é ligado entre dois nós, usando derivações quando os terminais já estão ocupados. **Soltar cabos** desfaz as conexões e devolve as pontas ao expositor. **Voltar ao Hub** pede confirmação.
 
-Os cabos têm pontas físicas XR e uma curva visual flexível. Não simulam corda com joints. Apenas as conexões feitas nos sockets entram no cálculo; contato casual ou cruzamento visual não une condutores. Marcadores móveis representam o **sentido convencional da corrente** em cada cabo com corrente calculada, sem pretender reproduzir a velocidade dos elétrons.
+Os cabos têm pontas físicas XR e uma curva visual flexível. Só as conexões nos sockets entram no cálculo. Marcas direcionais acompanham a superfície de cada fio percorrido por corrente. O sentido segue o sinal da corrente convencional calculada. As marcas desaparecem no circuito aberto e ficam estáticas na preferência de movimento reduzido. A velocidade da animação é didática.
 
 ## Modelo elétrico
 

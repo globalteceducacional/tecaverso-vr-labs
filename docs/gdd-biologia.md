@@ -1,6 +1,6 @@
-# Biologia — seis laboratórios propostos
+# Biologia — seis laboratórios
 
-**Status:** GDDs aprovados. Células e Corpo humano implementados/verificados no Editor; quatro salas pendentes de implementação. **Data:** 17/11/2026. **Modo inicial:** individual offline. Química fica em pausa por orientação do responsável; seus arquivos existentes foram preservados.
+Os seis GDDs aprovados correspondem a seis cenas individuais acessíveis pelo Hub. Os modelos, textos e interações funcionam offline. Consulte o [registro de validação](biology/validation.md) para os testes executados em cada sala.
 
 ## Distribuição e consolidação
 
@@ -30,7 +30,7 @@ Prévia HTML, não catálogo Unity atualizado. Cada GDD contém imagens de entra
 
 ## Ordem sugerida de implementação
 
-Células → Corpo humano → Microrganismos → DNA/RNA → Ecossistemas → Evolução. As três primeiras aproveitam a maior parte do acervo; DNA adiciona construção; as últimas duas precisam de conteúdo novo. Células e Corpo humano já abrem suas cenas pelo Hub. Os demais quatro conteúdos permanecem em desenvolvimento.
+Células → Corpo humano → Microrganismos → DNA/RNA → Ecossistemas → Evolução. As três primeiras exploram o acervo de modelos do projeto antigo. DNA/RNA combina modelos do acervo com uma bancada de montagem. Ecossistemas e Evolução têm dioramas próprios.
 
 ## Regras comuns
 

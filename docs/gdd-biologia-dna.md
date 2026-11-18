@@ -1,6 +1,6 @@
 # Short GDD — DNA, RNA e informação
 
-**Status:** aprovado para desenvolvimento; ainda não implementado. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. Uma das **seis** salas propostas, conforme [índice](gdd-biologia.md).
+**Status:** sala implementada no Unity. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. [Cena DNA, RNA e informação](../Assets/_Project/Laboratories/Biology/Dna/Scenes/Dna.unity) · [índice de Biologia](gdd-biologia.md).
 
 ## Objetivo e experiência
 
@@ -23,6 +23,8 @@ Investigar complementaridade e orientação de fitas. O aluno monta uma fita com
 **Disposição proposta:** Hélice ampliada ancorada à esquerda; montagem em bancada inclinada frontal, quatro sockets alcançáveis sem braços elevados. Vitrine do cromossomo à direita. Consulta lateral sem cobrir bandeja. Não exigir pegar a hélice inteira.
 
 **Controles escolhidos pela tarefa:** Escolha exclusiva DNA/RNA, apenas dois estados; cinco tipos de peças com letras gravadas; quatro sockets; Restaurar fitas; anel de rotação na hélice. Nenhum slider de bases. Os botões de bases no HTML são proxies da bandeja física.
+
+Na bancada, as quatro letras do molde permanecem fixas. Abaixo delas ficam os quatro encaixes e, na fileira ao alcance das mãos, as bases soltas. T e U compartilham um berço conforme a atividade. O molde de DNA conserva T inclusive quando o aluno monta RNA. Cada peça traz uma letra na própria superfície. A pega de uma peça já encaixada libera a posição. Ao soltar uma peça fora de um encaixe compatível, ela volta à bandeja. A bancada apresenta a atividade e o número de pares preenchidos.
 
 ## Inventário de interfaces, rótulos e controles 3D
 
@@ -47,6 +49,10 @@ O cabeçalho de revisão e a seção “Como isso funciona em RV?” do HTML nã
 4. Restaurar quando aplicável: X1 pede confirmação; cancelar preserva os objetos; S1 retorna ao Hub.
 
 **Recusas e recuperação:** Pareamento incompatível não altera a fita, não consome peça e mantém a base na mão; E1 explica a regra. Remover uma base permite corrigir a posição. Troca de atividade preserva ambas as montagens. Confirmação apenas ao restaurar.
+
+O giro afeta apenas a hélice em exposição. Selecionar a hélice ou o cromossomo abre uma ficha lateral. Durante a pega, a troca de atividade pede que o aluno solte a peça. Restaurar só pede confirmação quando há pelo menos uma base encaixada em alguma das fitas.
+
+Se o aluno caminhar com uma peça para além de 1,6 m do centro dos encaixes, o suporte recupera a peça e indica onde ela está. A montagem continua disponível.
 
 ## Modelo científico e limites
 
@@ -103,3 +109,13 @@ Modo inicial individual offline; textos, malhas, texturas e metadados embarcados
 - Ocultar um objeto cancela foco e interação; não manter colisores ou seleção invisíveis. Voltar ao Hub não exige navegar por telas de estudo.
 - Restaurar respeita estado autoral de cada peça; a preferência reduzida não altera o conteúdo científico.
 - Compilação, testes de domínio e captura no Editor serão exigidos na implementação. Alcance, conforto e desempenho em headset são etapas separadas. Nenhum build sem autorização.
+
+### Evidências da implementação em 17/11/2026
+
+O teste de domínio verificou as cinco letras contra as quatro posições em cada atividade, totalizando 40 casos. No Play Mode, `DnaValidation.Run()` usou um interator XR temporário para preencher as oito posições das duas atividades. Verificou a recusa de A–A durante a pega, a devolução à bandeja, o bloqueio da troca enquanto uma peça está na mão, a remoção e reposição, a persistência de cada fita, a consulta do cromossomo e as duas decisões de restauração. O protótipo HTML passou pela montagem das duas fitas, recusa, remoção, reposição e cancelamento.
+
+![Sala no Unity com hélice, bancada de RNA e cromossomo](../GeneratedMedia/BiologyReview/dna-frente.png)
+
+![Bancada observada de lado, com três pares de RNA e um encaixe livre](../GeneratedMedia/BiologyReview/dna-encaixe.png)
+
+As capturas do Editor permitem comparar a leitura de frente e de lado. A revisão aumentou o peso da mensagem de encaixe e acrescentou apoios entre a faixa de controles e o tampo. A validação física em headset permanece pendente.

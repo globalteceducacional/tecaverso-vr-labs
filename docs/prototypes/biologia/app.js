@@ -173,6 +173,11 @@ const info = {
     "Organização do material genético. Este asset tem forma de X.",
     "A forma de X representa um cromossomo duplicado condensado; não é a forma universal do DNA.",
   ],
+  helix: [
+    "Dupla hélice de DNA",
+    "Duas fitas antiparalelas formam a dupla hélice. Açúcar e fosfato compõem as laterais e as bases ficam no interior.",
+    "No DNA, A pareia com T e C com G. Na cópia de RNA, A do molde pareia com U. As ampliações da hélice e do cromossomo são independentes.",
+  ],
 };
 let lab = null,
   s = {};
@@ -184,7 +189,8 @@ function defaults() {
     skin: false,
     system: "resp",
     playing: false,
-    phase: 0,
+    phase: 1,
+    exhibitAngles: {},
     angle: 0,
     mode: "DNA",
     slot: 0,
@@ -283,7 +289,7 @@ const microbes = [
   ["chromosome", "Cromossomo"],
   ["bacteria", "Bactéria genérica"],
   ["phage", "Bacteriófago"],
-  ["bacillus", "Bacilo"],
+  ["bacillus", "Modelo Bacillus"],
 ];
 function drawMicrobes() {
   let shapes = microbes
@@ -306,49 +312,126 @@ function drawMicrobes() {
         shape = `<path d="M${x - 45} ${y}q25-50 45 0t45 0" stroke="#e1c18b" stroke-width="6" fill="none"/>`;
       else
         shape = `<rect x="${x - 39}" y="${y - 20}" width="78" height="40" rx="20" fill="${key === "salmonella" ? "#cd9e79" : "#7cae91"}"/><path d="M${x + 39} ${y}q30 30 40 0" stroke="#a4d9bd" stroke-width="3" fill="none"/>`;
-      info[key + "_" + i] = info[key];
+      const id = key + "_" + i;
+      info[id] = [name, ...info[key].slice(1)];
+      const feature = ["Partícula viral","Apêndices","Projeções","Contorno celular","Filamento","Cromátides","Célula","Cabeça e cauda","Superfície externa"][i];
+      const spin = Math.max(.38,Math.abs(Math.cos((s.exhibitAngles[id] || 0) * Math.PI / 6)));
+      shape = `<g transform="translate(${x},0) scale(${spin},1) translate(${-x},0)">${shape}</g>`;
       return (
-        part(key + "_" + i, shape, name, x, y + 65) +
+        part(id, shape, feature, x, y + 62) +
         `<text class="small" x="${x}" y="${y - 57}" text-anchor="middle">${name}</text>`
       );
     })
     .join("");
-  return `<text x="450" y="86" text-anchor="middle">Galeria · 7 exemplares e 2 estruturas</text>${shapes}${s.phase ? `<text x="450" y="478" text-anchor="middle">Ciclo lítico · ${["", "1. Adsorção e entrada", "2. Síntese e montagem", "3. Lise e liberação"][s.phase]}</text><path class="flowpath" d="M520 365H650" stroke="#86e0d3" stroke-width="7"/>` : ""}`;
+  const figure = (x,y) => `<g transform="translate(${x},${y})" fill="none" stroke="#e4bfed" stroke-width="1.7"><path d="M-5 0l2-5h6l2 5-2 5h-6zM0 5v5m-6 5 2-5 4-2 4 2 2 5"/></g>`;
+  const phages = s.phase===1 ? figure(669,324) : s.phase===2 ? figure(659,352)+figure(687,352) : figure(681,352)+figure(716,342);
+  const host = s.phase===3 ? "M704 344C678 318 620 343 642 367Q674 386 704 360" : "M704 352a33 17 0 1 1-66 0 33 17 0 1 1 66 0";
+  return `<text x="450" y="86" text-anchor="middle">Galeria · 7 exemplares e 2 estruturas</text>${shapes}
+    <path d="${host}" fill="none" stroke="#86e0d3" stroke-width="3"/>${phages}
+    <text x="450" y="475" text-anchor="middle">Ciclo do fago · ${["","1. Contato e entrada","2. Síntese e montagem","3. Lise e liberação"][s.phase]}</text>`;
 }
 function drawDNA() {
-  let a = s.mode === "DNA" ? s.dna : s.rna;
-  return (
-    `<text x="450" y="85" text-anchor="middle">${s.mode === "DNA" ? "Fita complementar de DNA" : "RNA complementar à fita molde de DNA"}</text><path d="M310 140Q200 270 310 400M590 140Q700 270 590 400" stroke="#9ab1df" stroke-width="12" fill="none"/>` +
-    Array.from("ATGC")
-      .map((b, i) => {
-        let y = 170 + i * 63;
-        return `<text x="330" y="${y}" text-anchor="middle">${b}</text><path d="M355 ${y - 7}H535" stroke="#5c769c" stroke-width="5"/><g role="button" tabindex="0" data-slot="${i}" aria-label="Socket ${i + 1}"><rect class="part ${s.slot === i ? "selected" : ""}" x="545" y="${y - 32}" width="52" height="45" rx="5" fill="${a[i] ? "#368169" : "#213958"}"/><text x="571" y="${y}" text-anchor="middle">${a[i] || "?"}</text></g>`;
-      })
-      .join("") +
-    `<text class="small" x="450" y="455" text-anchor="middle">Fita molde DNA: 3′ — A T G C — 5′</text><text class="small" x="450" y="482" text-anchor="middle">${s.mode === 'DNA' ? 'Complementar DNA' : 'RNA'}: 5′ — ${a.map(x => x || '?').join(' ')} — 3′</text>`
-  );
+  const strand = s.mode === "DNA" ? s.dna : s.rna;
+  const inks = {A: "#a45b10", T: "#2165a6", G: "#1e7759", C: "#824a97", U: "#a64140"};
+  const tray = s.mode === "DNA" ? "AGCT" : "AGCU";
+  const text = (x, y, word, small = false) => `<text x="${x}" y="${y}" text-anchor="middle" ${small ? 'class="small"' : ""}>${word}</text>`;
+  const token = (x, y, letter) => `<path d="M${x-18} ${y-18}h29l11 9v19l-11 9h-29l-6-6v-25z" fill="${inks[letter] || "#324e69"}"/>${text(x,y+7,letter)}`;
+  const spin = Math.max(.4,Math.abs(Math.cos(s.angle * Math.PI / 6)));
+  const helix = `<g transform="translate(113,199) scale(${spin},1)"><path d="M-26 -73q94 38 0 79t0 68M26 -73q-94 38 0 79t0 68" fill="none" stroke="#83d0d2" stroke-width="8"/><path d="M-17 -64h35m-37 20h40m-40 63h39m-39 21h39" stroke="#deb575" stroke-width="6"/></g>`;
+  const chromosome = '<path d="M754 137q4 25 28 62t27 60m0-122q-5 30-30 65t-28 57" stroke="#b697d3" stroke-width="18" stroke-linecap="round" fill="none"/>';
+  return text(450,81,"Bancada de pareamento") +
+    part("helix",helix,"",113,290) + text(113,295,"Dupla hélice",true) +
+    part("chromosome",chromosome,"",782,290) + text(782,295,"Cromossomo",true) +
+    '<path d="M238 145h424l44 249H194z" fill="#20354d" stroke="#708397" stroke-width="3"/>' +
+    text(450,173,"Fita molde · DNA",true) + text(257,217,"3′") + text(643,217,"5′") +
+    text(257,284,"5′") + text(643,284,"3′") +
+    Array.from("ATGC", (base,i) => {
+      const x = 318 + i*88;
+      const letter = strand[i];
+      return `<path d="M${x} 211v65" stroke="#9ab1ba" stroke-width="5"/>` + token(x,210,base) +
+        `<g role="button" tabindex="0" data-slot="${i}" aria-label="${letter ? 'Retirar '+letter : 'Escolher encaixe '+(i+1)}"><rect class="part ${s.slot===i ? 'selected' : ''}" x="${x-30}" y="251" width="60" height="49" rx="5" fill="#39536c" stroke="#b5ced0"/>${token(x,276,letter || String(i+1))}</g>`;
+    }).join("") +
+    text(450,328,`${s.mode} · ${strand.filter(Boolean).length}/4 pares`,true) +
+    Array.from(tray, (b,i) => strand.includes(b) ? "" :
+      `<g role="button" tabindex="0" data-base="${b}" aria-label="Pegar base ${b}">${token(318+i*88,366,b)}</g>`).join("") +
+    text(450,458,"Bandeja de bases · escolha um encaixe e uma peça",true);
+}
+const ecoNames = ["Capim", "Gafanhoto", "Sapo"];
+function connectedEco() {
+  const gap=ecoNames.findIndex((n,i)=>s.chain[i]!==n);
+  return gap<0 ? ecoNames.length : gap;
+}
+function placeEco(piece, slot) {
+  const roles = ["produtor", "herbívoro", "predador"];
+  if(piece==null)return msg("Escolha uma ficha na bandeja.",true);
+  if(piece !== slot || slot>connectedEco()) {
+    const needed=piece!==slot?slot:connectedEco();
+    return msg("Este encaixe pede "+roles[needed]+". A ficha continua na mão.",true);
+  }
+  s.chain[slot]=ecoNames[piece];
+  s.ecoHeld=null;
+  msg(connectedEco()===3?"Cadeia completa. Acione Exibir fluxo.":ecoNames[piece]+" no suporte de "+roles[slot]+".");
+}
+function bindEco() {
+  for(const element of document.querySelectorAll("[data-eco-piece],[data-eco-slot]")) {
+    element.onclick=()=>{
+      if(element.hasAttribute("data-eco-piece")){
+        const piece=Number(element.dataset.ecoPiece);
+        s.ecoHeld=piece;s.chain[piece]=null;
+        msg(ecoNames[piece]+" na mão. Escolha o encaixe.");
+      }
+      else placeEco(s.ecoHeld,Number(element.dataset.ecoSlot));
+      renderScene();
+    };
+    element.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();element.onclick();}};
+  }
 }
 function drawEco() {
-  const names = ["Capim", "Gafanhoto", "Sapo"];
-  return (
-    `<text x="450" y="85" text-anchor="middle">Cadeia alimentar · diorama didático</text><path d="M130 395Q300 350 420 390T770 390" fill="none" stroke="#7fa98c" stroke-width="35"/>` +
-    names
-      .map((n, i) => {
-        let x = 230 + i * 220;
-        return `<rect x="${x - 60}" y="220" width="120" height="100" fill="${s.chain[i] ? "#578775" : "#213958"}" stroke="#a6c8dc" stroke-width="3"/><text x="${x}" y="260" text-anchor="middle">${s.chain[i] || "Encaixe " + (i + 1)}</text><text class="small" x="${x}" y="300" text-anchor="middle">${["Produtor", "Herbívoro", "Predador"][i]}</text>`;
-      })
-      .join("") +
-    `<path d="M300 265h65m-10-10 10 10-10 10M520 265h65m-10-10 10 10-10 10" stroke="#e8c67c" fill="none" stroke-width="5" class="${s.energy ? "flowpath" : ""}"/><text x="450" y="388" text-anchor="middle">Decompositores → nutrientes no ambiente → produtores</text>${s.energy ? '<path d="M200 150L230 210M440 320L440 355M670 320L670 355" stroke="#f0cf86" stroke-width="5" class="flowpath"/><text class="small" x="450" y="150" text-anchor="middle">Entrada de energia solar · dissipação de calor nas transferências</text>' : ""}`
-  );
+  const names = ecoNames;
+  const count=connectedEco();
+  const roles = ["Produtor", "Herbívoro", "Predador"];
+  const symbols = [
+    `<path fill="#9ab755" d="M-4 0Q-48-18-48-48Q-26-35-4 0M-6 0Q-30-44-17-70Q-7-42-6 0M0 0Q-6-64 9-81Q10-48 0 0M5 0Q16-50 39-60Q31-28 5 0"/><path fill="#5c8f4c" d="M-3 0Q-28-30-34-62Q-14-45-3 0M2 0Q-1-46 16-56Q14-22 2 0M7 0Q34-35 49-30Q28-10 7 0"/><path d="M3 0L-2-73l-6-13m6 9 4-7" stroke="#d7bd73" fill="none" stroke-width="2"/>`,
+    `<path d="M-48-17Q-28-30 7-31Q21-35 32-21L7-14Z" fill="#a1af53"/><path d="M-45-16L8-30 1-21Z" fill="#617e3c"/><ellipse cx="24" cy="-27" rx="11" ry="13" fill="#9eb65a"/><circle cx="29" cy="-31" r="3.6" fill="#4e4326"/><path d="M29-37q10-13 19-14m-17 14q10-8 22-8M17-16l5 13h7M7-17l4 12 8 4" fill="none" stroke="#5d5339" stroke-width="2.6"/><path d="M2-17l-23-18" stroke="#789547" stroke-linecap="round" stroke-width="8"/><path d="M-21-35l-17 31h15" fill="none" stroke="#b2834e" stroke-width="3"/>`,
+    `<ellipse cx="-9" cy="-18" rx="31" ry="20" fill="#8c9652"/><path d="M-34-20q-20 8-11 19h33q5-8-6-8h-11" fill="#677943"/><ellipse cx="13" cy="-25" rx="27" ry="17" fill="#97a052"/><path d="M9-19q14 8 29-5q0 11-22 12" fill="#c9b779"/><circle cx="24" cy="-37" r="10" fill="#7a8246"/><circle cx="27" cy="-38" r="6.5" fill="#ebc35b"/><ellipse cx="28" cy="-38" rx="4" ry="1.5" fill="#292f25"/><path d="M8-14l10 11h12m-12 0 9 3" stroke="#677948" stroke-linecap="round" stroke-width="4" fill="none"/>`,
+  ];
+  const x = [235, 438, 635];
+  const ink = ["#ffd77d", "#f2ac87", "#70e2d1"];
+  const marker = (i) => `<marker id="eco-tip-${i}" viewBox="0 0 12 8" refX="10" refY="4" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0l12 4-12 4z" fill="${ink[i]}"/></marker>`;
+  const route = (path, i) => `<path d="${path}" fill="none" stroke="${ink[i]}" stroke-width="4" marker-end="url(#eco-tip-${i})"/><path class="flowpath" d="${path}" fill="none" stroke="#fff5db" stroke-width="1.4" opacity=".85"/>`;
+  const paths = ["M132 268q31-23 56-10", "M280 259q47-24 107-1", "M483 259q50-24 101-1"];
+  let lines = "";
+  if (s.energy) {
+    for (let i=0;i<count;i++) {
+      lines += route(paths[i],0) + route(`M${x[i]+14} 268q5 10 18 19`,1);
+    }
+    if (count===3) {
+      for (const pos of x) lines += route(`M${pos} 246q16-33 34-39`,2);
+      lines += route("M271 208Q528 218 718 202",2) + route("M751 182C698 145 364 164 235 180Q201 192 221 218",2);
+    }
+  }
+  const mushroom = part("nutrients", `<g fill="#dec39e"><path d="M718 199l3-18h6l2 18zm23 1 1-26h6l3 26z"/><path d="M707 183q13-25 30 0zm20-9q16-29 35 0z" fill="#b47849"/></g>`, "", 0, 0);
+  return `<defs>${ink.map((_,i)=>marker(i)).join("")}</defs><text x="450" y="81" text-anchor="middle">Cadeia alimentar terrestre</text>
+    <path d="M95 157H786l57 137-39 21H94l-36-21z" fill="#796452"/><path d="M95 147H786l57 139-39 16H94l-36-16z" fill="#506e59"/>
+    ${lines}<circle cx="112" cy="268" r="14" fill="${ink[0]}"/><text class="small" x="111" y="238" text-anchor="middle">Luz solar</text>${mushroom}<text class="small" x="731" y="140" text-anchor="middle">Decompositores</text>
+    ${names.map((n,i)=>`<g role="button" tabindex="0" data-eco-slot="${i}" aria-label="Encaixe ${roles[i]}"><ellipse cx="${x[i]}" cy="259" rx="41" ry="13" fill="#273740" stroke="#ceb886" stroke-width="3"/><text x="${x[i]}" y="328" text-anchor="middle">${roles[i]}</text></g>`).join("")}
+    ${names.map((n,i)=>{const docked=s.chain[i]===n;const px=docked?x[i]:x[(i+1)%3];const py=docked?257:410;return `<g role="button" tabindex="0" data-eco-piece="${i}" aria-label="Pegar ${n}" transform="translate(${px} ${py-(s.ecoHeld===i?20:0)})"><ellipse cx="0" cy="0" rx="38" ry="9" fill="#8d7453"/>${symbols[i]}<text class="small" x="0" y="${docked?32:31}" text-anchor="middle">${n}</text></g>`;}).join("")}
+    ${s.energy&&count?`<text class="small" x="450" y="111" text-anchor="middle">Dourado · alimentação    Salmão · calor    Turquesa · nutrientes</text>`:""}`;
 }
 function drawEvolution() {
   let total = s.counts[0] + s.counts[1];
   return (
     `<text x="450" y="80" text-anchor="middle">Geração ${s.generation} · ${s.dark ? "ambiente escuro" : "ambiente claro"}</text><rect x="155" y="125" width="590" height="275" fill="${s.dark ? "#26344a" : "#aa9e88"}" stroke="#9ab2ca" stroke-width="3"/>` +
     Array.from({ length: total }, (_, i) => {
-      let x = 200 + (i % 8) * 70,
-        y = 180 + Math.floor(i / 8) * 75;
-      return `<ellipse cx="${x}" cy="${y}" rx="19" ry="12" fill="${i < s.counts[0] ? "#f0d9a5" : "#28333c"}" stroke="#0b1930" stroke-width="2"/>`;
+        const x = 201 + (i % 6) * 98 + Math.sin(i * 2) * 10;
+        const y = 164 + Math.floor(i / 6) * 63 + Math.cos(i * 3) * 7;
+        const light = (i * 11 + s.generation * 7) % 24 < s.counts[0];
+        return `<g transform="translate(${x} ${y}) rotate(${(i * 29) % 96 - 48})">
+          <path d="M0 -5 Q8 -12 21 -10 L17 2 10 4 11 9 5 10 0 6 -5 10 -11 9 -10 4 -17 2 -21 -10 Q-8 -12 0 -5Z"
+            fill="${light ? "#e7ce99" : "#41404a"}" stroke="${light ? "#776652" : "#262733"}" stroke-width="1.2"/>
+          <path d="M-18 -4l6 4 4 -3 5 5m21 -6l-6 4 -4 -3 -5 5" fill="none" stroke="${light ? "#9c8262" : "#81808b"}" stroke-width="1.8"/>
+          <path d="M-5 -13l5 8 5 -8 M0 -5v13" fill="none" stroke="#492f26" stroke-width="1.6"/>
+        </g>`;
     }).join("") +
     `<text x="450" y="445" text-anchor="middle">Claros ${s.counts[0]} · escuros ${s.counts[1]} · total 24</text>${s.reference ? `<text class="small" x="450" y="475" text-anchor="middle">Referência G${s.reference.g}: claros ${s.reference.c[0]} · escuros ${s.reference.c[1]}</text>` : ""}`
   );
@@ -357,7 +440,7 @@ function renderScene() {
   if (!lab) return;
   $("scene").innerHTML =
     bg() +
-    `<g transform="translate(450 260) scale(${["celulas", "anatomia", "microbios", "dna"].includes(lab.id) ? Math.max(0.4, Math.abs(Math.cos((s.angle * Math.PI) / 6))) : 1} 1) translate(-450 -260)">` +
+    `<g transform="translate(450 260) scale(${["celulas", "anatomia"].includes(lab.id) ? Math.max(0.4, Math.abs(Math.cos((s.angle * Math.PI) / 6))) : 1} 1) translate(-450 -260)">` +
     {
       celulas: drawCells,
       anatomia: drawAnatomy,
@@ -368,10 +451,9 @@ function renderScene() {
     }[lab.id]() +
     `</g>`;
   $("scene").classList.toggle("paused", !s.playing);
-  if (["dna", "ecossistemas", "evolucao"].includes(lab.id)) {
+  if(lab.id==="ecossistemas")bindEco();
+  if (lab.id === "evolucao") {
     const key = {
-      dna: "chromosome",
-      ecossistemas: "nutrients",
       evolucao: "selection",
     }[lab.id];
     $("scene").insertAdjacentHTML(
@@ -394,13 +476,21 @@ function renderScene() {
       }
     };
   }
+  for (const n of document.querySelectorAll("[data-base]")) {
+    n.onclick = () => { placeBase(n.dataset.base); renderScene(); renderControls(); };
+    n.onkeydown = (e) => {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); n.onclick(); }
+    };
+  }
   for (const n of document.querySelectorAll("[data-slot]")) {
     n.onclick = () => {
       s.slot = +n.dataset.slot;
-      renderScene();
-      msg(
-        "Socket " + (s.slot + 1) + " selecionado. Pegue uma base na bandeja.",
-      );
+      const strand = s.mode === "DNA" ? s.dna : s.rna;
+      if (strand[s.slot]) {
+        msg("Base " + strand[s.slot] + " devolvida à bandeja. O encaixe está livre.");
+        strand[s.slot] = "";
+      } else msg("Encaixe " + (s.slot + 1) + " selecionado. Pegue uma base na bandeja.");
+      renderScene(); renderControls();
     };
     n.onkeydown = (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -499,8 +589,6 @@ function renderControls() {
     control("Rótulos de estruturas", () => (s.labels = !s.labels), s.labels);
     control("Próxima etapa do fago", () => {
       s.phase = (s.phase % 3) + 1;
-      s.playing = true;
-      select("phage_7");
       msg("Etapa " + s.phase + " do ciclo lítico simplificado.");
     });
     control("Restaurar galeria", askReset);
@@ -521,28 +609,17 @@ function renderControls() {
         },
         s.mode === mode,
       );
-    for (let base of ["A", "T", "G", "C", "U"])
-      control("Base " + base, () => placeBase(base));
-    control("Restaurar fitas", askReset);
+    const strand = s.mode === "DNA" ? s.dna : s.rna;
+    for (const base of s.mode === "DNA" ? "AGCT" : "AGCU")
+      if (!strand.includes(base)) control("Base " + base, () => placeBase(base));
+    control("Restaurar fitas", () => s.dna.some(Boolean) || s.rna.some(Boolean) ? askReset() : msg("As duas fitas já estão vazias."));
   }
   if (lab.id === "ecossistemas") {
-    for (let n of ["Capim", "Gafanhoto", "Sapo"])
-      control("Encaixar " + n, () => {
-        const target = ["Capim", "Gafanhoto", "Sapo"][s.chain.length];
-        if (!target)
-          return msg(
-            "Cadeia completa. Observe o fluxo ou restaure para remontar.",
-          );
-        if (n !== target)
-          return msg(
-            "Este encaixe pede " +
-              ["um produtor", "um herbívoro", "um predador"][s.chain.length] +
-              ". A ficha continua disponível.",
-            true,
-          );
-        s.chain.push(n);
-        msg("Ficha encaixada: " + n + ".");
-      });
+    ecoNames.forEach((name,piece)=>gesture("Encaixar "+name,()=>{
+      const slot=connectedEco();
+      if(slot===3)return msg("Cadeia completa. Observe o fluxo ou retire uma ficha.");
+      placeEco(piece,slot);
+    }));
     control(
       "Exibir fluxo",
       () => {
@@ -554,7 +631,11 @@ function renderControls() {
       },
       s.energy,
     );
-    control("Restaurar diorama", askReset);
+    control("Restaurar diorama", () => {
+      if(s.ecoHeld!=null)return msg("Solte a ficha antes de continuar.",true);
+      if(s.energy || s.chain.some(Boolean))askReset();
+      else msg("As três fichas já estão na bandeja.");
+    });
   }
   if (lab.id === "evolucao") {
     control(
@@ -600,7 +681,10 @@ function renderControls() {
   }
   if (["celulas", "anatomia", "microbios", "dna"].includes(lab.id))
     gesture("Simular giro de 30° no anel da base", () => {
-      s.angle++;
+      if (lab.id === "microbios") {
+        const target = s.selected || "virus_0";
+        s.exhibitAngles[target] = (s.exhibitAngles[target] || 0) + 1;
+      } else s.angle++;
       msg(
         "Giro ancorado: o modelo muda de orientação e a base permanece fixa.",
       );
@@ -672,8 +756,7 @@ function openLab(id, preset) {
     }
     if (id === "microbios") {
       s.phase = 2;
-      s.playing = true;
-      select("phage_7");
+      s.labels = true;
     }
     if (id === "dna") s.dna = ["T", "A", "C", "G"];
     if (id === "ecossistemas") {
@@ -716,7 +799,11 @@ function openLab(id, preset) {
   }
   renderScene();
   renderControls();
-  if (preset === "reset") askReset();
+  if (preset === "reset") {
+    if (id === "ecossistemas") { s.chain[0] = "Capim"; renderScene(); }
+    if (id === "dna") { s.dna[0] = "T"; renderScene(); renderControls(); }
+    askReset();
+  }
 }
 $("cards").innerHTML = labs
   .map(
