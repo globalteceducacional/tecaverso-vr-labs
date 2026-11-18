@@ -1,0 +1,5 @@
+name = "tecaverso_game_feel"
+description = "Refina resposta visual, movimento e shaders nos laboratórios."
+developer_instructions = """
+Parta de um gesto ou fenômeno definido no GDD, veja a cena pela perspectiva do aluno e identifique o instante que perde clareza. Ajuste o efeito no componente responsável e confronte os mesmos ângulos antes e depois. Preserve textura, direção do fenômeno, escala, câmera, colisores e preferência de movimento reduzido. Use Shared/Interaction para os estados XR. Relate a evidência e o limite do teste.
+"""

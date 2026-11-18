@@ -1,103 +1,120 @@
 # Short GDD — Corpo humano e sistemas
 
-**Status:** aprovado para desenvolvimento; ainda não implementado. **Disciplina:** Biologia. **Modo:** individual offline. **Público:** Ensino Médio. **Data:** 17/11/2026. Uma das **seis** salas propostas, conforme [índice](gdd-biologia.md).
+**Biologia · Ensino Médio · individual offline.** Segunda das [seis salas de Biologia](gdd-biologia.md). A revisão de 17/11/2026 recupera a inspeção manual de órgãos e corrige a apresentação do giro e dos quatro processos. O protótipo abaixo especifica a revisão. As verificações anteriores e as capturas da primeira versão estão identificadas separadamente.
 
-## Objetivo e experiência
+## Objetivo e sala
 
-Relacionar órgãos, sistemas e sua posição no mesmo corpo. O aluno gira um corpo ancorado, escolhe um sistema e consulta órgãos; observa quatro percursos esquemáticos, sem trocar de sala.
+Onde fica o órgão, a que sistema pertence e como ele participa de um processo? O aluno examina um corpo masculino de aproximadamente 1,7 m, separa uma peça para ver seu verso e a devolve à posição original. Pode então seguir uma etapa do processo no corpo recomposto e pausá-la para explicar o que está vendo.
 
-## Acervo, objetos e sala
+Na entrada, o corpo está de frente, com o sistema respiratório selecionado e a pele semitransparente visível. A base fica no centro. À frente e à esquerda, o console deixa o tórax e a pelve livres no campo visual. A extensão direita do mesmo tampo inclinado sustenta o dial. A face azul, o indicador e o nome **Girar corpo** ficam voltados para cima e para o aluno. É possível contornar a base e operar por raio a partir de uma posição sentada. A ficha tem posição própria à direita do corpo. A faixa livre prevista em torno da base é de pelo menos 1,5 m.
 
-**Cenas antigas consolidadas:** EsqueletoHumano + SistemaCirculatorio + SistemaDigestorio + SistemaNervoso + SistemaRespiratorio.
+## Acervo e interações
 
-**Reaproveitamento comprovado por arquivos:** Body, Skeleton, Muscles, NervousSystem, Sistema Digestorio, Sistema Renal, Sistema Reprodutivo, SistemaCirculatório, Sitema Respiratorio e LymphaticSystem. São conjuntos derivados do FBX masculino. Há FBX feminino separado, preservado para adaptação futura, sem prometer equivalência ou alternância pronta.
+O corpo reúne as antigas salas EsqueletoHumano, SistemaCirculatorio, SistemaDigestorio, SistemaNervoso e SistemaRespiratorio. Pele e sistemas usam a pose comum do FBX masculino. O acervo feminino continua reservado para adaptação futura. Cada consulta corresponde a uma unidade identificada no acervo. Quando a unidade reúne mais de uma malha, elas permanecem juntas durante o exame.
 
-**Catálogo fechado desta entrega:** Nove sistemas/camadas além da pele: respiratório, circulatório, digestório, nervoso, esquelético, muscular, urinário, linfático e reprodutivo. Um sistema principal por vez e pele independente. Quatro percursos: ar/vias respiratórias, sangue em circuito, caminho digestório e sinal nervoso ilustrativo. Os demais são exploração anatômica estática.
+| Sistema | Consultas | Unidades que o aluno pode afastar |
+|---|---:|---|
+| Respiratório | 9 | Laringe, traqueia, diafragma e os dois pulmões individualmente |
+| Circulatório | 5 | Coração |
+| Digestório | 11 | Esôfago, estômago, intestino delgado, intestino grosso, fígado, pâncreas e vesícula biliar |
+| Nervoso | 3 | Encéfalo como conjunto |
+| Esquelético | 14 | Crânio, pelve e caixa torácica, cada qual como conjunto |
+| Muscular | 4 | Consulta das regiões musculares na posição anatômica |
+| Urinário | 6 | Cada rim e ureter individualmente e a bexiga |
+| Linfático | 4 | Baço e timo |
+| Reprodutivo | 4 | Consulta das estruturas agrupadas na pelve |
 
-| Conjunto de objetos | Papel | Interação | Limite |
-|---|---|---|---|
-| Modelos e peças descritos no catálogo | Fenômeno principal | Seleção direta, pega/rotação ou encaixe conforme o fluxo abaixo | Não disponibilizar partes sem identificação revisada |
-| Suportes e sockets da atividade | Ancoragem, retorno e alcance | Controles 3D e filtros de encaixe | Preservar referência espacial e evitar seleção concorrente |
-| Consulta e navegação | Apoio opcional | Apontar/tocar e fechar; voltar ao Hub | Uma consulta simultânea; sem HUD na câmera |
-
-**Disposição proposta:** Corpo com aproximadamente 1,7 m de altura, base giratória ancorada no centro; circulação de pelo menos 1,5 m ao redor. Seleção de sistemas no suporte frontal inclinado, abaixo do tórax visual. Consulta lateral fixa. Não copiar o posicionamento antigo de órgãos soltos a vários metros do corpo.
-
-**Controles escolhidos pela tarefa:** Nove botões exclusivos nomeados; toggle Pele; Observar/Pausar percurso somente nos quatro sistemas com percurso; anel físico de rotação. Sem slider de índice de sistema e sem um painel de parâmetros.
+**60 consultas, 24 unidades destacáveis.** Redes extensas, conjuntos distribuídos e estruturas agrupadas para contexto compõem os outros 36 alvos fixos. A pele fornece contexto e deixa o raio chegar ao órgão interno.
 
 ## Inventário de interfaces, rótulos e controles 3D
 
-**HUD na câmera: nenhum.** Uma ficha opcional de consulta. Os nomes ficam nos suportes e junto à estrutura selecionada; nenhum cartão extenso acompanha uma peça na mão. A sala não repete o formulário de Física.
+Sem HUD na cabeça. Há um console de operação e uma ficha de consulta opcional. O aluno solicita informação diretamente no órgão.
 
-| ID | Tipo e localização | Finalidade e ação | Inicial | Abre/fecha | Simultâneo |
-|---|---|---|---|---|---|
-| R1 | Nomes nos suportes e legenda junto ao modelo | Identificar o objeto e informar ampliação didática; rótulos extras só quando solicitados | Nomes visíveis; extras ocultos | Toggle quando houver; seleção realça uma estrutura | C1, S1; Q1 pode consultar a selecionada |
-| C1 | Controles 3D no suporte e objetos da atividade | Nove botões exclusivos nomeados; toggle Pele; Observar/Pausar percurso somente nos quatro sistemas com percurso; anel físico de rotação. Sem slider de índice de sistema e sem um painel de parâmetros. | Visíveis; estado inicial da atividade | Pega/toque/raio, evento de domínio | R1, E1, Q1 e S1; bloqueados por X1 |
-| Q1 | Ficha clara fixa à lateral do suporte | Nome, função, contexto, limite do modelo; Fechar | Oculta | Selecionar uma parte ou símbolo de consulta; Fechar ou trocar alvo fecha/substitui | Objetos e C1 permanecem visíveis; uma Q1 por vez |
-| E1 | Uma linha no suporte, sem painel flutuante | Confirmar ação ou explicar recusa/limite; não depender apenas de cor | Instrução inicial curta | Atualiza por evento; erro persiste até correção ou outra ação pertinente | R1, C1 e Q1 |
-| X1 | Não se aplica | Não há restauração destrutiva nesta sala | Não existe | — | — |
-| S1 | Voltar ao Hub, junto à saída e ao suporte | Retorno padrão à disciplina, sem confirmação se não houver estado relevante | Visível | Permanente | Todos, exceto bloqueio por X1 |
+| ID e localização | Finalidade e gesto | Inicial | Entrada e saída | Simultâneo |
+|---|---|---|---|---|
+| R1 · título e legenda no corpo | Identificar o sistema e ler a etapa em curso. A legenda acompanha o fenômeno e conserva a etapa na pausa | Sistema respiratório e contexto didático | Corrige o conteúdo ao escolher sistema ou mudar de etapa | C1, G1, E1, S1 e, se aberta, Q1 |
+| R2 · nome à esquerda do corpo e linha-guia | Ligar o nome escolhido à unidade observada, inclusive durante a inspeção | Oculto | Selecionar revela. Fechar a consulta ou trocar sistema recolhe | R1, C1, G1, Q1, E1, S1 |
+| C1 · grade e ações no tampo esquerdo | Escolher um dos nove sistemas na grade 3 × 3, alternar Pele e iniciar, pausar ou continuar o percurso. O texto da ação indica o próximo passo | Respiratório, pele ligada e percurso parado | Sistemas anatômicos sem processo recolhem a ação de percurso. Durante o afastamento a apresentação do percurso é suspensa | R1, G1, E1, S1, Q1 e R2 quando houver seleção |
+| G1 · dial Unity ao lado direito da grade | Segurar o manípulo e girar o conjunto em torno do eixo vertical. O corpo mantém posição e altura | Disponível com face e nome legíveis da frente | Pegar ou soltar controla o giro. A silhueta aparece somente na peça móvel | Todos |
+| Q1 · ficha lateral direita | Ler nome, função, contexto e limites. **Fechar consulta** encerra a leitura | Oculta | Seleção direta ou por raio abre. Outro alvo substitui o conteúdo. Trocar sistema fecha | Uma ficha por vez, R2 e controles |
+| E1 · linha de instrução no console | Explicar o gesto de exame, a soltura, a estrutura fixa ou o estado do percurso | Convite para selecionar uma estrutura | Atualiza com a ação. A tentativa em um grupo fixo preserva sua consulta e posição | C1, G1, R1 e Q1 durante consulta |
+| S1 · Voltar ao Hub no rodapé do console | Retornar à disciplina | Visível | Ação direta a qualquer momento | Todos |
 
-O cabeçalho de revisão e a seção “Como isso funciona em RV?” do HTML não são interfaces a implementar na sala. Motion reduzido é preferência geral do produto, exposta no menu padrão; não exige outro painel permanente de Biologia.
+Não há confirmação destrutiva. A soltura já oferece saída reversível. Legendas da gravação e instruções de mouse do protótipo são externas à sala.
 
-## Sequência e casos sem resultado
+## Prévias da revisão
 
-1. Entrar, reconhecer as peças e a primeira ação em E1.
-2. Escolher Respiratório → ocultar pele → selecionar pulmão → consultar função → observar percurso → pausar → escolher Circulatório e repetir no coração. Visão muda no mesmo referencial corporal. Esqueleto e músculos são alternativas na mesma sala.
-3. Fechar a consulta, comparar outro caso e retornar ao estado de exploração.
-4. Restaurar quando aplicável: X1 pede confirmação; cancelar preserva os objetos; S1 retorna ao Hub.
+[Experimentar a proposta em HTML](prototypes/biologia/anatomy-layout.html). O desenho representa a anatomia em projeção frontal simplificada. No navegador, clique no órgão ilustrado para consultar, mantenha pressionado e arraste para examinar, solte para devolver. Arraste a manopla ou use as setas do teclado com o dial em foco. O protótipo demonstra um alvo representativo por sistema. Os totais da tabela acima se referem à sala Unity.
 
-**Recusas e recuperação:** Trocar sistema fecha a consulta do órgão oculto e interrompe seu percurso, sem deixar collider invisível. Órgãos não mapeados são identificados como indisponíveis para consulta. Não mostrar animação de contração muscular ou articulação se o modelo não foi rigado.
+**Entrada · R1, C1, G1, E1, S1.** De frente para o console, a face de pega se vê sobre o prolongamento do tampo. O corpo fica no centro. Escolher um sistema muda o conteúdo no mesmo lugar.
 
-## Modelo científico e limites
+![Proposta de entrada e manopla visível na face superior do suporte](../GeneratedMedia/GDD/biologia/anatomia-layout-entry.png)
 
-Preservar cores anatômicas; azul/vermelho do esquema de vasos não representa cor real do sangue. Ar, sangue, alimento e sinal não compartilham a mesma animação ou legenda. Sem vazão, ECG, diagnóstico, cirurgia ou fisiologia quantitativa. O esqueleto tem grupos de ossos: não prometer seleção dos 206 ossos.
+**Consulta · Q1 e R2.** Uma seleção breve no pulmão esquerdo abre a ficha, mantendo as mãos e a região torácica livres. Fechar recolhe a ficha e o nome.
 
-Referência de revisão: [OpenStax — conteúdo relacionado](https://openstax.org/books/biology-2e/pages/1-2-themes-and-concepts-of-biology). Os modelos artísticos precisam de validação semântica; nomes de arquivos não são autoridade taxonômica/anatômica. Reutilização técnica não substitui revisão do conteúdo.
+![Proposta da consulta ao pulmão esquerdo](../GeneratedMedia/GDD/biologia/anatomia-layout-detail.png)
 
-**Critério específico:** Os nove sistemas são selecionáveis sem mudar de cena. Pele, visibilidade e consultas coerentes. Quatro percursos com legendas próprias e pausa. Preservar alinhamento anatômico de origem.
+**Manipulação · Q1, R2 e E1.** Segurar e mover afasta o coração. A ficha fica na estação. O modelo não recebe uma cópia flutuante, um cartão na mão ou um novo painel. Ao soltar, o coração volta à pose que ocupa no corpo.
 
-## Interação, feedback e ergonomia
+![Proposta do coração retirado para inspeção e instrução de devolução](../GeneratedMedia/GDD/biologia/anatomia-layout-grab.png)
 
-Pega por proximidade e raio XR conforme a peça; nenhuma ação essencial exige hand tracking. Bases são ancoradas e não são carregadas pela sala. Partes manipuláveis têm suporte/socket de retorno e área de pega distinta do botão de consulta. Não adicionar Rigidbody a cada submalha automaticamente. Alvos amplos, colliders simples e filtros evitam selecionar a base em vez da peça.
+**Em movimento · R1 e C1.** O avanço luminoso está na região do trajeto, com o sistema arterial e o retorno venoso distinguíveis. A etapa é acompanhada na legenda.
 
-Foco: contorno em 0,12–0,16 s. Ação: confirmação de até 0,22 s no filho visual. Estado selecionado persiste; collider, câmera e referência científica permanecem estáveis. Encaixe aceita uma vez por gesto; recusa mantém a peça e explica correção. Reutilizar `Shared/Interaction`, preferência `MotionPreferences.Reduced` e controles oficiais Unity em `Shared/XR/Controls`, sem duplicar tweens. Som curto e haptic podem complementar, nunca substituir informação visual. Não inventar partículas para ornamentar uma galeria: usar somente para representar um processo cadastrado, com legenda e pausa quando temporal.
+![Proposta de destaque em trajeto vascular](../GeneratedMedia/GDD/biologia/anatomia-layout-path.png)
 
-Modelos têm alcance e altura ajustáveis na autoria; o primeiro protótipo mira controles de pega entre 0,8 e 1,25 m, com consulta a cerca de 2–3 m. Validar sentado/em pé em headset antes de homologar. O controle de motion é a preferência geral da aplicação; no HTML está no cabeçalho de revisão.
+**Pausa · R1 e C1.** O aluno para a frente de propagação do sinal e pode continuar a partir daquele lugar. A orientação do corpo pode mudar durante a pausa.
 
-## Prévias e estados
+![Proposta do sistema nervoso com etapa e sinal pausados](../GeneratedMedia/GDD/biologia/anatomia-layout-paused.png)
 
-**Proposta, não cena Unity implementada.** O [protótipo HTML](prototypes/biologia/index.html?lab=anatomia) usa diagramas esquemáticos. Header, navegação de revisão e comandos tracejados de simular pega/giro são externos ao laboratório; não autorizam novos painéis na Unity. Os controles sólidos representam controles da sala. A ficha aparece somente por seleção. O estado `detail` é exemplo de consulta; `action` exemplifica manipulação/resultado; `error` é exemplo visual do aviso, não execução automática de uma falha real.
+**Consulta a grupo fixo · E1, Q1 e R2.** Selecionar a musculatura permite ler a ficha. E1 explica que a estrutura é fixa. O sistema muscular oferece exploração estática e o console recolhe o controle de percurso.
 
-![Disposição espacial proposta](../GeneratedMedia/GDD/biologia/layout.png)
+![Proposta da consulta a grupo fixo no sistema muscular](../GeneratedMedia/GDD/biologia/anatomia-layout-static.png)
 
-Visão espacial comum: entrada, suporte elevado, faixa de circulação e consulta lateral. A disposição específica é descrita acima.
+As seis imagens são capturas da proposta HTML. Para reproduzir, executar `node Tools/biology-migration/capture-anatomy.cjs` com as dependências locais de `Tools/tecaverso-demo`. As imagens ficam na pasta ignorada `GeneratedMedia/GDD/biologia` e devem acompanhar o Markdown quando compartilhado. O [protótipo original](prototypes/biologia/index.html?lab=anatomia) documenta a primeira proposta.
 
-![Entrada](../GeneratedMedia/GDD/biologia/anatomia-entry.png)
+## Sequência do aluno e feedback
 
-Entrada: R1, C1 e S1 visíveis; Q1 e X1 ocultos. Os objetos são a ação principal.
+1. Escolher **Circulatório** e ocultar Pele se quiser ver o coração com mais contraste. Foco por raio ou proximidade mostra uma única silhueta sobre o órgão.
+2. Selecionar o coração para ler a ficha. Mantendo a seleção, mover a mão ou o ponto de pega do raio para afastar a peça e girá-la. Um pequeno limiar de deslocamento distingue a consulta breve da retirada deliberada. A malha conserva cor e escala.
+3. Soltar para devolver automaticamente. O destino é a pose local no corpo, inclusive se o aluno tiver girado o conjunto. Uma peça pode ficar afastada por vez. Movimento reduzido faz uma restituição imediata. Não há arremesso ou perda de órgão no chão.
+4. Iniciar o circuito, pausar no membro superior e girar o corpo para ver a mesma etapa de outro ângulo. Se examinar uma das peças durante um percurso, suspender a visualização enquanto estiver afastada. A devolução recupera a fase e o estado anterior de reprodução, inclusive a pausa manual.
+5. Escolher **Nervoso**. A consulta anterior fecha, a peça volta à origem e o percurso anterior some. Observar a propagação da mão ao encéfalo. Escolher **Muscular** para comparar uma estrutura fixa ou usar **Voltar ao Hub**.
 
-![Interação e resultado](../GeneratedMedia/GDD/biologia/anatomia-action.png)
+[Feedback de interação compartilhado](gdd-interaction-feedback.md) para foco, ação e retenção da silhueta. O retorno é curto, desacelera ao chegar à origem e deixa os vizinhos imóveis. Com preferência reduzida, foco e seleção permanecem legíveis de forma estática. O processo científico só avança após solicitação e pode ser pausado. Câmera e foco visual do aluno ficam estáveis.
 
-Manipulação/resultado: C1 altera os objetos; E1 confirma a ação. Fechar Q1 mantém o experimento. Não há interface sobre a câmera.
+## Percursos e limites científicos
 
-![Consulta opcional](../GeneratedMedia/GDD/biologia/anatomia-detail.png)
+| Sistema | O que observar | Como ler a pausa |
+|---|---|---|
+| Respiratório | Destaque ciano progride pelas vias até os dois pulmões durante a inspiração e volta na expiração | Identificar sentido e região. Sem modelo individual de alvéolos ou cálculo de volume |
+| Circulatório | O coração direito envia sangue menos oxigenado aos pulmões. A representação muda para sangue mais oxigenado, retorna ao coração esquerdo e segue pelas artérias até a mão esquerda. O sangue retorna pelas veias | Distinguir direção e etapa pelo texto e pela frente luminosa. Azul e vermelho codificam oxigenação. As redes brônquicas não substituem o circuito pulmonar |
+| Digestório | Uma onda de destaque acompanha boca, faringe, esôfago, estômago, intestino delgado e intestino grosso até a região de eliminação | Distinguir por onde passa o conteúdo. Fígado, pâncreas e vesícula são órgãos acessórios |
+| Nervoso | Uma frente luminosa sensitiva progride dos nervos da mão direita e do braço à medula cervical, ao tronco encefálico e ao encéfalo | Identificar uma etapa de propagação no tecido. O exemplo representa uma sequência regional, sem partícula material ou velocidade de condução |
 
-Consulta: selecionar objeto ou símbolo da base abre Q1 lateral; Fechar remove o bloqueio visual sem resetar estado.
+A luz é didática. Os trechos esquemáticos respeitam a posição e a profundidade das estruturas. A sala apresenta a sequência funcional macroscópica, sem simular vazão, pressão, peristaltismo quantitativo, ECG ou um trato nervoso específico. Ossos e redes agrupados conservam o agrupamento da malha de origem. Os modelos e textos precisam de revisão científica independente.
 
-![Recusa ou limite](../GeneratedMedia/GDD/biologia/anatomia-error.png)
+Referências de autoria: OpenStax *Anatomy and Physiology 2e* — [vias respiratórias](https://openstax.org/books/anatomy-and-physiology-2e/pages/22-1-organs-and-structures-of-the-respiratory-system), [coração](https://openstax.org/books/anatomy-and-physiology-2e/pages/19-1-heart-anatomy), [circuitos circulatórios](https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways), [digestão](https://openstax.org/books/anatomy-and-physiology-2e/pages/23-1-overview-of-the-digestive-system) e [organização nervosa](https://openstax.org/books/anatomy-and-physiology-2e/pages/12-1-basic-structure-and-function-of-the-nervous-system). O aplicativo usa apenas dados locais.
 
-Impedimento: E1 descreve a recuperação sem modal. O estado válido anterior é preservado.
+## Verificação e critérios de aceite
 
-**X1 não se aplica à Anatomia:** a seleção de sistemas e o fechamento de consultas não destroem montagem. Não criar modal de reset por convenção.
+O vídeo de 3min14s anterior à revisão fornece a linha de base. No quadro de **1min**, os marcadores circulatórios seguem diagonais fora dos vasos no abdome. Em **2min08s**, a linha nervosa cruza o tronco e ultrapassa o encéfalo. Em **2min30s**, a manopla aparece por baixo da placa e encobre parte do nome. Esses três enquadramentos devem ser repetidos após a correção.
 
-Capturas locais ignoradas em `GeneratedMedia/GDD/biologia/`. Para compartilhar o GDD, enviar também essas imagens; elas não acompanham Git. Fonte e reprodução em [README do protótipo](prototypes/biologia/README.md).
+| Verificar no Editor | Critério observável |
+|---|---|
+| Manopla de frente, em três quartos e de cima | Indicador, face de pega e nome legíveis. O collider acompanha a manopla. Girar muda somente a orientação do corpo |
+| Consulta rápida, retirada, giro e soltura | A consulta abre sem deslocamento acidental. Afastar uma unidade destacável movimenta apenas aquela peça. Soltar, trocar sistema e sair nunca deixam alvos ou seleções invisíveis |
+| Quatro percursos de frente, a 45° e de perfil | Objeto, luz e etapa coincidem ao girar. Sem trilhos flutuando diante do corpo. Pausar mantém avanço e cor, retomar continua da mesma etapa |
+| Pausa + retirada e modo reduzido | Recuperar o estado de processo vigente ao devolver. Sem pulsação decorativa, salto de câmera ou perda de referência da peça |
+| Sistemas estáticos, grupos fixos e Hub | A ação de percurso fica recolhida e o grupo fixo continua consultável. A troca limpa os estados anteriores. Entrada e saída funcionam no modo individual |
 
-## Execução e aceite
+A primeira versão já foi verificada para nove sistemas exclusivos, 60 consultas, retorno ao Hub e operação offline. Seu [registro de validação](biology/validation.md) e a [gravação inicial](recording-anatomy.md) constituem histórico. O protótipo serve para decidir a disposição e os gestos. Alcance sentado/em pé, legibilidade, conforto e desempenho em headset precisam de verificação física.
 
-Modo inicial individual offline; textos, malhas, texturas e metadados embarcados. Sem API em runtime. LAN não implementada: a infraestrutura atual só dá autoridade coletiva ao lançamento oblíquo; não anunciar Biologia multiplayer.
+### Revisão implementada na Unity
 
-- Completar o fluxo descrito, incluindo seleção, manipulação, consulta, correção e restauração/cancelamento.
-- Rótulos e controles correspondem ao inventário; objetos e área de pega ficam legíveis durante consultas.
-- Ocultar um objeto cancela foco e interação; não manter colisores ou seleção invisíveis. Voltar ao Hub não exige navegar por telas de estudo.
-- Restaurar respeita estado autoral de cada peça; a preferência reduzida não altera o conteúdo científico.
-- Compilação, testes de domínio e captura no Editor serão exigidos na implementação. Alcance, conforto e desempenho em headset são etapas separadas. Nenhum build sem autorização.
+No Play Mode, a pega direta e a seleção por raio foram exercitadas com interatores XR. O exame do coração incluiu retirada, rotação, retorno após girar o corpo, cancelamento ao trocar o sistema e preservação da pausa. As imagens abaixo mostram a execução que sucedeu as prévias HTML.
+
+![Manopla do dial e identificação no mesmo tampo](../GeneratedMedia/Anatomy/RevisaoFinal/dial-em-pe.png)
+
+![Troca de oxigenação junto às redes da mão](../GeneratedMedia/Anatomy/RevisaoFinal/circulacao-mao.png)
+
+![Etapa cervical vista por trás do corpo](../GeneratedMedia/Anatomy/RevisaoFinal/nervoso-medula.png)

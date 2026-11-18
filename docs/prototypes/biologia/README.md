@@ -1,13 +1,13 @@
 # Protótipos de Biologia
 
-Propostas de 17/11/2026, ainda não aprovadas nem implementadas em cenas do projeto atual. Abrir [index.html](index.html) no navegador: seis salas navegáveis, sem servidor, CDN ou API. Montserrat é carregada da pasta de fontes local do projeto. Diagramas SVG são representações para testar escolhas e estados; não são renders dos FBX antigos.
+Protótipos das propostas aprovadas de 17/11/2026. Células e Corpo humano já possuem cenas próprias; as outras quatro aguardam implementação. Abrir [index.html](index.html) no navegador: seis salas navegáveis, sem servidor, CDN ou API. Montserrat é carregada da pasta de fontes local do projeto. Diagramas SVG são representações para testar escolhas e estados; não são renders dos FBX antigos. Capturas reais estão nos respectivos GDDs.
 
 ## O que experimentar
 
 | Sala | Fluxo representativo | Caso de recuperação |
 |---|---|---|
 | Células | Selecionar mitocôndria; abrir “Como funciona em RV?”; simular separação, giro e reencaixe | Separar sem organela selecionada é recusado; recompor/cancelar |
-| Corpo humano | Alternar nove sistemas, selecionar estrutura, mostrar pele e observar/pausar quatro percursos | Troca de sistema fecha consulta de alvo oculto; partes estáticas sem percurso inventado |
+| Corpo humano | [Abrir a revisão de Anatomia](anatomy-layout.html), trocar sistema, consultar, afastar e devolver uma peça, girar o corpo e pausar/retomar | Troca de sistema fecha consulta de alvo oculto; partes estáticas sem percurso inventado |
 | Microrganismos | Consultar bactérias, vírus e estruturas; avançar três etapas do fago | Modelos próximos não criam infecção; restaurar/cancelar |
 | DNA/RNA | Clicar no socket e na base da bandeja; completar DNA e RNA independentemente | Base incompatível preserva a fita; alternar preserva montagem |
 | Ecossistemas | Encaixar capim → gafanhoto → sapo; exibir fluxo e consultar matéria/energia | Papel errado mantém a ficha disponível |
@@ -17,10 +17,16 @@ O cabeçalho, os links de troca de sala e os comandos tracejados são navegaçã
 
 Os estados `entry`, `action`, `detail`, `error` e `reset` podem ser pré-carregados por `&state=...` para revisão visual. O aviso de erro pré-carregado é uma prévia de mensagem; os fluxos acima permitem provocar recusas reais. Anatomia não possui reset destrutivo no produto.
 
-Para revisar no navegador por localhost, executar `node Tools/biology-migration/serve-prototype.cjs` na raiz e abrir o endereço impresso. O servidor aceita somente leitura dos quatro arquivos do protótipo e das fontes locais; não expõe as demais pastas do projeto. Não é dependência da aplicação Unity ou do HTML aberto como arquivo.
+Para revisar no navegador por localhost, executar `node Tools/biology-migration/serve-prototype.cjs` na raiz e abrir o endereço impresso. O servidor aceita somente leitura dos arquivos HTML, CSS e JS permitidos dos protótipos e das fontes locais; não expõe as demais pastas do projeto. Não é dependência da aplicação Unity ou do HTML aberto como arquivo.
 
 ## Capturas e validação
 
 Fonte: `index.html`, `app.js`, `style.css`, `layout.html`. Prévia espacial: [layout.html](layout.html). Capturas em `GeneratedMedia/GDD/biologia/`, ignoradas por Git. Instruções e teste de interação estão em `Tools/biology-migration/verify-prototype.cjs`; requer a instalação já existente em `Tools/tecaverso-demo/node_modules/@remotion/renderer` e seu Chrome Headless Shell. Nenhuma dependência nova é necessária. Esse script verifica o HTML; não compila Unity nem cria build.
 
 Aceite em headset, raycasts, manipulação física, hierarquia semântica dos modelos, materiais URP e custo de renderização permanecem etapas da implementação. Respeitar a distinção entre preferência de motion (feedback) e animações que ensinam processos.
+
+### Revisão de Corpo humano
+
+[Estação e controles](anatomy-layout.html). Abrir o arquivo local. A ilustração permite testar a interação com um alvo por sistema e diferencia peças manipuláveis de grupos fixos. Clique breve consulta. Segure, arraste e solte para examinar e devolver. Arraste a manopla para girar ou pressione as setas com o controle focado. Os quatro percursos têm linguagens próprias e permitem pausa.
+
+Fontes: `anatomy-layout.html`, `anatomy-layout.css` e `anatomy-layout.js`. Executar `node Tools/biology-migration/capture-anatomy.cjs` na raiz para testar os gestos e reproduzir as seis imagens do [GDD](../../gdd-biologia-anatomia.md). Os estados são `entry`, `detail`, `grab`, `path`, `paused` e `static`. A versão navegável pelo índice de seis salas conserva o esboço original para comparação.

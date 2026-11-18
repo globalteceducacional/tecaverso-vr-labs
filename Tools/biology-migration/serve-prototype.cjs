@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = path.resolve(__dirname, '../..');
 const files = new Map();
-for (const name of ['index.html', 'layout.html', 'app.js', 'style.css']) {
+for (const name of ['index.html', 'layout.html', 'app.js', 'style.css', 'anatomy-layout.html', 'anatomy-layout.css', 'anatomy-layout.js']) {
   files.set('/' + name, path.join(root, 'docs/prototypes/biologia', name));
 }
 files.set('/', files.get('/index.html'));

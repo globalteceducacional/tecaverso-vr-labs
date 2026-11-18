@@ -1,0 +1,275 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../../../Assets/_Project/UI/Fonts/Montserrat/Montserrat-Bold.ttf);
+  font-weight: bold;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #edf2ff;
+  background: #0a1321;
+  font:
+    16px Montserrat,
+    system-ui,
+    sans-serif;
+}
+header,
+footer {
+  padding: 18px 4vw;
+}
+header {
+  border-bottom: 1px solid #394a66;
+}
+h1 {
+  margin: 0;
+  font-size: 25px;
+}
+header p,
+footer {
+  font-size: 13px;
+  color: #becbe2;
+}
+header p {
+  margin: 5px 0 0;
+}
+.room {
+  position: relative;
+  min-height: 700px;
+  width: min(1480px, 100%);
+  margin: auto;
+  background: linear-gradient(#33425a, #354761 67%, #25354b 67%, #152239 98%);
+  border-bottom: 4px solid #345c9f;
+}
+.station {
+  position: absolute;
+  bottom: 6%;
+  left: 2%;
+  width: 35%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 23%;
+  gap: 2px;
+  transform: perspective(850px) rotateX(12deg);
+  transform-origin: center bottom;
+  filter: drop-shadow(3px 9px 3px #141f30);
+}
+.console {
+  background: #e8e6fe;
+  border: 7px solid #233249;
+  border-radius: 5px 0 4px 4px;
+  color: #07386f;
+  padding: 11px;
+}
+.systems {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+}
+button {
+  font:
+    700 clamp(10px, 0.81vw, 14px) Montserrat,
+    system-ui;
+  cursor: pointer;
+  color: white;
+  border: 0;
+  background: #284ea0;
+  padding: 11px 2px;
+}
+button:hover,
+button:focus-visible {
+  outline: 2px solid #67baff;
+  outline-offset: -2px;
+}
+button:focus-visible,
+canvas:focus-visible {
+  outline: 3px solid #9af6ff;
+}
+.systems button {
+  color: #07386f;
+  background: #d3d1e8;
+}
+.systems [aria-pressed="true"] {
+  background: #284ea0;
+  color: white;
+}
+.actions {
+  display: flex;
+  gap: 4px;
+  margin: 6px 0;
+}
+.actions button {
+  flex: 1;
+}
+.actions [aria-pressed="true"]::before {
+  content: "✓ ";
+}
+.console p {
+  min-height: 36px;
+  font-size: 11px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+.console #back,
+#query button {
+  width: 100%;
+}
+.dial-panel {
+  align-self: end;
+  background: #263548;
+  border: 5px solid #1a2638;
+  padding: 14px 3px 11px;
+  text-align: center;
+}
+.dial-panel strong {
+  display: block;
+  font-size: 11px;
+}
+.mount {
+  border: 1px solid #b3c7df;
+  border-radius: 5px;
+  background: #8093ab;
+  aspect-ratio: 1.08;
+  margin: 0 auto 9px;
+  display: grid;
+  place-items: center;
+  width: 88%;
+}
+#dial {
+  position: relative;
+  width: 66%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(125deg, #5e9aff, #234ea8 65%);
+  border: 2px solid #99bcfa;
+  box-shadow: 1px 5px 0 #123067;
+  touch-action: none;
+}
+#dial:after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  height: 26%;
+  left: 46%;
+  width: 7%;
+  background: #eef5ff;
+  border-radius: 3px;
+}
+.specimen {
+  width: 39%;
+  margin: 0 auto;
+  text-align: center;
+  pointer-events: none;
+}
+.specimen h2 {
+  padding-top: 20px;
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+.specimen canvas {
+  width: min(100%, 430px);
+  height: auto;
+  touch-action: none;
+  pointer-events: auto;
+}
+.specimen p {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0 auto;
+  width: min(88%, 410px);
+  color: #eef7ff;
+}
+#query {
+  position: absolute;
+  right: 2%;
+  top: 23%;
+  width: 24%;
+  max-width: 315px;
+  padding: 20px;
+  background: #e8e6fe;
+  color: #17263c;
+  border-top: 5px solid #284ea0;
+}
+#query h2 {
+  font-size: 23px;
+  margin: 0;
+  color: #284ea0;
+}
+#query p,
+#query small {
+  font-size: 14px;
+  line-height: 1.55;
+}
+#query small {
+  display: block;
+  color: #49546a;
+  font-size: 12px;
+  margin-bottom: 16px;
+}
+footer {
+  max-width: 1350px;
+  line-height: 1.65;
+}
+dialog {
+  background: #e8e6fe;
+  border: 0;
+  padding: 25px;
+}
+dialog::backdrop {
+  background: #0a152cd9;
+}
+dialog button {
+  padding: 10px 18px;
+}
+[hidden] {
+  display: none !important;
+}
+@media (max-width: 800px) {
+  .room {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+  }
+  .specimen {
+    order: 0;
+    width: min(90%, 360px);
+  }
+  .station {
+    order: 1;
+    position: static;
+    width: min(100%, 475px);
+    transform: none;
+  }
+  #query {
+    order: 2;
+    position: static;
+    width: min(100%, 475px);
+    max-width: none;
+  }
+  .specimen h2 {
+    padding-top: 0;
+  }
+  .systems button,
+  button {
+    font-size: 12px;
+  }
+  footer {
+    font-size: 12px;
+  }
+}
+@media (min-width: 801px) {
+  .specimen p {
+    max-width: 325px;
+  }
+  .systems button,
+  .actions button,
+  #back {
+    font-size: clamp(10px, 0.91vw, 14px);
+  }
+}

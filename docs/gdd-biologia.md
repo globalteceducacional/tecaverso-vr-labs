@@ -1,13 +1,13 @@
 # Biologia — seis laboratórios propostos
 
-**Status:** GDDs aprovados. Células implementado/verificado no Editor; demais cinco salas pendentes de implementação. **Data:** 17/11/2026. **Modo inicial:** individual offline. Química fica em pausa por orientação do responsável; seus arquivos existentes foram preservados.
+**Status:** GDDs aprovados. Células e Corpo humano implementados/verificados no Editor; quatro salas pendentes de implementação. **Data:** 17/11/2026. **Modo inicial:** individual offline. Química fica em pausa por orientação do responsável; seus arquivos existentes foram preservados.
 
 ## Distribuição e consolidação
 
 | Nova sala | Cenas antigas absorvidas | Experiência principal | Conteúdo a criar |
 |---|---|---|---|
 | [1. Células animal e vegetal](gdd-biologia-celulas.md) | CelulaAnimalVegetal | Selecionar, girar, separar e reencaixar organelas; comparar duas células presentes | Mapa semântico das organelas, sockets de retorno e consultas |
-| [2. Corpo humano e sistemas](gdd-biologia-anatomia.md) | EsqueletoHumano, SistemaCirculatorio, SistemaDigestorio, SistemaNervoso, SistemaRespiratorio | Um mesmo corpo, nove sistemas/camadas e pele; consulta de órgãos e quatro percursos | Controle de camadas e conteúdo científico; sistemas extras dos prefabs entram aqui |
+| [2. Corpo humano e sistemas](gdd-biologia-anatomia.md) | EsqueletoHumano, SistemaCirculatorio, SistemaDigestorio, SistemaNervoso, SistemaRespiratorio | Um corpo com nove sistemas e pele, consulta de 60 estruturas, inspeção manual de 24 unidades e quatro percursos pausáveis | Controle de camadas e conteúdo científico; sistemas extras dos prefabs entram aqui |
 | [3. Microrganismos e vírus](gdd-biologia-microbios.md) | Microrganismos | Sete exemplares e duas estruturas; comparação e ciclo lítico simplificado do fago | Identificação revisada, consulta, diorama de hospedeiro e etapas |
 | [4. DNA, RNA e informação](gdd-biologia-dna.md) | DnaRna | Hélice de observação e encaixe de bases em duas fitas independentes | Peças semânticas, RNA, encaixes e validação de complementaridade |
 | [5. Ecossistemas e relações](gdd-biologia-ecossistemas.md) | EcossistemaInterativo | Montar cadeia e distinguir energia de matéria | Diorama, organismos/fichas e fluxo; legado era cena inicial |
@@ -30,7 +30,7 @@ Prévia HTML, não catálogo Unity atualizado. Cada GDD contém imagens de entra
 
 ## Ordem sugerida de implementação
 
-Células → Corpo humano → Microrganismos → DNA/RNA → Ecossistemas → Evolução. As três primeiras aproveitam a maior parte do acervo; DNA adiciona construção; as últimas duas precisam de conteúdo novo. A implementação foi iniciada por Células, conforme autorização do responsável. Os demais conteúdos permanecem em desenvolvimento no Hub.
+Células → Corpo humano → Microrganismos → DNA/RNA → Ecossistemas → Evolução. As três primeiras aproveitam a maior parte do acervo; DNA adiciona construção; as últimas duas precisam de conteúdo novo. Células e Corpo humano já abrem suas cenas pelo Hub. Os demais quatro conteúdos permanecem em desenvolvimento.
 
 ## Regras comuns
 

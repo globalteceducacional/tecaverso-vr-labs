@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Corpo humano e sistemas · protótipo de interação</title>
+    <link rel="stylesheet" href="anatomy-layout.css" />
+    <script defer src="anatomy-layout.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Corpo humano e sistemas</h1>
+      <p>
+        Protótipo de interação XR · representação esquemática em vista frontal
+      </p>
+    </header>
+    <main class="room" aria-label="Estação de anatomia">
+      <section class="station" aria-label="Console inclinado">
+        <div class="console">
+          <div class="systems" aria-label="Sistemas anatômicos"></div>
+          <div class="actions">
+            <button id="skin" aria-pressed="true">Pele (contexto)</button
+            ><button id="process">Observar percurso</button>
+          </div>
+          <p id="status" aria-live="polite"></p>
+          <button id="back">Voltar ao Hub</button>
+        </div>
+        <div class="dial-panel">
+          <div class="mount">
+            <button
+              id="dial"
+              aria-label="Girar corpo"
+              title="Arraste ou use as setas para girar"
+            ></button>
+          </div>
+          <strong>Girar corpo</strong>
+        </div>
+      </section>
+      <section class="specimen">
+        <h2 id="title"></h2>
+        <canvas
+          width="480"
+          height="620"
+          aria-label="Corpo. Clique em uma estrutura para consultar. Pressione e arraste uma peça destacável para inspecionar."
+          tabindex="0"
+        ></canvas>
+        <p id="legend" aria-live="polite"></p>
+      </section>
+      <aside id="query" hidden>
+        <h2 id="organ"></h2>
+        <p id="function"></p>
+        <p id="context"></p>
+        <small
+          >Modelo anatômico didático. Os agrupamentos e as cores variam em
+          relação ao corpo real.</small
+        ><button id="close">Fechar consulta</button>
+      </aside>
+    </main>
+    <footer>
+      Para experimentar no navegador, clique em uma estrutura ou pressione e
+      arraste para afastá-la. Solte para devolver. Arraste a manopla azul para
+      girar. A ilustração testa os gestos e a disposição dos controles.
+    </footer>
+    <dialog>
+      <p>Você voltou ao Hub da prévia.</p>
+      <button id="enter">Entrar no laboratório</button>
+    </dialog>
+  </body>
+</html>

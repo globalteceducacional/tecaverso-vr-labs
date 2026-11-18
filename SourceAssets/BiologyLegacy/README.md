@@ -12,6 +12,8 @@ O versionamento é seletivo por laboratório. A entrega de Células inclui os do
 
 Os hashes do manifesto registram a cópia original local. Git pode normalizar finais de linha dos arquivos textuais ao versioná-los; isso não altera GUIDs ou conteúdo semântico, mas pode alterar seu hash de bytes em outro checkout. Os FBX no LFS preservam os bytes originais e seus hashes foram conferidos.
 
+Corpo humano e sistemas agora usa uma cópia do FBX masculino e derivados menores de 274 texturas em `Assets/_Project/Art/Biology/Anatomy`, com rastreio em `AnatomyGeometry.json`. O runtime não precisa dos PNGs brutos desta pasta. A migração não altera nem elimina essas fontes; o modelo feminino continua preservado para possível adaptação futura.
+
 Os binários desta pasta têm regras próprias de Git LFS em `.gitattributes`. Capturas e vídeos permanecem em `GeneratedMedia/`, ignorados. Nenhum push é necessário para usar a sala localmente.
 
 Não foram encontrados arquivos de licença/autoria dos modelos dentro das pastas de modelos auditadas. Isso não determina que sejam livres ou proibidos: a origem/licença deve ser registrada a partir das aquisições do projeto antes de distribuição. As fontes são mantidas sem alterar os originais. Não apresentar o autor do Tecaverso como autor dos modelos de terceiros.

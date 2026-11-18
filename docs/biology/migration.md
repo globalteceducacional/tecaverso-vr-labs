@@ -35,4 +35,12 @@ Após a remoção da pasta antiga, a auditoria e os protótipos continuam dispon
 
 Foram importados somente `Animal_Cell.fbx` e `Plant_Cell.fbx`, com GUIDs originais conferidos sem colisão. `GeometryMap.json` conserva a montagem visual dos prefabs antigos. Novos prefabs visuais e materiais URP não carregam scripts, interface, física ou ambiente antigos. O mapa de oito alvos consta no README da sala; seis categorias foram associadas a grupos semânticos existentes, sem inferir organelas por nomes genéricos.
 
-`Cells.unity` reutiliza ambiente, rig, componentes XR, controles oficiais Unity e feedback compartilhado do projeto atual. Está habilitada no catálogo de seis conteúdos de Biologia; as outras cinco entradas não apontam para cenas inexistentes. Os FBX de runtime também têm regras LFS restritas à pasta de arte de Biologia. `SourceAssets` e `PROJETO ANTIGO` não são lidos pela aplicação. Headset, otimização medida e revisão científica independente continuam etapas de homologação.
+`Cells.unity` reutiliza ambiente, rig, componentes XR, controles oficiais Unity e feedback compartilhado do projeto atual. Está habilitada no catálogo de seis conteúdos de Biologia. Corpo humano foi implementado posteriormente; quatro entradas ainda não apontam para cenas. Os FBX de runtime também têm regras LFS restritas à pasta de arte de Biologia. `SourceAssets` e `PROJETO ANTIGO` não são lidos pela aplicação. Headset, otimização medida e revisão científica independente continuam etapas de homologação.
+
+## Lote implementado: Corpo humano e sistemas
+
+Um FBX masculino importado com GUID/hash originais. O pertencimento das peças vem dos dez prefabs históricos; as poses vêm do referencial comum do FBX, evitando raízes deslocadas de prefabs antigos. `AnatomyGeometry.json` registra fontes, materiais, texturas e correções semânticas. Apenas o conjunto recebe escala de 1,7 m, orientação de apresentação e posição na sala.
+
+Albedos e normais foram derivados pelo Editor em PNGs menores, preservando originais fora de `Assets`. Não foi necessário importar cerca de 1,5 GB de texturas brutas, nem o segundo modelo corporal. A regra LFS de arte de Biologia agora também cobre os PNGs runtime; capturas continuam ignoradas. Os derivados são suficientes num clone para executar a sala. Reproduzir sua autoria exige as fontes correspondentes do acervo local preservado.
+
+`Anatomy.unity` tem nove sistemas, pele independente, 60 grupos de consulta XR, dial Unity e quatro percursos didáticos pausáveis. O aluno pode afastar e girar 24 peças e devolvê-las à pose anatômica ao soltar. Verificações e limitações em [validation.md](validation.md).

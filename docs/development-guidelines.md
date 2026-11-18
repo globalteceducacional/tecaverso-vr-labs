@@ -89,3 +89,9 @@ O MVP separa `ProjectileKinematics` (equações), `ObliqueLaunchSimulation` (est
 Toda nova interação deve aplicar a diretriz de motion do Design System. Testar normal, hover/foco, ação, saída, ocultação, desabilitação e preferência reduzida. Confirmar que transforms/colliders físicos e valores científicos não mudam pelo feedback. Reutilizar `Shared/Interaction`; não adicionar loops decorativos em todas as peças. Estado selecionado precisa continuar evidente sem animação.
 
 `InteractionMotionVerification.Start()` no Editor em Play Mode percorre as cenas de laboratório habilitadas e registra cobertura de Selectables e interactables em `Temp/interaction-motion-verification.txt`; não salva nem regenera cenas. Esse teste não substitui interação XR real ou medição de desempenho no dispositivo.
+
+### Revisão de interações em equipe
+
+O projeto inclui perfis do Codex para [game feel e shaders](../.codex/agents/tecaverso_game_feel.toml), [UI e protótipos](../.codex/agents/tecaverso_ui.toml), [UX em realidade virtual](../.codex/agents/tecaverso_ux_xr.toml) e [programação XR](../.codex/agents/tecaverso_programacao_xr.toml). Quando a tarefa envolver várias dessas frentes, distribuir entregas com responsáveis distintos e combinar quem opera o Editor compartilhado.
+
+Na revisão de Anatomia, o ciclo PDCA partiu de três quadros do vídeo anterior. O GDD e o HTML definiram o gesto, os estados e a posição do controle. Após implementar, a equipe repetiu os enquadramentos, testou o gesto e a pausa em Play Mode e corrigiu a oclusão do rótulo e a intensidade do shader. A segunda rodada usou os mesmos pontos de vista para confirmar o efeito das mudanças. [Evidências de Anatomia](biology/validation.md)

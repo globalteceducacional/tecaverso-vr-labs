@@ -1,6 +1,6 @@
 # Células animal e vegetal
 
-Primeira sala individual offline de Biologia, implementada em 17/11/2026 conforme o [GDD aprovado](../../../../../docs/gdd-biologia-celulas.md). Cena: `Scenes/Cells.unity`. Entrada: **Explorar sozinho → Biologia → Células animal e vegetal**. Os outros cinco conteúdos de Biologia permanecem em desenvolvimento.
+Primeira sala individual offline de Biologia, implementada em 17/11/2026 conforme o [GDD aprovado](../../../../../docs/gdd-biologia-celulas.md). Cena: `Scenes/Cells.unity`. Entrada: **Explorar sozinho → Biologia → Células animal e vegetal**. Corpo humano e sistemas também está disponível; os outros quatro conteúdos permanecem em desenvolvimento.
 
 ## Uso
 

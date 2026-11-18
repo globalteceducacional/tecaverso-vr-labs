@@ -1,0 +1,4330 @@
+{
+  "groups": [
+    {
+      "id": "resp",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Sitema Respiratorio.prefab",
+      "names": [
+        "Trachea",
+        "Diaphragm",
+        "Larynx_Internal",
+        "Lung_Right",
+        "Bronchi",
+        "NasalCavity",
+        "OralCavity",
+        "Pharynx",
+        "Lung_Left",
+        "Larynx_External"
+      ]
+    },
+    {
+      "id": "circ",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/SistemaCirculatório.prefab",
+      "names": [
+        "ArterialSystem_Head",
+        "VenousSystem_Leg_Right",
+        "VenousSystem_Leg_Left",
+        "VenousSystem_Head",
+        "Heart",
+        "ArterialSystem_Leg_Right",
+        "Heart_Vessels",
+        "ArterialSystem_Torso",
+        "ArterialSystem_Arm_Left",
+        "VenousSystem_Arm_Right",
+        "VenousSystem_Arm_Left",
+        "Heart_Vessels_Big",
+        "ArterialSystem_Arm_Right",
+        "ArterialSystem_Leg_Left",
+        "VenousSystem_Torso",
+        "Bronchi_Vessels"
+      ]
+    },
+    {
+      "id": "dig",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Sistema Digestorio.prefab",
+      "names": [
+        "Bile_Duct",
+        "Small_Inestines",
+        "Stomach",
+        "Glands_Parotid",
+        "Glands_Mandibular_Lingual",
+        "Colon",
+        "Liver",
+        "Pancreas",
+        "Esophagus_Head",
+        "Esophagus_Torso",
+        "Gallbladder",
+        "OralCavity",
+        "Pharynx"
+      ]
+    },
+    {
+      "id": "nerv",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/NervousSystem.prefab",
+      "names": [
+        "Lobe_Insular_Right",
+        "BasalGanglia_Putamen_Left",
+        "BasalGanglia_Putamen_Right",
+        "Lobe_Occipital_Right",
+        "Lobe_Temporal_Left",
+        "NervousSystem_Leg_Right",
+        "Lobe_Insular_Left",
+        "Cerebellum_Right",
+        "NervousSystem_Torso",
+        "Brainstem_Thalamus_Left",
+        "NervousSystem_Arm_Left",
+        "Lobe_Frontal_Right",
+        "Optic_OlfactoryTract_Right",
+        "Lobe_Limbic_Right",
+        "Lobe_Parietal_Left",
+        "Ventricles_Right",
+        "Lobe_Occipital_Left",
+        "NervousSystem_Neck",
+        "NervousSystem_Leg_Left",
+        "Optic_OlfactoryTract_Left",
+        "Cerebellum_Left",
+        "Hippocampus_Amygdala_Fornix_Left",
+        "Lobe_Limbic_Left",
+        "CentralBrain_Right",
+        "NervousSystem_Head",
+        "NervousSystem_Arm_Right",
+        "Lobe_Parietal_Right",
+        "Lobe_Temporal_Right",
+        "Hippocampus_Amygdala_Fornix_Right",
+        "Brainstem_Thalamus_Right",
+        "CentralBrain_Left",
+        "Lobe_Frontal_Left",
+        "Ventricles_Left",
+        "SpinalCord_Neck",
+        "SpinalCord_Torso"
+      ]
+    },
+    {
+      "id": "skel",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Skeleton.prefab",
+      "names": [
+        "Skeleton_Rib_Cage",
+        "Skeleton_Foot_Right",
+        "Skeleton_Leg_Right",
+        "Intervertebral_Discs",
+        "Skeleton_Skull",
+        "Skeleton_Foot_Left",
+        "Skeleton_Arm_Left",
+        "Skeleton_Spine",
+        "Teeth_Top",
+        "Skeleton_Hand_Left",
+        "Skeleton_Arm_Right",
+        "Teeth_Bottom",
+        "Skeleton_Hand_Right",
+        "Skeleton_Leg_Left",
+        "Skeleton_Pelvis"
+      ]
+    },
+    {
+      "id": "muscle",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Muscles.prefab",
+      "names": [
+        "Muscles_Shin_Foot_Right",
+        "Muscles_Hip_Back_Right",
+        "Muscles_Floor",
+        "Muscles_Calf_Left",
+        "Muscles_Eye_Right",
+        "Muscles_Back_External",
+        "Muscles_Craniofacial",
+        "Muscles_Hip_Front_Left",
+        "Muscles_Forearm_Right",
+        "Muscles_PostAbdominalWall",
+        "Muscles_Abdomen_Internal",
+        "Muscles_Shin_Foot_Left",
+        "Muscles_Back_Internal",
+        "Muscles_Hip_Front_Right",
+        "Muscles_Forearm_Left",
+        "Muscles_Abdomen_External",
+        "Muscles_Thorax",
+        "Muscles_Neck_External",
+        "Muscles_Calf_Right",
+        "Muscles_UpperArm_Right",
+        "Muscles_Neck_Internal",
+        "Muscles_UpperArm_Left",
+        "Muscles_Hip_Back_Left",
+        "Muscles_Eye_Left",
+        "Muscles_UpperLimb"
+      ]
+    },
+    {
+      "id": "renal",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Sistema Renal.prefab",
+      "names": [
+        "Kidney_Right",
+        "Urinary_Ureter_Right",
+        "Urinary_Ureter_Left",
+        "Prostate_Uretra",
+        "Kidney_Left",
+        "Bladder"
+      ]
+    },
+    {
+      "id": "lymph",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/LymphaticSystem.prefab",
+      "names": [
+        "LymphaticNodes_Head",
+        "LymphaticNodes_Torso",
+        "LymphaticNodes_Leg_Right",
+        "LymphaticSystem_Troso",
+        "LymphaticNodes_Arm_Left",
+        "LymphaticNodes_Arm_Right",
+        "LymphaticSystem_Leg_Right",
+        "Spleen",
+        "LymphaticSystem_Leg_Left",
+        "LymphaticSystem_Arm_Right",
+        "LymphaticSystem_Arm_Left",
+        "Thymus",
+        "LymphaticSystem_Head",
+        "LymphaticNodes_Leg_Left"
+      ]
+    },
+    {
+      "id": "repro",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Sistema Reprodutivo.prefab",
+      "names": [
+        "Internal_Genetalia_Right",
+        "Prostate_Uretra",
+        "External_Genetalia",
+        "Internal_Genetalia_Left",
+        "Cremaster"
+      ]
+    },
+    {
+      "id": "skin",
+      "sourcePrefab": "SourceAssets/BiologyLegacy/Assets/_Project/Prefabs/Biologia/CorpoHumano/Body.prefab",
+      "names": [
+        "Body"
+      ]
+    }
+  ],
+  "parts": [
+    {
+      "name": "ArterialSystem_Arm_Left",
+      "materials": [
+        "5e602050903e0214997f8b6ae13cd8b9"
+      ]
+    },
+    {
+      "name": "ArterialSystem_Arm_Right",
+      "materials": [
+        "a1fa9ba59fa4099449741169fe55aa30"
+      ]
+    },
+    {
+      "name": "ArterialSystem_Head",
+      "materials": [
+        "271d090ad25c51b44bb9ce86d697dd03"
+      ]
+    },
+    {
+      "name": "ArterialSystem_Leg_Left",
+      "materials": [
+        "03ee7d14392443840ba1bd3f84ee15f0"
+      ]
+    },
+    {
+      "name": "ArterialSystem_Leg_Right",
+      "materials": [
+        "9193066f645453849afd992c77a0501c"
+      ]
+    },
+    {
+      "name": "ArterialSystem_Torso",
+      "materials": [
+        "0340ad8816440114390d1afa2665b3ec"
+      ]
+    },
+    {
+      "name": "BasalGanglia_Putamen_Left",
+      "materials": [
+        "8d9d0eda8ac062f42a63b1466d153f70"
+      ]
+    },
+    {
+      "name": "BasalGanglia_Putamen_Right",
+      "materials": [
+        "66e8e59ec9372c64c9bc4c1ecdc28517"
+      ]
+    },
+    {
+      "name": "Bile_Duct",
+      "materials": [
+        "e0983e094dda06e469d0abc94ed2d4cb"
+      ]
+    },
+    {
+      "name": "Bladder",
+      "materials": [
+        "5dacf45a2c8c9704385ab80519556555"
+      ]
+    },
+    {
+      "name": "Body",
+      "materials": [
+        "2b520bf0ae48315429396b6944c3fc74"
+      ]
+    },
+    {
+      "name": "Brainstem_Thalamus_Left",
+      "materials": [
+        "82c5bd83f5bd5454d892fb57e0849e75"
+      ]
+    },
+    {
+      "name": "Brainstem_Thalamus_Right",
+      "materials": [
+        "6c5534a73d706594d851c69dccc79410"
+      ]
+    },
+    {
+      "name": "Bronchi",
+      "materials": [
+        "e2b84076b11c85a40bbbdc73513f684f"
+      ]
+    },
+    {
+      "name": "Bronchi_Vessels",
+      "materials": [
+        "0e6106fa062d7674aa4db25d6ab7fb61"
+      ]
+    },
+    {
+      "name": "CentralBrain_Left",
+      "materials": [
+        "e4d5e34364828cc428260c43a4eb7f48"
+      ]
+    },
+    {
+      "name": "CentralBrain_Right",
+      "materials": [
+        "05e0ee42d8dbcff4c9cb5965895ea3c8"
+      ]
+    },
+    {
+      "name": "Cerebellum_Left",
+      "materials": [
+        "c99b9414cb905404fb484c8a9e86e2e9"
+      ]
+    },
+    {
+      "name": "Cerebellum_Right",
+      "materials": [
+        "242035be462dbe04abcc3769ed5d9e3a"
+      ]
+    },
+    {
+      "name": "Colon",
+      "materials": [
+        "a90a4961ed11b6a4cb8577090db3b512"
+      ]
+    },
+    {
+      "name": "Cremaster",
+      "materials": [
+        "bf9c2fddf869bdc4580e068cc4311eea"
+      ]
+    },
+    {
+      "name": "Diaphragm",
+      "materials": [
+        "114d52f9e6f045b44bd9b30698be14da"
+      ]
+    },
+    {
+      "name": "Esophagus_Head",
+      "materials": [
+        "44f55d8e0b6220f42be3b3fe9856c0b7"
+      ]
+    },
+    {
+      "name": "Esophagus_Torso",
+      "materials": [
+        "d70e4384421fd6e41987b9aa34b15188"
+      ]
+    },
+    {
+      "name": "External_Genetalia",
+      "materials": [
+        "8360d0bc85f15ef4685fe7a150b17a60"
+      ]
+    },
+    {
+      "name": "Gallbladder",
+      "materials": [
+        "9b30adf3a64f69140a7a55453c4cd88c"
+      ]
+    },
+    {
+      "name": "Glands_Mandibular_Lingual",
+      "materials": [
+        "30c391de726371b488c7737737a75f31"
+      ]
+    },
+    {
+      "name": "Glands_Parotid",
+      "materials": [
+        "d65b6d921e3b45544be8d3eb055578f6"
+      ]
+    },
+    {
+      "name": "Heart",
+      "materials": [
+        "09746181145a88b40a102bbd12c06917"
+      ]
+    },
+    {
+      "name": "Heart_Vessels",
+      "materials": [
+        "5d0da08651416804fb4168f867abcf5c"
+      ]
+    },
+    {
+      "name": "Heart_Vessels_Big",
+      "materials": [
+        "dd26ed60e43bc7d469e2be10f341a385"
+      ]
+    },
+    {
+      "name": "Hippocampus_Amygdala_Fornix_Left",
+      "materials": [
+        "07bb7f09d89738240a28fa8ec4c8e4dc"
+      ]
+    },
+    {
+      "name": "Hippocampus_Amygdala_Fornix_Right",
+      "materials": [
+        "bf47fd56ef0f98242ab405ae8e684a02"
+      ]
+    },
+    {
+      "name": "Internal_Genetalia_Left",
+      "materials": [
+        "426864c316f68284892044808ffb84bd"
+      ]
+    },
+    {
+      "name": "Internal_Genetalia_Right",
+      "materials": [
+        "64bdbed52d941de41b19b183c9504f7a"
+      ]
+    },
+    {
+      "name": "Intervertebral_Discs",
+      "materials": [
+        "9cc3b3db4484adf42aa836d5b5ca6013"
+      ]
+    },
+    {
+      "name": "Kidney_Left",
+      "materials": [
+        "ab7cc3b8f37ca8f4b9eb0d01c5e64654"
+      ]
+    },
+    {
+      "name": "Kidney_Right",
+      "materials": [
+        "12c867f491b577d4ebb3d9dfcb4987c1"
+      ]
+    },
+    {
+      "name": "Larynx_External",
+      "materials": [
+        "b52b85cb608af774dac6f78aefe05d7a"
+      ]
+    },
+    {
+      "name": "Larynx_Internal",
+      "materials": [
+        "0f88a3a41b7d3c64d85cff12c7e71115"
+      ]
+    },
+    {
+      "name": "Liver",
+      "materials": [
+        "2aad30ad8bf913348b780334e0c56d01"
+      ]
+    },
+    {
+      "name": "Lobe_Frontal_Left",
+      "materials": [
+        "35669424592501345b94878f8e411786"
+      ]
+    },
+    {
+      "name": "Lobe_Frontal_Right",
+      "materials": [
+        "76645e37281cfb44dac0245dcfb52d57"
+      ]
+    },
+    {
+      "name": "Lobe_Insular_Left",
+      "materials": [
+        "776fec473b4a1a747b7deddfedeb1731"
+      ]
+    },
+    {
+      "name": "Lobe_Insular_Right",
+      "materials": [
+        "df7c1de6de91d604894f07faaae023db"
+      ]
+    },
+    {
+      "name": "Lobe_Limbic_Left",
+      "materials": [
+        "d18a1742357b601429af1ef033cce53e"
+      ]
+    },
+    {
+      "name": "Lobe_Limbic_Right",
+      "materials": [
+        "a3e7309a742b690459d2bbc45c43f797"
+      ]
+    },
+    {
+      "name": "Lobe_Occipital_Left",
+      "materials": [
+        "15afbcbe6cbf1fa41b7211763678cb3a"
+      ]
+    },
+    {
+      "name": "Lobe_Occipital_Right",
+      "materials": [
+        "03379bd424d071c40bc47409bae2f0be"
+      ]
+    },
+    {
+      "name": "Lobe_Parietal_Left",
+      "materials": [
+        "fde9f52d8d220bc4ea697b22f8752181"
+      ]
+    },
+    {
+      "name": "Lobe_Parietal_Right",
+      "materials": [
+        "02adcef1110f2d94fa9b8c90266bbb78"
+      ]
+    },
+    {
+      "name": "Lobe_Temporal_Left",
+      "materials": [
+        "fa9436b020e77344cad95f26de553271"
+      ]
+    },
+    {
+      "name": "Lobe_Temporal_Right",
+      "materials": [
+        "99b014cf292affd4ca146eb8a4d35097"
+      ]
+    },
+    {
+      "name": "Lung_Left",
+      "materials": [
+        "3b4904bef5ce2374a82ab8ea644e563f"
+      ]
+    },
+    {
+      "name": "Lung_Right",
+      "materials": [
+        "2aa59ab1db7302548ab84388a146a797"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Arm_Left",
+      "materials": [
+        "d4b20c2351aad4c46ad04557486cb82a"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Arm_Right",
+      "materials": [
+        "4f6b482909e2c7c4bbb7c53472402641"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Head",
+      "materials": [
+        "f35dc8c4dfeaf8b469f12a4a7bb7d1b3"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Leg_Left",
+      "materials": [
+        "bd821d7235b764d4192eb5f379e4ffdf"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Leg_Right",
+      "materials": [
+        "ce90539354e1b7748ae9e58e2aa3c1bf"
+      ]
+    },
+    {
+      "name": "LymphaticNodes_Torso",
+      "materials": [
+        "7f85ee3f435a1584eb1fb68215ddd1ee"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Arm_Left",
+      "materials": [
+        "1b420d9576df9d849b61c0a831107ac6"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Arm_Right",
+      "materials": [
+        "a725f8693e9e1ac46b59663f9230d156"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Head",
+      "materials": [
+        "437fbb451cc410541b43afcfe457c2de"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Leg_Left",
+      "materials": [
+        "c4b58ddda06ac7b44b2fa8747e0ad1b5"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Leg_Right",
+      "materials": [
+        "cfcb5e3543ebc5e468c7e91b3163f3de"
+      ]
+    },
+    {
+      "name": "LymphaticSystem_Troso",
+      "materials": [
+        "3637f1849f685a1479c592eed9aaa923"
+      ]
+    },
+    {
+      "name": "Muscles_Abdomen_External",
+      "materials": [
+        "6d45c90923f72cd4897ae0c4a9bd8bfc"
+      ]
+    },
+    {
+      "name": "Muscles_Abdomen_Internal",
+      "materials": [
+        "a9efcbc550918574592bbcb37270a012"
+      ]
+    },
+    {
+      "name": "Muscles_Back_External",
+      "materials": [
+        "f365577f35b92d74094e50f38694a3a6"
+      ]
+    },
+    {
+      "name": "Muscles_Back_Internal",
+      "materials": [
+        "8131779dce966aa468af3b255730b967"
+      ]
+    },
+    {
+      "name": "Muscles_Calf_Left",
+      "materials": [
+        "79f39879e346ba5478972419a45934f5"
+      ]
+    },
+    {
+      "name": "Muscles_Calf_Right",
+      "materials": [
+        "be73f7669162f8f47a33f5ab68364ecd"
+      ]
+    },
+    {
+      "name": "Muscles_Craniofacial",
+      "materials": [
+        "79cf1e41bd9f10d429335e2e2611b7ef"
+      ]
+    },
+    {
+      "name": "Muscles_Eye_Left",
+      "materials": [
+        "f541f2cc129f04e4390d634c913ca5ec"
+      ]
+    },
+    {
+      "name": "Muscles_Eye_Right",
+      "materials": [
+        "2191196a26267ba46a9cc2ba60449989"
+      ]
+    },
+    {
+      "name": "Muscles_Floor",
+      "materials": [
+        "e700fb33432e2ee4facb9b345b5ab129"
+      ]
+    },
+    {
+      "name": "Muscles_Forearm_Left",
+      "materials": [
+        "9e13f4015821d1b4b8376b478b87fbc7"
+      ]
+    },
+    {
+      "name": "Muscles_Forearm_Right",
+      "materials": [
+        "5322fe843cfa999458543336ea6d0cf1"
+      ]
+    },
+    {
+      "name": "Muscles_Hip_Back_Left",
+      "materials": [
+        "efee4651c478dbe42987622ae349ab48"
+      ]
+    },
+    {
+      "name": "Muscles_Hip_Back_Right",
+      "materials": [
+        "0d1e68f914569ed4a837a53236ec5763"
+      ]
+    },
+    {
+      "name": "Muscles_Hip_Front_Left",
+      "materials": [
+        "045d3f4fd1967ef43a2f3eac491f864a"
+      ]
+    },
+    {
+      "name": "Muscles_Hip_Front_Right",
+      "materials": [
+        "780e53a324a70d84b8e00d6756aa1b8c"
+      ]
+    },
+    {
+      "name": "Muscles_Neck_External",
+      "materials": [
+        "06be26654f0ea064bb09352214466240"
+      ]
+    },
+    {
+      "name": "Muscles_Neck_Internal",
+      "materials": [
+        "e8a4d54275eb0d844ad3654246b49903"
+      ]
+    },
+    {
+      "name": "Muscles_PostAbdominalWall",
+      "materials": [
+        "2f2919a265e0d6b4db73dd47501660af"
+      ]
+    },
+    {
+      "name": "Muscles_Shin_Foot_Left",
+      "materials": [
+        "eee61e111aa7d1f448f75a6e9d1899fc"
+      ]
+    },
+    {
+      "name": "Muscles_Shin_Foot_Right",
+      "materials": [
+        "43ca0246d610a4e4bbe60de8ee698b9f"
+      ]
+    },
+    {
+      "name": "Muscles_Thorax",
+      "materials": [
+        "d6526a16316d5cd49b801d7e14a0058b"
+      ]
+    },
+    {
+      "name": "Muscles_UpperArm_Left",
+      "materials": [
+        "17db93cd7058fbe4dbc735b143fd6a18"
+      ]
+    },
+    {
+      "name": "Muscles_UpperArm_Right",
+      "materials": [
+        "6708ec42ee9393244939568456c75e5c"
+      ]
+    },
+    {
+      "name": "Muscles_UpperLimb",
+      "materials": [
+        "0bc331ebab69ebc49b4f3503e44dabcf"
+      ]
+    },
+    {
+      "name": "NasalCavity",
+      "materials": [
+        "1b9e47e67bd2880468d12b38f484ed61"
+      ]
+    },
+    {
+      "name": "NervousSystem_Arm_Left",
+      "materials": [
+        "997966c1d2fa7ac458f3f7a0b3357e55"
+      ]
+    },
+    {
+      "name": "NervousSystem_Arm_Right",
+      "materials": [
+        "b344550c6693df94aa8cb99383262240"
+      ]
+    },
+    {
+      "name": "NervousSystem_Head",
+      "materials": [
+        "044773f268653a34ba2740c0f37a40d6"
+      ]
+    },
+    {
+      "name": "NervousSystem_Leg_Left",
+      "materials": [
+        "dfba6f50ba09e264bbefa1c521f0c6e5"
+      ]
+    },
+    {
+      "name": "NervousSystem_Leg_Right",
+      "materials": [
+        "3109ef4a3b639114ea613e36e435039c"
+      ]
+    },
+    {
+      "name": "NervousSystem_Neck",
+      "materials": [
+        "28bdeaa2c815948458a288e9569f1e64"
+      ]
+    },
+    {
+      "name": "NervousSystem_Torso",
+      "materials": [
+        "8f067d8261fd3b044a87d919dee7fec7"
+      ]
+    },
+    {
+      "name": "Optic_OlfactoryTract_Left",
+      "materials": [
+        "b06469227c5adcb43bad8d8e2d26e011"
+      ]
+    },
+    {
+      "name": "Optic_OlfactoryTract_Right",
+      "materials": [
+        "7dc2e92a2a9b8a64ca231b8dd74a4a7d"
+      ]
+    },
+    {
+      "name": "OralCavity",
+      "materials": [
+        "5433a17254c8cca438260230ab53fadc"
+      ]
+    },
+    {
+      "name": "Pancreas",
+      "materials": [
+        "8963dcf043fc6b944af028e341dee101"
+      ]
+    },
+    {
+      "name": "Pharynx",
+      "materials": [
+        "26892225297c8114c8e92cb2138f7fce"
+      ]
+    },
+    {
+      "name": "Prostate_Uretra",
+      "materials": [
+        "0073058edcb8b85409cf41af28475406"
+      ]
+    },
+    {
+      "name": "Skeleton_Arm_Left",
+      "materials": [
+        "54773ef77bc6bd14ba07f2e8658dd9a4"
+      ]
+    },
+    {
+      "name": "Skeleton_Arm_Right",
+      "materials": [
+        "adb93ac57326d8447865295f10607c13"
+      ]
+    },
+    {
+      "name": "Skeleton_Foot_Left",
+      "materials": [
+        "905a5a679d3df5245b3a0fd881cab08f"
+      ]
+    },
+    {
+      "name": "Skeleton_Foot_Right",
+      "materials": [
+        "d1fe54b04eb9a7847a18212d319568db"
+      ]
+    },
+    {
+      "name": "Skeleton_Hand_Left",
+      "materials": [
+        "f9bedadf9bdec594690ba67467cd9952"
+      ]
+    },
+    {
+      "name": "Skeleton_Hand_Right",
+      "materials": [
+        "0d8361d181879cc45aaaad00e2b55fe9"
+      ]
+    },
+    {
+      "name": "Skeleton_Leg_Left",
+      "materials": [
+        "db0c1cabd68ddb2449fcbad0b2f2291e"
+      ]
+    },
+    {
+      "name": "Skeleton_Leg_Right",
+      "materials": [
+        "9a1e0cc5793c56542aff962beb559ffa"
+      ]
+    },
+    {
+      "name": "Skeleton_Pelvis",
+      "materials": [
+        "38751e3db9a9d434d9b7be131e6643d9"
+      ]
+    },
+    {
+      "name": "Skeleton_Rib_Cage",
+      "materials": [
+        "4387335826995674e85ea72e565b8eb7"
+      ]
+    },
+    {
+      "name": "Skeleton_Skull",
+      "materials": [
+        "6c0806d869d22f546a8c521db2082c62"
+      ]
+    },
+    {
+      "name": "Skeleton_Spine",
+      "materials": [
+        "040a12c142fe06942832b7dd269778aa"
+      ]
+    },
+    {
+      "name": "Small_Inestines",
+      "materials": [
+        "6b2dd036ac9081f4c9b9060b0cb7921d"
+      ]
+    },
+    {
+      "name": "SpinalCord_Neck",
+      "materials": [
+        "96551780cb044894383188cdbbcafa08"
+      ]
+    },
+    {
+      "name": "SpinalCord_Torso",
+      "materials": [
+        "f8b1b0cfb870edf4a81c66f107a4cfef"
+      ]
+    },
+    {
+      "name": "Spleen",
+      "materials": [
+        "de814964dfb4953459891c331cd4ccd9"
+      ]
+    },
+    {
+      "name": "Stomach",
+      "materials": [
+        "2f38a0369d666d84bbdc013e084b0fdd"
+      ]
+    },
+    {
+      "name": "Teeth_Bottom",
+      "materials": [
+        "aa0efe7d6e3cb484996f27188e5c0538"
+      ]
+    },
+    {
+      "name": "Teeth_Top",
+      "materials": [
+        "e4ac4e1b5b1e7ed409f886fcc70236b5"
+      ]
+    },
+    {
+      "name": "Thymus",
+      "materials": [
+        "315aae16749d8d444989e5a5c8b39f4f"
+      ]
+    },
+    {
+      "name": "Trachea",
+      "materials": [
+        "8ff3103ab3166854aa5ca81d59e35649"
+      ]
+    },
+    {
+      "name": "Urinary_Ureter_Left",
+      "materials": [
+        "d90209c2b3d95d94f91f8ef5dc386d6f"
+      ]
+    },
+    {
+      "name": "Urinary_Ureter_Right",
+      "materials": [
+        "dca6ba4864adf9f4098adddce852e89a"
+      ]
+    },
+    {
+      "name": "VenousSystem_Arm_Left",
+      "materials": [
+        "2f1d84478acc167488d9136c169344e1"
+      ]
+    },
+    {
+      "name": "VenousSystem_Arm_Right",
+      "materials": [
+        "6b30c1afae44ff340b5b1e8bff0aad23"
+      ]
+    },
+    {
+      "name": "VenousSystem_Head",
+      "materials": [
+        "931d454f1f0c05046a21662d22c6590f"
+      ]
+    },
+    {
+      "name": "VenousSystem_Leg_Left",
+      "materials": [
+        "5400146366e86ed4e899010b6bab345f"
+      ]
+    },
+    {
+      "name": "VenousSystem_Leg_Right",
+      "materials": [
+        "e5c96f522b4e5664082fee3701af8337"
+      ]
+    },
+    {
+      "name": "VenousSystem_Torso",
+      "materials": [
+        "0a1aa542432f4d24e87ae264b5086236"
+      ]
+    },
+    {
+      "name": "Ventricles_Left",
+      "materials": [
+        "825076a6d9b1b624d8ea982194a3e1b7"
+      ]
+    },
+    {
+      "name": "Ventricles_Right",
+      "materials": [
+        "ec45ff550dcb2dd41a55365da4255f99"
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "guid": "0073058edcb8b85409cf41af28475406",
+      "name": "Prostate_Uretra",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "516cc357559f9ca4aa0d93c446b18714",
+      "normal": "bbc38cdbd0eeffb418a25208970044dc"
+    },
+    {
+      "guid": "02adcef1110f2d94fa9b8c90266bbb78",
+      "name": "Lobe_Parietal_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "3b13abfd271f4a9458762c7a3c65c2cd",
+      "normal": "ba206cfc9faf9c94ea41f13a27700bd0"
+    },
+    {
+      "guid": "03379bd424d071c40bc47409bae2f0be",
+      "name": "Lobe_Occipital_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "ef982a5094ed915448db18d44993f596",
+      "normal": "8360c007659f01049a8f55776e739f5c"
+    },
+    {
+      "guid": "0340ad8816440114390d1afa2665b3ec",
+      "name": "ArterialSystem_Torso",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "a2cf6e85b62a04c43bc4dda7c6773611",
+      "normal": "fde2f6feba4f62743bdb19d56bf939d4"
+    },
+    {
+      "guid": "03ee7d14392443840ba1bd3f84ee15f0",
+      "name": "ArterialSystem_Leg_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "c6020f3d97c0554429dfe6eafa7cd5d3",
+      "normal": "eaaf901172bac0647bcdc4a5b4345ae0"
+    },
+    {
+      "guid": "040a12c142fe06942832b7dd269778aa",
+      "name": "Skeleton_Spine",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "63de3512e8c4391408d49d8697b69f46",
+      "normal": "fd5975cc12cc4ca4eaadfd0aeb35c600"
+    },
+    {
+      "guid": "044773f268653a34ba2740c0f37a40d6",
+      "name": "NervousSystem_Head",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "382f058f90a11fa47b23fc1687e29d1a",
+      "normal": "657ae2728a30a3f4f9564d5d5d159bca"
+    },
+    {
+      "guid": "045d3f4fd1967ef43a2f3eac491f864a",
+      "name": "Muscles_Hip_Front_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "bb24d9b90c4f8674cbcd76558bc6ecc1",
+      "normal": "c8c117a3ec237664d94113e7a1dd7c4d"
+    },
+    {
+      "guid": "05e0ee42d8dbcff4c9cb5965895ea3c8",
+      "name": "CentralBrain_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "3af9695c807ffc244982bc02cb075310",
+      "normal": "34b0855bbf24ffa478def6880665274f"
+    },
+    {
+      "guid": "06be26654f0ea064bb09352214466240",
+      "name": "Muscles_Neck_External",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "fc16ecb09208dfd4f8a94fe6b1cd2234",
+      "normal": "ba54bfb7776ba9b40a09e0f8b18c8f0c"
+    },
+    {
+      "guid": "07bb7f09d89738240a28fa8ec4c8e4dc",
+      "name": "Hippocampus_Amygdala_Fornix_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "fd076359c1739ec4cade66af8e675168",
+      "normal": "09a4c94522dbbe743a80deaf1c4a27c6"
+    },
+    {
+      "guid": "09746181145a88b40a102bbd12c06917",
+      "name": "Heart",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "ba599bd6dcefec14393190fa4a34bdb1",
+      "normal": "815ece36e30fc114282f20c4b700d2a7"
+    },
+    {
+      "guid": "0a1aa542432f4d24e87ae264b5086236",
+      "name": "VenousSystem_Torso",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "dedcd293015bbf44d9deab84274c4dc9",
+      "normal": "f1ff0e6a547079b47a8442a92f8d4aa5"
+    },
+    {
+      "guid": "0bc331ebab69ebc49b4f3503e44dabcf",
+      "name": "Muscles_UpperLimb",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "101efd43c38df1944a56cd94e644d5e7",
+      "normal": "a2e7855957ed2be4785ca2677291a0aa"
+    },
+    {
+      "guid": "0d1e68f914569ed4a837a53236ec5763",
+      "name": "Muscles_Hip_Back_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "35efec0cbd86cd346a19210956e449a5",
+      "normal": "4bccfb75e6d671e4cb1356745864669d"
+    },
+    {
+      "guid": "0d8361d181879cc45aaaad00e2b55fe9",
+      "name": "Skeleton_Hand_Right",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "2aff727e8246a92468121fcdc372a5fc",
+      "normal": "247320bf8cf2cd746a2d496ae811d904"
+    },
+    {
+      "guid": "0e6106fa062d7674aa4db25d6ab7fb61",
+      "name": "Bronchi_Vessels",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "8909dfbc285a6fa4a86eb865aa8edfc1",
+      "normal": "415ab15bc818bae4190553ada3996d5a"
+    },
+    {
+      "guid": "0f88a3a41b7d3c64d85cff12c7e71115",
+      "name": "Larynx_Internal",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "61542b8f729ecf248a9c6c758caacb16",
+      "normal": "c48c6d1f7b56b164a918f945ede790b9"
+    },
+    {
+      "guid": "114d52f9e6f045b44bd9b30698be14da",
+      "name": "Diaphragm",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.19999999,
+      "bumpScale": 1.0,
+      "albedo": "0a1d9fda5e7608d408b50a0d138d4453",
+      "normal": "d20d7cd3ed06a434c987aff1d95eaa58"
+    },
+    {
+      "guid": "12c867f491b577d4ebb3d9dfcb4987c1",
+      "name": "Kidney_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "564cd085892e0014d9522276b0e6e60d",
+      "normal": "867b29646d8e63348b2a65805fd4e50c"
+    },
+    {
+      "guid": "15afbcbe6cbf1fa41b7211763678cb3a",
+      "name": "Lobe_Occipital_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "d4318298740f0154590c0c0c9284cd73",
+      "normal": "867ba05e143d21948885244339ce3467"
+    },
+    {
+      "guid": "17db93cd7058fbe4dbc735b143fd6a18",
+      "name": "Muscles_UpperArm_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "f53c4e5e05b860f46abfddeabae76c0a",
+      "normal": "d945d89a5ae4e114cbbbcc22c2b4a8e4"
+    },
+    {
+      "guid": "1b420d9576df9d849b61c0a831107ac6",
+      "name": "LymphaticSystem_Arm_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "03a1bbe3f2b66c44fb7bfe36108dc970",
+      "normal": "cf8603edfb6ee764982d3e088e640afb"
+    },
+    {
+      "guid": "1b9e47e67bd2880468d12b38f484ed61",
+      "name": "NasalCavity",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "031c67d0420692249b2b9f10214054ba",
+      "normal": "8410e805b66bee04b979aba30053ab1f"
+    },
+    {
+      "guid": "2191196a26267ba46a9cc2ba60449989",
+      "name": "Muscles_Eye_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "ff21d67a100cb6343a105ccfac7c77d8",
+      "normal": "6d8130a3d257fca468ecb58680156d0a"
+    },
+    {
+      "guid": "242035be462dbe04abcc3769ed5d9e3a",
+      "name": "Cerebellum_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "ee5fd11e56deb79428feb1fe59962083",
+      "normal": "43eee3687cf44e545899104e00b51cdc"
+    },
+    {
+      "guid": "26892225297c8114c8e92cb2138f7fce",
+      "name": "Pharynx",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "a83ace06b6273874fb5cb1639594979c",
+      "normal": "a18ac57eed53981448f8dc20e20f47bd"
+    },
+    {
+      "guid": "271d090ad25c51b44bb9ce86d697dd03",
+      "name": "ArterialSystem_Head",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "e69f7c6f95131e449917e4d10db3b87c",
+      "normal": "ad02395a20815194785937d517c4fac7"
+    },
+    {
+      "guid": "28bdeaa2c815948458a288e9569f1e64",
+      "name": "NervousSystem_Neck",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "e06b33d831cf6984c8532784c8d94762",
+      "normal": "70b3e0ca104f552499abea0a791552e1"
+    },
+    {
+      "guid": "2aa59ab1db7302548ab84388a146a797",
+      "name": "Lung_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "24d4075f749c3df4ca6fe070aa6a70b6",
+      "normal": "a5ad5c5fda25ac0478390b82c1c11e30"
+    },
+    {
+      "guid": "2aad30ad8bf913348b780334e0c56d01",
+      "name": "Liver",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "8f4a5318cbd0cf54f95ba45b7fa47848",
+      "normal": "5e9cca501a57ca7459c357c491b44ec5"
+    },
+    {
+      "guid": "2b520bf0ae48315429396b6944c3fc74",
+      "name": "Body",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "7316322a42a52e14da79fe2abdf5b31a",
+      "normal": "f1743ad75f0fa6247b3393bea16c7acf"
+    },
+    {
+      "guid": "2f1d84478acc167488d9136c169344e1",
+      "name": "VenousSystem_Arm_Left",
+      "color": {
+        "r": 0.25983334,
+        "g": 0.25983334,
+        "b": 0.75938094,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "458289f5bed0f5f4988a5cc173eafc85",
+      "normal": "ae2b77f168c0a4a4c8027419ea23bb0f"
+    },
+    {
+      "guid": "2f2919a265e0d6b4db73dd47501660af",
+      "name": "Muscles_PostAbdominalWall",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "54c4b1482832ebc429725e15671ab054",
+      "normal": "88c77d61f77bfb046b906af5edb9dafa"
+    },
+    {
+      "guid": "2f38a0369d666d84bbdc013e084b0fdd",
+      "name": "Stomach",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.55,
+      "bumpScale": 1.0,
+      "albedo": "91e70563809f95d43b652960e42f5052",
+      "normal": "d164962fdf1bde1498c37842f2aa7a7c"
+    },
+    {
+      "guid": "30c391de726371b488c7737737a75f31",
+      "name": "Glands_Mandibular_Lingual",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "f5941e166523de044a4b5b4114d0e260",
+      "normal": "4fdb6326588e36340afe71ec15c15664"
+    },
+    {
+      "guid": "3109ef4a3b639114ea613e36e435039c",
+      "name": "NervousSystem_Leg_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "f7bf24d75acfe9e468907ba78923c53c",
+      "normal": "9376fae4eecc1e0409800371c81ebd7b"
+    },
+    {
+      "guid": "315aae16749d8d444989e5a5c8b39f4f",
+      "name": "Thymus",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "d10c39721968ad8488342616ff4d9be5",
+      "normal": "5c478b2ce97287644b7337aac656548f"
+    },
+    {
+      "guid": "35669424592501345b94878f8e411786",
+      "name": "Lobe_Frontal_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "f78d993dd57e83944b6ace54011f8388",
+      "normal": "bf6aa59d554b2fe4fa928f301e1a6457"
+    },
+    {
+      "guid": "3637f1849f685a1479c592eed9aaa923",
+      "name": "LymphaticSystem_Troso",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "854aec16df3b47a4eb48757baccf1714",
+      "normal": "6c073d50ac2f2e448bb168040efd050b"
+    },
+    {
+      "guid": "38751e3db9a9d434d9b7be131e6643d9",
+      "name": "Skeleton_Pelvis",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "f613ae75a65dbb843a78753bae0a1ed4",
+      "normal": "e885d8cdbf0cf4942b933df7bea73147"
+    },
+    {
+      "guid": "3b4904bef5ce2374a82ab8ea644e563f",
+      "name": "Lung_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 0.3,
+      "albedo": "6742503db6aa70f4fb0e1180c860777c",
+      "normal": "76989bb480e54dd4f93ba2b7a320c8af"
+    },
+    {
+      "guid": "426864c316f68284892044808ffb84bd",
+      "name": "Internal_Genetalia_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "6c888df62298edc43af348193fef96b6",
+      "normal": "e329c0fc4c390e544aaa616ef4f68378"
+    },
+    {
+      "guid": "437fbb451cc410541b43afcfe457c2de",
+      "name": "LymphaticSystem_Head",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "835b1965dd12c5440843a120245f13d1",
+      "normal": "1c4fe46d908ff0d43a22d7088cdae889"
+    },
+    {
+      "guid": "4387335826995674e85ea72e565b8eb7",
+      "name": "Skeleton_Rib_Cage",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "b0dff395f959fb3439bf0f5f098a5771",
+      "normal": "54df97a720399cd47b5bb6895d190b05"
+    },
+    {
+      "guid": "43ca0246d610a4e4bbe60de8ee698b9f",
+      "name": "Muscles_Shin_Foot_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "3665d02f53d07b84795a58440a860f4c",
+      "normal": "a790720f253120c4896efcdb9f21d94f"
+    },
+    {
+      "guid": "44f55d8e0b6220f42be3b3fe9856c0b7",
+      "name": "Esophagus_Head",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "364f335095b4154459fa48ecad21716c",
+      "normal": "5d517b59d71dade4aa0b1cdaa891d790"
+    },
+    {
+      "guid": "4f6b482909e2c7c4bbb7c53472402641",
+      "name": "LymphaticNodes_Arm_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "9b369a431194cb94a9423203e529a98c",
+      "normal": "bf6ba4f724ede3b42855646d6c4a1b7f"
+    },
+    {
+      "guid": "5322fe843cfa999458543336ea6d0cf1",
+      "name": "Muscles_Forearm_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "1f1dad1154d89524d9cef21e81c2f5dc",
+      "normal": "d73e3d468b8273e4c9690822fdebf15d"
+    },
+    {
+      "guid": "5400146366e86ed4e899010b6bab345f",
+      "name": "VenousSystem_Leg_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "8614edcd07741d543bdde7b754d45861",
+      "normal": "eeae95cb1c832a645a2a4b114e80c961"
+    },
+    {
+      "guid": "5433a17254c8cca438260230ab53fadc",
+      "name": "OralCavity",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.55,
+      "bumpScale": 1.0,
+      "albedo": "dd47c0e5ec5365b4d821b508339a9f7b",
+      "normal": "a587e90e1190cb440b0f373285914057"
+    },
+    {
+      "guid": "54773ef77bc6bd14ba07f2e8658dd9a4",
+      "name": "Skeleton_Arm_Left",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "c53322decd021ad46a8aa8a4b0376ec5",
+      "normal": "6aef41ff0d3bb404db8dcb09bbfdd785"
+    },
+    {
+      "guid": "5d0da08651416804fb4168f867abcf5c",
+      "name": "Heart_Vessels",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "43f287eb767340a4784f74808d3b2466",
+      "normal": "491d9f3af27f2584c9aba6b0afe203ad"
+    },
+    {
+      "guid": "5dacf45a2c8c9704385ab80519556555",
+      "name": "Bladder",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "350c534ea8db8ca4b85a2119925659bc",
+      "normal": "de3bd82f6b7054c4898a3f7713651932"
+    },
+    {
+      "guid": "5e602050903e0214997f8b6ae13cd8b9",
+      "name": "ArterialSystem_Arm_Left",
+      "color": {
+        "r": 0.25983334,
+        "g": 0.25983334,
+        "b": 0.75938094,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "919f6054d1c4a32488970f348cb0c0a9",
+      "normal": "84b5d9f40ba6dd043acec6f80a90774b"
+    },
+    {
+      "guid": "64bdbed52d941de41b19b183c9504f7a",
+      "name": "Internal_Genetalia_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "76b141d3d00553e46999a9627ca1a9ee",
+      "normal": "10ba5552b1c87c947a58982c254a81f5"
+    },
+    {
+      "guid": "66e8e59ec9372c64c9bc4c1ecdc28517",
+      "name": "BasalGanglia_Putamen_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "242bc7a4c4aca4443a6e1e7d58d51070",
+      "normal": "1be4cffac37fce94eadde0c55884b269"
+    },
+    {
+      "guid": "6708ec42ee9393244939568456c75e5c",
+      "name": "Muscles_UpperArm_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "3cb9917d8da3fc242b8c095625e034a4",
+      "normal": "1b08871223ab1e447898faf29725e03c"
+    },
+    {
+      "guid": "6b2dd036ac9081f4c9b9060b0cb7921d",
+      "name": "Small_Inestines",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.55,
+      "bumpScale": 1.0,
+      "albedo": "ccedda6f54d782843b4a7bffb9452706",
+      "normal": "1d25dd02e7a5e474c988ec5e5517ecbf"
+    },
+    {
+      "guid": "6b30c1afae44ff340b5b1e8bff0aad23",
+      "name": "VenousSystem_Arm_Right",
+      "color": {
+        "r": 0.25983334,
+        "g": 0.25983334,
+        "b": 0.75938094,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "67d9c5a06b3fcfe48bcca76d2b51dd64",
+      "normal": "8e6d06141287814449440b2f97204f60"
+    },
+    {
+      "guid": "6c0806d869d22f546a8c521db2082c62",
+      "name": "Skeleton_Skull",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "e4f551c6847dcc64ca66d3007fd89099",
+      "normal": "e9b44882bdd755b4a9727ecee8048312"
+    },
+    {
+      "guid": "6c5534a73d706594d851c69dccc79410",
+      "name": "Brainstem_Thalamus_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "9011ad504f3380747aaa9bcd05d33d4a",
+      "normal": "fb9f0e60abb434241a7350a8a0e83234"
+    },
+    {
+      "guid": "6d45c90923f72cd4897ae0c4a9bd8bfc",
+      "name": "Muscles_Abdomen_External",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "24e17b5b46cdc8f4fa80e09f761a9984",
+      "normal": "26bf019f5a25ec845ab210c344f3b74e"
+    },
+    {
+      "guid": "76645e37281cfb44dac0245dcfb52d57",
+      "name": "Lobe_Frontal_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "05597bc945a8e584b97f0f31c4313b08",
+      "normal": "33602f82fa134894da4984bf71da5016"
+    },
+    {
+      "guid": "776fec473b4a1a747b7deddfedeb1731",
+      "name": "Lobe_Insular_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "7d4fe608f99ee314793d7412df7f40c0",
+      "normal": "a8ced821e861bc54bbad219d01b90b78"
+    },
+    {
+      "guid": "780e53a324a70d84b8e00d6756aa1b8c",
+      "name": "Muscles_Hip_Front_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "4ee2cf93c5e6a654ab2362779aa0097a",
+      "normal": "6e68ca0bf3de10543a1e26ebd35d1963"
+    },
+    {
+      "guid": "79cf1e41bd9f10d429335e2e2611b7ef",
+      "name": "Muscles_Craniofacial",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "c64e1908dd863e94484466b45d0811bb",
+      "normal": "275b3071dcea8ea4089d9adbc5a83d30"
+    },
+    {
+      "guid": "79f39879e346ba5478972419a45934f5",
+      "name": "Muscles_Calf_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "5d7de9d8dd3522b46855c280c3b01b00",
+      "normal": "d1eaa6fe943eaa14ab1f77fad4d0f6ed"
+    },
+    {
+      "guid": "7dc2e92a2a9b8a64ca231b8dd74a4a7d",
+      "name": "Optic_OlfactoryTract_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "0acbbbca4ec010141b6577ec6c2aa61d",
+      "normal": "d9c60ccb75153c14198f4901066b80e9"
+    },
+    {
+      "guid": "7f85ee3f435a1584eb1fb68215ddd1ee",
+      "name": "LymphaticNodes_Torso",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "71334ca463d57c9488aff75568789fd4",
+      "normal": "e4dfb3b6c361ee94a91d5d8320784e96"
+    },
+    {
+      "guid": "8131779dce966aa468af3b255730b967",
+      "name": "Muscles_Back_Internal",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "7ddbe980c29b5e848b341647d8b5b8a1",
+      "normal": "6453cfee92280254294b4cb70ef44acf"
+    },
+    {
+      "guid": "825076a6d9b1b624d8ea982194a3e1b7",
+      "name": "Ventricles_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "0930d58ffc7f5b348902022ef2192e63",
+      "normal": "f299443a5f28eb74ba1984aa045dca6f"
+    },
+    {
+      "guid": "82c5bd83f5bd5454d892fb57e0849e75",
+      "name": "Brainstem_Thalamus_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "3307158fb6d277e499ced38d4a92e70b",
+      "normal": "d58597b0a050daa459ddc06b0bb25a1a"
+    },
+    {
+      "guid": "8360d0bc85f15ef4685fe7a150b17a60",
+      "name": "External_Genetalia",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "81a19af099144f34bb380b00e06e6d8f",
+      "normal": "4073594b63723884aaf2b15d00890542"
+    },
+    {
+      "guid": "8963dcf043fc6b944af028e341dee101",
+      "name": "Pancreas",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 0.3,
+      "albedo": "4a50f73d833039245b28a1ee14aa0770",
+      "normal": "58c1117a183272545811178867fec5a7"
+    },
+    {
+      "guid": "8d9d0eda8ac062f42a63b1466d153f70",
+      "name": "BasalGanglia_Putamen_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "00b877009fbaee8419851a20e5b54278",
+      "normal": "a3e6aa4d9caa2a545938f6f8f50db1ad"
+    },
+    {
+      "guid": "8f067d8261fd3b044a87d919dee7fec7",
+      "name": "NervousSystem_Torso",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "3d6af0fcd766c944d904aa81cd4c3974",
+      "normal": "1fd1f8ce53006f5468176066e47c08de"
+    },
+    {
+      "guid": "8ff3103ab3166854aa5ca81d59e35649",
+      "name": "Trachea",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "01bcb3b3e1f469a448804b273f1446dc",
+      "normal": "c9ecf92f16bfa714d869c9ae3712226c"
+    },
+    {
+      "guid": "905a5a679d3df5245b3a0fd881cab08f",
+      "name": "Skeleton_Foot_Left",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "3132855f0712aee47ab268f623a5f343",
+      "normal": "0e4d55e26bd6d0f42a190065f89a947a"
+    },
+    {
+      "guid": "9193066f645453849afd992c77a0501c",
+      "name": "ArterialSystem_Leg_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "7cedde4a60dc609459cbe62e66f9f157",
+      "normal": "2678b06c8bb2e334b917a88c74875d40"
+    },
+    {
+      "guid": "931d454f1f0c05046a21662d22c6590f",
+      "name": "VenousSystem_Head",
+      "color": {
+        "r": 0.25983334,
+        "g": 0.25983334,
+        "b": 0.75938094,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "c5fd4c6e608cfb94baa4ff7159059d72",
+      "normal": "d33f5a8cb3f23ae42abd520ef9641280"
+    },
+    {
+      "guid": "96551780cb044894383188cdbbcafa08",
+      "name": "SpinalCord_Neck",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "80ad57eef572e0541bacc1e2a614820c",
+      "normal": "e806939f340cf9a4d9e642b95c6d992e"
+    },
+    {
+      "guid": "997966c1d2fa7ac458f3f7a0b3357e55",
+      "name": "NervousSystem_Arm_Left",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "1abe1dd698399c446afb0f9c3ad05588",
+      "normal": "3e0697dbd1f3ea74b883d4aad26e5ad7"
+    },
+    {
+      "guid": "99b014cf292affd4ca146eb8a4d35097",
+      "name": "Lobe_Temporal_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "43fc0cd625e6d3548adba3438177dadb",
+      "normal": "6d899154b50b85e4cbf9edea5d90db79"
+    },
+    {
+      "guid": "9a1e0cc5793c56542aff962beb559ffa",
+      "name": "Skeleton_Leg_Right",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "cef832661cdb09b459353d23f23d5275",
+      "normal": "32d3f6a6aaf071b4081f6e85b5f36c5d"
+    },
+    {
+      "guid": "9b30adf3a64f69140a7a55453c4cd88c",
+      "name": "Gallbladder",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "79fcecb5f4c4a0e4aaa7819e7bee6dc8",
+      "normal": "a63b17da88b031e4bb500f2ec645fdbf"
+    },
+    {
+      "guid": "9cc3b3db4484adf42aa836d5b5ca6013",
+      "name": "Intervertebral_Discs",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "61a2810f0e88a8b448a6b0241ba145ac",
+      "normal": "521206d9bf2ecca4dab5370de51a89e8"
+    },
+    {
+      "guid": "9e13f4015821d1b4b8376b478b87fbc7",
+      "name": "Muscles_Forearm_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "13524e4570112e6479ec75a639783b8b",
+      "normal": "d8673bb935be41a4682b09370433a9d5"
+    },
+    {
+      "guid": "a1fa9ba59fa4099449741169fe55aa30",
+      "name": "ArterialSystem_Arm_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "9fea5ef183d7a8f4fa51aa43e9c1b997",
+      "normal": "cf2fc7499da78e847a668983a00bc055"
+    },
+    {
+      "guid": "a3e7309a742b690459d2bbc45c43f797",
+      "name": "Lobe_Limbic_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "e3dd3b0898f3059459839c5736477c83",
+      "normal": "9ca2d577f8320014cad509821e581133"
+    },
+    {
+      "guid": "a725f8693e9e1ac46b59663f9230d156",
+      "name": "LymphaticSystem_Arm_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "6cea5a9444f1a2642af5e69bb64f2753",
+      "normal": "3246677e3b435754da0db9f38698286e"
+    },
+    {
+      "guid": "a90a4961ed11b6a4cb8577090db3b512",
+      "name": "Colon",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.55,
+      "bumpScale": 1.0,
+      "albedo": "ef2572d5e3d8cec4a8b2dd8f1b02e7ba",
+      "normal": "0b6ca4ebaeeec644181f50d385cc2063"
+    },
+    {
+      "guid": "a9efcbc550918574592bbcb37270a012",
+      "name": "Muscles_Abdomen_Internal",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "3313f7cb51aba3c4eb28d3c79dd4f051",
+      "normal": "15736498006db3f4f842b3fea82e414c"
+    },
+    {
+      "guid": "aa0efe7d6e3cb484996f27188e5c0538",
+      "name": "Teeth_Bottom",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "ebb67c36cff1fe14aa45e99e3d2d18fe",
+      "normal": "c90368640357e65439ade10d84603ebf"
+    },
+    {
+      "guid": "ab7cc3b8f37ca8f4b9eb0d01c5e64654",
+      "name": "Kidney_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "6b304f20a577f574baad177a4ce26d1c",
+      "normal": "c77786206b7784840bbf6a8867add16c"
+    },
+    {
+      "guid": "adb93ac57326d8447865295f10607c13",
+      "name": "Skeleton_Arm_Right",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "9863527aa419c5d4783f86c254404a4f",
+      "normal": "aabbb46de19284a47a59562354212abd"
+    },
+    {
+      "guid": "b06469227c5adcb43bad8d8e2d26e011",
+      "name": "Optic_OlfactoryTract_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "c2dfce8510e4dc048a85297cba8c1c86",
+      "normal": "4641028e176e90f4f8b0a1343c93da9b"
+    },
+    {
+      "guid": "b344550c6693df94aa8cb99383262240",
+      "name": "NervousSystem_Arm_Right",
+      "color": {
+        "r": 0.62221795,
+        "g": 0.5183006,
+        "b": 0.0849447,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "e7358cc6f694c9f4eb4b7cd75a6137d0",
+      "normal": "7e25c3012e11b2a48a7560f5f5e100a3"
+    },
+    {
+      "guid": "b52b85cb608af774dac6f78aefe05d7a",
+      "name": "Larynx_External",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "25c39caae1833da4797462ec0a6e84fd",
+      "normal": "01929224a43c0234e859a48038f8ccf8"
+    },
+    {
+      "guid": "bd821d7235b764d4192eb5f379e4ffdf",
+      "name": "LymphaticNodes_Leg_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "2a889d8971418674992a08ceca572cd8",
+      "normal": "9582f6c88fd9aac4a9f35a79d495ac1e"
+    },
+    {
+      "guid": "be73f7669162f8f47a33f5ab68364ecd",
+      "name": "Muscles_Calf_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "b5a5c59dc20c2ff4d8a2fb64cf5c98d5",
+      "normal": "abfa7101d78ad7b488dc09ad660ff678"
+    },
+    {
+      "guid": "bf47fd56ef0f98242ab405ae8e684a02",
+      "name": "Hippocampus_Amygdala_Fornix_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "d211e34aa0a4382418fba1e8313dbdb6",
+      "normal": "5ae0a81bd261917419cd974ff62f1e37"
+    },
+    {
+      "guid": "bf9c2fddf869bdc4580e068cc4311eea",
+      "name": "Cremaster",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.19999999,
+      "bumpScale": 1.0,
+      "albedo": "2e859cdb4b538da479ef544c4cc6079d",
+      "normal": "e14f643146bff0242b68abccf07359c2"
+    },
+    {
+      "guid": "c4b58ddda06ac7b44b2fa8747e0ad1b5",
+      "name": "LymphaticSystem_Leg_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "7ba785d944acee1448da244d09b203eb",
+      "normal": "924482044508b1f4383eb554248e19cb"
+    },
+    {
+      "guid": "c99b9414cb905404fb484c8a9e86e2e9",
+      "name": "Cerebellum_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "952f4b4c8b8eb2240ac654f167d17a71",
+      "normal": "c4f520888dae08c4bbecc37aed20ae37"
+    },
+    {
+      "guid": "ce90539354e1b7748ae9e58e2aa3c1bf",
+      "name": "LymphaticNodes_Leg_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "d24a718d11eab904b9b47e6ff6d810ad",
+      "normal": "095e08d1e5359904084652531aa19409"
+    },
+    {
+      "guid": "cfcb5e3543ebc5e468c7e91b3163f3de",
+      "name": "LymphaticSystem_Leg_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "85e13ca32a77d9141822778c8e2253bb",
+      "normal": "a9c5778d215eace468f1a94be1abea50"
+    },
+    {
+      "guid": "d18a1742357b601429af1ef033cce53e",
+      "name": "Lobe_Limbic_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "bb4b3a5e689de6540856b3963dc7a25b",
+      "normal": "1eb794eb0a86fc24fa4f26cc11d79039"
+    },
+    {
+      "guid": "d1fe54b04eb9a7847a18212d319568db",
+      "name": "Skeleton_Foot_Right",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "1ad00078319470c499f55203524e9adc",
+      "normal": "76ef4228d8a4bde4699e01e10652960e"
+    },
+    {
+      "guid": "d4b20c2351aad4c46ad04557486cb82a",
+      "name": "LymphaticNodes_Arm_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "dd1ee247c7cbbbc44908041e3398cb47",
+      "normal": "0cfb06411c6d6ab42bf52579ecc63d4f"
+    },
+    {
+      "guid": "d6526a16316d5cd49b801d7e14a0058b",
+      "name": "Muscles_Thorax",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "943bc7c9342354d4089c7ad683f08d6a",
+      "normal": "8b50f92e3c61ff64c9ec239fd688e692"
+    },
+    {
+      "guid": "d65b6d921e3b45544be8d3eb055578f6",
+      "name": "Glands_Parotid",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "27020e0469316e547a0200453ed90cae",
+      "normal": "c6d26b4c2b0bf1a4885d14fabd88c58c"
+    },
+    {
+      "guid": "d70e4384421fd6e41987b9aa34b15188",
+      "name": "Esophagus_Torso",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "f775c952f70d1774c944f2691e9ea50f",
+      "normal": "c965aa42502bcc947b73769c4c2ceb57"
+    },
+    {
+      "guid": "d90209c2b3d95d94f91f8ef5dc386d6f",
+      "name": "Urinary_Ureter_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "74c818d890960854cb9511ac54c4e894",
+      "normal": "d88d93ca6d8720d47b3591f18ffb33fe"
+    },
+    {
+      "guid": "db0c1cabd68ddb2449fcbad0b2f2291e",
+      "name": "Skeleton_Leg_Left",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "9916202903cf57844ac179fe14b4275e",
+      "normal": "415aa26882378a64984a5dbc239e9ff5"
+    },
+    {
+      "guid": "dca6ba4864adf9f4098adddce852e89a",
+      "name": "Urinary_Ureter_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "f169fa1bc85dad34e864343ae178a02c",
+      "normal": "14c5cd420eb71a84c82a845d47f092bb"
+    },
+    {
+      "guid": "dd26ed60e43bc7d469e2be10f341a385",
+      "name": "Heart_Vessels_Big",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "60ddfcd079a910e4c9215d511decbcbf",
+      "normal": "250dc8e225f8bc94381c5464dd2ff214"
+    },
+    {
+      "guid": "de814964dfb4953459891c331cd4ccd9",
+      "name": "Spleen",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "a73ef2386e0020c4fb0a18c15c798c87",
+      "normal": "5d8e6fb64416d0d4ba5c84d41b817cc2"
+    },
+    {
+      "guid": "df7c1de6de91d604894f07faaae023db",
+      "name": "Lobe_Insular_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "9f35b5c1072beba428caffbe79c19534",
+      "normal": "eaebc02b973b5d0458fce85dbab1b060"
+    },
+    {
+      "guid": "dfba6f50ba09e264bbefa1c521f0c6e5",
+      "name": "NervousSystem_Leg_Left",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "240914ea554909445bc7a4f561865f69",
+      "normal": "5d104fb331337404e946419267b87eaf"
+    },
+    {
+      "guid": "e0983e094dda06e469d0abc94ed2d4cb",
+      "name": "Bile_Duct",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "a216e45a43d8e5f4db89ecdca1555a17",
+      "normal": "dc341e6cd1f511343aaf431c56d1aad2"
+    },
+    {
+      "guid": "e2b84076b11c85a40bbbdc73513f684f",
+      "name": "Bronchi",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.55,
+      "bumpScale": 1.0,
+      "albedo": "861d9cacd494e9f44a002a761f23ce52",
+      "normal": "2de80a034bd95df4aa88b63e8ba5978b"
+    },
+    {
+      "guid": "e4ac4e1b5b1e7ed409f886fcc70236b5",
+      "name": "Teeth_Top",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "49283d3b19efea64eac789a12b68664a",
+      "normal": "93cc3b7170dd947418b31b4412fe24a0"
+    },
+    {
+      "guid": "e4d5e34364828cc428260c43a4eb7f48",
+      "name": "CentralBrain_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "14fae172502823d4ea9428e97178c800",
+      "normal": "3fd7b31fcb366054686423fb118bb3a7"
+    },
+    {
+      "guid": "e5c96f522b4e5664082fee3701af8337",
+      "name": "VenousSystem_Leg_Right",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "d209d25d84fc46545ab19e7f37ddae13",
+      "normal": "176cec0ff453c1c438ee19300a95f05f"
+    },
+    {
+      "guid": "e700fb33432e2ee4facb9b345b5ab129",
+      "name": "Muscles_Floor",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "33bcf7ce78b35ce4193faab200027621",
+      "normal": "a61fa3e74b7fd3d4dbaaae754b787545"
+    },
+    {
+      "guid": "e8a4d54275eb0d844ad3654246b49903",
+      "name": "Muscles_Neck_Internal",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "22d82b5fced87b0438bafecac2067068",
+      "normal": "f160d65f2ee2a8a4b9347f77bb59d57e"
+    },
+    {
+      "guid": "ec45ff550dcb2dd41a55365da4255f99",
+      "name": "Ventricles_Right",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 0.3,
+      "albedo": "15fced8e49f3be24a9ad824d3b68cefa",
+      "normal": "b74ccb8abe8677044abcffb47d0b81d0"
+    },
+    {
+      "guid": "eee61e111aa7d1f448f75a6e9d1899fc",
+      "name": "Muscles_Shin_Foot_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.14142135,
+      "bumpScale": 1.0,
+      "albedo": "b376a4845ee5efd43b567b5e7be8e1da",
+      "normal": "eceeee0e6cfe41e488f9b57c0f55e7d9"
+    },
+    {
+      "guid": "efee4651c478dbe42987622ae349ab48",
+      "name": "Muscles_Hip_Back_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "e0a001171e6b16140b1836770bca516e",
+      "normal": "6a3ca347f3bd81a488b0c132636539f1"
+    },
+    {
+      "guid": "f35dc8c4dfeaf8b469f12a4a7bb7d1b3",
+      "name": "LymphaticNodes_Head",
+      "color": {
+        "r": 0.1808585,
+        "g": 0.4116451,
+        "b": 0.15000519,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "85effefa41b06ba4196baaa24f39b1af",
+      "normal": "b08106bc0286d0c4081871db5e99bd9c"
+    },
+    {
+      "guid": "f365577f35b92d74094e50f38694a3a6",
+      "name": "Muscles_Back_External",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "bbc69714ae905554cbb353f0990c53cb",
+      "normal": "93a9049a246802643b1f3c7b7248662c"
+    },
+    {
+      "guid": "f541f2cc129f04e4390d634c913ca5ec",
+      "name": "Muscles_Eye_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "25920d768ba23de47aec15b63e311379",
+      "normal": "c7d5a78f38ce6cd439fab01ded74ce47"
+    },
+    {
+      "guid": "f8b1b0cfb870edf4a81c66f107a4cfef",
+      "name": "SpinalCord_Torso",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "2510b3009b2f9354e8b07bd45b02e114",
+      "normal": "71c719c24d97fee44a406896d1227890"
+    },
+    {
+      "guid": "f9bedadf9bdec594690ba67467cd9952",
+      "name": "Skeleton_Hand_Left",
+      "color": {
+        "r": 0.7353569,
+        "g": 0.7353569,
+        "b": 0.7353569,
+        "a": 1.0
+      },
+      "smoothness": 0.5656854,
+      "bumpScale": 1.0,
+      "albedo": "699e529888b1f954696089dce5ad486c",
+      "normal": "cb6a74fa250871e43897836163f007c2"
+    },
+    {
+      "guid": "fa9436b020e77344cad95f26de553271",
+      "name": "Lobe_Temporal_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "1278949e644e0084591fedc0b5909253",
+      "normal": "98909a0ae85c4324184bf015bcef3043"
+    },
+    {
+      "guid": "fde9f52d8d220bc4ea697b22f8752181",
+      "name": "Lobe_Parietal_Left",
+      "color": {
+        "r": 0.79058963,
+        "g": 0.79058963,
+        "b": 0.79058963,
+        "a": 1.0
+      },
+      "smoothness": 0.2828427,
+      "bumpScale": 1.0,
+      "albedo": "dafb93b2f8d1cde47b1a2d9bcdfa383e",
+      "normal": "e7dd3891ccf4ffd46b4b2399f20d9061"
+    }
+  ],
+  "textures": [
+    {
+      "guid": "516cc357559f9ca4aa0d93c446b18714",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Prostate_Uretra_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "bbc38cdbd0eeffb418a25208970044dc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Prostate_Uretra_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3b13abfd271f4a9458762c7a3c65c2cd",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Parietal_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "ba206cfc9faf9c94ea41f13a27700bd0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Parietal_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ef982a5094ed915448db18d44993f596",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Occipital_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "8360c007659f01049a8f55776e739f5c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Occipital_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "a2cf6e85b62a04c43bc4dda7c6773611",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "fde2f6feba4f62743bdb19d56bf939d4",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "c6020f3d97c0554429dfe6eafa7cd5d3",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "eaaf901172bac0647bcdc4a5b4345ae0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "63de3512e8c4391408d49d8697b69f46",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Spine_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "fd5975cc12cc4ca4eaadfd0aeb35c600",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Spine_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "382f058f90a11fa47b23fc1687e29d1a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "657ae2728a30a3f4f9564d5d5d159bca",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "bb24d9b90c4f8674cbcd76558bc6ecc1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Front_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c8c117a3ec237664d94113e7a1dd7c4d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Front_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3af9695c807ffc244982bc02cb075310",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/CentralBrain_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "34b0855bbf24ffa478def6880665274f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/CentralBrain_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "fc16ecb09208dfd4f8a94fe6b1cd2234",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Neck_External_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "ba54bfb7776ba9b40a09e0f8b18c8f0c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Neck_External_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "fd076359c1739ec4cade66af8e675168",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Hippocampus_Amygdala_Fornix_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "09a4c94522dbbe743a80deaf1c4a27c6",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Hippocampus_Amygdala_Fornix_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ba599bd6dcefec14393190fa4a34bdb1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "815ece36e30fc114282f20c4b700d2a7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "dedcd293015bbf44d9deab84274c4dc9",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "f1ff0e6a547079b47a8442a92f8d4aa5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "101efd43c38df1944a56cd94e644d5e7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperLimb_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a2e7855957ed2be4785ca2677291a0aa",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperLimb_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "35efec0cbd86cd346a19210956e449a5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Back_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "4bccfb75e6d671e4cb1356745864669d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Back_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "2aff727e8246a92468121fcdc372a5fc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Hand_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "247320bf8cf2cd746a2d496ae811d904",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Hand_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "8909dfbc285a6fa4a86eb865aa8edfc1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bronchi_Vessels_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "415ab15bc818bae4190553ada3996d5a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bronchi_Vessels_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "61542b8f729ecf248a9c6c758caacb16",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Larynx_Internal_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c48c6d1f7b56b164a918f945ede790b9",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Larynx_Internal_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "0a1d9fda5e7608d408b50a0d138d4453",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Diaphragm_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d20d7cd3ed06a434c987aff1d95eaa58",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Diaphragm_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "564cd085892e0014d9522276b0e6e60d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Kidney_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "867b29646d8e63348b2a65805fd4e50c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Kidney_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "d4318298740f0154590c0c0c9284cd73",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Occipital_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "867ba05e143d21948885244339ce3467",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Occipital_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f53c4e5e05b860f46abfddeabae76c0a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperArm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d945d89a5ae4e114cbbbcc22c2b4a8e4",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperArm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "03a1bbe3f2b66c44fb7bfe36108dc970",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "cf8603edfb6ee764982d3e088e640afb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "031c67d0420692249b2b9f10214054ba",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/NasalCavity_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "8410e805b66bee04b979aba30053ab1f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/NasalCavity_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ff21d67a100cb6343a105ccfac7c77d8",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Eye_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6d8130a3d257fca468ecb58680156d0a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Eye_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ee5fd11e56deb79428feb1fe59962083",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cerebellum_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "43eee3687cf44e545899104e00b51cdc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cerebellum_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "a83ace06b6273874fb5cb1639594979c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Pharynx_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a18ac57eed53981448f8dc20e20f47bd",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Pharynx_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e69f7c6f95131e449917e4d10db3b87c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "ad02395a20815194785937d517c4fac7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e06b33d831cf6984c8532784c8d94762",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Neck_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "70b3e0ca104f552499abea0a791552e1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Neck_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "24d4075f749c3df4ca6fe070aa6a70b6",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Lung_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a5ad5c5fda25ac0478390b82c1c11e30",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Lung_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "8f4a5318cbd0cf54f95ba45b7fa47848",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Liver_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5e9cca501a57ca7459c357c491b44ec5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Liver_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "7316322a42a52e14da79fe2abdf5b31a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Body_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "f1743ad75f0fa6247b3393bea16c7acf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Body_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "458289f5bed0f5f4988a5cc173eafc85",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "ae2b77f168c0a4a4c8027419ea23bb0f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "54c4b1482832ebc429725e15671ab054",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_PostAbdominalWall_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "88c77d61f77bfb046b906af5edb9dafa",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_PostAbdominalWall_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "91e70563809f95d43b652960e42f5052",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Stomach_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d164962fdf1bde1498c37842f2aa7a7c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Stomach_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f5941e166523de044a4b5b4114d0e260",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Glands_Mandibular_Lingual_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "4fdb6326588e36340afe71ec15c15664",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Glands_Mandibular_Lingual_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f7bf24d75acfe9e468907ba78923c53c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "9376fae4eecc1e0409800371c81ebd7b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "d10c39721968ad8488342616ff4d9be5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Thymus_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5c478b2ce97287644b7337aac656548f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Thymus_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f78d993dd57e83944b6ace54011f8388",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Frontal_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "bf6aa59d554b2fe4fa928f301e1a6457",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Frontal_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "854aec16df3b47a4eb48757baccf1714",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Troso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6c073d50ac2f2e448bb168040efd050b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Troso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f613ae75a65dbb843a78753bae0a1ed4",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Pelvis_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e885d8cdbf0cf4942b933df7bea73147",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Pelvis_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "6742503db6aa70f4fb0e1180c860777c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Lung_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "76989bb480e54dd4f93ba2b7a320c8af",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Lung_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "6c888df62298edc43af348193fef96b6",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Internal_Genetalia_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e329c0fc4c390e544aaa616ef4f68378",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Internal_Genetalia_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "835b1965dd12c5440843a120245f13d1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1c4fe46d908ff0d43a22d7088cdae889",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "b0dff395f959fb3439bf0f5f098a5771",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Rib_Cage_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "54df97a720399cd47b5bb6895d190b05",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Rib_Cage_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3665d02f53d07b84795a58440a860f4c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Shin_Foot_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a790720f253120c4896efcdb9f21d94f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Shin_Foot_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "364f335095b4154459fa48ecad21716c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Esophagus_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5d517b59d71dade4aa0b1cdaa891d790",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Esophagus_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9b369a431194cb94a9423203e529a98c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "bf6ba4f724ede3b42855646d6c4a1b7f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "1f1dad1154d89524d9cef21e81c2f5dc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Forearm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d73e3d468b8273e4c9690822fdebf15d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Forearm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "8614edcd07741d543bdde7b754d45861",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "eeae95cb1c832a645a2a4b114e80c961",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "dd47c0e5ec5365b4d821b508339a9f7b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/OralCavity_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a587e90e1190cb440b0f373285914057",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/OralCavity_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "c53322decd021ad46a8aa8a4b0376ec5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6aef41ff0d3bb404db8dcb09bbfdd785",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "43f287eb767340a4784f74808d3b2466",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Vessels_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "491d9f3af27f2584c9aba6b0afe203ad",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Vessels_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "350c534ea8db8ca4b85a2119925659bc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bladder_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "de3bd82f6b7054c4898a3f7713651932",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bladder_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "919f6054d1c4a32488970f348cb0c0a9",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "84b5d9f40ba6dd043acec6f80a90774b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "76b141d3d00553e46999a9627ca1a9ee",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Internal_Genetalia_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "10ba5552b1c87c947a58982c254a81f5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Internal_Genetalia_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "242bc7a4c4aca4443a6e1e7d58d51070",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/BasalGanglia_Putamen_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1be4cffac37fce94eadde0c55884b269",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/BasalGanglia_Putamen_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3cb9917d8da3fc242b8c095625e034a4",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperArm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1b08871223ab1e447898faf29725e03c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_UpperArm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ccedda6f54d782843b4a7bffb9452706",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Small_Inestines_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1d25dd02e7a5e474c988ec5e5517ecbf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Small_Inestines_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "67d9c5a06b3fcfe48bcca76d2b51dd64",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "8e6d06141287814449440b2f97204f60",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e4f551c6847dcc64ca66d3007fd89099",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Skull_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e9b44882bdd755b4a9727ecee8048312",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Skull_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9011ad504f3380747aaa9bcd05d33d4a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Brainstem_Thalamus_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "fb9f0e60abb434241a7350a8a0e83234",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Brainstem_Thalamus_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "24e17b5b46cdc8f4fa80e09f761a9984",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Abdomen_External_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "26bf019f5a25ec845ab210c344f3b74e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Abdomen_External_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "05597bc945a8e584b97f0f31c4313b08",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Frontal_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "33602f82fa134894da4984bf71da5016",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Frontal_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "7d4fe608f99ee314793d7412df7f40c0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Insular_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a8ced821e861bc54bbad219d01b90b78",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Insular_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "4ee2cf93c5e6a654ab2362779aa0097a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Front_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6e68ca0bf3de10543a1e26ebd35d1963",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Front_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "c64e1908dd863e94484466b45d0811bb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Craniofacial_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "275b3071dcea8ea4089d9adbc5a83d30",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Craniofacial_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "5d7de9d8dd3522b46855c280c3b01b00",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Calf_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d1eaa6fe943eaa14ab1f77fad4d0f6ed",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Calf_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "0acbbbca4ec010141b6577ec6c2aa61d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Optic_OlfactoryTract_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d9c60ccb75153c14198f4901066b80e9",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Optic_OlfactoryTract_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "71334ca463d57c9488aff75568789fd4",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e4dfb3b6c361ee94a91d5d8320784e96",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "7ddbe980c29b5e848b341647d8b5b8a1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Back_Internal_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6453cfee92280254294b4cb70ef44acf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Back_Internal_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "0930d58ffc7f5b348902022ef2192e63",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Ventricles_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "f299443a5f28eb74ba1984aa045dca6f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Ventricles_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3307158fb6d277e499ced38d4a92e70b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Brainstem_Thalamus_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d58597b0a050daa459ddc06b0bb25a1a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Brainstem_Thalamus_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "81a19af099144f34bb380b00e06e6d8f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/External_Genetalia_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "4073594b63723884aaf2b15d00890542",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/External_Genetalia_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "4a50f73d833039245b28a1ee14aa0770",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Pancreas_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "58c1117a183272545811178867fec5a7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Pancreas_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "00b877009fbaee8419851a20e5b54278",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/BasalGanglia_Putamen_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a3e6aa4d9caa2a545938f6f8f50db1ad",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/BasalGanglia_Putamen_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3d6af0fcd766c944d904aa81cd4c3974",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1fd1f8ce53006f5468176066e47c08de",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "01bcb3b3e1f469a448804b273f1446dc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Trachea_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c9ecf92f16bfa714d869c9ae3712226c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Trachea_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3132855f0712aee47ab268f623a5f343",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Foot_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "0e4d55e26bd6d0f42a190065f89a947a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Foot_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "7cedde4a60dc609459cbe62e66f9f157",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "2678b06c8bb2e334b917a88c74875d40",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "c5fd4c6e608cfb94baa4ff7159059d72",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d33f5a8cb3f23ae42abd520ef9641280",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "80ad57eef572e0541bacc1e2a614820c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/SpinalCord_Neck_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e806939f340cf9a4d9e642b95c6d992e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/SpinalCord_Neck_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "1abe1dd698399c446afb0f9c3ad05588",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "3e0697dbd1f3ea74b883d4aad26e5ad7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "43fc0cd625e6d3548adba3438177dadb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Temporal_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6d899154b50b85e4cbf9edea5d90db79",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Temporal_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "cef832661cdb09b459353d23f23d5275",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "32d3f6a6aaf071b4081f6e85b5f36c5d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "79fcecb5f4c4a0e4aaa7819e7bee6dc8",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Gallbladder_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a63b17da88b031e4bb500f2ec645fdbf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Gallbladder_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "61a2810f0e88a8b448a6b0241ba145ac",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Intervertebral_Discs_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "521206d9bf2ecca4dab5370de51a89e8",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Intervertebral_Discs_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "13524e4570112e6479ec75a639783b8b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Forearm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d8673bb935be41a4682b09370433a9d5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Forearm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9fea5ef183d7a8f4fa51aa43e9c1b997",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "cf2fc7499da78e847a668983a00bc055",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/ArterialSystem_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e3dd3b0898f3059459839c5736477c83",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Limbic_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "9ca2d577f8320014cad509821e581133",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Limbic_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "6cea5a9444f1a2642af5e69bb64f2753",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "3246677e3b435754da0db9f38698286e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ef2572d5e3d8cec4a8b2dd8f1b02e7ba",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Colon_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "0b6ca4ebaeeec644181f50d385cc2063",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Colon_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "3313f7cb51aba3c4eb28d3c79dd4f051",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Abdomen_Internal_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "15736498006db3f4f842b3fea82e414c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Abdomen_Internal_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "ebb67c36cff1fe14aa45e99e3d2d18fe",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Teeth_Bottom_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c90368640357e65439ade10d84603ebf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Teeth_Bottom_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "6b304f20a577f574baad177a4ce26d1c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Kidney_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c77786206b7784840bbf6a8867add16c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Kidney_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9863527aa419c5d4783f86c254404a4f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "aabbb46de19284a47a59562354212abd",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "c2dfce8510e4dc048a85297cba8c1c86",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Optic_OlfactoryTract_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "4641028e176e90f4f8b0a1343c93da9b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Optic_OlfactoryTract_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e7358cc6f694c9f4eb4b7cd75a6137d0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Arm_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "7e25c3012e11b2a48a7560f5f5e100a3",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Arm_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "25c39caae1833da4797462ec0a6e84fd",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Larynx_External_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "01929224a43c0234e859a48038f8ccf8",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Larynx_External_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "2a889d8971418674992a08ceca572cd8",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "9582f6c88fd9aac4a9f35a79d495ac1e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "b5a5c59dc20c2ff4d8a2fb64cf5c98d5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Calf_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "abfa7101d78ad7b488dc09ad660ff678",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Calf_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "d211e34aa0a4382418fba1e8313dbdb6",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Hippocampus_Amygdala_Fornix_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5ae0a81bd261917419cd974ff62f1e37",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Hippocampus_Amygdala_Fornix_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "2e859cdb4b538da479ef544c4cc6079d",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cremaster_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e14f643146bff0242b68abccf07359c2",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cremaster_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "7ba785d944acee1448da244d09b203eb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "924482044508b1f4383eb554248e19cb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "952f4b4c8b8eb2240ac654f167d17a71",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cerebellum_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c4f520888dae08c4bbecc37aed20ae37",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Cerebellum_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "d24a718d11eab904b9b47e6ff6d810ad",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "095e08d1e5359904084652531aa19409",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "85e13ca32a77d9141822778c8e2253bb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a9c5778d215eace468f1a94be1abea50",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticSystem_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "bb4b3a5e689de6540856b3963dc7a25b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Limbic_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "1eb794eb0a86fc24fa4f26cc11d79039",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Limbic_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "1ad00078319470c499f55203524e9adc",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Foot_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "76ef4228d8a4bde4699e01e10652960e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Foot_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "dd1ee247c7cbbbc44908041e3398cb47",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Arm_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "0cfb06411c6d6ab42bf52579ecc63d4f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Arm_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "943bc7c9342354d4089c7ad683f08d6a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Thorax_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "8b50f92e3c61ff64c9ec239fd688e692",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Thorax_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "27020e0469316e547a0200453ed90cae",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Glands_Parotid_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c6d26b4c2b0bf1a4885d14fabd88c58c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Glands_Parotid_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f775c952f70d1774c944f2691e9ea50f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Esophagus_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c965aa42502bcc947b73769c4c2ceb57",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Esophagus_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "74c818d890960854cb9511ac54c4e894",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Urinary_Ureter_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "d88d93ca6d8720d47b3591f18ffb33fe",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Urinary_Ureter_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9916202903cf57844ac179fe14b4275e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "415aa26882378a64984a5dbc239e9ff5",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "f169fa1bc85dad34e864343ae178a02c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Urinary_Ureter_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "14c5cd420eb71a84c82a845d47f092bb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Urinary_Ureter_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "60ddfcd079a910e4c9215d511decbcbf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Vessels_Big_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "250dc8e225f8bc94381c5464dd2ff214",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Heart_Vessels_Big_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "a73ef2386e0020c4fb0a18c15c798c87",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Spleen_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5d8e6fb64416d0d4ba5c84d41b817cc2",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Spleen_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "9f35b5c1072beba428caffbe79c19534",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Insular_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "eaebc02b973b5d0458fce85dbab1b060",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Insular_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "240914ea554909445bc7a4f561865f69",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Leg_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "5d104fb331337404e946419267b87eaf",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/NervousSystem_Leg_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "a216e45a43d8e5f4db89ecdca1555a17",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bile_Duct_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "dc341e6cd1f511343aaf431c56d1aad2",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bile_Duct_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "861d9cacd494e9f44a002a761f23ce52",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bronchi_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "2de80a034bd95df4aa88b63e8ba5978b",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Bronchi_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "49283d3b19efea64eac789a12b68664a",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Teeth_Top_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "93cc3b7170dd947418b31b4412fe24a0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Teeth_Top_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "14fae172502823d4ea9428e97178c800",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/CentralBrain_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "3fd7b31fcb366054686423fb118bb3a7",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/CentralBrain_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "d209d25d84fc46545ab19e7f37ddae13",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Leg_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "176cec0ff453c1c438ee19300a95f05f",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/VenousSystem_Leg_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "33bcf7ce78b35ce4193faab200027621",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Floor_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "a61fa3e74b7fd3d4dbaaae754b787545",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Floor_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "22d82b5fced87b0438bafecac2067068",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Neck_Internal_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "f160d65f2ee2a8a4b9347f77bb59d57e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Neck_Internal_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "15fced8e49f3be24a9ad824d3b68cefa",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Ventricles_Right_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "b74ccb8abe8677044abcffb47d0b81d0",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Ventricles_Right_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "b376a4845ee5efd43b567b5e7be8e1da",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Shin_Foot_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "eceeee0e6cfe41e488f9b57c0f55e7d9",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Shin_Foot_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "e0a001171e6b16140b1836770bca516e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Back_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "6a3ca347f3bd81a488b0c132636539f1",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Hip_Back_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "85effefa41b06ba4196baaa24f39b1af",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Head_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "b08106bc0286d0c4081871db5e99bd9c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/LymphaticNodes_Head_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "bbc69714ae905554cbb353f0990c53cb",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Back_External_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "93a9049a246802643b1f3c7b7248662c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Back_External_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "25920d768ba23de47aec15b63e311379",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Eye_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "c7d5a78f38ce6cd439fab01ded74ce47",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_2/Muscles_Eye_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "2510b3009b2f9354e8b07bd45b02e114",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/SpinalCord_Torso_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "71c719c24d97fee44a406896d1227890",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/SpinalCord_Torso_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "699e529888b1f954696089dce5ad486c",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Hand_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "cb6a74fa250871e43897836163f007c2",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_3/Skeleton_Hand_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "1278949e644e0084591fedc0b5909253",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Temporal_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "98909a0ae85c4324184bf015bcef3043",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Temporal_Left_Normal.png",
+      "normal": true
+    },
+    {
+      "guid": "dafb93b2f8d1cde47b1a2d9bcdfa383e",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Parietal_Left_Diffuse.png",
+      "normal": false
+    },
+    {
+      "guid": "e7dd3891ccf4ffd46b4b2399f20d9061",
+      "source": "SourceAssets/BiologyLegacy/Assets/_Project/Textures/Corpo Homem/Male_Full_Body_Anatomy_and_Skin_textures_part_1/Lobe_Parietal_Left_Normal.png",
+      "normal": true
+    }
+  ],
+  "alignment": "Use canonical FBX node transforms, never the displaced prefab roots.",
+  "excluded": [
+    "Adrenal glands: endocrine, outside the nine-system scope.",
+    "Maxillary sinus: not a muscle."
+  ],
+  "corrections": [
+    "Spinal cord belongs to nervous system.",
+    "Bronchial vessels belong to circulatory system.",
+    "Pharynx is shared by respiratory/digestive models."
+  ]
+}
